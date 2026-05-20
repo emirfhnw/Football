@@ -98,6 +98,22 @@ def metric_card(title, value, subtitle=""):
     )
 
 
+def info_box(title, text):
+    return html.Div(
+        [
+            html.Div(title, style={"fontWeight": "700", "fontSize": "13px", "color": "#0f172a", "marginBottom": "4px"}),
+            html.Div(text, style={"fontSize": "12px", "lineHeight": "1.45", "color": "#475569"}),
+        ],
+        style={
+            "backgroundColor": "#f8fafc",
+            "border": "1px solid #e2e8f0",
+            "borderRadius": "12px",
+            "padding": "10px 12px",
+            "marginTop": "10px",
+        },
+    )
+
+
 def empty_figure(title):
     fig = go.Figure()
     fig.update_layout(
@@ -145,7 +161,7 @@ def create_pitch_figure(df):
         color="team",
         symbol="goal_label",
         size="shot_statsbomb_xg",
-        size_max=22,
+        size_max=24,
         hover_data={
             "player": True,
             "team": True,
@@ -166,9 +182,9 @@ def create_pitch_figure(df):
     fig.update_xaxes(range=[0, 120], visible=False)
     fig.update_yaxes(range=[80, 0], visible=False)
     fig.update_layout(
-        title="Interactive shot map",
+        title="Interactive shot map – marker size represents xG, star/cross symbols indicate goals",
         height=520,
-        margin=dict(l=10, r=10, t=50, b=10),
+        margin=dict(l=10, r=10, t=60, b=10),
         plot_bgcolor="#ecfdf5",
         paper_bgcolor="white",
         legend_title_text="Team / Goal",
@@ -187,6 +203,31 @@ app.layout = html.Div(
                 html.P(
                     "Explore shot quality, shot locations and finishing efficiency across teams, matches and players.",
                     style={"color": "#64748b", "fontSize": "16px", "marginTop": "0"},
+                ),
+                html.Div(
+                    [
+                        html.Div(
+                            [
+                                html.Strong("How to use this dashboard: "),
+                                "Start with the tournament overview, then filter by team, match, player, outcome, chance quality or minute range. All charts update together.",
+                            ],
+                            style={"fontSize": "13px", "color": "#334155", "marginBottom": "6px"},
+                        ),
+                        html.Div(
+                            [
+                                html.Strong("xG explanation: "),
+                                "Expected goals (xG) estimates how likely a shot is to become a goal. Higher xG means a better chance. Chance quality is grouped as Low (<0.05), Medium (0.05–0.20) and High (>=0.20).",
+                            ],
+                            style={"fontSize": "13px", "color": "#334155"},
+                        ),
+                    ],
+                    style={
+                        "backgroundColor": "#e0f2fe",
+                        "border": "1px solid #7dd3fc",
+                        "borderRadius": "14px",
+                        "padding": "12px 14px",
+                        "marginTop": "12px",
+                    },
                 ),
             ],
             style={"padding": "20px 24px 8px 24px"},
@@ -225,9 +266,13 @@ app.layout = html.Div(
                             tooltip={"placement": "bottom", "always_visible": False},
                         ),
                         html.Hr(),
-                        html.P(
-                            "User task: Select a team, match or player and compare shot volume, chance quality and spatial patterns.",
-                            style={"fontSize": "12px", "color": "#64748b"},
+                        info_box(
+                            "User task",
+                            "Select a team, match or player and compare shot volume, xG, chance quality and spatial patterns.",
+                        ),
+                        info_box(
+                            "Linked views",
+                            "The KPI cards, pitch map, timeline and bar charts always represent the same filtered data.",
                         ),
                     ],
                     style={
@@ -332,7 +377,7 @@ def update_dashboard(team, match, player, outcome, quality, minute_range):
         size="shot_statsbomb_xg",
         symbol="is_goal",
         hover_data=["player", "match_label", "shot_outcome", "chance_quality", "shot_statsbomb_xg"],
-        title="Shot timeline",
+        title="Shot timeline – symbol indicates goal / no goal",
     )
     timeline_fig.add_vline(x=45, line_dash="dash", line_color="gray")
     timeline_fig.update_layout(height=420, margin=dict(l=10, r=20, t=50, b=10))
