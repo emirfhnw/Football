@@ -31,17 +31,23 @@ The user should be able to answer questions such as:
 ```text
 Football/
 ├── dashboard/
-│   └── app.py                         # Current IVI dashboard prototype
+│   ├── app.py                         # Earlier IVI dashboard prototype
+│   └── app_worldcup.py                # Final IVI dashboard for this project
 ├── data/
 │   ├── raw/                           # Original/raw data files
 │   └── processed/                     # Generated processed CSV files
+├── evaluation/
+│   ├── evaluation_tasks.md            # User test tasks
+│   ├── sus_questionnaire.md           # SUS questionnaire
+│   └── evaluation_results_template.csv
 ├── notebooks/
 │   ├── eda2.ipynb                     # Early exploratory notebook
 │   └── gdv_eda_final.ipynb            # First GDV notebook draft
 ├── reports/
 │   ├── figures/                       # Generated GDV figures
 │   ├── gdv_insights.md                # Automatically generated insights
-│   └── gdv_report_draft.md            # Current GDV report draft
+│   ├── gdv_report_draft.md            # GDV report draft
+│   └── ivi_report_draft.md            # IVI report draft
 ├── src/
 │   ├── build_worldcup_shots.py        # Builds processed World Cup shot dataset
 │   ├── gdv_analysis.py                # Earlier single-match GDV analysis
@@ -113,6 +119,32 @@ It also creates:
 reports/gdv_insights.md
 ```
 
+## Step 3: Run the IVI dashboard
+
+After the processed dataset exists, start the interactive dashboard with:
+
+```bash
+python dashboard/app_worldcup.py
+```
+
+Then open the dashboard in your browser:
+
+```text
+http://127.0.0.1:8050
+```
+
+The dashboard provides:
+
+- KPI cards for shots, goals, total xG, xG per shot and conversion rate
+- filters for team, match, player, shot outcome, chance quality and minute range
+- an interactive shot map
+- a shot timeline
+- xG comparison by team
+- top players by total xG
+- shot outcome distribution
+- hover details for individual shots
+- linked views where all charts react to the same filters
+
 ## Current GDV results
 
 The processed dataset contains:
@@ -157,30 +189,56 @@ The report draft explains:
 
 ## IVI part
 
-The IVI part will use the same processed CSV file:
+The IVI part uses the same processed CSV file:
 
 ```text
 data/processed/world_cup_2022_shots.csv
 ```
 
-Planned dashboard features:
+Relevant files:
 
-- KPI cards for shots, goals, total xG, xG per shot and conversion rate
-- filters for team, match, player, shot outcome and chance quality
-- interactive shot map
-- shot timeline
-- team and player comparison charts
-- hover details for individual shots
-- linked views where all charts react to the same filters
+```text
+dashboard/app_worldcup.py
+reports/ivi_report_draft.md
+evaluation/evaluation_tasks.md
+evaluation/sus_questionnaire.md
+evaluation/evaluation_results_template.csv
+```
+
+The interactive dashboard is designed around the principle:
+
+```text
+overview first, filter, then details on demand
+```
+
+Users can start with the whole tournament and then filter down to a team, match or player.
+
+## Evaluation
+
+The evaluation material is stored in:
+
+```text
+evaluation/
+```
+
+The evaluation uses:
+
+- task-based user testing
+- think-aloud observation
+- SUS questionnaire
+- short qualitative feedback
+
+The planned tasks include finding the highest-xG team, comparing Argentina, analysing Serbia vs Switzerland, filtering high-quality chances and exploring top players.
 
 ## Reproducibility
 
-To reproduce the current GDV results from scratch:
+To reproduce the current GDV results and start the IVI dashboard from scratch:
 
 ```bash
 pip install -r requirements.txt
 python src/build_worldcup_shots.py
 python src/gdv_worldcup_analysis.py
+python dashboard/app_worldcup.py
 ```
 
 Then check:
@@ -189,6 +247,7 @@ Then check:
 data/processed/
 reports/figures/
 reports/gdv_insights.md
+http://127.0.0.1:8050
 ```
 
 ## Data source
