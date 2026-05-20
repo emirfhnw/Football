@@ -40,7 +40,8 @@ shots["distance_to_goal"] = pd.to_numeric(shots["distance_to_goal"], errors="coe
 for col in ["team", "player", "match_label", "shot_outcome", "chance_quality", "competition_stage"]:
     shots[col] = shots[col].fillna("Unknown").astype(str)
 
-# Dropdown options
+MINUTE_MAX = int(max(120, shots["minute"].max()))
+
 team_options = [{"label": "All teams", "value": "All"}] + [
     {"label": team, "value": team} for team in sorted(shots["team"].unique())
 ]
@@ -57,11 +58,20 @@ quality_options = [{"label": "All qualities", "value": "All"}] + [
     {"label": q, "value": q} for q in ["Low", "Medium", "High"] if q in shots["chance_quality"].unique()
 ]
 
+COLORS = {
+    "bg": "#f5f7fb",
+    "panel": "#ffffff",
+    "navy": "#0f172a",
+    "muted": "#64748b",
+    "border": "#e2e8f0",
+    "blue": "#2563eb",
+    "light_blue": "#eff6ff",
+    "green": "#ecfdf5",
+}
+
 
 def filter_data(team, match, player, outcome, quality, minute_range):
-    """Apply dashboard filters."""
     df = shots.copy()
-
     if team != "All":
         df = df[df["team"] == team]
     if match != "All":
@@ -72,44 +82,51 @@ def filter_data(team, match, player, outcome, quality, minute_range):
         df = df[df["shot_outcome"] == outcome]
     if quality != "All":
         df = df[df["chance_quality"] == quality]
-
     df = df[(df["minute"] >= minute_range[0]) & (df["minute"] <= minute_range[1])]
     return df
+
+
+def panel(children, style=None):
+    base = {
+        "backgroundColor": COLORS["panel"],
+        "border": f"1px solid {COLORS['border']}",
+        "borderRadius": "18px",
+        "padding": "18px",
+        "boxShadow": "0 8px 24px rgba(15, 23, 42, 0.06)",
+    }
+    if style:
+        base.update(style)
+    return html.Div(children, style=base)
+
+
+def section_title(title, subtitle):
+    return html.Div(
+        [
+            html.H3(title, style={"margin": "0", "fontSize": "18px", "color": COLORS["navy"]}),
+            html.P(subtitle, style={"margin": "6px 0 0 0", "fontSize": "13px", "color": COLORS["muted"], "lineHeight": "1.45"}),
+        ],
+        style={"marginBottom": "8px"},
+    )
 
 
 def metric_card(title, value, subtitle=""):
     return html.Div(
         [
-            html.Div(title, style={"fontSize": "13px", "color": "#64748b"}),
-            html.Div(value, style={"fontSize": "26px", "fontWeight": "700", "color": "#0f172a"}),
-            html.Div(subtitle, style={"fontSize": "11px", "color": "#94a3b8"}),
+            html.Div(title, style={"fontSize": "12px", "color": COLORS["muted"], "fontWeight": "600"}),
+            html.Div(value, style={"fontSize": "28px", "fontWeight": "800", "color": COLORS["navy"], "marginTop": "4px"}),
+            html.Div(subtitle, style={"fontSize": "11px", "color": "#94a3b8", "marginTop": "2px"}),
         ],
         style={
-            "backgroundColor": "white",
-            "border": "1px solid #e2e8f0",
-            "borderRadius": "14px",
-            "padding": "14px",
-            "boxShadow": "0 1px 4px rgba(15, 23, 42, 0.08)",
+            "backgroundColor": COLORS["panel"],
+            "border": f"1px solid {COLORS['border']}",
+            "borderRadius": "16px",
+            "padding": "15px",
+            "boxShadow": "0 4px 14px rgba(15, 23, 42, 0.05)",
             "width": "19%",
             "display": "inline-block",
             "marginRight": "1%",
+            "boxSizing": "border-box",
             "verticalAlign": "top",
-        },
-    )
-
-
-def info_box(title, text):
-    return html.Div(
-        [
-            html.Div(title, style={"fontWeight": "700", "fontSize": "13px", "color": "#0f172a", "marginBottom": "4px"}),
-            html.Div(text, style={"fontSize": "12px", "lineHeight": "1.45", "color": "#475569"}),
-        ],
-        style={
-            "backgroundColor": "#f8fafc",
-            "border": "1px solid #e2e8f0",
-            "borderRadius": "12px",
-            "padding": "10px 12px",
-            "marginTop": "10px",
         },
     )
 
@@ -118,30 +135,31 @@ def empty_figure(title):
     fig = go.Figure()
     fig.update_layout(
         title=title,
-        annotations=[
-            dict(
-                text="No data for the current filters",
-                x=0.5,
-                y=0.5,
-                showarrow=False,
-                xref="paper",
-                yref="paper",
-                font=dict(size=16),
-            )
-        ],
-        height=420,
+        annotations=[dict(text="No data for the current filters", x=0.5, y=0.5, showarrow=False, xref="paper", yref="paper")],
+        height=430,
+        paper_bgcolor="white",
+        plot_bgcolor="white",
+    )
+    return fig
+
+
+def clean_layout(fig, height=430):
+    fig.update_layout(
+        height=height,
+        paper_bgcolor="white",
+        plot_bgcolor="white",
+        font=dict(family="Arial", size=12, color=COLORS["navy"]),
+        margin=dict(l=20, r=20, t=55, b=35),
+        legend_title_text="",
     )
     return fig
 
 
 def create_pitch_figure(df):
-    """Create interactive shot map."""
     if df.empty:
-        return empty_figure("Interactive shot map")
+        return empty_figure("Where were dangerous shots taken?")
 
     fig = go.Figure()
-
-    # Pitch lines
     line = dict(color="#334155", width=2)
     fig.add_shape(type="rect", x0=0, y0=0, x1=120, y1=80, line=line)
     fig.add_shape(type="line", x0=60, y0=0, x1=60, y1=80, line=line)
@@ -153,6 +171,15 @@ def create_pitch_figure(df):
 
     plot_df = df.dropna(subset=["x", "y"]).copy()
     plot_df["goal_label"] = plot_df["is_goal"].map({True: "Goal", False: "No goal"})
+
+    # Full tournament overview can be cluttered. For the all-data view, keep the pitch readable by showing
+    # high-quality chances and goals. Once users filter, all shots in that selection are shown.
+    overview_mode = len(plot_df) > 400
+    if overview_mode:
+        plot_df = plot_df[(plot_df["chance_quality"] == "High") | (plot_df["is_goal"])]
+        title = "Where were the best chances taken?  High-quality chances and goals shown for readability"
+    else:
+        title = "Where were the selected shots taken?  Size = xG, symbol = goal/no goal"
 
     fig_px = px.scatter(
         plot_df,
@@ -182,12 +209,12 @@ def create_pitch_figure(df):
     fig.update_xaxes(range=[0, 120], visible=False)
     fig.update_yaxes(range=[80, 0], visible=False)
     fig.update_layout(
-        title="Interactive shot map – marker size represents xG, star/cross symbols indicate goals",
+        title=title,
         height=520,
-        margin=dict(l=10, r=10, t=60, b=10),
-        plot_bgcolor="#ecfdf5",
+        margin=dict(l=10, r=10, t=65, b=10),
+        plot_bgcolor="#dcfce7",
         paper_bgcolor="white",
-        legend_title_text="Team / Goal",
+        legend=dict(orientation="h", y=-0.05),
     )
     return fig
 
@@ -199,47 +226,53 @@ app.layout = html.Div(
     [
         html.Div(
             [
-                html.H1("FIFA World Cup 2022 Shot Quality Explorer", style={"marginBottom": "4px"}),
-                html.P(
-                    "Explore shot quality, shot locations and finishing efficiency across teams, matches and players.",
-                    style={"color": "#64748b", "fontSize": "16px", "marginTop": "0"},
-                ),
                 html.Div(
                     [
-                        html.Div(
-                            [
-                                html.Strong("How to use this dashboard: "),
-                                "Start with the tournament overview, then filter by team, match, player, outcome, chance quality or minute range. All charts update together.",
-                            ],
-                            style={"fontSize": "13px", "color": "#334155", "marginBottom": "6px"},
+                        html.Div("FIFA World Cup 2022", style={"fontSize": "13px", "fontWeight": "700", "letterSpacing": "0.08em", "color": "#bfdbfe"}),
+                        html.H1("Shot Quality Explorer", style={"fontSize": "42px", "margin": "8px 0 8px 0", "color": "white"}),
+                        html.P(
+                            "A focused dashboard to compare shot quality, shot locations and finishing efficiency between teams, matches and players.",
+                            style={"fontSize": "16px", "color": "#dbeafe", "maxWidth": "900px", "lineHeight": "1.5"},
                         ),
-                        html.Div(
-                            [
-                                html.Strong("xG explanation: "),
-                                "Expected goals (xG) estimates how likely a shot is to become a goal. Higher xG means a better chance. Chance quality is grouped as Low (<0.05), Medium (0.05–0.20) and High (>=0.20).",
-                            ],
-                            style={"fontSize": "13px", "color": "#334155"},
-                        ),
-                    ],
-                    style={
-                        "backgroundColor": "#e0f2fe",
-                        "border": "1px solid #7dd3fc",
-                        "borderRadius": "14px",
-                        "padding": "12px 14px",
-                        "marginTop": "12px",
-                    },
-                ),
+                    ]
+                )
             ],
-            style={"padding": "20px 24px 8px 24px"},
+            style={"background": "linear-gradient(135deg, #0f172a, #1d4ed8)", "padding": "30px 34px", "borderRadius": "0 0 26px 26px"},
         ),
-
-        html.Div(id="kpi-container", style={"padding": "0 24px 16px 24px"}),
 
         html.Div(
             [
-                html.Div(
+                panel(
                     [
-                        html.H3("Filters", style={"marginTop": "0"}),
+                        html.Div(
+                            [
+                                html.Strong("Research question: "),
+                                "How do shot quality, shot locations and finishing efficiency differ between teams and matches in the FIFA World Cup 2022?",
+                            ],
+                            style={"fontSize": "14px", "color": COLORS["navy"], "marginBottom": "8px"},
+                        ),
+                        html.Div(
+                            [
+                                html.Strong("How to read it: "),
+                                "xG estimates the probability that a shot becomes a goal. Higher xG means a better chance. Chance quality: Low < 0.05, Medium 0.05–0.20, High ≥ 0.20.",
+                            ],
+                            style={"fontSize": "14px", "color": COLORS["navy"], "lineHeight": "1.45"},
+                        ),
+                    ],
+                    style={"backgroundColor": COLORS["light_blue"], "border": "1px solid #bfdbfe"},
+                )
+            ],
+            style={"padding": "22px 28px 10px 28px"},
+        ),
+
+        html.Div(id="insight-container", style={"padding": "0 28px 10px 28px"}),
+        html.Div(id="kpi-container", style={"padding": "0 28px 18px 28px"}),
+
+        html.Div(
+            [
+                panel(
+                    [
+                        section_title("Filters", "Use the filters to move from tournament overview to team, match or player detail."),
                         html.Label("Team"),
                         dcc.Dropdown(id="team-filter", options=team_options, value="All", clearable=False),
                         html.Br(),
@@ -259,67 +292,85 @@ app.layout = html.Div(
                         dcc.RangeSlider(
                             id="minute-filter",
                             min=0,
-                            max=int(max(120, shots["minute"].max())),
+                            max=MINUTE_MAX,
                             step=1,
-                            value=[0, int(max(120, shots["minute"].max()))],
-                            marks={i: str(i) for i in range(0, int(max(120, shots["minute"].max())) + 1, 15)},
+                            value=[0, MINUTE_MAX],
+                            marks={i: str(i) for i in range(0, MINUTE_MAX + 1, 15)},
                             tooltip={"placement": "bottom", "always_visible": False},
                         ),
-                        html.Hr(),
-                        info_box(
-                            "User task",
-                            "Select a team, match or player and compare shot volume, xG, chance quality and spatial patterns.",
-                        ),
-                        info_box(
-                            "Linked views",
-                            "The KPI cards, pitch map, timeline and bar charts always represent the same filtered data.",
+                        html.Div(
+                            [
+                                html.Strong("Linked views: "),
+                                "Every chart below uses the same filtered data. Change one filter and the full story updates.",
+                            ],
+                            style={"fontSize": "12px", "lineHeight": "1.45", "color": COLORS["muted"], "marginTop": "18px"},
                         ),
                     ],
-                    style={
-                        "width": "24%",
-                        "display": "inline-block",
-                        "verticalAlign": "top",
-                        "backgroundColor": "white",
-                        "padding": "18px",
-                        "borderRadius": "14px",
-                        "boxShadow": "0 1px 4px rgba(15, 23, 42, 0.08)",
-                    },
+                    style={"width": "25%", "display": "inline-block", "verticalAlign": "top", "boxSizing": "border-box"},
                 ),
                 html.Div(
-                    [dcc.Graph(id="shot-map")],
-                    style={"width": "74%", "display": "inline-block", "verticalAlign": "top", "marginLeft": "2%"},
+                    [
+                        panel(
+                            [
+                                section_title("1. Chance creation quality", "This chart answers: who creates many shots and who creates valuable shots? Higher xG means better chance quality."),
+                                dcc.Graph(id="team-quality-chart"),
+                            ]
+                        )
+                    ],
+                    style={"width": "73%", "display": "inline-block", "verticalAlign": "top", "marginLeft": "2%"},
                 ),
             ],
-            style={"padding": "0 24px 16px 24px"},
+            style={"padding": "0 28px 18px 28px"},
         ),
 
         html.Div(
             [
-                html.Div([dcc.Graph(id="xg-by-team")], style={"width": "49%", "display": "inline-block"}),
-                html.Div([dcc.Graph(id="shot-timeline")], style={"width": "49%", "display": "inline-block", "marginLeft": "2%"}),
+                html.Div(
+                    [
+                        panel([section_title("2. Shot locations", "This shows where dangerous chances happen. Close and central shots usually have higher xG."), dcc.Graph(id="shot-map")])
+                    ],
+                    style={"width": "58%", "display": "inline-block", "verticalAlign": "top"},
+                ),
+                html.Div(
+                    [
+                        panel([section_title("3. Timing of shots", "This shows when shots happened and whether dangerous moments came in specific match phases."), dcc.Graph(id="shot-timeline")])
+                    ],
+                    style={"width": "40%", "display": "inline-block", "verticalAlign": "top", "marginLeft": "2%"},
+                ),
             ],
-            style={"padding": "0 24px 16px 24px"},
+            style={"padding": "0 28px 18px 28px"},
         ),
 
         html.Div(
             [
-                html.Div([dcc.Graph(id="top-players")], style={"width": "49%", "display": "inline-block"}),
-                html.Div([dcc.Graph(id="outcome-chart")], style={"width": "49%", "display": "inline-block", "marginLeft": "2%"}),
+                html.Div(
+                    [
+                        panel([section_title("4. Finishing efficiency", "This compares actual goals with expected goals. Positive values mean a team scored more than its xG."), dcc.Graph(id="efficiency-chart")])
+                    ],
+                    style={"width": "49%", "display": "inline-block", "verticalAlign": "top"},
+                ),
+                html.Div(
+                    [
+                        panel([section_title("5. Key players", "This identifies players who contributed most to total xG in the selected data."), dcc.Graph(id="top-players")])
+                    ],
+                    style={"width": "49%", "display": "inline-block", "verticalAlign": "top", "marginLeft": "2%"},
+                ),
             ],
-            style={"padding": "0 24px 24px 24px"},
+            style={"padding": "0 28px 28px 28px"},
         ),
     ],
-    style={"backgroundColor": "#f8fafc", "fontFamily": "Arial, sans-serif", "minHeight": "100vh"},
+    style={"backgroundColor": COLORS["bg"], "fontFamily": "Arial, sans-serif", "minHeight": "100vh"},
 )
 
 
 @app.callback(
+    Output("insight-container", "children"),
     Output("kpi-container", "children"),
+    Output("team-quality-chart", "figure"),
     Output("shot-map", "figure"),
-    Output("xg-by-team", "figure"),
     Output("shot-timeline", "figure"),
+    Output("efficiency-chart", "figure"),
     Output("top-players", "figure"),
-    Output("outcome-chart", "figure"),
     Input("team-filter", "value"),
     Input("match-filter", "value"),
     Input("player-filter", "value"),
@@ -336,39 +387,67 @@ def update_dashboard(team, match, player, outcome, quality, minute_range):
     xg_per_shot = total_xg / total_shots if total_shots else 0
     conversion_rate = total_goals / total_shots if total_shots else 0
 
+    insight_text = "No data for the current filters. Try removing one filter."
+    if not df.empty:
+        grouped = (
+            df.groupby("team")
+            .agg(shots=("team", "size"), goals=("is_goal", "sum"), total_xg=("shot_statsbomb_xg", "sum"))
+            .reset_index()
+        )
+        top_xg = grouped.sort_values("total_xg", ascending=False).iloc[0]
+        insight_text = (
+            f"Current selection contains {total_shots:,} shots and {total_goals:,} goals. "
+            f"The strongest team by total xG in this selection is {top_xg['team']} with {top_xg['total_xg']:.2f} xG. "
+            "Use the filters to compare whether this comes from many shots, better locations or more efficient finishing."
+        )
+
+    insight = panel(
+        [
+            html.Div("Main reading of the current view", style={"fontWeight": "800", "fontSize": "14px", "color": COLORS["navy"], "marginBottom": "6px"}),
+            html.Div(insight_text, style={"fontSize": "14px", "lineHeight": "1.45", "color": "#334155"}),
+        ],
+        style={"backgroundColor": "#fff7ed", "border": "1px solid #fed7aa"},
+    )
+
     kpis = [
-        metric_card("Shots", f"{total_shots:,}", "Filtered attempts"),
-        metric_card("Goals", f"{total_goals:,}", "Successful shots"),
-        metric_card("Total xG", f"{total_xg:.2f}", "Chance quality sum"),
+        metric_card("Shots", f"{total_shots:,}", "How often teams finished"),
+        metric_card("Goals", f"{total_goals:,}", "Actual result of shots"),
+        metric_card("Total xG", f"{total_xg:.2f}", "Overall chance quality"),
         metric_card("xG / Shot", f"{xg_per_shot:.3f}", "Average shot quality"),
-        metric_card("Conversion", f"{conversion_rate:.1%}", "Goals divided by shots"),
+        metric_card("Conversion", f"{conversion_rate:.1%}", "Goals / shots"),
     ]
+
+    if df.empty:
+        return insight, kpis, empty_figure("Chance creation quality"), empty_figure("Shot map"), empty_figure("Timeline"), empty_figure("Efficiency"), empty_figure("Top players")
+
+    team_df = (
+        df.groupby("team")
+        .agg(
+            shots=("team", "size"),
+            goals=("is_goal", "sum"),
+            total_xg=("shot_statsbomb_xg", "sum"),
+            xg_per_shot=("shot_statsbomb_xg", "mean"),
+        )
+        .reset_index()
+    )
+    team_df["conversion_rate"] = team_df["goals"] / team_df["shots"]
+    team_df["goals_minus_xg"] = team_df["goals"] - team_df["total_xg"]
+
+    quality_fig = px.scatter(
+        team_df,
+        x="shots",
+        y="total_xg",
+        size="goals",
+        color="team",
+        hover_data={"xg_per_shot": ":.3f", "conversion_rate": ":.1%", "goals": True},
+        title="Shots vs total xG – volume compared with chance quality",
+        labels={"shots": "Shots", "total_xg": "Total xG"},
+        size_max=35,
+    )
+    quality_fig = clean_layout(quality_fig, height=430)
 
     shot_map = create_pitch_figure(df)
 
-    if df.empty:
-        return (
-            kpis,
-            shot_map,
-            empty_figure("xG by team"),
-            empty_figure("Shot timeline"),
-            empty_figure("Top players by xG"),
-            empty_figure("Shot outcomes"),
-        )
-
-    # xG by team
-    team_df = (
-        df.groupby("team")
-        .agg(shots=("team", "size"), goals=("is_goal", "sum"), total_xg=("shot_statsbomb_xg", "sum"))
-        .reset_index()
-        .sort_values("total_xg", ascending=False)
-        .head(12)
-    )
-    xg_fig = px.bar(team_df, x="total_xg", y="team", orientation="h", text="total_xg", title="xG by team")
-    xg_fig.update_traces(texttemplate="%{text:.2f}", textposition="outside")
-    xg_fig.update_layout(yaxis={"categoryorder": "total ascending"}, height=420, margin=dict(l=10, r=20, t=50, b=10))
-
-    # Timeline
     timeline_fig = px.scatter(
         df,
         x="minute",
@@ -377,12 +456,26 @@ def update_dashboard(team, match, player, outcome, quality, minute_range):
         size="shot_statsbomb_xg",
         symbol="is_goal",
         hover_data=["player", "match_label", "shot_outcome", "chance_quality", "shot_statsbomb_xg"],
-        title="Shot timeline – symbol indicates goal / no goal",
+        title="Shot timeline – larger points have higher xG",
     )
     timeline_fig.add_vline(x=45, line_dash="dash", line_color="gray")
-    timeline_fig.update_layout(height=420, margin=dict(l=10, r=20, t=50, b=10))
+    timeline_fig = clean_layout(timeline_fig, height=520)
 
-    # Top players
+    efficiency_df = team_df.sort_values("goals_minus_xg", ascending=False).head(12)
+    efficiency_fig = px.bar(
+        efficiency_df,
+        x="goals_minus_xg",
+        y="team",
+        orientation="h",
+        color="goals_minus_xg",
+        color_continuous_scale="RdBu",
+        title="Finishing efficiency: goals minus xG",
+        labels={"goals_minus_xg": "Goals - xG", "team": "Team"},
+        hover_data={"goals": True, "total_xg": ":.2f", "conversion_rate": ":.1%"},
+    )
+    efficiency_fig.update_layout(yaxis={"categoryorder": "total ascending"}, coloraxis_showscale=False)
+    efficiency_fig = clean_layout(efficiency_fig, height=430)
+
     player_df = (
         df.groupby(["player", "team"])
         .agg(shots=("player", "size"), goals=("is_goal", "sum"), total_xg=("shot_statsbomb_xg", "sum"))
@@ -396,24 +489,13 @@ def update_dashboard(team, match, player, outcome, quality, minute_range):
         y="player",
         color="team",
         orientation="h",
-        title="Top players by xG",
+        title="Top players by total xG",
         hover_data=["shots", "goals"],
     )
-    players_fig.update_layout(yaxis={"categoryorder": "total ascending"}, height=420, margin=dict(l=10, r=20, t=50, b=10))
+    players_fig.update_layout(yaxis={"categoryorder": "total ascending"})
+    players_fig = clean_layout(players_fig, height=430)
 
-    # Outcomes
-    outcome_df = df.groupby(["shot_outcome", "team"]).size().reset_index(name="count")
-    outcome_fig = px.bar(
-        outcome_df,
-        x="shot_outcome",
-        y="count",
-        color="team",
-        barmode="group",
-        title="Shot outcomes",
-    )
-    outcome_fig.update_layout(height=420, margin=dict(l=10, r=20, t=50, b=10), xaxis_title="Outcome", yaxis_title="Shots")
-
-    return kpis, shot_map, xg_fig, timeline_fig, players_fig, outcome_fig
+    return insight, kpis, quality_fig, shot_map, timeline_fig, efficiency_fig, players_fig
 
 
 if __name__ == "__main__":
