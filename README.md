@@ -2,56 +2,67 @@
 
 This project analyses shot quality, shot locations and finishing efficiency in the FIFA World Cup 2022 using StatsBomb Open Data.
 
-The project is used for two visualization modules:
+It is designed for two visualization modules:
 
-- **GDV – Fundamentals of Data Visualization**: static visual analysis and design reasoning
-- **IVI – Interactive Visualization**: interactive dashboard based on the same prepared dataset
+- **GDV – Fundamentals of Data Visualization:** static visual analysis and design reasoning
+- **IVI – Interactive Visualization:** an interactive dashboard based on the same prepared dataset
 
 ## Research question
 
 **How do shot quality, shot locations and finishing efficiency differ between teams and matches in the FIFA World Cup 2022?**
 
-The goal is not only to count shots or goals. The analysis also uses expected goals (xG), pitch location and conversion rate to compare attacking quality between teams, matches and players.
+The project does not only compare goals or shot counts. It separates four analytical dimensions:
+
+1. **Shot volume:** how often teams shoot
+2. **Chance quality:** how valuable the shots are, measured with xG
+3. **Shot location:** where dangerous chances happen on the pitch
+4. **Finishing efficiency:** whether teams score more or fewer goals than expected from xG
 
 ## Use case
 
-The target user is a football fan, student analyst or coach who wants to explore which teams and players created dangerous chances during the tournament.
+The dashboard is intended for a football fan, student analyst or assistant coach who wants to quickly understand attacking performance during the World Cup 2022.
 
-The user should be able to answer questions such as:
+A typical user scenario:
 
-- Which teams produced the most shots?
-- Which teams produced the highest total xG?
-- Which teams were most efficient in converting shots into goals?
+> After a match or during a tournament review, the user wants to compare whether a team was actually dangerous or only had many low-quality shots. The user starts with the tournament overview, then filters down to one team, one match or one player.
+
+The dashboard helps answer questions such as:
+
+- Did a team create many shots or actually good chances?
+- Which teams had the highest total xG?
+- Which teams scored more or fewer goals than expected?
 - Where on the pitch did high-quality chances occur?
 - Which players contributed most to attacking danger?
 - How does a specific match, such as Serbia vs Switzerland, compare to the tournament overview?
 
-## Repository structure
+## Final repository structure
 
 ```text
 Football/
 ├── dashboard/
-│   ├── app.py                         # Earlier IVI dashboard prototype
-│   └── app_worldcup.py                # Final IVI dashboard for this project
+│   └── app_worldcup.py                # Final IVI dashboard
 ├── data/
 │   ├── raw/                           # Original/raw data files
 │   └── processed/                     # Generated processed CSV files
 ├── evaluation/
 │   ├── evaluation_tasks.md            # User test tasks
 │   ├── sus_questionnaire.md           # SUS questionnaire
-│   └── evaluation_results_template.csv
+│   ├── evaluation_results_template.csv
+│   ├── evaluation_summary.md
+│   └── evaluation_analysis.md
 ├── notebooks/
-│   ├── eda2.ipynb                     # Early exploratory notebook
-│   └── gdv_eda_final.ipynb            # First GDV notebook draft
+│   ├── eda2.ipynb                     # Exploratory notebook
+│   └── gdv_eda_final.ipynb            # GDV notebook draft
 ├── reports/
 │   ├── figures/                       # Generated GDV figures
 │   ├── gdv_insights.md                # Automatically generated insights
 │   ├── gdv_report_draft.md            # GDV report draft
-│   └── ivi_report_draft.md            # IVI report draft
+│   ├── ivi_report_draft.md            # IVI report draft
+│   └── final_report_draft.md          # Combined final report draft
 ├── src/
 │   ├── build_worldcup_shots.py        # Builds processed World Cup shot dataset
-│   ├── gdv_analysis.py                # Earlier single-match GDV analysis
 │   └── gdv_worldcup_analysis.py       # Final GDV tournament analysis figures
+├── SUBMISSION_CHECKLIST.md
 ├── requirements.txt
 └── README.md
 ```
@@ -102,16 +113,16 @@ This creates the GDV figures in:
 reports/figures/
 ```
 
-The main figures are:
+The main GDV figures analyse:
 
-- Top 10 teams by shots
-- Top 10 teams by total xG
-- Goals compared with xG
-- Chance quality by team
-- Shot map of all World Cup 2022 shots
-- Distance to goal vs xG
-- Top players by total xG
-- Serbia vs Switzerland case study
+- top teams by shots
+- top teams by total xG
+- goals compared with xG
+- chance quality by team
+- shot locations
+- distance to goal vs xG
+- top players by total xG
+- Serbia vs Switzerland as case study
 
 It also creates:
 
@@ -136,14 +147,15 @@ http://127.0.0.1:8050
 The dashboard provides:
 
 - KPI cards for shots, goals, total xG, xG per shot and conversion rate
-- filters for team, match, player, shot outcome, chance quality and minute range
-- an interactive shot map
-- a shot timeline
-- xG comparison by team
-- top players by total xG
-- shot outcome distribution
+- dependent filters for team, match and player
+- filters for shot outcome, chance quality and minute range
+- linked visualizations that update together
 - hover details for individual shots
-- linked views where all charts react to the same filters
+- shot map
+- timing chart
+- finishing efficiency chart
+- chance quality mix
+- player ranking
 
 ## Current GDV results
 
@@ -176,17 +188,6 @@ reports/gdv_insights.md
 reports/gdv_report_draft.md
 ```
 
-The report draft explains:
-
-- the research question
-- dataset description
-- preprocessing
-- design rationale
-- interpretation of the figures
-- main findings
-- connection to IVI
-- limitations
-
 ## IVI part
 
 The IVI part uses the same processed CSV file:
@@ -205,13 +206,13 @@ evaluation/sus_questionnaire.md
 evaluation/evaluation_results_template.csv
 ```
 
-The interactive dashboard is designed around the principle:
+The dashboard follows the interaction principle:
 
 ```text
 overview first, filter, then details on demand
 ```
 
-Users can start with the whole tournament and then filter down to a team, match or player.
+Users start with the tournament overview and then filter down to a team, match or player.
 
 ## Evaluation
 
