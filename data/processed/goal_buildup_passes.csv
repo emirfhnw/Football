@@ -1,0 +1,1098 @@
+build_up_id,match_id,match_label,team,goal_player,goal_minute,pass_order,player,minute,second,x,y,end_x,end_y
+3857256_1,3857256,Serbia vs Switzerland,Switzerland,Xherdan Shaqiri,19,1,Silvan Widmer,18,53,29.7,74.2,22.9,29.1
+3857256_1,3857256,Serbia vs Switzerland,Switzerland,Xherdan Shaqiri,19,2,Manuel Obafemi Akanji,18,55,23.1,29.7,46.3,13.4
+3857256_1,3857256,Serbia vs Switzerland,Switzerland,Xherdan Shaqiri,19,3,Ricardo Iván Rodríguez Araya,18,59,46.3,14.0,66.2,5.6
+3857256_1,3857256,Serbia vs Switzerland,Switzerland,Xherdan Shaqiri,19,4,Ruben Vargas,19,1,66.2,5.6,89.1,11.8
+3857256_1,3857256,Serbia vs Switzerland,Switzerland,Xherdan Shaqiri,19,5,Djibril Sow,19,10,107.0,44.5,108.0,52.0
+3857256_2,3857256,Serbia vs Switzerland,Serbia,Aleksandar Mitrović,25,1,Filip Kostić,25,49,57.3,13.5,55.9,17.3
+3857256_2,3857256,Serbia vs Switzerland,Serbia,Aleksandar Mitrović,25,2,Dušan Tadić,25,55,100.4,14.9,108.3,38.6
+3857256_4,3857256,Serbia vs Switzerland,Switzerland,Breel-Donald Embolo,43,1,Gregor Kobel,43,22,6.4,53.0,22.9,35.1
+3857256_4,3857256,Serbia vs Switzerland,Switzerland,Breel-Donald Embolo,43,2,Granit Xhaka,43,30,48.4,32.3,52.8,47.5
+3857256_4,3857256,Serbia vs Switzerland,Switzerland,Breel-Donald Embolo,43,3,Xherdan Shaqiri,43,36,83.9,52.6,99.3,48.5
+3857256_4,3857256,Serbia vs Switzerland,Switzerland,Breel-Donald Embolo,43,4,Djibril Sow,43,38,100.1,49.4,109.0,59.8
+3857256_4,3857256,Serbia vs Switzerland,Switzerland,Breel-Donald Embolo,43,5,Silvan Widmer,43,40,109.0,59.8,114.4,36.9
+3857256_5,3857256,Serbia vs Switzerland,Switzerland,Remo Freuler,47,1,Manuel Obafemi Akanji,47,4,49.4,25.9,43.4,40.0
+3857256_5,3857256,Serbia vs Switzerland,Switzerland,Remo Freuler,47,2,Fabian Lukas Schär,47,7,47.7,33.0,38.2,23.2
+3857256_5,3857256,Serbia vs Switzerland,Switzerland,Remo Freuler,47,3,Manuel Obafemi Akanji,47,9,33.9,24.6,40.7,70.7
+3857256_5,3857256,Serbia vs Switzerland,Switzerland,Remo Freuler,47,4,Silvan Widmer,47,14,45.6,73.4,56.7,70.1
+3857256_5,3857256,Serbia vs Switzerland,Switzerland,Remo Freuler,47,5,Xherdan Shaqiri,47,17,44.2,69.1,24.7,21.6
+3857256_5,3857256,Serbia vs Switzerland,Switzerland,Remo Freuler,47,6,Manuel Obafemi Akanji,47,22,28.2,19.7,49.6,3.7
+3857256_5,3857256,Serbia vs Switzerland,Switzerland,Remo Freuler,47,7,Breel-Donald Embolo,47,33,105.5,57.4,98.7,60.9
+3857256_5,3857256,Serbia vs Switzerland,Switzerland,Remo Freuler,47,8,Xherdan Shaqiri,47,36,94.4,59.6,110.7,49.5
+3857256_5,3857256,Serbia vs Switzerland,Switzerland,Remo Freuler,47,9,Ruben Vargas,47,37,110.7,49.5,107.2,41.2
+3869151_1,3869151,Argentina vs Australia,Argentina,Lionel Andrés Messi Cuccittini,34,1,Alejandro Darío Gómez,34,27,100.4,52.7,109.0,68.4
+3869151_1,3869151,Argentina vs Australia,Argentina,Lionel Andrés Messi Cuccittini,34,2,Lionel Andrés Messi Cuccittini,34,31,102.9,65.6,95.5,50.8
+3869151_1,3869151,Argentina vs Australia,Argentina,Lionel Andrés Messi Cuccittini,34,3,Alexis Mac Allister,34,33,97.4,49.2,106.0,52.6
+3869151_1,3869151,Argentina vs Australia,Argentina,Lionel Andrés Messi Cuccittini,34,4,Nicolás Hernán Otamendi,34,34,106.7,51.5,105.2,49.2
+3857257_1,3857257,Australia vs Denmark,Australia,Mathew Leckie,59,1,Harry Souttar,59,46,20.6,34.2,33.5,34.1
+3857257_1,3857257,Australia vs Denmark,Australia,Mathew Leckie,59,2,Mitchell Thomas Duke,59,47,32.0,33.1,34.3,27.0
+3857257_1,3857257,Australia vs Denmark,Australia,Mathew Leckie,59,3,Jackson Irvine,59,48,34.3,27.0,39.8,16.2
+3857257_1,3857257,Australia vs Denmark,Australia,Mathew Leckie,59,4,Riley McGree,59,50,50.3,11.3,79.8,31.3
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,1,Thiago Emiliano da Silva,60,59,45.3,71.0,59.1,59.5
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,2,Marcos Aoás Corrêa,61,1,56.8,57.9,45.0,49.7
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,3,Alex Sandro Lobo Silva,61,4,44.2,37.2,66.6,37.7
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,4,Neymar da Silva Santos Junior,61,7,62.2,33.8,50.1,28.4
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,5,Alex Sandro Lobo Silva,61,8,51.2,30.5,54.8,38.4
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,6,Carlos Henrique Casimiro,61,10,53.2,43.3,62.5,65.4
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,7,Danilo Luiz da Silva,61,14,66.3,71.5,73.7,75.6
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,8,Raphael Dias Belloli,61,18,70.4,73.8,47.3,68.4
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,9,Thiago Emiliano da Silva,61,21,52.5,61.5,54.8,22.0
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,10,Alex Sandro Lobo Silva,61,24,56.8,22.8,58.6,31.0
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,11,Marcos Aoás Corrêa,61,26,58.6,28.7,65.8,13.6
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,12,Alex Sandro Lobo Silva,61,28,69.4,14.6,86.0,6.9
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,13,Vinícius José Paixão de Oliveira Júnior,61,31,86.0,6.9,85.5,30.5
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,14,Carlos Henrique Casimiro,61,36,85.8,32.3,80.1,58.2
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,15,Danilo Luiz da Silva,61,38,81.7,61.2,94.5,68.4
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,16,Raphael Dias Belloli,61,41,95.5,60.5,105.3,47.9
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,17,Thiago Emiliano da Silva,61,46,79.1,55.9,86.5,66.6
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,18,Danilo Luiz da Silva,61,49,86.5,66.6,85.8,55.9
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,19,Carlos Henrique Casimiro,61,51,86.0,54.6,91.7,51.5
+3857258_1,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,20,Neymar da Silva Santos Junior,61,56,105.8,30.5,110.0,26.9
+3857258_2,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,72,1,Danilo Luiz da Silva,72,33,29.9,80.0,45.8,75.9
+3857258_2,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,72,2,Alex Sandro Lobo Silva,72,43,58.9,18.6,83.2,7.9
+3857258_2,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,72,3,Vinícius José Paixão de Oliveira Júnior,72,45,82.4,7.7,77.6,13.8
+3857258_2,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,72,4,Neymar da Silva Santos Junior,72,49,86.8,15.9,100.4,10.7
+3857258_2,3857258,Brazil vs Serbia,Brazil,Richarlison de Andrade,72,5,Vinícius José Paixão de Oliveira Júnior,72,52,109.4,24.8,108.6,42.5
+3857288_1,3857288,Tunisia vs Australia,Australia,Mitchell Thomas Duke,22,1,Fran Karačić,22,23,45.6,80.0,34.5,39.9
+3857288_1,3857288,Tunisia vs Australia,Australia,Mitchell Thomas Duke,22,2,Kye Rowles,22,27,32.6,32.9,45.0,2.7
+3857288_1,3857288,Tunisia vs Australia,Australia,Mitchell Thomas Duke,22,3,Aziz Eraltay Behich,22,29,44.8,2.7,24.0,9.3
+3857288_1,3857288,Tunisia vs Australia,Australia,Mitchell Thomas Duke,22,4,Kye Rowles,22,32,24.0,9.3,10.1,33.7
+3857288_1,3857288,Tunisia vs Australia,Australia,Mitchell Thomas Duke,22,5,Mathew Ryan,22,36,10.1,37.8,10.5,55.3
+3857288_1,3857288,Tunisia vs Australia,Australia,Mitchell Thomas Duke,22,6,Harry Souttar,22,39,13.3,55.8,56.3,49.6
+3857288_1,3857288,Tunisia vs Australia,Australia,Mitchell Thomas Duke,22,7,Mitchell Thomas Duke,22,41,56.3,49.1,55.7,38.6
+3857288_1,3857288,Tunisia vs Australia,Australia,Mitchell Thomas Duke,22,8,Riley McGree,22,43,56.1,29.0,80.3,2.9
+3857267_2,3857267,Ecuador vs Senegal,Ecuador,Moisés Isaac Caicedo Corozo,66,1,Gonzalo Jordy Plata Jiménez,66,56,120.0,80.0,113.7,42.7
+3869321_1,3869321,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,1,Nahuel Molina Lucero,33,21,64.9,80.0,52.8,77.1
+3869321_1,3869321,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,2,Cristian Gabriel Romero,33,22,53.3,77.0,37.1,52.6
+3869321_1,3869321,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,3,Nicolás Hernán Otamendi,33,28,50.1,44.4,63.1,21.7
+3869321_1,3869321,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,4,Marcos Javier Acuña,33,29,64.7,21.1,38.6,23.5
+3869321_1,3869321,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,5,Lisandro Martínez,33,32,38.9,23.7,37.5,35.1
+3869321_1,3869321,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,6,Nicolás Hernán Otamendi,33,35,44.7,45.4,57.5,75.4
+3869321_1,3869321,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,7,Cristian Gabriel Romero,33,39,65.4,76.1,73.1,76.3
+3869321_1,3869321,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,8,Lionel Andrés Messi Cuccittini,33,41,73.1,76.3,77.3,69.0
+3869321_1,3869321,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,9,Nicolás Hernán Otamendi,33,49,47.2,50.3,57.8,69.2
+3869321_1,3869321,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,10,Nahuel Molina Lucero,33,57,81.5,69.2,74.2,71.1
+3869321_1,3869321,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,11,Lionel Andrés Messi Cuccittini,34,2,85.6,44.9,103.4,50.6
+3869321_3,3869321,Netherlands vs Argentina,Netherlands,Wout Weghorst,82,1,Jurriën David Norman Timber,81,43,72.9,60.9,87.2,76.8
+3869321_3,3869321,Netherlands vs Argentina,Netherlands,Wout Weghorst,82,2,Frenkie de Jong,81,51,81.5,17.3,43.2,36.4
+3869321_3,3869321,Netherlands vs Argentina,Netherlands,Wout Weghorst,82,3,Andries Noppert,81,56,42.6,38.6,66.1,67.9
+3869321_3,3869321,Netherlands vs Argentina,Netherlands,Wout Weghorst,82,4,Teun Koopmeiners,82,0,66.5,68.5,86.6,78.0
+3869321_3,3869321,Netherlands vs Argentina,Netherlands,Wout Weghorst,82,5,Jurriën David Norman Timber,82,12,73.3,50.3,82.4,62.1
+3869321_3,3869321,Netherlands vs Argentina,Netherlands,Wout Weghorst,82,6,Teun Koopmeiners,82,13,82.4,62.1,91.8,78.6
+3869321_3,3869321,Netherlands vs Argentina,Netherlands,Wout Weghorst,82,7,Steven Berghuis,82,15,91.8,76.8,108.7,46.4
+3869321_4,3869321,Netherlands vs Argentina,Netherlands,Wout Weghorst,100,1,Teun Koopmeiners,100,31,96.8,31.8,107.3,35.4
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,1,Achraf Hakimi Mouh,40,49,14.2,67.6,25.5,6.2
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,2,Yahia Attiyat allah,40,55,37.7,11.9,39.2,4.8
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,3,Sofiane Boufal,40,57,44.1,3.6,26.9,7.7
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,4,Sofyan Amrabat,41,1,26.9,8.2,8.7,38.2
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,5,Yassine Bounou,41,3,8.7,38.2,20.8,64.1
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,6,Jawad El Yamiq,41,5,20.8,64.1,9.7,43.2
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,7,Yassine Bounou,41,9,9.7,43.2,21.3,48.3
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,8,Sofyan Amrabat,41,12,21.3,48.3,47.6,44.3
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,9,Azzedine Ounahi,41,17,44.7,65.7,51.4,59.2
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,10,Hakim Ziyech,41,20,50.8,49.6,74.9,6.0
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,11,Sofiane Boufal,41,25,68.0,17.5,73.1,32.5
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,12,Azzedine Ounahi,41,28,76.9,29.3,84.2,26.8
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,13,Sofiane Boufal,41,29,84.2,26.8,80.5,21.0
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,14,Azzedine Ounahi,41,30,82.6,17.0,92.4,6.0
+3869486_1,3869486,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,15,Yahia Attiyat allah,41,34,92.4,6.0,112.6,39.7
+3869685_2,3869685,Argentina vs France,Argentina,Ángel Fabián Di María Hernández,35,1,Nahuel Molina Lucero,35,12,25.9,71.8,41.6,59.2
+3869685_2,3869685,Argentina vs France,Argentina,Ángel Fabián Di María Hernández,35,2,Alexis Mac Allister,35,14,41.8,59.0,53.1,61.8
+3869685_2,3869685,Argentina vs France,Argentina,Ángel Fabián Di María Hernández,35,3,Lionel Andrés Messi Cuccittini,35,15,52.9,61.8,62.5,68.2
+3869685_2,3869685,Argentina vs France,Argentina,Ángel Fabián Di María Hernández,35,4,Julián Álvarez,35,17,63.2,68.2,99.3,54.9
+3869685_2,3869685,Argentina vs France,Argentina,Ángel Fabián Di María Hernández,35,5,Alexis Mac Allister,35,20,99.3,54.9,111.8,32.1
+3869685_4,3869685,Argentina vs France,France,Kylian Mbappé Lottin,80,1,Jules Koundé,80,13,56.5,80.0,38.8,50.8
+3869685_4,3869685,Argentina vs France,France,Kylian Mbappé Lottin,80,2,Dayotchanculle Upamecano,80,20,55.7,35.2,55.9,11.1
+3869685_4,3869685,Argentina vs France,France,Kylian Mbappé Lottin,80,3,Eduardo Camavinga,80,22,55.9,11.1,66.8,2.3
+3869685_4,3869685,Argentina vs France,France,Kylian Mbappé Lottin,80,4,Marcus Thuram,80,24,68.7,2.7,54.6,5.5
+3869685_4,3869685,Argentina vs France,France,Kylian Mbappé Lottin,80,5,Eduardo Camavinga,80,25,54.6,5.5,44.1,23.7
+3869685_4,3869685,Argentina vs France,France,Kylian Mbappé Lottin,80,6,Kingsley Coman,80,52,84.8,71.2,78.8,58.3
+3869685_4,3869685,Argentina vs France,France,Kylian Mbappé Lottin,80,7,Adrien Rabiot,80,54,79.2,54.1,93.1,24.1
+3869685_4,3869685,Argentina vs France,France,Kylian Mbappé Lottin,80,8,Kylian Mbappé Lottin,80,56,93.1,24.1,94.8,36.3
+3869685_4,3869685,Argentina vs France,France,Kylian Mbappé Lottin,80,9,Marcus Thuram,80,57,94.8,36.3,104.8,30.1
+3869685_5,3869685,Argentina vs France,Argentina,Lionel Andrés Messi Cuccittini,107,1,Leandro Daniel Paredes,107,46,43.2,46.2,63.1,70.8
+3869685_5,3869685,Argentina vs France,Argentina,Lionel Andrés Messi Cuccittini,107,2,Gonzalo Ariel Montiel,107,50,64.2,74.0,94.2,56.4
+3869685_5,3869685,Argentina vs France,Argentina,Lionel Andrés Messi Cuccittini,107,3,Lautaro Javier Martínez,107,53,94.2,56.4,91.2,58.8
+3869685_5,3869685,Argentina vs France,Argentina,Lionel Andrés Messi Cuccittini,107,4,Lionel Andrés Messi Cuccittini,107,53,91.2,58.8,95.4,49.4
+3869685_5,3869685,Argentina vs France,Argentina,Lionel Andrés Messi Cuccittini,107,5,Enzo Fernandez,107,54,95.4,49.4,109.3,56.9
+3857260_1,3857260,Saudi Arabia vs Mexico,Mexico,Henry Josué Martín Mex,46,1,Luis Gerardo Chávez Magallón,46,50,120.0,0.1,113.6,33.2
+3857260_1,3857260,Saudi Arabia vs Mexico,Mexico,Henry Josué Martín Mex,46,2,César Jasib Montes Castro,46,51,113.9,33.0,116.7,40.2
+3857260_3,3857260,Saudi Arabia vs Mexico,Saudi Arabia,Salem Mohammed Al Dawsari,94,1,Abdulelah Al Amri,94,27,64.4,46.5,96.6,57.4
+3857260_3,3857260,Saudi Arabia vs Mexico,Saudi Arabia,Salem Mohammed Al Dawsari,94,2,Firas Tariq Nasser Al Albirakan,94,31,102.8,60.2,92.7,64.5
+3857260_3,3857260,Saudi Arabia vs Mexico,Saudi Arabia,Salem Mohammed Al Dawsari,94,3,Abdulrahman Al-Obood,94,33,92.3,63.8,99.6,70.9
+3857260_3,3857260,Saudi Arabia vs Mexico,Saudi Arabia,Salem Mohammed Al Dawsari,94,4,Firas Tariq Nasser Al Albirakan,94,35,100.8,70.5,98.7,62.8
+3857260_3,3857260,Saudi Arabia vs Mexico,Saudi Arabia,Salem Mohammed Al Dawsari,94,5,Salem Mohammed Al Dawsari,94,38,98.6,54.6,101.2,44.0
+3857260_3,3857260,Saudi Arabia vs Mexico,Saudi Arabia,Salem Mohammed Al Dawsari,94,6,Hattan Babhir,94,38,101.2,44.0,105.0,48.0
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,1,Lionel Andrés Messi Cuccittini,45,0,60.0,40.0,49.5,38.9
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,2,Enzo Fernandez,45,2,49.3,39.9,44.3,50.4
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,3,Rodrigo Javier De Paul,45,3,44.3,50.4,30.0,38.9
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,4,Cristian Gabriel Romero,45,6,29.6,38.9,30.6,20.0
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,5,Nicolás Hernán Otamendi,45,10,30.6,23.5,24.9,46.8
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,6,Cristian Gabriel Romero,45,15,26.6,45.9,33.6,19.6
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,7,Nicolás Hernán Otamendi,45,19,42.8,12.1,61.7,1.6
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,8,Marcos Javier Acuña,45,22,62.6,2.0,42.0,6.4
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,9,Nicolás Hernán Otamendi,45,24,40.8,6.6,35.9,14.8
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,10,Enzo Fernandez,45,26,33.5,19.2,27.0,50.5
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,11,Cristian Gabriel Romero,45,33,54.0,58.5,74.7,53.0
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,12,Lionel Andrés Messi Cuccittini,45,35,68.7,54.3,65.7,64.3
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,13,Rodrigo Javier De Paul,45,39,67.2,69.0,48.6,62.6
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,14,Cristian Gabriel Romero,45,45,56.1,63.7,75.1,67.7
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,15,Nahuel Molina Lucero,45,47,80.3,68.6,92.7,73.5
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,16,Ángel Fabián Di María Hernández,45,50,102.1,72.0,110.4,71.6
+3857264_1,3857264,Poland vs Argentina,Argentina,Alexis Mac Allister,45,17,Nahuel Molina Lucero,45,52,114.3,69.9,106.0,46.7
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,1,Nicolás Alejandro Tagliafico,65,50,70.9,4.6,64.0,14.5
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,2,Leandro Daniel Paredes,65,52,62.9,17.3,53.5,40.1
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,3,Cristian Gabriel Romero,65,55,54.2,42.7,60.2,47.6
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,4,Enzo Fernandez,65,57,62.3,53.4,68.5,64.5
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,5,Rodrigo Javier De Paul,66,0,70.9,69.2,75.1,63.5
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,6,Lionel Andrés Messi Cuccittini,66,1,74.9,63.9,71.5,68.0
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,7,Rodrigo Javier De Paul,66,2,71.9,68.4,71.1,56.2
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,8,Lionel Andrés Messi Cuccittini,66,4,70.6,55.8,66.4,41.2
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,9,Leandro Daniel Paredes,66,5,66.4,41.2,62.5,42.3
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,10,Enzo Fernandez,66,7,60.6,39.1,55.2,21.1
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,11,Nicolás Hernán Otamendi,66,10,55.9,19.4,73.6,2.7
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,12,Nicolás Alejandro Tagliafico,66,12,74.1,3.6,68.5,11.5
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,13,Leandro Daniel Paredes,66,14,67.0,14.5,57.8,25.8
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,14,Enzo Fernandez,66,17,56.1,30.7,61.7,60.0
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,15,Rodrigo Javier De Paul,66,19,62.5,61.5,80.7,73.5
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,16,Nahuel Molina Lucero,66,22,80.7,73.7,69.8,69.9
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,17,Rodrigo Javier De Paul,66,24,70.0,68.6,69.6,50.2
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,18,Lionel Andrés Messi Cuccittini,66,30,83.7,55.3,109.8,64.7
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,19,Nahuel Molina Lucero,66,34,111.3,63.0,93.7,54.3
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,20,Rodrigo Javier De Paul,66,37,93.5,52.3,105.1,64.1
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,21,Nahuel Molina Lucero,66,40,104.4,66.0,84.8,47.8
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,22,Leandro Daniel Paredes,66,43,82.6,45.1,87.8,50.6
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,23,Alexis Mac Allister,66,45,87.1,51.9,92.9,64.5
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,24,Rodrigo Javier De Paul,66,48,95.2,64.5,86.9,58.1
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,25,Alexis Mac Allister,66,50,87.3,55.3,78.3,41.4
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,26,Leandro Daniel Paredes,66,52,77.1,38.2,86.0,22.6
+3857264_2,3857264,Poland vs Argentina,Argentina,Julián Álvarez,66,27,Enzo Fernandez,66,56,97.4,29.5,103.6,29.5
+3857266_1,3857266,France vs Denmark,France,Kylian Mbappé Lottin,60,1,Aurélien Djani Tchouaméni,60,9,19.6,73.1,22.3,77.5
+3857266_1,3857266,France vs Denmark,France,Kylian Mbappé Lottin,60,2,Aurélien Djani Tchouaméni,60,13,20.7,58.8,39.1,13.7
+3857266_1,3857266,France vs Denmark,France,Kylian Mbappé Lottin,60,3,Theo Bernard François Hernández,60,17,57.8,16.8,85.3,8.7
+3857266_1,3857266,France vs Denmark,France,Kylian Mbappé Lottin,60,4,Kylian Mbappé Lottin,60,22,104.4,22.8,117.4,23.4
+3857266_1,3857266,France vs Denmark,France,Kylian Mbappé Lottin,60,5,Theo Bernard François Hernández,60,24,118.7,23.6,110.9,30.5
+3857266_2,3857266,France vs Denmark,Denmark,Andreas Christensen,67,1,Christian Dannemann Eriksen,67,13,120.0,80.0,112.2,43.9
+3857266_3,3857266,France vs Denmark,France,Kylian Mbappé Lottin,85,1,Hugo Lloris,84,34,7.0,44.1,18.6,61.4
+3857266_3,3857266,France vs Denmark,France,Kylian Mbappé Lottin,85,2,Ibrahima Konaté,84,39,29.5,53.6,30.3,27.3
+3857266_3,3857266,France vs Denmark,France,Kylian Mbappé Lottin,85,3,Dayotchanculle Upamecano,84,42,32.5,27.3,45.4,6.1
+3857266_3,3857266,France vs Denmark,France,Kylian Mbappé Lottin,85,4,Theo Bernard François Hernández,84,47,46.6,4.9,42.5,32.4
+3857266_3,3857266,France vs Denmark,France,Kylian Mbappé Lottin,85,5,Aurélien Djani Tchouaméni,84,49,42.8,32.4,41.9,21.2
+3857266_3,3857266,France vs Denmark,France,Kylian Mbappé Lottin,85,6,Dayotchanculle Upamecano,84,53,41.9,21.2,38.3,50.0
+3857266_3,3857266,France vs Denmark,France,Kylian Mbappé Lottin,85,7,Ibrahima Konaté,84,55,38.3,50.0,47.2,73.2
+3857266_3,3857266,France vs Denmark,France,Kylian Mbappé Lottin,85,8,Jules Koundé,85,1,62.3,73.9,112.9,67.9
+3857266_3,3857266,France vs Denmark,France,Kylian Mbappé Lottin,85,9,Antoine Griezmann,85,8,103.3,65.2,117.8,36.5
+3857289_1,3857289,Argentina vs Mexico,Argentina,Lionel Andrés Messi Cuccittini,63,1,Damián Emiliano Martínez,63,8,7.0,36.1,35.7,44.2
+3857289_1,3857289,Argentina vs Mexico,Argentina,Lionel Andrés Messi Cuccittini,63,2,Enzo Fernandez,63,14,50.9,51.7,64.8,74.8
+3857289_1,3857289,Argentina vs Mexico,Argentina,Lionel Andrés Messi Cuccittini,63,3,Nahuel Molina Lucero,63,16,69.8,75.4,76.6,78.3
+3857289_1,3857289,Argentina vs Mexico,Argentina,Lionel Andrés Messi Cuccittini,63,4,Ángel Fabián Di María Hernández,63,19,80.2,77.7,72.0,72.3
+3857289_1,3857289,Argentina vs Mexico,Argentina,Lionel Andrés Messi Cuccittini,63,5,Lionel Andrés Messi Cuccittini,63,22,74.1,69.8,81.0,58.2
+3857289_1,3857289,Argentina vs Mexico,Argentina,Lionel Andrés Messi Cuccittini,63,6,Enzo Fernandez,63,25,82.7,63.3,90.6,76.0
+3857289_1,3857289,Argentina vs Mexico,Argentina,Lionel Andrés Messi Cuccittini,63,7,Ángel Fabián Di María Hernández,63,30,97.4,68.5,93.3,37.6
+3857289_2,3857289,Argentina vs Mexico,Argentina,Enzo Fernandez,86,1,Rodrigo Javier De Paul,86,34,120.0,0.1,110.9,7.8
+3857289_2,3857289,Argentina vs Mexico,Argentina,Enzo Fernandez,86,2,Lionel Andrés Messi Cuccittini,86,36,108.9,8.8,100.7,17.3
+3857269_1,3857269,Brazil vs Switzerland,Brazil,Carlos Henrique Casimiro,82,1,Carlos Henrique Casimiro,81,46,26.3,8.5,38.1,24.8
+3857269_1,3857269,Brazil vs Switzerland,Brazil,Carlos Henrique Casimiro,82,2,Bruno Guimarães Rodriguez Moura,81,48,37.4,22.1,40.8,20.8
+3857269_1,3857269,Brazil vs Switzerland,Brazil,Carlos Henrique Casimiro,82,3,Rodrygo Silva de Goes,81,55,63.5,50.5,75.1,66.1
+3857269_1,3857269,Brazil vs Switzerland,Brazil,Carlos Henrique Casimiro,82,4,Éder Gabriel Militão,81,59,87.3,77.6,87.3,65.8
+3857269_1,3857269,Brazil vs Switzerland,Brazil,Carlos Henrique Casimiro,82,5,Antony Matheus dos Santos,82,3,89.3,67.1,81.7,64.9
+3857269_1,3857269,Brazil vs Switzerland,Brazil,Carlos Henrique Casimiro,82,6,Bruno Guimarães Rodriguez Moura,82,5,81.7,64.5,73.7,35.2
+3857269_1,3857269,Brazil vs Switzerland,Brazil,Carlos Henrique Casimiro,82,7,Marcos Aoás Corrêa,82,9,81.4,29.5,100.6,8.0
+3857269_1,3857269,Brazil vs Switzerland,Brazil,Carlos Henrique Casimiro,82,8,Vinícius José Paixão de Oliveira Júnior,82,13,99.8,19.0,99.6,30.3
+3857269_1,3857269,Brazil vs Switzerland,Brazil,Carlos Henrique Casimiro,82,9,Rodrygo Silva de Goes,82,14,99.9,30.5,106.6,29.7
+3857294_1,3857294,Netherlands vs Qatar,Netherlands,Cody Mathès Gakpo,25,1,Andries Noppert,25,40,6.0,36.0,20.9,15.6
+3857294_1,3857294,Netherlands vs Qatar,Netherlands,Cody Mathès Gakpo,25,2,Frenkie de Jong,25,44,50.6,12.4,63.3,2.3
+3857294_1,3857294,Netherlands vs Qatar,Netherlands,Cody Mathès Gakpo,25,3,Daley Blind,25,47,67.3,4.4,75.6,11.4
+3857294_1,3857294,Netherlands vs Qatar,Netherlands,Cody Mathès Gakpo,25,4,Memphis Depay,25,50,82.5,10.8,89.9,16.7
+3857294_1,3857294,Netherlands vs Qatar,Netherlands,Cody Mathès Gakpo,25,5,Cody Mathès Gakpo,25,51,90.6,16.6,89.1,24.3
+3857294_1,3857294,Netherlands vs Qatar,Netherlands,Cody Mathès Gakpo,25,6,Davy Klaassen,25,52,89.6,25.0,94.5,22.2
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,1,Andries Noppert,47,56,7.0,44.1,18.9,50.8
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,2,Virgil van Dijk,47,58,18.9,51.1,7.5,45.6
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,3,Andries Noppert,48,0,7.3,45.6,11.1,74.3
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,4,Jurriën David Norman Timber,48,7,15.0,64.3,6.7,38.1
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,5,Andries Noppert,48,10,8.9,34.8,36.8,5.0
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,6,Daley Blind,48,18,44.8,9.1,36.3,16.6
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,7,Nathan Aké,48,21,41.5,24.8,34.6,47.5
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,8,Virgil van Dijk,48,26,44.0,50.8,45.1,23.7
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,9,Nathan Aké,48,32,58.6,20.4,82.9,23.5
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,10,Memphis Depay,48,34,84.1,19.0,87.1,4.7
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,11,Daley Blind,48,38,87.1,6.3,86.8,27.0
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,12,Frenkie de Jong,48,41,92.6,32.3,87.9,45.0
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,13,Davy Klaassen,48,43,88.2,47.8,97.9,70.1
+3857294_2,3857294,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,14,Denzel Dumfries,48,49,107.5,64.1,96.2,65.7
+3869254_1,3869254,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,16,1,Raphaël Adelino José Guerreiro,16,38,100.4,0.1,101.4,12.4
+3869254_1,3869254,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,16,2,João Félix Sequeira,16,41,99.2,16.0,107.8,25.5
+3869254_2,3869254,Portugal vs Switzerland,Portugal,Kléper Laveran Lima Ferreira,32,1,Bruno Miguel Borges Fernandes,32,33,120.0,80.0,114.3,40.0
+3869254_3,3869254,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,50,1,Otávio Edmilson da Silva Monteiro,49,42,47.4,43.3,52.8,25.3
+3869254_3,3869254,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,50,2,Bruno Miguel Borges Fernandes,49,49,88.4,22.0,92.8,9.3
+3869254_3,3869254,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,50,3,Bernardo Mota Veiga de Carvalho e Silva,49,53,96.2,18.0,99.6,25.3
+3869254_4,3869254,Portugal vs Switzerland,Portugal,Raphaël Adelino José Guerreiro,54,1,Otávio Edmilson da Silva Monteiro,54,39,25.8,14.4,25.8,5.1
+3869254_4,3869254,Portugal vs Switzerland,Portugal,Raphaël Adelino José Guerreiro,54,2,Raphaël Adelino José Guerreiro,54,43,38.2,8.4,25.3,11.8
+3869254_4,3869254,Portugal vs Switzerland,Portugal,Raphaël Adelino José Guerreiro,54,3,Rúben Santos Gato Alves Dias,54,44,25.3,11.8,44.7,4.4
+3869254_4,3869254,Portugal vs Switzerland,Portugal,Raphaël Adelino José Guerreiro,54,4,João Félix Sequeira,54,46,44.7,4.4,63.9,10.1
+3869254_4,3869254,Portugal vs Switzerland,Portugal,Raphaël Adelino José Guerreiro,54,5,Otávio Edmilson da Silva Monteiro,54,48,62.0,6.6,61.6,14.0
+3869254_4,3869254,Portugal vs Switzerland,Portugal,Raphaël Adelino José Guerreiro,54,6,João Félix Sequeira,54,50,71.3,23.8,86.9,31.7
+3869254_4,3869254,Portugal vs Switzerland,Portugal,Raphaël Adelino José Guerreiro,54,7,Gonçalo Matias Ramos,54,52,89.0,34.9,103.4,28.2
+3869254_6,3869254,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,66,1,Rúben Santos Gato Alves Dias,65,57,6.0,36.0,3.6,41.2
+3869254_6,3869254,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,66,2,Bernardo Mota Veiga de Carvalho e Silva,66,7,74.3,45.6,93.3,43.5
+3869254_6,3869254,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,66,3,João Félix Sequeira,66,10,94.4,45.4,103.7,52.0
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,1,Diogo Meireles Costa,90,20,7.3,33.0,6.5,54.2
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,2,Kléper Laveran Lima Ferreira,90,23,6.8,53.5,15.3,45.6
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,3,Rúben Diogo Da Silva Neves,90,26,15.0,45.2,18.3,18.6
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,4,Rúben Santos Gato Alves Dias,90,30,20.9,17.1,28.4,1.9
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,5,Raphaël Adelino José Guerreiro,90,32,30.1,1.2,44.7,1.7
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,6,Rafael Alexandre Conceição Leão,90,35,38.0,2.1,19.9,24.2
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,7,Rúben Diogo Da Silva Neves,90,38,19.9,24.8,20.5,57.2
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,8,Kléper Laveran Lima Ferreira,90,42,22.8,58.6,36.9,76.1
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,9,José Diogo Dalot Teixeira,90,43,37.7,76.5,22.0,68.4
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,10,Kléper Laveran Lima Ferreira,90,47,22.0,69.0,30.7,61.0
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,11,Vitor Machado Ferreira,90,51,50.4,54.2,58.0,75.3
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,12,Cristiano Ronaldo dos Santos Aveiro,90,53,56.0,73.1,42.2,68.4
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,13,José Diogo Dalot Teixeira,90,56,44.4,64.1,37.2,53.9
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,14,Rúben Diogo Da Silva Neves,90,58,37.3,50.8,37.2,18.5
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,15,Rúben Santos Gato Alves Dias,91,3,44.7,16.0,60.6,0.8
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,16,Raphaël Adelino José Guerreiro,91,5,61.8,0.8,74.5,1.2
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,17,Rafael Alexandre Conceição Leão,91,7,75.1,1.5,78.8,9.8
+3869254_7,3869254,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,18,Raphaël Adelino José Guerreiro,91,9,80.7,12.6,101.2,16.4
+3869118_1,3869118,England vs Senegal,England,Jordan Brian Henderson,38,1,Jordan Pickford,37,45,6.0,36.0,23.2,38.6
+3869118_1,3869118,England vs Senegal,England,Jordan Brian Henderson,38,2,John Stones,37,48,26.7,37.0,35.6,12.1
+3869118_1,3869118,England vs Senegal,England,Jordan Brian Henderson,38,3,Harry Maguire,37,50,34.8,9.4,45.1,1.8
+3869118_1,3869118,England vs Senegal,England,Jordan Brian Henderson,38,4,Luke Shaw,37,52,45.1,0.3,58.0,3.1
+3869118_1,3869118,England vs Senegal,England,Jordan Brian Henderson,38,5,Philip Foden,37,53,58.0,2.8,68.3,13.7
+3869118_1,3869118,England vs Senegal,England,Jordan Brian Henderson,38,6,Harry Kane,37,56,71.9,6.0,97.3,18.9
+3869118_1,3869118,England vs Senegal,England,Jordan Brian Henderson,38,7,Jude Bellingham,37,59,106.9,21.3,107.6,38.0
+3869118_2,3869118,England vs Senegal,England,Harry Kane,47,1,Jude Bellingham,47,12,63.5,44.1,82.9,28.3
+3869118_2,3869118,England vs Senegal,England,Harry Kane,47,2,Philip Foden,47,14,82.6,28.8,93.2,50.0
+3869118_3,3869118,England vs Senegal,England,Bukayo Saka,56,1,Luke Shaw,56,32,43.9,28.2,57.5,23.6
+3869118_3,3869118,England vs Senegal,England,Bukayo Saka,56,2,Philip Foden,56,33,57.6,17.7,48.3,18.9
+3869118_3,3869118,England vs Senegal,England,Bukayo Saka,56,3,Luke Shaw,56,34,47.1,12.6,67.1,14.5
+3869118_3,3869118,England vs Senegal,England,Bukayo Saka,56,4,Philip Foden,56,42,105.7,14.5,111.0,35.9
+3869684_1,3869684,Croatia vs Morocco,Croatia,Joško Gvardiol,6,1,Lovro Majer,6,26,84.6,21.0,107.9,22.9
+3869684_1,3869684,Croatia vs Morocco,Croatia,Joško Gvardiol,6,2,Ivan Perišić,6,27,108.3,26.7,108.8,38.0
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,1,Dominik Livaković,40,57,10.8,51.9,22.9,55.8
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,2,Josip Šutalo,41,1,24.0,55.5,37.7,49.6
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,3,Luka Modrić,41,2,37.9,47.8,27.4,34.6
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,4,Joško Gvardiol,41,8,44.8,17.0,52.0,28.2
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,5,Mateo Kovačić,41,12,51.6,27.5,72.1,29.7
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,6,Lovro Majer,41,15,68.7,22.8,57.2,13.2
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,7,Joško Gvardiol,41,17,58.0,11.7,75.6,13.8
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,8,Andrej Kramarić,41,19,73.9,11.9,64.9,14.5
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,9,Ivan Perišić,41,21,64.7,14.9,56.7,16.4
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,10,Mateo Kovačić,41,23,56.3,17.3,58.0,6.4
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,11,Joško Gvardiol,41,25,57.6,6.8,100.0,26.5
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,12,Marko Livaja,41,29,98.5,24.1,95.2,31.6
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,13,Lovro Majer,41,31,97.4,38.4,105.3,53.2
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,14,Josip Stanišić,41,34,108.5,53.0,101.7,51.3
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,15,Mateo Kovačić,41,38,93.1,36.1,96.7,25.0
+3869684_3,3869684,Croatia vs Morocco,Croatia,Mislav Oršić,41,16,Marko Livaja,41,41,101.9,25.8,106.5,21.3
+3869519_2,3869519,Argentina vs Croatia,Argentina,Julián Álvarez,38,1,Nicolás Hernán Otamendi,38,15,21.2,47.8,33.9,36.1
+3869519_3,3869519,Argentina vs Croatia,Argentina,Julián Álvarez,68,1,Nahuel Molina Lucero,68,32,42.5,80.0,63.6,76.2
+3869519_3,3869519,Argentina vs Croatia,Argentina,Julián Álvarez,68,2,Julián Álvarez,68,34,64.1,76.4,65.3,79.1
+3869519_3,3869519,Argentina vs Croatia,Argentina,Julián Álvarez,68,3,Lionel Andrés Messi Cuccittini,68,46,116.9,53.1,113.3,45.4
+3869354_1,3869354,England vs France,France,Aurélien Djani Tchouaméni,16,1,Dayotchanculle Upamecano,16,2,41.4,14.3,62.5,4.3
+3869354_1,3869354,England vs France,France,Aurélien Djani Tchouaméni,16,2,Kylian Mbappé Lottin,16,8,84.6,7.7,81.1,21.7
+3869354_1,3869354,England vs France,France,Aurélien Djani Tchouaméni,16,3,Dayotchanculle Upamecano,16,11,83.5,17.8,87.5,34.7
+3869354_1,3869354,England vs France,France,Aurélien Djani Tchouaméni,16,4,Kylian Mbappé Lottin,16,14,93.0,49.1,101.3,70.4
+3869354_1,3869354,England vs France,France,Aurélien Djani Tchouaméni,16,5,Ousmane Dembélé,16,19,104.5,59.9,97.2,55.3
+3869354_1,3869354,England vs France,France,Aurélien Djani Tchouaméni,16,6,Antoine Griezmann,16,21,98.8,55.7,93.0,50.4
+3869354_3,3869354,England vs France,France,Olivier Giroud,77,1,Jules Koundé,77,2,88.0,40.3,75.3,14.4
+3869354_3,3869354,England vs France,France,Olivier Giroud,77,2,Theo Bernard François Hernández,77,5,74.5,12.2,93.5,4.0
+3869354_3,3869354,England vs France,France,Olivier Giroud,77,3,Antoine Griezmann,77,8,97.9,3.1,114.7,36.4
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,1,Theo Bernard François Hernández,3,40,61.1,0.1,51.2,12.7
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,2,Aurélien Djani Tchouaméni,3,43,51.2,12.7,35.4,7.2
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,3,Ibrahima Konaté,3,47,34.2,8.9,35.3,48.1
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,4,Raphaël Varane,3,51,38.7,54.1,45.9,68.9
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,5,Jules Koundé,3,53,44.8,66.4,44.3,51.9
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,6,Raphaël Varane,3,55,44.0,51.9,44.0,15.6
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,7,Ibrahima Konaté,3,59,51.8,16.7,69.2,3.8
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,8,Kylian Mbappé Lottin,4,2,68.7,3.6,57.5,3.1
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,9,Theo Bernard François Hernández,4,4,56.2,5.0,44.3,39.5
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,10,Raphaël Varane,4,11,61.7,58.5,67.0,74.1
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,11,Ousmane Dembélé,4,14,61.5,65.8,54.3,31.7
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,12,Ibrahima Konaté,4,18,67.0,20.0,80.3,2.5
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,13,Kylian Mbappé Lottin,4,23,77.9,6.3,71.4,13.6
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,14,Youssouf Fofana,4,25,72.6,13.6,63.4,41.0
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,15,Raphaël Varane,4,30,72.2,61.3,93.4,57.0
+3869552_1,3869552,France vs Morocco,France,Theo Bernard François Hernández,4,16,Antoine Griezmann,4,34,110.0,55.2,107.3,43.8
+3869552_2,3869552,France vs Morocco,France,Randal Kolo Muani,78,1,Ibrahima Konaté,78,25,45.2,27.5,42.4,42.9
+3869552_2,3869552,France vs Morocco,France,Randal Kolo Muani,78,2,Jules Koundé,78,26,42.4,42.9,62.5,25.8
+3869552_2,3869552,France vs Morocco,France,Randal Kolo Muani,78,3,Aurélien Djani Tchouaméni,78,34,56.7,39.7,64.0,41.7
+3869552_2,3869552,France vs Morocco,France,Randal Kolo Muani,78,4,Youssouf Fofana,78,39,89.5,48.9,92.4,37.0
+3869552_2,3869552,France vs Morocco,France,Randal Kolo Muani,78,5,Kylian Mbappé Lottin,78,41,94.2,26.3,105.5,23.9
+3869552_2,3869552,France vs Morocco,France,Randal Kolo Muani,78,6,Marcus Thuram,78,45,108.7,26.7,103.4,26.9
+3869420_1,3869420,Croatia vs Brazil,Brazil,Neymar da Silva Santos Junior,105,1,Éder Gabriel Militão,105,18,92.0,80.0,76.2,75.0
+3869420_1,3869420,Croatia vs Brazil,Brazil,Neymar da Silva Santos Junior,105,2,Thiago Emiliano da Silva,105,22,69.7,68.9,73.8,42.7
+3869420_1,3869420,Croatia vs Brazil,Brazil,Neymar da Silva Santos Junior,105,3,Marcos Aoás Corrêa,105,26,76.2,42.5,81.5,41.8
+3869420_1,3869420,Croatia vs Brazil,Brazil,Neymar da Silva Santos Junior,105,4,Neymar da Silva Santos Junior,105,28,81.5,41.8,91.6,35.3
+3869420_1,3869420,Croatia vs Brazil,Brazil,Neymar da Silva Santos Junior,105,5,Rodrygo Silva de Goes,105,30,91.6,35.3,88.9,44.9
+3869420_1,3869420,Croatia vs Brazil,Brazil,Neymar da Silva Santos Junior,105,6,Neymar da Silva Santos Junior,105,31,94.0,45.4,100.7,38.9
+3869420_1,3869420,Croatia vs Brazil,Brazil,Neymar da Silva Santos Junior,105,7,Lucas Tolentino Coelho de Lima,105,32,100.7,38.9,107.9,43.7
+3869420_2,3869420,Croatia vs Brazil,Croatia,Bruno Petković,116,1,Luka Modrić,115,32,55.3,11.6,52.6,28.1
+3869420_2,3869420,Croatia vs Brazil,Croatia,Bruno Petković,116,2,Dejan Lovren,115,35,52.6,28.1,46.0,13.5
+3869420_2,3869420,Croatia vs Brazil,Croatia,Bruno Petković,116,3,Lovro Majer,115,51,31.7,19.2,36.3,18.6
+3869420_2,3869420,Croatia vs Brazil,Croatia,Bruno Petković,116,4,Nikola Vlašić,115,57,69.4,21.4,92.5,9.7
+3869420_2,3869420,Croatia vs Brazil,Croatia,Bruno Petković,116,5,Mislav Oršić,116,1,105.5,23.5,102.2,37.9
+3869219_1,3869219,Japan vs Croatia,Japan,Daizen Maeda,42,1,Ritsu Doan,42,47,120.0,80.0,111.1,76.3
+3869219_1,3869219,Japan vs Croatia,Japan,Daizen Maeda,42,2,Daichi Kamada,42,49,111.5,76.4,92.4,68.2
+3869219_1,3869219,Japan vs Croatia,Japan,Daizen Maeda,42,3,Junya Ito,42,50,92.4,68.5,98.4,71.5
+3869219_1,3869219,Japan vs Croatia,Japan,Daizen Maeda,42,4,Ritsu Doan,42,52,98.4,71.5,112.2,37.2
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,1,Dejan Lovren,54,2,32.6,54.6,38.8,67.4
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,2,Josip Juranović,54,3,39.2,67.4,36.7,57.7
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,3,Dejan Lovren,54,5,36.7,57.7,39.3,44.9
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,4,Luka Modrić,54,12,68.3,28.6,83.0,25.3
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,5,Marcelo Brozović,54,16,67.9,35.5,65.8,31.7
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,6,Luka Modrić,54,19,62.4,31.5,63.2,4.5
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,7,Borna Barišić,54,22,64.1,6.6,63.1,18.2
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,8,Luka Modrić,54,24,63.8,19.2,72.8,26.3
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,9,Marcelo Brozović,54,29,75.9,9.9,79.9,15.1
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,10,Mateo Kovačić,54,29,79.9,15.1,69.5,21.0
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,11,Luka Modrić,54,35,74.0,33.3,81.3,66.4
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,12,Josip Juranović,54,38,83.3,69.7,87.2,75.4
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,13,Andrej Kramarić,54,45,87.0,51.8,92.5,59.1
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,14,Marcelo Brozović,54,48,87.5,61.2,97.4,74.0
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,15,Josip Juranović,54,50,97.4,74.0,80.7,69.5
+3869219_2,3869219,Japan vs Croatia,Croatia,Ivan Perišić,54,16,Dejan Lovren,54,53,85.4,68.6,106.0,34.1
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,1,Éder Gabriel Militão,5,52,40.5,54.3,40.3,27.1
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,2,Thiago Emiliano da Silva,5,58,50.6,21.1,55.5,12.6
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,3,Danilo Luiz da Silva,6,2,52.0,14.0,44.6,20.6
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,4,Thiago Emiliano da Silva,6,5,43.8,23.6,46.5,68.3
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,5,Éder Gabriel Militão,6,11,61.9,55.2,48.5,46.6
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,6,Marcos Aoás Corrêa,6,15,52.8,37.6,57.7,23.1
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,7,Thiago Emiliano da Silva,6,19,61.9,19.3,70.4,5.2
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,8,Neymar da Silva Santos Junior,6,20,70.3,6.4,55.8,9.7
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,9,Thiago Emiliano da Silva,6,22,55.0,12.4,56.9,23.9
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,10,Danilo Luiz da Silva,6,24,56.9,25.9,58.0,53.0
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,11,Éder Gabriel Militão,6,27,61.9,53.8,88.0,76.8
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,12,Raphael Dias Belloli,6,31,87.6,66.6,84.3,58.6
+3869253_1,3869253,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,13,Raphael Dias Belloli,6,38,117.3,55.2,111.3,44.4
+3869253_3,3869253,Brazil vs South Korea,Brazil,Richarlison de Andrade,28,1,Raphael Dias Belloli,27,43,93.4,32.1,98.6,14.8
+3869253_3,3869253,Brazil vs South Korea,Brazil,Richarlison de Andrade,28,2,Carlos Henrique Casimiro,27,49,88.4,51.3,104.1,59.6
+3869253_3,3869253,Brazil vs South Korea,Brazil,Richarlison de Andrade,28,3,Lucas Tolentino Coelho de Lima,27,57,104.9,76.2,85.1,71.6
+3869253_3,3869253,Brazil vs South Korea,Brazil,Richarlison de Andrade,28,4,Richarlison de Andrade,28,9,94.4,50.4,100.2,48.8
+3869253_3,3869253,Brazil vs South Korea,Brazil,Richarlison de Andrade,28,5,Marcos Aoás Corrêa,28,11,102.7,48.6,99.7,39.3
+3869253_3,3869253,Brazil vs South Korea,Brazil,Richarlison de Andrade,28,6,Thiago Emiliano da Silva,28,11,99.7,39.3,108.4,42.8
+3869253_4,3869253,Brazil vs South Korea,Brazil,Lucas Tolentino Coelho de Lima,35,1,Carlos Henrique Casimiro,35,25,10.9,0.1,10.9,13.0
+3869253_4,3869253,Brazil vs South Korea,Brazil,Lucas Tolentino Coelho de Lima,35,2,Danilo Luiz da Silva,35,31,15.0,14.6,27.0,19.0
+3869253_4,3869253,Brazil vs South Korea,Brazil,Lucas Tolentino Coelho de Lima,35,3,Lucas Tolentino Coelho de Lima,35,32,25.7,18.7,36.6,18.1
+3869253_4,3869253,Brazil vs South Korea,Brazil,Lucas Tolentino Coelho de Lima,35,4,Richarlison de Andrade,35,37,64.7,29.9,77.5,11.8
+3869253_4,3869253,Brazil vs South Korea,Brazil,Lucas Tolentino Coelho de Lima,35,5,Neymar da Silva Santos Junior,35,40,89.5,20.3,110.7,19.2
+3869253_4,3869253,Brazil vs South Korea,Brazil,Lucas Tolentino Coelho de Lima,35,6,Vinícius José Paixão de Oliveira Júnior,35,43,112.8,25.1,110.0,44.8
+3869152_1,3869152,France vs Poland,France,Olivier Giroud,43,1,Jules Koundé,43,2,94.8,80.0,89.9,64.5
+3869152_1,3869152,France vs Poland,France,Olivier Giroud,43,2,Ousmane Dembélé,43,5,89.9,64.5,77.4,33.0
+3869152_1,3869152,France vs Poland,France,Olivier Giroud,43,3,Aurélien Djani Tchouaméni,43,8,76.4,30.1,81.5,16.0
+3869152_1,3869152,France vs Poland,France,Olivier Giroud,43,4,Adrien Rabiot,43,11,81.5,16.0,78.7,25.6
+3869152_1,3869152,France vs Poland,France,Olivier Giroud,43,5,Aurélien Djani Tchouaméni,43,13,78.7,25.6,80.7,47.9
+3869152_1,3869152,France vs Poland,France,Olivier Giroud,43,6,Ousmane Dembélé,43,14,80.7,47.9,70.3,45.1
+3869152_1,3869152,France vs Poland,France,Olivier Giroud,43,7,Raphaël Varane,43,15,70.3,45.1,90.5,73.3
+3869152_1,3869152,France vs Poland,France,Olivier Giroud,43,8,Jules Koundé,43,19,89.9,73.3,86.4,58.2
+3869152_1,3869152,France vs Poland,France,Olivier Giroud,43,9,Ousmane Dembélé,43,22,86.4,58.2,83.4,49.0
+3869152_1,3869152,France vs Poland,France,Olivier Giroud,43,10,Dayotchanculle Upamecano,43,25,84.4,30.1,94.4,24.8
+3869152_1,3869152,France vs Poland,France,Olivier Giroud,43,11,Kylian Mbappé Lottin,43,26,94.4,24.8,104.9,29.5
+3869152_2,3869152,France vs Poland,France,Kylian Mbappé Lottin,73,1,Raphaël Varane,73,40,8.8,39.3,11.8,41.9
+3869152_2,3869152,France vs Poland,France,Kylian Mbappé Lottin,73,2,Antoine Griezmann,73,42,11.8,41.9,42.8,34.6
+3869152_2,3869152,France vs Poland,France,Kylian Mbappé Lottin,73,3,Olivier Giroud,73,48,62.7,46.2,71.5,72.3
+3869152_2,3869152,France vs Poland,France,Kylian Mbappé Lottin,73,4,Ousmane Dembélé,73,53,90.3,57.3,100.8,29.5
+3869152_3,3869152,France vs Poland,France,Kylian Mbappé Lottin,90,1,Dayotchanculle Upamecano,89,42,51.8,22.2,56.7,13.2
+3869152_3,3869152,France vs Poland,France,Kylian Mbappé Lottin,90,2,Marcus Thuram,89,44,55.9,13.0,47.7,18.3
+3869152_3,3869152,France vs Poland,France,Kylian Mbappé Lottin,90,3,Dayotchanculle Upamecano,89,45,47.1,14.1,56.7,20.7
+3869152_3,3869152,France vs Poland,France,Kylian Mbappé Lottin,90,4,Antoine Griezmann,89,47,54.4,22.2,58.9,27.1
+3869152_3,3869152,France vs Poland,France,Kylian Mbappé Lottin,90,5,Adrien Rabiot,89,47,58.9,28.6,55.7,28.2
+3869152_3,3869152,France vs Poland,France,Kylian Mbappé Lottin,90,6,Antoine Griezmann,89,50,63.1,36.1,76.6,28.2
+3869152_3,3869152,France vs Poland,France,Kylian Mbappé Lottin,90,7,Kylian Mbappé Lottin,89,53,82.2,24.6,105.5,8.9
+3869152_3,3869152,France vs Poland,France,Kylian Mbappé Lottin,90,8,Marcus Thuram,90,3,112.3,13.4,106.1,24.1
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,1,Daley Blind,8,28,80.5,25.7,41.2,28.7
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,2,Virgil van Dijk,8,32,41.2,28.7,7.8,38.8
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,3,Andries Noppert,8,36,12.6,39.4,27.2,31.9
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,4,Virgil van Dijk,8,38,27.2,31.9,32.5,24.9
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,5,Frenkie de Jong,8,41,29.7,24.6,27.9,35.1
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,6,Virgil van Dijk,8,44,34.9,44.6,41.8,77.0
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,7,Denzel Dumfries,8,48,40.0,75.0,26.1,65.3
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,8,Jurriën David Norman Timber,8,51,26.8,63.9,8.8,38.5
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,9,Andries Noppert,8,54,9.2,35.6,22.7,29.4
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,10,Frenkie de Jong,9,2,11.6,46.8,18.5,70.2
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,11,Jurriën David Norman Timber,9,8,32.0,74.1,19.9,74.6
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,12,Frenkie de Jong,9,10,19.3,72.5,14.9,52.7
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,13,Virgil van Dijk,9,13,14.9,46.8,23.5,14.2
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,14,Nathan Aké,9,16,25.0,12.7,33.5,3.2
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,15,Daley Blind,9,17,33.5,3.2,46.6,17.9
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,16,Memphis Depay,9,19,46.4,18.5,44.5,11.4
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,17,Marten de Roon,9,21,44.5,11.3,54.4,21.1
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,18,Davy Klaassen,9,22,54.7,22.1,49.1,23.9
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,19,Memphis Depay,9,22,49.1,24.1,62.9,37.0
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,20,Cody Mathès Gakpo,9,27,81.2,52.0,107.9,68.1
+3869117_1,3869117,Netherlands vs United States,Netherlands,Memphis Depay,9,21,Denzel Dumfries,9,30,108.7,68.3,104.9,43.7
+3869117_2,3869117,Netherlands vs United States,Netherlands,Daley Blind,45,1,Denzel Dumfries,45,27,106.1,80.0,100.1,71.1
+3869117_2,3869117,Netherlands vs United States,Netherlands,Daley Blind,45,2,Marten de Roon,45,28,100.1,71.1,105.1,75.7
+3869117_2,3869117,Netherlands vs United States,Netherlands,Daley Blind,45,3,Davy Klaassen,45,32,100.7,63.6,110.0,65.7
+3869117_2,3869117,Netherlands vs United States,Netherlands,Daley Blind,45,4,Denzel Dumfries,45,34,117.0,59.4,107.6,38.5
+3869117_3,3869117,Netherlands vs United States,United States,Haji Wright,75,1,DeAndre Yedlin,75,14,82.4,48.5,93.6,51.0
+3869117_3,3869117,Netherlands vs United States,United States,Haji Wright,75,2,Walker Zimmerman,75,16,93.6,51.9,87.0,54.8
+3869117_3,3869117,Netherlands vs United States,United States,Haji Wright,75,3,DeAndre Yedlin,75,16,86.6,54.8,106.3,67.2
+3869117_3,3869117,Netherlands vs United States,United States,Haji Wright,75,4,Christian Pulisic,75,20,113.2,55.6,115.1,45.2
+3869117_4,3869117,Netherlands vs United States,Netherlands,Denzel Dumfries,80,1,Andries Noppert,80,1,15.0,34.8,39.2,8.9
+3869117_4,3869117,Netherlands vs United States,Netherlands,Denzel Dumfries,80,2,Daley Blind,80,5,45.2,5.8,81.2,26.2
+3869117_4,3869117,Netherlands vs United States,Netherlands,Denzel Dumfries,80,3,Steven Bergwijn,80,8,81.9,26.2,83.9,17.3
+3869117_4,3869117,Netherlands vs United States,Netherlands,Denzel Dumfries,80,4,Frenkie de Jong,80,14,77.5,26.2,85.6,6.3
+3869117_4,3869117,Netherlands vs United States,Netherlands,Denzel Dumfries,80,5,Daley Blind,80,17,86.4,6.3,97.1,23.0
+3869117_4,3869117,Netherlands vs United States,Netherlands,Denzel Dumfries,80,6,Memphis Depay,80,22,104.9,15.3,99.1,22.5
+3869117_4,3869117,Netherlands vs United States,Netherlands,Denzel Dumfries,80,7,Frenkie de Jong,80,24,99.1,22.5,106.3,6.9
+3869117_4,3869117,Netherlands vs United States,Netherlands,Denzel Dumfries,80,8,Daley Blind,80,26,107.8,7.1,113.5,44.3
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,1,Diogo Meireles Costa,52,58,7.3,40.0,15.3,19.9
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,2,Rúben Santos Gato Alves Dias,53,3,20.6,13.0,32.2,20.8
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,3,Rúben Diogo Da Silva Neves,53,5,42.6,16.1,45.4,2.6
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,4,Raphaël Adelino José Guerreiro,53,10,56.3,4.2,39.3,14.6
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,5,Rúben Santos Gato Alves Dias,53,14,39.3,15.4,50.9,22.2
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,6,Rúben Diogo Da Silva Neves,53,15,48.5,23.2,39.2,42.5
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,7,Kléper Laveran Lima Ferreira,53,17,39.2,42.5,46.1,56.7
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,8,William Silva de Carvalho,53,20,55.1,58.2,69.3,74.7
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,9,Cristiano Ronaldo dos Santos Aveiro,53,23,81.1,75.0,71.9,61.9
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,10,William Silva de Carvalho,53,24,71.9,61.9,68.6,74.2
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,11,João Pedro Cavaco Cancelo,53,27,61.7,71.7,45.1,32.4
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,12,Rúben Santos Gato Alves Dias,53,30,45.1,32.4,62.2,16.5
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,13,Bernardo Mota Veiga de Carvalho e Silva,53,34,74.7,9.7,87.3,3.1
+3857270_1,3857270,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,14,Raphaël Adelino José Guerreiro,53,37,92.4,3.1,96.7,18.5
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,1,Unai Simón Mendibil,60,49,7.0,36.1,10.4,55.7
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,2,Rodrigo Hernández Cascante,60,51,4.8,59.6,14.2,76.2
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,3,Daniel Carvajal Ramos,60,53,14.5,76.6,32.8,66.9
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,4,Pablo Martín Páez Gavira,60,58,51.7,66.0,65.2,62.2
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,5,Álvaro Borja Morata Martín,60,59,65.1,62.2,75.1,76.1
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,6,Marco Asensio Willemsen,61,3,91.9,66.5,105.3,22.3
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,7,Aymeric Laporte,61,11,78.7,28.7,89.3,16.9
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,8,Jordi Alba Ramos,61,14,89.4,10.3,74.9,13.9
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,9,Aymeric Laporte,61,17,74.9,14.4,75.8,30.4
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,10,Sergio Busquets i Burgos,61,19,75.5,30.4,62.0,46.2
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,11,Rodrigo Hernández Cascante,61,21,62.6,46.2,70.5,72.5
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,12,Daniel Carvajal Ramos,61,24,70.9,72.5,57.3,59.4
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,13,Rodrigo Hernández Cascante,61,26,58.2,58.7,67.7,40.6
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,14,Sergio Busquets i Burgos,61,28,73.9,38.3,87.2,25.1
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,15,Daniel Olmo Carvajal,61,30,87.7,17.6,100.3,9.4
+3857263_1,3857263,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,16,Jordi Alba Ramos,61,32,105.5,11.0,113.2,34.3
+3857263_2,3857263,Spain vs Germany,Germany,Niclas Füllkrug,82,1,Lukas Klostermann,82,20,79.5,75.6,84.5,63.7
+3857263_2,3857263,Spain vs Germany,Germany,Niclas Füllkrug,82,2,Leroy Sané,82,22,86.6,56.1,99.9,48.0
+3857259_1,3857259,Cameroon vs Serbia,Cameroon,Jean-Charles Castelletto,28,1,Pierre Kunde Malong,28,5,120.0,0.1,115.2,33.5
+3857259_2,3857259,Cameroon vs Serbia,Serbia,Strahinja Pavlović,45,1,Dušan Tadić,45,20,86.0,26.7,110.7,42.8
+3857259_3,3857259,Cameroon vs Serbia,Serbia,Sergej Milinković-Savić,47,1,Filip Kostić,47,38,64.7,0.1,102.3,3.6
+3857259_3,3857259,Cameroon vs Serbia,Serbia,Sergej Milinković-Savić,47,2,Sergej Milinković-Savić,47,47,90.1,41.9,99.3,57.7
+3857259_3,3857259,Cameroon vs Serbia,Serbia,Sergej Milinković-Savić,47,3,Andrija Živković,47,50,102.3,55.3,97.8,47.4
+3857259_4,3857259,Cameroon vs Serbia,Serbia,Aleksandar Mitrović,52,1,Aleksandar Mitrović,52,19,95.5,27.8,109.1,22.4
+3857259_4,3857259,Cameroon vs Serbia,Serbia,Aleksandar Mitrović,52,2,Filip Kostić,52,21,108.9,22.6,102.5,41.2
+3857259_4,3857259,Cameroon vs Serbia,Serbia,Aleksandar Mitrović,52,3,Sergej Milinković-Savić,52,22,102.5,41.2,108.9,53.3
+3857259_4,3857259,Cameroon vs Serbia,Serbia,Aleksandar Mitrović,52,4,Andrija Živković,52,25,109.4,48.6,113.6,40.2
+3857259_5,3857259,Cameroon vs Serbia,Cameroon,Vincent Paté Aboubakar,62,1,Devis Rogers Epassy Mboka,62,32,6.0,44.0,12.4,25.8
+3857259_5,3857259,Cameroon vs Serbia,Cameroon,Vincent Paté Aboubakar,62,2,Nouhou Tolo,62,36,16.5,22.7,11.7,31.1
+3857259_5,3857259,Cameroon vs Serbia,Cameroon,Vincent Paté Aboubakar,62,3,Nicolas Alexis Julio N'Koulou Ndoubena,62,39,11.7,31.1,13.4,58.9
+3857259_5,3857259,Cameroon vs Serbia,Cameroon,Vincent Paté Aboubakar,62,4,Jean-Charles Castelletto,62,46,41.2,63.2,85.3,49.6
+3857259_6,3857259,Cameroon vs Serbia,Cameroon,Jean-Eric Maxim Choupo-Moting,65,1,Ngoran Suiru Fai Collins,65,19,40.5,48.9,79.8,54.9
+3857259_6,3857259,Cameroon vs Serbia,Cameroon,Jean-Eric Maxim Choupo-Moting,65,2,Vincent Paté Aboubakar,65,24,107.2,54.9,111.0,37.0
+3857295_1,3857295,Japan vs Costa Rica,Costa Rica,Keysher Fuller Spence,80,1,Yeltsin Ignacio Tejeda Valverde,80,6,92.3,47.7,102.6,48.5
+3857283_1,3857283,Belgium vs Morocco,Morocco,Romain Saïss,72,1,Abdelhamid Sabiri,72,36,114.1,3.6,118.0,36.4
+3857283_2,3857283,Belgium vs Morocco,Morocco,Zakaria Aboukhlal,91,1,Munir Mohand Mohamedi,91,39,6.0,36.0,75.6,29.5
+3857283_2,3857283,Belgium vs Morocco,Morocco,Zakaria Aboukhlal,91,2,Abderrazak Hamdallah,91,43,75.6,29.5,87.5,40.1
+3857283_2,3857283,Belgium vs Morocco,Morocco,Zakaria Aboukhlal,91,3,Zakaria Aboukhlal,91,45,87.5,40.1,98.9,39.7
+3857283_2,3857283,Belgium vs Morocco,Morocco,Zakaria Aboukhlal,91,4,Hakim Ziyech,91,50,116.0,55.8,110.3,46.8
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,1,Junya Ito,73,58,38.3,80.0,35.8,63.9
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,2,Ko Itakura,74,4,33.0,59.8,22.5,47.6
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,3,Maya Yoshida,74,10,20.3,42.4,20.3,16.3
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,4,Takehiro Tomiyasu,74,13,20.6,14.1,45.9,2.2
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,5,Kaoru Mitoma,74,19,44.8,20.2,38.7,58.5
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,6,Ko Itakura,74,23,49.8,64.2,70.7,76.4
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,7,Junya Ito,74,31,74.7,62.0,69.4,53.6
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,8,Wataru Endo,74,33,68.5,53.8,76.0,45.5
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,9,Daichi Kamada,74,33,75.7,46.0,57.2,42.8
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,10,Maya Yoshida,74,35,57.2,42.8,62.0,25.2
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,11,Takehiro Tomiyasu,74,37,62.6,22.5,82.0,5.8
+3857284_2,3857284,Germany vs Japan,Japan,Ritsu Doan,74,12,Kaoru Mitoma,74,43,100.1,21.6,112.8,24.4
+3857284_3,3857284,Germany vs Japan,Japan,Takuma Asano,82,1,Ko Itakura,82,36,39.2,71.1,97.3,59.7
+3857282_1,3857282,United States vs Wales,United States,Timothy Weah,35,1,Walker Zimmerman,35,0,26.2,21.8,39.0,8.7
+3857282_1,3857282,United States vs Wales,United States,Timothy Weah,35,2,Antonee Robinson,35,2,38.6,8.7,57.6,13.4
+3857282_1,3857282,United States vs Wales,United States,Timothy Weah,35,3,Christian Pulisic,35,4,57.6,13.4,56.1,20.0
+3857282_1,3857282,United States vs Wales,United States,Timothy Weah,35,4,Yunus Dimoara Musah,35,6,56.1,20.0,69.2,17.7
+3857282_1,3857282,United States vs Wales,United States,Timothy Weah,35,5,Joshua Sargent,35,7,68.5,17.5,66.4,22.2
+3857282_1,3857282,United States vs Wales,United States,Timothy Weah,35,6,Christian Pulisic,35,11,87.8,31.6,107.7,37.8
+3857286_2,3857286,Qatar vs Ecuador,Ecuador,Enner Remberto Valencia Lastra,30,1,Moisés Isaac Caicedo Corozo,30,41,112.6,71.8,98.0,73.5
+3857286_2,3857286,Qatar vs Ecuador,Ecuador,Enner Remberto Valencia Lastra,30,2,Angelo Smit Preciado Quiñónez,30,43,98.2,73.5,109.6,38.0
+3857301_1,3857301,Qatar vs Senegal,Senegal,Boulaye Dia,40,1,Kalidou Koulibaly,39,41,58.2,43.4,60.2,49.3
+3857301_1,3857301,Qatar vs Senegal,Senegal,Boulaye Dia,40,2,Nampalys Mendy,39,43,56.7,50.0,45.8,56.2
+3857301_1,3857301,Qatar vs Senegal,Senegal,Boulaye Dia,40,3,Youssouf Sabaly,39,46,45.8,53.8,40.7,29.7
+3857301_1,3857301,Qatar vs Senegal,Senegal,Boulaye Dia,40,4,Abdou Diallo,39,49,43.5,24.5,56.3,2.7
+3857301_1,3857301,Qatar vs Senegal,Senegal,Boulaye Dia,40,5,Ismail Jakobs,39,52,56.7,5.7,45.0,18.1
+3857301_1,3857301,Qatar vs Senegal,Senegal,Boulaye Dia,40,6,Abdou Diallo,40,0,62.5,14.5,67.0,3.1
+3857301_1,3857301,Qatar vs Senegal,Senegal,Boulaye Dia,40,7,Ismail Jakobs,40,4,72.8,1.6,57.0,11.9
+3857301_1,3857301,Qatar vs Senegal,Senegal,Boulaye Dia,40,8,Abdou Diallo,40,9,68.1,13.0,79.4,21.5
+3857301_1,3857301,Qatar vs Senegal,Senegal,Boulaye Dia,40,9,Boulaye Dia,40,10,80.5,21.1,65.9,19.2
+3857301_1,3857301,Qatar vs Senegal,Senegal,Boulaye Dia,40,10,Abdou Diallo,40,12,65.9,17.3,89.0,2.1
+3857301_2,3857301,Qatar vs Senegal,Senegal,Famara Diedhiou,47,1,Ismail Jakobs,47,50,120.0,80.0,112.5,48.1
+3857301_3,3857301,Qatar vs Senegal,Qatar,Mohammed Muntari,77,1,Akram Hassan Afif,77,9,64.0,39.1,67.9,13.0
+3857301_3,3857301,Qatar vs Senegal,Qatar,Mohammed Muntari,77,2,Boualem Khoukhi,77,18,40.5,34.4,14.8,43.1
+3857301_3,3857301,Qatar vs Senegal,Qatar,Mohammed Muntari,77,3,Meshaal Aissa Barsham,77,22,15.2,41.4,19.3,46.6
+3857301_3,3857301,Qatar vs Senegal,Qatar,Mohammed Muntari,77,4,Boualem Khoukhi,77,26,19.3,48.1,31.1,13.0
+3857301_3,3857301,Qatar vs Senegal,Qatar,Mohammed Muntari,77,5,Abdelkarim Hassan Al Haj Fadlalla,77,30,37.5,15.8,98.9,76.7
+3857301_3,3857301,Qatar vs Senegal,Qatar,Mohammed Muntari,77,6,Ismaeel Mohammad Mohammad,77,38,116.6,67.3,109.8,38.7
+3857301_4,3857301,Qatar vs Senegal,Senegal,Cheikh Ahmadou Bamba Mbacke Dieng,83,1,Youssouf Sabaly,82,54,55.7,73.3,69.6,78.9
+3857301_4,3857301,Qatar vs Senegal,Senegal,Cheikh Ahmadou Bamba Mbacke Dieng,83,2,Iliman Ndiaye,83,1,91.2,68.0,93.9,72.0
+3857301_4,3857301,Qatar vs Senegal,Senegal,Cheikh Ahmadou Bamba Mbacke Dieng,83,3,Pape Matar Sarr,83,3,95.2,69.7,113.0,60.1
+3857301_4,3857301,Qatar vs Senegal,Senegal,Cheikh Ahmadou Bamba Mbacke Dieng,83,4,Iliman Ndiaye,83,5,113.0,60.1,107.6,47.0
+3857300_2,3857300,Argentina vs Saudi Arabia,Saudi Arabia,Saleh Khalid Al Shehri,47,1,Mohammed Kanoo,47,22,49.9,24.7,58.9,17.7
+3857300_2,3857300,Argentina vs Saudi Arabia,Saudi Arabia,Saleh Khalid Al Shehri,47,2,Nawaf Shaker Al Abid,47,24,59.3,17.7,69.4,4.2
+3857300_2,3857300,Argentina vs Saudi Arabia,Saudi Arabia,Saleh Khalid Al Shehri,47,3,Salem Mohammed Al Dawsari,47,26,69.2,4.4,69.6,17.9
+3857300_2,3857300,Argentina vs Saudi Arabia,Saudi Arabia,Saleh Khalid Al Shehri,47,4,Abdulelah Saad Hameed Al-Malki,47,35,63.2,38.0,84.6,34.4
+3857300_2,3857300,Argentina vs Saudi Arabia,Saudi Arabia,Saleh Khalid Al Shehri,47,5,Firas Tariq Nasser Al Albirakan,47,36,84.6,34.4,91.8,33.5
+3857300_3,3857300,Argentina vs Saudi Arabia,Saudi Arabia,Salem Mohammed Al Dawsari,52,1,Salem Mohammed Al Dawsari,52,13,66.4,2.7,50.1,8.5
+3857300_3,3857300,Argentina vs Saudi Arabia,Saudi Arabia,Salem Mohammed Al Dawsari,52,2,Ali Albulayhi,52,15,50.1,7.8,44.1,22.2
+3857300_3,3857300,Argentina vs Saudi Arabia,Saudi Arabia,Salem Mohammed Al Dawsari,52,3,Abdulelah Saad Hameed Al-Malki,52,17,39.0,24.1,13.1,26.7
+3857300_3,3857300,Argentina vs Saudi Arabia,Saudi Arabia,Salem Mohammed Al Dawsari,52,4,Mohammed Khalil Al Owais,52,22,13.3,26.5,74.9,74.2
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,1,Lawrence Ati-Zigi,32,15,7.0,44.1,9.4,23.7
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,2,Mohamed Salisu,32,20,11.6,23.7,11.4,35.3
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,3,Salis Abdul Samed,32,22,12.2,35.3,16.0,60.6
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,4,Daniel Amartey,32,24,21.3,62.8,28.1,60.0
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,5,Thomas Teye Partey,32,26,27.8,63.3,51.6,64.6
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,6,Mohammed Kudus,32,30,53.4,50.4,68.7,6.0
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,7,Gideon Mensah,32,37,81.2,18.5,73.3,18.5
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,8,André Ayew Pelé,32,39,73.3,17.9,74.7,31.3
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,9,Thomas Teye Partey,32,40,74.7,31.3,73.8,20.1
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,10,André Ayew Pelé,32,44,73.8,19.3,56.6,17.9
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,11,Mohamed Salisu,32,48,62.9,20.1,63.2,5.5
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,12,André Ayew Pelé,32,52,67.2,19.7,73.8,12.9
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,13,Jordan Ayew,32,52,73.8,12.7,63.4,8.3
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,14,Gideon Mensah,32,56,57.8,16.7,39.3,19.7
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,15,Mohamed Salisu,32,59,39.6,20.5,41.5,63.8
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,16,Daniel Amartey,33,3,53.0,67.7,64.3,55.1
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,17,Thomas Teye Partey,33,5,64.3,59.4,55.4,68.3
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,18,Daniel Amartey,33,7,55.4,67.4,58.2,47.0
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,19,Salis Abdul Samed,33,8,58.2,47.0,58.2,53.6
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,20,Thomas Teye Partey,33,8,58.0,53.6,45.4,40.0
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,21,Mohamed Salisu,33,11,45.4,39.7,50.0,9.3
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,22,Gideon Mensah,33,14,50.5,9.1,99.1,9.1
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,23,Iñaki Williams Arthuer,33,19,98.3,6.1,89.1,8.3
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,24,Jordan Ayew,33,23,91.9,8.3,83.7,4.5
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,25,Gideon Mensah,33,25,83.4,4.5,76.9,14.0
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,26,Salis Abdul Samed,33,28,72.4,25.0,64.6,60.0
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,27,Daniel Amartey,33,34,75.5,62.0,73.6,56.4
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,28,Thomas Teye Partey,33,39,82.7,51.2,79.8,38.6
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,29,Salis Abdul Samed,33,41,80.1,37.3,95.5,11.1
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,30,Gideon Mensah,33,45,100.3,6.9,91.7,11.0
+3857299_2,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,33,31,Jordan Ayew,33,47,90.9,10.7,113.1,41.8
+3857299_3,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,57,1,Young-Gwon Kim,56,51,16.8,6.3,26.6,12.3
+3857299_3,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,57,2,Kang-In Lee,56,54,27.3,25.0,24.1,55.2
+3857299_3,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,57,3,Moon-Hwan Kim,56,58,39.6,64.6,39.6,55.0
+3857299_3,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,57,4,In-Beom Hwang,57,5,45.4,41.2,54.8,19.0
+3857299_3,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,57,5,Young-Gwon Kim,57,8,57.9,18.1,87.2,4.2
+3857299_3,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,57,6,Kang-In Lee,57,18,101.6,5.2,112.6,38.4
+3857299_4,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,60,1,Heung-Min Son,59,38,76.4,0.1,53.5,9.6
+3857299_4,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,60,2,Woo-Young Jung,59,41,57.2,9.6,61.0,22.1
+3857299_4,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,60,3,Kang-In Lee,59,42,61.0,22.1,39.3,22.7
+3857299_4,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,60,4,Young-Gwon Kim,59,45,38.9,22.7,42.7,61.4
+3857299_4,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,60,5,Min Jae Kim,59,49,46.2,64.1,81.6,78.5
+3857299_4,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,60,6,Sang-Ho Na,59,59,74.9,31.0,92.9,11.5
+3857299_4,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,60,7,Heung-Min Son,60,2,98.9,12.5,117.9,14.0
+3857299_4,3857299,South Korea vs Ghana,South Korea,Gue-Sung Cho,60,8,Jin-Su Kim,60,5,117.9,14.0,115.5,43.7
+3857299_5,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,67,1,Daniel Amartey,67,30,50.6,61.6,57.4,32.2
+3857299_5,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,67,2,Salis Abdul Samed,67,33,62.0,27.6,75.1,2.4
+3857299_5,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,67,3,Gideon Mensah,67,36,75.1,2.4,62.4,14.3
+3857299_5,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,67,4,Salis Abdul Samed,67,39,59.7,18.9,46.8,18.2
+3857299_5,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,67,5,Mohamed Salisu,67,42,46.6,17.6,62.9,17.2
+3857299_5,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,67,6,Thomas Teye Partey,67,44,69.1,17.8,88.9,5.7
+3857299_5,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,67,7,Jordan Ayew,67,48,97.0,8.0,111.0,13.5
+3857299_5,3857299,South Korea vs Ghana,Ghana,Mohammed Kudus,67,8,Gideon Mensah,67,49,111.0,13.9,109.2,32.5
+3857298_2,3857298,Portugal vs Ghana,Ghana,André Ayew Pelé,72,1,Daniel Amartey,71,46,56.7,64.4,51.3,49.8
+3857298_2,3857298,Portugal vs Ghana,Ghana,André Ayew Pelé,72,2,Salis Abdul Samed,71,55,62.4,25.4,76.0,4.5
+3857298_2,3857298,Portugal vs Ghana,Ghana,André Ayew Pelé,72,3,Abdul Rahman Baba,71,59,76.8,3.7,63.7,11.3
+3857298_2,3857298,Portugal vs Ghana,Ghana,André Ayew Pelé,72,4,Mohamed Salisu,72,2,65.6,10.7,75.7,3.9
+3857298_2,3857298,Portugal vs Ghana,Ghana,André Ayew Pelé,72,5,Abdul Rahman Baba,72,6,73.8,4.7,106.3,21.3
+3857298_3,3857298,Portugal vs Ghana,Portugal,João Félix Sequeira,77,1,Raphaël Adelino José Guerreiro,76,58,46.0,11.0,50.1,17.6
+3857298_3,3857298,Portugal vs Ghana,Portugal,João Félix Sequeira,77,2,William Silva de Carvalho,77,1,55.8,24.1,64.2,44.1
+3857298_3,3857298,Portugal vs Ghana,Portugal,João Félix Sequeira,77,3,Bruno Miguel Borges Fernandes,77,3,68.7,50.7,101.1,55.7
+3857298_4,3857298,Portugal vs Ghana,Portugal,Rafael Alexandre Conceição Leão,79,1,Cristiano Ronaldo dos Santos Aveiro,79,13,56.1,43.9,51.7,32.8
+3857298_4,3857298,Portugal vs Ghana,Portugal,Rafael Alexandre Conceição Leão,79,2,Bruno Miguel Borges Fernandes,79,20,100.0,33.6,111.7,28.3
+3857298_5,3857298,Portugal vs Ghana,Ghana,Osman Bukari,88,1,Tariq Lamptey,88,15,51.8,80.0,30.1,50.1
+3857298_5,3857298,Portugal vs Ghana,Ghana,Osman Bukari,88,2,Alexander Djiku,88,17,30.4,46.5,36.3,25.1
+3857298_5,3857298,Portugal vs Ghana,Ghana,Osman Bukari,88,3,Mohamed Salisu,88,20,41.2,19.4,105.8,15.9
+3857297_1,3857297,Poland vs Saudi Arabia,Poland,Piotr Zieliński,38,1,Wojciech Szczęsny,38,43,6.0,36.0,53.2,68.2
+3857297_1,3857297,Poland vs Saudi Arabia,Poland,Piotr Zieliński,38,2,Matty Cash,38,46,53.2,68.2,92.7,59.8
+3857297_1,3857297,Poland vs Saudi Arabia,Poland,Piotr Zieliński,38,3,Przemysław Frankowski,38,52,93.1,57.6,107.4,59.1
+3857297_1,3857297,Poland vs Saudi Arabia,Poland,Piotr Zieliński,38,4,Matty Cash,38,53,106.8,59.1,112.7,42.1
+3857297_1,3857297,Poland vs Saudi Arabia,Poland,Piotr Zieliński,38,5,Robert Lewandowski,38,56,117.9,51.1,111.9,44.7
+3857293_1,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,25,1,Federico Santiago Valverde Dipetta,25,7,48.0,49.4,36.6,33.5
+3857293_1,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,25,2,Sebastián Coates Nión,25,10,36.8,33.8,42.7,77.1
+3857293_1,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,25,3,Guillermo Varela Olivera,25,13,42.5,75.7,45.5,64.6
+3857293_1,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,25,4,Federico Santiago Valverde Dipetta,25,19,57.8,62.3,72.7,76.2
+3857293_1,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,25,5,Darwin Gabriel Núñez Ribeiro,25,24,96.4,74.6,109.8,26.5
+3857293_2,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,1,Rodrigo Bentancur Colmán,30,44,75.4,18.1,73.6,33.1
+3857293_2,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,2,Federico Santiago Valverde Dipetta,30,45,73.4,35.2,75.3,18.4
+3857293_2,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,3,Rodrigo Bentancur Colmán,30,46,75.3,18.4,75.0,5.7
+3857293_2,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,4,Mathías Olivera Miramontes,30,47,77.3,5.4,49.4,22.6
+3857293_2,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,5,Sebastián Coates Nión,30,51,44.7,21.0,50.8,51.6
+3857293_2,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,6,José María Giménez de Vargas,30,53,52.0,50.4,60.0,50.9
+3857293_2,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,7,Federico Santiago Valverde Dipetta,30,56,66.2,57.0,84.7,60.9
+3857293_2,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,8,Facundo Pellistri Rebollo,30,58,88.4,56.0,100.3,54.1
+3857293_2,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,9,Darwin Gabriel Núñez Ribeiro,30,59,100.3,54.3,100.3,40.2
+3857293_2,3857293,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,10,Luis Alberto Suárez Díaz,31,0,101.1,40.6,110.8,31.2
+3857292_1,3857292,Costa Rica vs Germany,Germany,Serge Gnabry,9,1,İlkay Gündoğan,9,22,53.4,13.9,57.9,13.7
+3857292_1,3857292,Costa Rica vs Germany,Germany,Serge Gnabry,9,2,Jamal Musiala,9,28,95.5,26.7,110.1,14.2
+3857292_1,3857292,Costa Rica vs Germany,Germany,Serge Gnabry,9,3,David Raum,9,30,110.2,14.2,111.9,33.1
+3857292_2,3857292,Costa Rica vs Germany,Costa Rica,Yeltsin Ignacio Tejeda Valverde,57,1,Keysher Fuller Spence,57,30,70.8,76.4,72.6,61.2
+3857292_2,3857292,Costa Rica vs Germany,Costa Rica,Yeltsin Ignacio Tejeda Valverde,57,2,Joel Nathaniel Campbell Samuels,57,33,76.1,58.0,114.8,61.4
+3857292_2,3857292,Costa Rica vs Germany,Costa Rica,Yeltsin Ignacio Tejeda Valverde,57,3,Keysher Fuller Spence,57,37,114.9,60.4,108.9,45.4
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,1,Niclas Füllkrug,70,59,60.0,40.0,56.1,27.1
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,2,Jamal Musiala,71,5,73.0,26.3,56.1,40.8
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,3,Niklas Süle,71,8,55.8,41.0,64.2,54.3
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,4,Lukas Klostermann,71,11,64.8,54.3,61.1,40.7
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,5,Niklas Süle,71,16,76.9,28.6,90.3,0.9
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,6,Antonio Rüdiger,71,25,38.8,8.2,52.8,38.9
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,7,Niklas Süle,71,28,53.8,40.8,77.4,66.7
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,8,Mario Götze,71,33,84.5,73.2,68.2,58.1
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,9,Lukas Klostermann,71,35,69.2,55.1,63.4,43.7
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,10,Niklas Süle,71,37,63.4,43.6,66.7,24.0
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,11,Antonio Rüdiger,71,41,69.7,22.3,75.1,57.6
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,12,Niklas Süle,71,44,76.1,57.0,80.3,42.8
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,13,Joshua Kimmich,71,46,80.3,42.1,89.2,70.9
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,14,Serge Gnabry,71,48,89.2,71.1,79.5,51.7
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,15,Joshua Kimmich,71,54,84.8,42.5,93.4,6.6
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,16,Leroy Sané,71,57,93.2,6.1,107.8,34.9
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,17,Joshua Kimmich,72,1,96.3,32.9,106.2,44.1
+3857292_3,3857292,Costa Rica vs Germany,Germany,Kai Havertz,72,18,Niclas Füllkrug,72,2,106.5,44.7,109.9,39.5
+3857292_4,3857292,Costa Rica vs Germany,Germany,Kai Havertz,84,1,Antonio Rüdiger,83,39,34.7,51.4,17.3,46.3
+3857292_4,3857292,Costa Rica vs Germany,Germany,Kai Havertz,84,2,Lukas Klostermann,83,40,17.3,46.3,2.1,42.7
+3857292_4,3857292,Costa Rica vs Germany,Germany,Kai Havertz,84,3,Manuel Neuer,83,44,12.2,38.4,46.9,8.3
+3857292_4,3857292,Costa Rica vs Germany,Germany,Kai Havertz,84,4,Niclas Füllkrug,83,47,46.9,8.3,48.5,15.1
+3857292_4,3857292,Costa Rica vs Germany,Germany,Kai Havertz,84,5,Kai Havertz,83,49,47.5,18.9,44.7,37.6
+3857292_4,3857292,Costa Rica vs Germany,Germany,Kai Havertz,84,6,Joshua Kimmich,83,53,56.1,40.8,83.0,59.3
+3857292_4,3857292,Costa Rica vs Germany,Germany,Kai Havertz,84,7,Mario Götze,83,58,95.8,62.3,98.7,72.3
+3857292_4,3857292,Costa Rica vs Germany,Germany,Kai Havertz,84,8,Serge Gnabry,84,1,105.5,71.5,113.1,37.6
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,1,Antonio Rüdiger,86,52,49.4,0.1,43.9,24.3
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,2,Niklas Süle,86,56,43.9,24.3,59.7,21.3
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,3,Joshua Kimmich,87,4,73.8,37.0,73.0,57.1
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,4,Lukas Klostermann,87,7,74.1,60.1,70.3,38.4
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,5,Joshua Kimmich,87,10,70.3,38.4,84.4,5.6
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,6,Jamal Musiala,87,15,100.9,14.2,101.5,2.0
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,7,Antonio Rüdiger,87,22,77.6,26.7,77.6,37.6
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,8,Joshua Kimmich,87,26,79.5,37.0,81.7,14.8
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,9,Manuel Neuer,87,37,45.0,72.9,55.1,68.8
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,10,Lukas Klostermann,87,40,55.1,68.8,54.5,52.0
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,11,Niklas Süle,87,45,68.6,54.1,88.2,40.8
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,12,Joshua Kimmich,87,55,78.7,62.0,84.6,59.3
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,13,Kai Havertz,87,58,83.3,57.9,70.8,37.3
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,14,Antonio Rüdiger,88,3,71.6,35.4,93.3,57.1
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,15,Mario Götze,88,8,93.3,57.1,79.8,49.2
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,16,Joshua Kimmich,88,10,82.2,49.8,113.7,33.0
+3857292_5,3857292,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,17,Leroy Sané,88,12,113.7,33.0,114.8,42.5
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,1,César Azpilicueta Tanco,9,37,110.5,80.0,103.1,68.7
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,2,Ferrán Torres García,9,40,98.4,72.1,104.1,78.5
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,3,César Azpilicueta Tanco,9,41,99.9,78.1,86.6,76.4
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,4,Ferrán Torres García,9,44,82.3,75.2,64.0,70.3
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,5,Rodrigo Hernández Cascante,9,46,63.5,67.7,63.5,40.5
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,6,Aymeric Laporte,9,50,69.2,27.6,71.5,15.3
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,7,Jordi Alba Ramos,9,51,73.7,13.5,82.3,2.9
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,8,Daniel Olmo Carvajal,9,53,81.0,2.9,73.4,6.6
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,9,Jordi Alba Ramos,9,54,73.4,6.6,75.7,20.4
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,10,Sergio Busquets i Burgos,9,55,75.7,20.4,54.3,21.7
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,11,Aymeric Laporte,9,59,57.1,29.8,60.6,53.1
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,12,Rodrigo Hernández Cascante,10,2,63.1,57.0,63.5,70.1
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,13,César Azpilicueta Tanco,10,4,63.5,69.3,71.1,58.6
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,14,Sergio Busquets i Burgos,10,16,80.0,66.0,86.6,41.4
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,15,Sergio Busquets i Burgos,10,24,83.9,56.0,99.5,72.5
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,16,Pablo Martín Páez Gavira,10,28,100.1,73.5,83.3,77.3
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,17,César Azpilicueta Tanco,10,30,83.5,75.6,83.1,56.3
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,18,Sergio Busquets i Burgos,10,32,81.4,53.5,81.2,37.3
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,19,Pedro González López,10,35,81.0,35.2,91.0,8.2
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,20,Jordi Alba Ramos,10,37,91.0,8.2,91.3,20.1
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,21,Marco Asensio Willemsen,10,39,91.3,20.1,81.6,18.2
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,22,Pedro González López,10,40,81.6,18.5,88.2,17.8
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,23,Marco Asensio Willemsen,10,41,87.8,18.0,86.0,28.2
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,24,Sergio Busquets i Burgos,10,43,86.4,27.7,99.0,8.9
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,25,Jordi Alba Ramos,10,45,99.0,8.9,98.1,24.9
+3857291_1,3857291,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,26,Daniel Olmo Carvajal,10,47,98.8,24.1,97.8,36.4
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,1,Sergio Busquets i Burgos,19,13,36.1,54.2,45.3,24.7
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,2,Pedro González López,19,18,66.5,22.2,87.4,7.7
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,3,Daniel Olmo Carvajal,19,23,94.9,7.7,81.2,18.5
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,4,Marco Asensio Willemsen,19,27,80.7,25.6,68.8,35.7
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,5,Sergio Busquets i Burgos,19,29,68.8,35.7,69.6,49.2
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,6,Rodrigo Hernández Cascante,19,31,75.2,54.0,75.7,71.4
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,7,César Azpilicueta Tanco,19,35,75.2,66.8,81.2,56.0
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,8,Sergio Busquets i Burgos,19,37,81.4,55.4,86.9,46.0
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,9,Marco Asensio Willemsen,19,38,86.9,46.0,81.2,55.4
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,10,Sergio Busquets i Burgos,19,39,81.2,55.4,80.2,45.8
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,11,Pedro González López,19,40,81.0,45.5,95.8,5.9
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,12,Jordi Alba Ramos,19,43,94.4,11.6,91.0,19.8
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,13,Marco Asensio Willemsen,19,48,88.8,23.5,86.6,37.8
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,14,Sergio Busquets i Burgos,19,50,81.9,38.6,78.4,54.9
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,15,Rodrigo Hernández Cascante,19,51,80.5,57.0,86.9,73.2
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,16,César Azpilicueta Tanco,19,54,87.8,73.0,99.5,78.9
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,17,Ferrán Torres García,19,56,99.5,78.9,86.0,77.6
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,18,César Azpilicueta Tanco,19,59,79.6,75.5,56.9,44.1
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,19,Aymeric Laporte,20,7,68.4,38.6,70.2,56.2
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,20,Rodrigo Hernández Cascante,20,10,74.7,60.4,86.9,74.4
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,21,César Azpilicueta Tanco,20,16,79.8,69.7,71.3,61.5
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,22,Rodrigo Hernández Cascante,20,18,70.6,60.2,63.1,42.3
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,23,Aymeric Laporte,20,23,66.5,40.3,72.0,53.3
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,24,Rodrigo Hernández Cascante,20,25,75.3,54.9,80.9,46.0
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,25,Sergio Busquets i Burgos,20,27,81.6,46.0,102.9,9.4
+3857291_2,3857291,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,26,Jordi Alba Ramos,20,31,104.5,12.4,105.8,33.4
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,1,Marco Asensio Willemsen,52,3,120.0,80.0,111.3,76.1
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,2,Daniel Olmo Carvajal,52,6,111.1,73.8,93.7,60.7
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,3,Pedro González López,52,8,93.0,63.2,100.0,74.8
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,4,Daniel Olmo Carvajal,52,10,100.0,74.8,107.3,69.6
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,5,Marco Asensio Willemsen,52,12,107.0,69.6,117.4,57.3
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,6,César Azpilicueta Tanco,52,26,93.3,68.2,86.0,55.3
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,7,Pedro González López,52,29,86.0,55.3,94.8,49.2
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,8,Marco Asensio Willemsen,52,32,89.2,51.5,72.3,47.6
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,9,Jordi Alba Ramos,52,35,72.3,47.6,64.3,33.0
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,10,Aymeric Laporte,52,37,64.3,33.0,61.7,45.1
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,11,Rodrigo Hernández Cascante,52,39,61.2,41.8,66.1,54.8
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,12,Sergio Busquets i Burgos,52,42,70.2,52.6,62.6,32.9
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,13,Aymeric Laporte,52,44,62.6,32.9,76.1,27.8
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,14,Pedro González López,52,46,78.6,25.3,88.5,5.1
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,15,Pedro González López,52,56,57.8,6.1,52.6,19.8
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,16,Aymeric Laporte,52,56,52.4,19.8,65.7,9.4
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,17,Jordi Alba Ramos,52,59,71.1,10.4,63.7,23.2
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,18,Sergio Busquets i Burgos,53,0,63.7,23.2,74.1,14.9
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,19,Jordi Alba Ramos,53,2,73.4,14.6,63.4,23.4
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,20,Sergio Busquets i Burgos,53,3,63.4,23.4,67.1,39.1
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,21,Pablo Martín Páez Gavira,53,5,67.1,37.9,62.8,26.6
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,22,Sergio Busquets i Burgos,53,6,62.8,26.6,73.1,7.4
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,23,Pedro González López,53,9,73.6,6.9,57.3,14.2
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,24,Aymeric Laporte,53,16,57.3,14.2,51.3,24.1
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,25,Rodrigo Hernández Cascante,53,18,51.3,24.1,73.2,5.8
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,26,Pedro González López,53,20,73.2,5.8,85.1,1.6
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,27,Daniel Olmo Carvajal,53,23,85.3,2.0,80.8,12.1
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,28,Pedro González López,53,25,80.8,12.1,83.8,45.6
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,29,Pablo Martín Páez Gavira,53,28,81.5,38.4,75.6,34.7
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,30,Sergio Busquets i Burgos,53,28,74.5,35.2,69.3,57.3
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,31,César Azpilicueta Tanco,53,31,69.3,57.3,83.1,75.2
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,32,Ferrán Torres García,53,33,83.1,75.2,109.1,74.0
+3857291_4,3857291,Spain vs Costa Rica,Spain,Ferrán Torres García,53,33,Pablo Martín Páez Gavira,53,36,112.2,73.4,103.7,53.3
+3857291_5,3857291,Spain vs Costa Rica,Spain,Pablo Martín Páez Gavira,73,1,Rodrigo Hernández Cascante,73,31,32.1,48.1,40.9,39.7
+3857291_5,3857291,Spain vs Costa Rica,Spain,Pablo Martín Páez Gavira,73,2,Jorge Resurrección Merodio,73,34,39.5,23.0,23.7,21.9
+3857291_5,3857291,Spain vs Costa Rica,Spain,Pablo Martín Páez Gavira,73,3,Alejandro Balde Martínez,73,51,85.4,27.1,110.0,28.6
+3857291_5,3857291,Spain vs Costa Rica,Spain,Pablo Martín Páez Gavira,73,4,Álvaro Borja Morata Martín,73,57,112.5,14.1,103.0,45.8
+3857291_6,3857291,Spain vs Costa Rica,Spain,Carlos Soler Barragán,89,1,Alejandro Balde Martínez,88,47,40.8,8.1,40.8,28.7
+3857291_6,3857291,Spain vs Costa Rica,Spain,Carlos Soler Barragán,89,2,Rodrigo Hernández Cascante,88,50,41.8,29.8,52.6,25.7
+3857291_6,3857291,Spain vs Costa Rica,Spain,Carlos Soler Barragán,89,3,Jorge Resurrección Merodio,88,52,54.0,24.3,64.8,9.5
+3857291_6,3857291,Spain vs Costa Rica,Spain,Carlos Soler Barragán,89,4,Carlos Soler Barragán,88,58,86.1,11.7,79.9,20.3
+3857291_6,3857291,Spain vs Costa Rica,Spain,Carlos Soler Barragán,89,5,Jorge Resurrección Merodio,89,0,79.9,20.3,78.4,42.6
+3857291_6,3857291,Spain vs Costa Rica,Spain,Carlos Soler Barragán,89,6,Pablo Martín Páez Gavira,89,2,79.5,41.3,90.6,65.2
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,1,Unai Simón Mendibil,90,52,15.8,30.0,23.4,10.1
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,2,Alejandro Balde Martínez,90,56,37.5,10.4,63.5,2.4
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,3,Daniel Olmo Carvajal,91,0,68.7,3.8,57.8,15.3
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,4,Carlos Soler Barragán,91,2,57.8,15.3,44.5,12.8
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,5,Jorge Resurrección Merodio,91,4,39.0,9.2,33.2,20.7
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,6,Aymeric Laporte,91,6,32.7,20.7,53.7,5.6
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,7,Alejandro Balde Martínez,91,12,77.5,17.8,65.7,39.1
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,8,Pablo Martín Páez Gavira,91,15,63.7,38.6,73.2,72.7
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,9,Nicholas Williams Arthuer,91,17,73.4,72.0,64.4,61.6
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,10,César Azpilicueta Tanco,91,19,64.4,61.6,52.8,51.0
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,11,Rodrigo Hernández Cascante,91,22,52.4,50.3,48.7,29.3
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,12,Aymeric Laporte,91,24,47.2,29.3,54.0,38.4
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,13,Jorge Resurrección Merodio,91,27,56.2,36.8,57.8,21.9
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,14,Carlos Soler Barragán,91,28,57.8,23.0,59.6,8.8
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,15,Alejandro Balde Martínez,91,31,62.1,8.5,82.7,0.6
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,16,Daniel Olmo Carvajal,91,36,86.3,7.0,76.6,19.2
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,17,Jorge Resurrección Merodio,91,39,74.7,22.8,74.1,58.3
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,18,César Azpilicueta Tanco,91,42,74.3,61.6,94.6,74.5
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,19,Nicholas Williams Arthuer,91,44,92.4,72.9,117.0,71.4
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,20,Pablo Martín Páez Gavira,91,51,114.0,69.6,100.3,57.6
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,21,Nicholas Williams Arthuer,91,53,100.1,56.9,101.9,46.9
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,22,Álvaro Borja Morata Martín,91,55,101.6,44.3,95.1,40.2
+3857291_7,3857291,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,23,Daniel Olmo Carvajal,91,56,95.4,39.8,104.0,36.4
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,1,Ricardo Iván Rodríguez Araya,47,3,98.9,0.1,94.5,10.2
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,2,Djibril Sow,47,4,94.5,10.2,99.4,5.3
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,3,Ricardo Iván Rodríguez Araya,47,6,97.3,5.3,88.1,5.3
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,4,Djibril Sow,47,8,87.5,6.0,67.6,37.7
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,5,Manuel Obafemi Akanji,47,12,71.4,45.9,75.1,73.3
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,6,Silvan Widmer,47,15,75.1,73.3,57.4,52.0
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,7,Manuel Obafemi Akanji,47,18,56.6,48.3,51.0,19.0
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,8,Nico Elvedi,47,21,49.0,17.7,52.4,10.0
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,9,Ricardo Iván Rodríguez Araya,47,23,52.4,10.0,70.2,4.0
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,10,Ruben Vargas,47,24,70.2,4.0,69.0,12.8
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,11,Granit Xhaka,47,27,72.2,12.6,84.4,36.9
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,12,Remo Freuler,47,29,87.3,42.0,111.1,64.5
+3857290_1,3857290,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,13,Xherdan Shaqiri,47,31,111.7,64.1,111.9,39.5
+3857285_1,3857285,Senegal vs Netherlands,Netherlands,Cody Mathès Gakpo,83,1,Cody Mathès Gakpo,83,34,108.1,70.9,92.2,68.8
+3857285_1,3857285,Senegal vs Netherlands,Netherlands,Cody Mathès Gakpo,83,2,Teun Koopmeiners,83,37,92.2,68.8,104.0,34.1
+3857285_1,3857285,Senegal vs Netherlands,Netherlands,Cody Mathès Gakpo,83,3,Frenkie de Jong,83,42,91.3,32.1,99.9,20.2
+3857285_1,3857285,Senegal vs Netherlands,Netherlands,Cody Mathès Gakpo,83,4,Daley Blind,83,45,104.5,5.6,103.8,21.1
+3857285_1,3857285,Senegal vs Netherlands,Netherlands,Cody Mathès Gakpo,83,5,Memphis Depay,83,46,102.6,21.4,90.9,17.2
+3857285_1,3857285,Senegal vs Netherlands,Netherlands,Cody Mathès Gakpo,83,6,Frenkie de Jong,83,49,88.5,17.4,112.3,39.0
+3857285_2,3857285,Senegal vs Netherlands,Netherlands,Davy Klaassen,98,1,Daley Blind,97,54,35.7,30.4,42.1,35.9
+3857285_2,3857285,Senegal vs Netherlands,Netherlands,Davy Klaassen,98,2,Davy Klaassen,97,55,41.7,34.3,41.5,26.8
+3857285_2,3857285,Senegal vs Netherlands,Netherlands,Davy Klaassen,98,3,Frenkie de Jong,97,56,40.3,22.2,55.6,27.5
+3857285_2,3857285,Senegal vs Netherlands,Netherlands,Davy Klaassen,98,4,Memphis Depay,97,58,55.6,27.5,34.7,58.6
+3857285_2,3857285,Senegal vs Netherlands,Netherlands,Davy Klaassen,98,5,Denzel Dumfries,98,2,37.3,63.8,22.8,52.6
+3857285_2,3857285,Senegal vs Netherlands,Netherlands,Davy Klaassen,98,6,Matthijs de Ligt,98,4,18.6,53.3,5.8,35.3
+3857285_2,3857285,Senegal vs Netherlands,Netherlands,Davy Klaassen,98,7,Andries Noppert,98,7,5.8,35.3,66.1,59.5
+3857285_2,3857285,Senegal vs Netherlands,Netherlands,Davy Klaassen,98,8,Teun Koopmeiners,98,10,66.1,59.5,83.0,51.9
+3857281_1,3857281,Croatia vs Canada,Canada,Alphonso Davies,1,1,Milan Borjan,0,28,15.4,39.2,16.6,28.3
+3857281_1,3857281,Croatia vs Canada,Canada,Alphonso Davies,1,2,Kamal Miller,0,33,26.1,31.4,30.9,73.9
+3857281_1,3857281,Croatia vs Canada,Canada,Alphonso Davies,1,3,Alistair Johnston,0,37,32.5,75.5,48.6,76.1
+3857281_1,3857281,Croatia vs Canada,Canada,Alphonso Davies,1,4,Jonathan David,0,39,49.9,76.7,67.8,78.4
+3857281_1,3857281,Croatia vs Canada,Canada,Alphonso Davies,1,5,Tajon Buchanan,0,45,39.6,73.5,21.5,64.5
+3857281_1,3857281,Croatia vs Canada,Canada,Alphonso Davies,1,6,Steven de Sousa Vitoria,0,48,21.4,62.0,33.3,76.2
+3857281_1,3857281,Croatia vs Canada,Canada,Alphonso Davies,1,7,Tajon Buchanan,0,51,33.6,74.7,15.5,61.1
+3857281_1,3857281,Croatia vs Canada,Canada,Alphonso Davies,1,8,Steven de Sousa Vitoria,0,54,13.8,54.5,3.9,32.8
+3857281_1,3857281,Croatia vs Canada,Canada,Alphonso Davies,1,9,Milan Borjan,0,56,3.9,32.8,62.6,55.4
+3857281_1,3857281,Croatia vs Canada,Canada,Alphonso Davies,1,10,Cyle Larin,1,1,66.8,62.0,80.0,76.2
+3857281_1,3857281,Croatia vs Canada,Canada,Alphonso Davies,1,11,Tajon Buchanan,1,6,98.2,67.0,109.6,36.4
+3857281_2,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,35,1,Andrej Kramarić,35,40,100.2,11.2,89.2,3.0
+3857281_2,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,35,2,Borna Sosa,35,43,89.2,3.0,98.9,2.6
+3857281_2,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,35,3,Andrej Kramarić,35,44,98.9,2.6,98.9,13.9
+3857281_2,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,35,4,Joško Gvardiol,35,46,95.3,17.1,87.5,22.1
+3857281_2,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,35,5,Mateo Kovačić,35,50,87.0,23.7,101.5,18.6
+3857281_2,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,35,6,Ivan Perišić,35,52,102.0,18.7,114.1,29.4
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,1,Mateo Kovačić,43,1,33.3,56.0,43.2,58.6
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,2,Marcelo Brozović,43,3,48.3,59.3,52.6,41.3
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,3,Luka Modrić,43,8,67.8,25.4,62.2,12.0
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,4,Borna Sosa,43,11,62.5,10.6,73.2,2.3
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,5,Ivan Perišić,43,12,73.8,2.6,56.0,4.0
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,6,Mateo Kovačić,43,14,56.0,4.0,56.6,11.7
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,7,Luka Modrić,43,16,52.2,12.9,36.9,21.7
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,8,Joško Gvardiol,43,18,36.8,24.7,42.2,50.7
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,9,Dejan Lovren,43,21,45.5,56.4,62.6,74.1
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,10,Josip Juranović,43,23,63.8,74.1,70.2,75.7
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,11,Andrej Kramarić,43,24,68.6,75.1,67.0,68.0
+3857281_3,3857281,Croatia vs Canada,Croatia,Marko Livaja,43,12,Josip Juranović,43,30,95.3,44.8,97.2,37.2
+3857281_4,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,69,1,Marcelo Brozović,69,15,43.7,53.8,71.0,58.7
+3857281_4,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,69,2,Andrej Kramarić,69,18,74.3,56.0,63.3,62.9
+3857281_4,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,69,3,Luka Modrić,69,22,67.5,63.0,69.5,52.0
+3857281_4,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,69,4,Mateo Kovačić,69,24,77.3,52.5,76.8,38.5
+3857281_4,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,69,5,Marcelo Brozović,69,26,76.7,37.8,99.6,4.5
+3857281_4,3857281,Croatia vs Canada,Croatia,Andrej Kramarić,69,6,Ivan Perišić,69,33,103.7,15.5,110.0,50.7
+3857281_5,3857281,Croatia vs Canada,Croatia,Lovro Majer,93,1,Mislav Oršić,93,25,105.0,34.2,109.2,45.4
+3857280_1,3857280,Cameroon vs Brazil,Cameroon,Vincent Paté Aboubakar,91,1,Karl Brillant Toko Ekambi,91,37,43.7,3.1,38.4,15.6
+3857280_1,3857280,Cameroon vs Brazil,Cameroon,Vincent Paté Aboubakar,91,2,André-Frank Zambo Anguissa,91,38,39.5,15.2,45.0,33.4
+3857280_1,3857280,Cameroon vs Brazil,Cameroon,Vincent Paté Aboubakar,91,3,Jules Olivier Ntcham,91,42,50.0,50.9,69.8,75.1
+3857280_1,3857280,Cameroon vs Brazil,Cameroon,Vincent Paté Aboubakar,91,4,Jerome Ngom Mbekeli,91,47,92.9,77.6,106.7,40.7
+3857279_1,3857279,France vs Australia,Australia,Craig Goodwin,8,1,Craig Goodwin,8,7,97.5,0.1,80.0,3.4
+3857279_1,3857279,France vs Australia,Australia,Craig Goodwin,8,2,Aziz Eraltay Behich,8,9,80.0,3.4,72.7,14.6
+3857279_1,3857279,France vs Australia,Australia,Craig Goodwin,8,3,Aaron Mooy,8,11,69.6,15.8,50.0,8.6
+3857279_1,3857279,France vs Australia,Australia,Craig Goodwin,8,4,Kye Rowles,8,13,50.0,8.6,39.3,25.7
+3857279_1,3857279,France vs Australia,Australia,Craig Goodwin,8,5,Harry Souttar,8,17,44.5,38.5,101.4,74.1
+3857279_1,3857279,France vs Australia,Australia,Craig Goodwin,8,6,Mathew Leckie,8,23,109.0,61.2,114.2,31.3
+3857279_2,3857279,France vs Australia,France,Adrien Rabiot,26,1,Dayotchanculle Upamecano,25,58,80.8,31.8,88.7,23.9
+3857279_2,3857279,France vs Australia,France,Adrien Rabiot,26,2,Theo Bernard François Hernández,26,0,88.8,24.0,111.6,42.0
+3857279_3,3857279,France vs Australia,France,Olivier Giroud,31,1,Kylian Mbappé Lottin,31,15,104.7,9.2,104.5,14.8
+3857279_3,3857279,France vs Australia,France,Olivier Giroud,31,2,Adrien Rabiot,31,17,111.0,27.4,110.5,39.2
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,1,Dayotchanculle Upamecano,65,36,33.6,13.2,38.7,49.4
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,2,Ibrahima Konaté,65,40,42.4,48.8,53.6,42.2
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,3,Adrien Rabiot,65,42,51.9,50.8,42.4,64.4
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,4,Benjamin Pavard,65,44,43.7,64.4,54.2,60.3
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,5,Adrien Rabiot,65,45,54.2,60.3,44.5,64.1
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,6,Benjamin Pavard,65,47,45.3,62.4,46.0,30.5
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,7,Dayotchanculle Upamecano,65,51,56.0,25.8,62.1,35.4
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,8,Aurélien Djani Tchouaméni,65,54,63.8,26.5,62.9,15.5
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,9,Dayotchanculle Upamecano,65,57,63.2,14.5,62.9,49.1
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,10,Adrien Rabiot,66,3,75.2,47.8,71.4,63.9
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,11,Benjamin Pavard,66,6,75.8,64.7,75.8,58.7
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,12,Adrien Rabiot,66,7,75.8,58.7,72.4,65.0
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,13,Benjamin Pavard,66,8,72.4,65.0,63.6,49.4
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,14,Ibrahima Konaté,66,12,66.4,44.2,68.7,28.8
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,15,Dayotchanculle Upamecano,66,14,63.8,28.8,64.0,40.8
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,16,Antoine Griezmann,66,21,87.8,50.4,93.1,43.3
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,17,Olivier Giroud,66,21,93.1,43.3,87.8,45.6
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,18,Antoine Griezmann,66,23,87.8,44.2,96.5,15.1
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,19,Theo Bernard François Hernández,66,26,103.1,11.8,104.0,23.3
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,20,Kylian Mbappé Lottin,66,27,104.0,23.3,112.0,20.1
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,21,Theo Bernard François Hernández,66,29,117.6,26.9,105.3,36.2
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,22,Aurélien Djani Tchouaméni,66,38,75.2,9.3,64.8,41.4
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,23,Ibrahima Konaté,66,42,68.6,48.2,71.1,62.5
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,24,Benjamin Pavard,66,44,71.1,62.5,68.7,49.1
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,25,Ibrahima Konaté,66,45,68.7,50.6,77.1,51.0
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,26,Adrien Rabiot,66,46,77.1,51.0,73.1,20.5
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,27,Dayotchanculle Upamecano,66,48,74.7,17.0,87.1,3.8
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,28,Theo Bernard François Hernández,66,51,91.1,5.0,115.7,24.7
+3857279_4,3857279,France vs Australia,France,Kylian Mbappé Lottin,67,29,Ousmane Dembélé,67,2,111.4,63.3,113.5,42.2
+3857279_5,3857279,France vs Australia,France,Olivier Giroud,70,1,Theo Bernard François Hernández,70,26,45.1,3.9,34.5,14.5
+3857279_5,3857279,France vs Australia,France,Olivier Giroud,70,2,Dayotchanculle Upamecano,70,28,34.5,14.5,57.2,2.8
+3857279_5,3857279,France vs Australia,France,Olivier Giroud,70,3,Theo Bernard François Hernández,70,31,57.2,2.8,46.8,13.5
+3857279_5,3857279,France vs Australia,France,Olivier Giroud,70,4,Dayotchanculle Upamecano,70,34,48.1,15.1,45.1,41.9
+3857279_5,3857279,France vs Australia,France,Olivier Giroud,70,5,Ibrahima Konaté,70,38,48.6,43.8,51.2,28.5
+3857279_5,3857279,France vs Australia,France,Olivier Giroud,70,6,Dayotchanculle Upamecano,70,40,51.2,28.5,86.9,4.2
+3857279_5,3857279,France vs Australia,France,Olivier Giroud,70,7,Kylian Mbappé Lottin,70,49,116.8,15.1,113.5,42.6
+3857278_1,3857278,Iran vs United States,United States,Christian Pulisic,37,1,Yunus Dimoara Musah,37,19,42.8,62.6,35.1,55.1
+3857278_1,3857278,Iran vs United States,United States,Christian Pulisic,37,2,Tyler Adams,37,21,27.2,41.5,6.7,40.8
+3857278_1,3857278,Iran vs United States,United States,Christian Pulisic,37,3,Matthew Charles Turner,37,25,3.5,47.9,52.2,66.3
+3857278_1,3857278,Iran vs United States,United States,Christian Pulisic,37,4,Timothy Weah,37,27,51.4,65.8,47.7,78.2
+3857278_1,3857278,Iran vs United States,United States,Christian Pulisic,37,5,Yunus Dimoara Musah,37,30,45.8,74.0,45.6,61.3
+3857278_1,3857278,Iran vs United States,United States,Christian Pulisic,37,6,Sergino Dest,37,31,46.7,59.2,49.9,50.9
+3857278_1,3857278,Iran vs United States,United States,Christian Pulisic,37,7,Tyler Adams,37,39,79.2,23.7,92.7,4.2
+3857278_1,3857278,Iran vs United States,United States,Christian Pulisic,37,8,Antonee Robinson,37,42,92.9,4.4,82.2,12.1
+3857278_1,3857278,Iran vs United States,United States,Christian Pulisic,37,9,Tyler Adams,37,44,82.6,14.1,79.6,28.6
+3857278_1,3857278,Iran vs United States,United States,Christian Pulisic,37,10,Weston McKennie,37,46,80.0,29.3,111.7,58.6
+3857278_1,3857278,Iran vs United States,United States,Christian Pulisic,37,11,Sergino Dest,37,48,111.7,58.6,115.1,38.7
+3857276_1,3857276,Canada vs Morocco,Morocco,Hakim Ziyech,3,1,Sofiane Boufal,3,18,47.0,3.7,31.4,7.5
+3857276_2,3857276,Canada vs Morocco,Morocco,Youssef En-Nesyri,22,1,Achraf Hakimi Mouh,22,12,63.3,80.0,45.6,76.6
+3857276_2,3857276,Canada vs Morocco,Morocco,Youssef En-Nesyri,22,2,Nayef Aguerd,22,16,43.3,57.9,44.6,24.0
+3857276_2,3857276,Canada vs Morocco,Morocco,Youssef En-Nesyri,22,3,Noussair Mazraoui,22,20,43.5,24.8,23.1,35.4
+3857276_2,3857276,Canada vs Morocco,Morocco,Youssef En-Nesyri,22,4,Romain Saïss,22,26,23.6,39.4,23.1,62.9
+3857276_2,3857276,Canada vs Morocco,Morocco,Youssef En-Nesyri,22,5,Nayef Aguerd,22,28,22.2,62.4,36.8,78.7
+3857276_2,3857276,Canada vs Morocco,Morocco,Youssef En-Nesyri,22,6,Achraf Hakimi Mouh,22,31,39.0,79.2,97.9,56.4
+3857275_1,3857275,Tunisia vs France,Tunisia,Wahbi Khazri,57,1,Ellyes Joris Skhiri,57,13,65.4,48.6,56.8,45.4
+3857275_1,3857275,Tunisia vs France,Tunisia,Wahbi Khazri,57,2,Aïssa Bilal Laïdouni,57,14,56.8,45.4,77.3,47.5
+3857274_1,3857274,Netherlands vs Ecuador,Netherlands,Cody Mathès Gakpo,5,1,Denzel Dumfries,4,45,55.7,80.0,26.5,66.3
+3857274_1,3857274,Netherlands vs Ecuador,Netherlands,Cody Mathès Gakpo,5,2,Jurriën David Norman Timber,4,49,27.1,61.6,33.1,22.9
+3857274_1,3857274,Netherlands vs Ecuador,Netherlands,Cody Mathès Gakpo,5,3,Nathan Aké,4,56,57.1,17.1,82.1,32.4
+3857274_1,3857274,Netherlands vs Ecuador,Netherlands,Cody Mathès Gakpo,5,4,Davy Klaassen,5,1,96.6,26.8,95.6,28.1
+3857274_2,3857274,Netherlands vs Ecuador,Ecuador,Enner Remberto Valencia Lastra,48,1,Michael Steveen Estrada Martínez,48,38,78.7,44.6,80.6,37.6
+3857274_2,3857274,Netherlands vs Ecuador,Ecuador,Enner Remberto Valencia Lastra,48,2,Gonzalo Jordy Plata Jiménez,48,40,80.8,34.6,96.3,21.3
+3857273_1,3857273,Wales vs Iran,Iran,Roozbeh Cheshmi,97,1,Seyed Majid Hosseini,97,13,48.2,80.0,27.2,49.8
+3857273_1,3857273,Wales vs Iran,Iran,Roozbeh Cheshmi,97,2,Morteza Pouraliganji,97,19,34.5,30.9,62.1,24.1
+3857273_1,3857273,Wales vs Iran,Iran,Roozbeh Cheshmi,97,3,Mehdi Torabi,97,27,80.3,30.7,79.6,34.2
+3857273_1,3857273,Wales vs Iran,Iran,Roozbeh Cheshmi,97,4,Mehdi Taremi,97,29,81.8,32.4,95.9,10.6
+3857273_1,3857273,Wales vs Iran,Iran,Roozbeh Cheshmi,97,5,Morteza Pouraliganji,97,40,74.7,26.9,88.0,18.5
+3857273_1,3857273,Wales vs Iran,Iran,Roozbeh Cheshmi,97,6,Alireza Jahanbakhsh,97,47,88.0,18.1,103.8,4.4
+3857273_2,3857273,Wales vs Iran,Iran,Ramin Rezaeian,100,1,Mehdi Taremi,100,34,95.7,27.3,97.2,45.1
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,1,John Stones,33,1,18.6,65.8,44.2,50.1
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,2,Jude Bellingham,33,6,38.3,51.5,30.9,25.7
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,3,Luke Shaw,33,17,78.0,7.8,75.3,2.3
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,4,Raheem Sterling,33,19,75.0,2.6,68.0,8.7
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,5,Mason Mount,33,20,66.7,9.8,58.0,35.0
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,6,Declan Rice,33,23,56.2,37.0,74.6,66.9
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,7,Jude Bellingham,33,40,93.6,74.6,80.9,74.2
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,8,Kieran Trippier,33,42,80.9,74.2,66.7,54.9
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,9,John Stones,33,44,66.7,54.9,61.0,38.1
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,10,Harry Maguire,33,48,70.1,26.4,87.7,2.8
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,11,Luke Shaw,33,53,92.7,3.2,75.5,5.5
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,12,Harry Maguire,33,57,73.0,8.7,67.6,34.3
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,13,John Stones,34,2,70.7,43.8,72.1,26.1
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,14,Harry Maguire,34,4,72.1,26.1,92.9,23.4
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,15,Mason Mount,34,5,94.1,23.0,91.8,15.5
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,16,Raheem Sterling,34,7,97.2,18.4,109.9,6.6
+3857271_1,3857271,England vs Iran,England,Jude Bellingham,34,17,Luke Shaw,34,8,109.9,6.6,112.0,38.0
+3857271_2,3857271,England vs Iran,England,Bukayo Saka,42,1,Luke Shaw,42,43,120.0,0.1,107.0,46.7
+3857271_2,3857271,England vs Iran,England,Bukayo Saka,42,2,Harry Maguire,42,45,107.0,47.4,104.0,39.0
+3857271_3,3857271,England vs Iran,England,Raheem Sterling,45,1,Luke Shaw,44,52,40.8,24.1,28.4,56.7
+3857271_3,3857271,England vs Iran,England,Raheem Sterling,45,2,John Stones,44,55,29.0,54.5,37.4,71.9
+3857271_3,3857271,England vs Iran,England,Raheem Sterling,45,3,Kieran Trippier,44,57,37.2,72.4,13.4,58.8
+3857271_3,3857271,England vs Iran,England,Raheem Sterling,45,4,John Stones,45,2,6.6,54.5,2.3,45.6
+3857271_3,3857271,England vs Iran,England,Raheem Sterling,45,5,Jordan Pickford,45,3,2.3,45.6,46.3,38.1
+3857271_3,3857271,England vs Iran,England,Raheem Sterling,45,6,Jude Bellingham,45,12,76.4,44.7,94.8,56.0
+3857271_3,3857271,England vs Iran,England,Raheem Sterling,45,7,Harry Kane,45,17,107.2,61.9,111.0,42.8
+3857271_4,3857271,England vs Iran,England,Bukayo Saka,61,1,Luke Shaw,61,15,57.4,16.4,78.8,26.6
+3857271_4,3857271,England vs Iran,England,Bukayo Saka,61,2,Raheem Sterling,61,20,79.5,46.2,98.9,58.8
+3857271_5,3857271,England vs Iran,Iran,Mehdi Taremi,64,1,Sadegh Moharrami,64,15,97.9,80.0,103.7,65.9
+3857271_5,3857271,England vs Iran,Iran,Mehdi Taremi,64,2,Mehdi Taremi,64,16,103.7,65.9,99.0,74.1
+3857271_5,3857271,England vs Iran,Iran,Mehdi Taremi,64,3,Sadegh Moharrami,64,22,106.0,72.5,103.7,68.6
+3857271_5,3857271,England vs Iran,Iran,Mehdi Taremi,64,4,Ahmad Nourollahi,64,25,103.7,70.0,103.7,75.6
+3857271_5,3857271,England vs Iran,Iran,Mehdi Taremi,64,5,Sadegh Moharrami,64,29,107.3,75.6,100.3,66.6
+3857271_5,3857271,England vs Iran,Iran,Mehdi Taremi,64,6,Ali Gholizadeh,64,32,99.0,61.7,109.7,48.0
+3857271_6,3857271,England vs Iran,England,Marcus Rashford,70,1,Luke Shaw,70,39,26.7,7.2,7.8,25.9
+3857271_6,3857271,England vs Iran,England,Marcus Rashford,70,2,Jordan Pickford,70,41,7.8,25.9,79.8,26.6
+3857271_6,3857271,England vs Iran,England,Marcus Rashford,70,3,Harry Kane,70,47,82.9,38.7,94.4,55.7
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,1,Declan Rice,87,35,64.2,36.9,65.3,27.5
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,2,Jude Bellingham,87,37,65.3,27.5,70.1,7.2
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,3,Luke Shaw,87,38,70.1,7.2,63.3,15.7
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,4,Jude Bellingham,87,39,63.3,15.7,69.4,8.8
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,5,Luke Shaw,87,40,69.4,8.8,64.2,15.1
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,6,Jude Bellingham,87,42,63.7,16.4,57.9,32.4
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,7,Declan Rice,87,45,57.0,32.2,63.1,20.0
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,8,Jude Bellingham,87,47,63.1,18.0,74.8,23.9
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,9,Philip Foden,87,48,74.8,23.9,63.5,18.9
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,10,Jude Bellingham,87,50,63.5,22.3,57.4,34.9
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,11,Declan Rice,87,51,57.0,38.3,52.2,52.3
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,12,John Stones,87,52,52.2,52.3,64.2,47.3
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,13,Declan Rice,87,55,69.4,57.0,55.6,71.0
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,14,Kieran Trippier,87,56,55.6,71.0,49.5,56.6
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,15,John Stones,87,59,48.2,50.9,44.3,16.2
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,16,Eric Dier,88,2,44.3,16.2,48.2,6.9
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,17,Luke Shaw,88,4,47.5,6.9,15.2,26.6
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,18,Jordan Pickford,88,7,15.2,30.2,20.9,40.8
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,19,John Stones,88,13,25.8,41.7,43.0,7.2
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,20,Luke Shaw,88,18,42.8,22.7,43.7,28.4
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,21,Jack Grealish,88,23,51.8,13.5,50.9,6.0
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,22,Jude Bellingham,88,25,50.9,6.3,50.4,18.2
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,23,Luke Shaw,88,26,50.4,18.2,33.3,12.4
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,24,Jude Bellingham,88,33,35.3,29.3,33.5,54.8
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,25,John Stones,88,37,39.1,59.1,54.0,61.5
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,26,Marcus Rashford,88,38,54.0,61.5,38.9,57.2
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,27,John Stones,88,41,38.0,55.2,44.6,40.6
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,28,Jude Bellingham,88,42,43.7,41.7,32.6,31.5
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,29,Eric Dier,88,44,32.6,31.3,43.9,19.1
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,30,Luke Shaw,88,46,44.3,17.3,27.0,27.5
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,31,Eric Dier,88,49,26.5,30.4,22.7,55.9
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,32,John Stones,88,51,24.5,58.8,44.8,59.7
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,33,Marcus Rashford,88,52,44.8,59.7,51.1,52.3
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,34,Jude Bellingham,88,54,51.3,53.0,98.0,60.4
+3857271_7,3857271,England vs Iran,England,Jack Grealish,89,35,Callum Wilson,89,0,113.1,53.0,112.0,39.9
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,1,Leander Dendoncker,42,3,46.1,50.8,32.9,37.0
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,2,Toby Alderweireld,42,5,32.9,37.0,37.5,22.2
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,3,Jan Vertonghen,42,8,37.5,22.2,30.4,30.5
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,4,Toby Alderweireld,42,10,29.7,30.6,26.4,53.5
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,5,Leander Dendoncker,42,13,26.4,53.5,38.9,73.5
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,6,Youri Tielemans,42,21,39.5,73.8,44.0,55.2
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,7,Eden Hazard,42,22,43.1,55.3,48.4,64.9
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,8,Axel Witsel,42,24,49.8,61.3,47.6,21.4
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,9,Jan Vertonghen,42,32,69.8,11.4,55.1,23.5
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,10,Toby Alderweireld,42,35,55.1,23.5,56.8,46.0
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,11,Leander Dendoncker,42,37,54.5,48.9,65.0,69.5
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,12,Youri Tielemans,42,38,65.0,69.5,52.9,58.0
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,13,Leander Dendoncker,42,42,54.8,58.0,76.4,48.0
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,14,Leander Dendoncker,42,51,12.5,74.1,5.9,51.9
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,15,Thibaut Courtois,42,55,5.9,51.9,16.7,14.9
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,16,Jan Vertonghen,42,59,29.7,11.4,35.0,20.0
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,17,Axel Witsel,43,5,47.2,20.8,43.9,34.4
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,18,Youri Tielemans,43,7,44.3,34.9,53.6,52.2
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,19,Leander Dendoncker,43,10,53.6,53.5,66.2,72.0
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,20,Kevin De Bruyne,43,15,66.7,72.0,48.7,62.0
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,21,Leander Dendoncker,43,17,48.7,62.0,42.2,41.7
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,22,Toby Alderweireld,43,20,42.2,41.7,46.5,16.6
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,23,Jan Vertonghen,43,23,46.5,16.6,44.8,21.6
+3857268_1,3857268,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,24,Toby Alderweireld,43,28,44.8,21.6,109.0,36.1
+3857262_1,3857262,South Korea vs Portugal,Portugal,Ricardo Jorge Luz Horta,4,1,Diogo Meireles Costa,4,26,7.0,36.1,29.0,52.3
+3857262_1,3857262,South Korea vs Portugal,Portugal,Ricardo Jorge Luz Horta,4,2,Rúben Diogo Da Silva Neves,4,29,29.1,51.9,38.5,11.9
+3857262_1,3857262,South Korea vs Portugal,Portugal,Ricardo Jorge Luz Horta,4,3,João Pedro Cavaco Cancelo,4,34,48.3,8.4,50.5,18.3
+3857262_1,3857262,South Korea vs Portugal,Portugal,Ricardo Jorge Luz Horta,4,4,Vitor Machado Ferreira,4,36,47.7,16.2,45.5,8.4
+3857262_1,3857262,South Korea vs Portugal,Portugal,Ricardo Jorge Luz Horta,4,5,João Pedro Cavaco Cancelo,4,38,43.7,10.6,22.1,24.2
+3857262_1,3857262,South Korea vs Portugal,Portugal,Ricardo Jorge Luz Horta,4,6,António João Pereira Albuquerque Tavares Silva,4,41,20.7,27.1,27.7,60.4
+3857262_1,3857262,South Korea vs Portugal,Portugal,Ricardo Jorge Luz Horta,4,7,Kléper Laveran Lima Ferreira,4,46,38.6,66.2,98.3,77.9
+3857262_1,3857262,South Korea vs Portugal,Portugal,Ricardo Jorge Luz Horta,4,8,José Diogo Dalot Teixeira,4,52,117.5,55.5,113.6,47.0
+3857262_3,3857262,South Korea vs Portugal,South Korea,Hee-Chan Hwang,90,1,Heung-Min Son,90,27,98.3,52.3,108.3,44.6
+3857261_2,3857261,Wales vs England,England,Philip Foden,50,1,Harry Kane,50,52,115.8,58.9,114.5,34.1
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,1,Kieran Trippier,66,56,51.9,0.1,56.7,18.3
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,2,Jordan Brian Henderson,67,0,51.9,33.4,44.4,58.9
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,3,Trent Alexander-Arnold,67,3,51.0,66.9,68.2,69.0
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,4,Marcus Rashford,67,4,68.2,69.0,50.6,70.9
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,5,Trent Alexander-Arnold,67,7,50.7,70.9,26.6,58.6
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,6,John Stones,67,11,26.6,58.6,10.5,33.3
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,7,Jordan Pickford,67,15,10.3,31.9,15.2,21.4
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,8,Harry Maguire,67,17,21.8,15.2,27.8,3.1
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,9,Kieran Trippier,67,20,27.8,3.1,17.3,13.1
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,10,Harry Maguire,67,22,14.3,16.1,7.0,40.2
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,11,Jordan Pickford,67,24,7.8,40.6,10.0,55.6
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,12,John Stones,67,28,10.3,59.9,44.7,70.0
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,13,Trent Alexander-Arnold,67,30,47.6,69.7,38.7,58.9
+3857261_3,3857261,Wales vs England,England,Marcus Rashford,67,14,Kalvin Phillips,67,32,39.9,59.9,94.0,67.2
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,1,Pau Francisco Torres,9,14,27.6,23.0,39.8,59.2
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,2,Rodrigo Hernández Cascante,9,21,61.4,51.0,74.0,53.9
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,3,Pablo Martín Páez Gavira,9,22,74.0,53.9,61.6,51.4
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,4,Rodrigo Hernández Cascante,9,24,62.1,52.8,67.8,70.7
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,5,César Azpilicueta Tanco,9,26,65.9,69.7,42.9,52.8
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,6,Rodrigo Hernández Cascante,9,29,43.5,51.9,44.5,30.2
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,7,Pau Francisco Torres,9,36,63.7,26.7,56.6,43.0
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,8,Rodrigo Hernández Cascante,9,41,64.9,46.3,66.7,26.5
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,9,Pau Francisco Torres,9,45,69.6,20.2,72.9,10.8
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,10,Alejandro Balde Martínez,9,48,72.7,9.8,56.4,19.4
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,11,Pau Francisco Torres,9,52,57.7,25.2,55.5,44.6
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,12,Rodrigo Hernández Cascante,9,58,65.7,46.6,70.0,64.9
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,13,César Azpilicueta Tanco,10,0,70.7,66.7,75.3,77.9
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,14,Nicholas Williams Arthuer,10,3,75.1,71.8,67.1,54.6
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,15,Sergio Busquets i Burgos,10,5,67.4,53.4,65.3,35.5
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,16,Pau Francisco Torres,10,8,69.0,27.1,85.3,4.1
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,17,Daniel Olmo Carvajal,10,11,83.0,3.5,71.4,9.6
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,18,Alejandro Balde Martínez,10,12,70.6,10.4,60.4,21.4
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,19,Pau Francisco Torres,10,15,62.1,24.3,64.1,46.9
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,20,Rodrigo Hernández Cascante,10,18,68.3,55.0,69.0,71.1
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,21,Pablo Martín Páez Gavira,10,20,69.0,71.1,79.1,77.9
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,22,César Azpilicueta Tanco,10,22,79.1,77.9,81.3,73.0
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,23,Nicholas Williams Arthuer,10,26,70.2,77.5,61.6,76.4
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,24,Pablo Martín Páez Gavira,10,29,61.6,76.4,52.4,63.6
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,25,Rodrigo Hernández Cascante,10,30,52.4,61.0,61.6,36.5
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,26,Pau Francisco Torres,10,38,82.6,20.6,95.0,3.5
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,27,Pablo Martín Páez Gavira,10,49,93.6,52.6,101.0,66.9
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,28,Nicholas Williams Arthuer,10,52,102.6,66.2,115.1,59.1
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,29,Nicholas Williams Arthuer,10,57,110.0,68.1,98.5,61.2
+3857255_1,3857255,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,30,César Azpilicueta Tanco,10,58,98.6,60.9,115.3,38.3
+3857255_2,3857255,Japan vs Spain,Japan,Ritsu Doan,47,1,Junya Ito,47,44,93.0,70.1,100.1,63.0
+3857255_3,3857255,Japan vs Spain,Japan,Ao Tanaka,50,1,Shūichi Gonda,50,1,25.6,10.6,86.2,65.7
+3857255_3,3857255,Japan vs Spain,Japan,Ao Tanaka,50,2,Junya Ito,50,7,88.8,60.4,94.3,56.2
+3857255_3,3857255,Japan vs Spain,Japan,Ao Tanaka,50,3,Ao Tanaka,50,8,96.7,55.7,103.0,58.3
+3857255_3,3857255,Japan vs Spain,Japan,Ao Tanaka,50,4,Ritsu Doan,50,11,108.7,57.8,120.0,32.4
+3857255_3,3857255,Japan vs Spain,Japan,Ao Tanaka,50,5,Kaoru Mitoma,50,13,120.0,32.4,118.7,40.2
