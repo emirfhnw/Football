@@ -1,256 +1,150 @@
-# FIFA World Cup 2022 Shot Quality Explorer
+# FIFA World Cup 2022 Goal Build-up Analysis
 
-This project analyses shot quality, shot locations and finishing efficiency in the FIFA World Cup 2022 using StatsBomb Open Data.
+This project analyses how goals were created during the FIFA World Cup 2022 using StatsBomb Open Data.
 
-It is designed for two visualization modules:
+The focus is on goal build-ups: successful passes in the same possession before a goal, attack duration, finishing efficiency and tournament progress.
 
-- **GDV – Fundamentals of Data Visualization:** static visual analysis and design reasoning
-- **IVI – Interactive Visualization:** an interactive dashboard based on the same prepared dataset
+## Module focus
+
+This repository currently contains the GDV part of the project.
+
+- **GDV – Fundamentals of Data Visualization:** static visual analysis, design reasoning and communication
+- **IVI – Interactive Visualization:** planned next step based on the same goal build-up data
 
 ## Research question
 
-**How do shot quality, shot locations and finishing efficiency differ between teams and matches in the FIFA World Cup 2022?**
+**How are goals created at the FIFA World Cup 2022: through quick attacks with few passes or through longer passing sequences?**
 
-The project does not only compare goals or shot counts. It separates four analytical dimensions:
+Additional question:
 
-1. **Shot volume:** how often teams shoot
-2. **Chance quality:** how valuable the shots are, measured with xG
-3. **Shot location:** where dangerous chances happen on the pitch
-4. **Finishing efficiency:** whether teams score more or fewer goals than expected from xG
+**Does a team’s goal build-up style relate to finishing efficiency and tournament progress?**
 
 ## Use case
 
-The dashboard is intended for a football fan, student analyst or assistant coach who wants to quickly understand attacking performance during the World Cup 2022.
+A coach, analyst or football fan wants to understand how goals are created. The goal is not only to know who scored, but how the ball moved before the goal.
 
-A typical user scenario:
+The analysis answers:
 
-> After a match or during a tournament review, the user wants to compare whether a team was actually dangerous or only had many low-quality shots. The user starts with the tournament overview, then filters down to one team, one match or one player.
+- How many successful passes happen before a goal?
+- Are goals more often created through quick, medium or long build-ups?
+- Which teams score after more direct attacks?
+- Which teams score after longer passing sequences?
+- Are more passes before a goal also linked to longer attack duration?
+- Is there a visible relationship between finishing efficiency and tournament progress?
+- What does a concrete Spain goal build-up look like as a case study?
 
-The dashboard helps answer questions such as:
+## Data source
 
-- Did a team create many shots or actually good chances?
-- Which teams had the highest total xG?
-- Which teams scored more or fewer goals than expected?
-- Where on the pitch did high-quality chances occur?
-- Which players contributed most to attacking danger?
-- How does a specific match, such as Serbia vs Switzerland, compare to the tournament overview?
+The project uses StatsBomb Open Data through the `statsbombpy` Python package.
 
-## Final repository structure
+The analysed competition is:
+
+```text
+FIFA World Cup 2022
+competition_id = 43
+season_id = 106
+```
+
+Relevant event data:
+
+- passes
+- shots
+- goals
+- possessions
+- pitch coordinates
+- match information
+- tournament stages
+
+## Method
+
+For each goal, the notebook identifies the same possession phase that directly led to the goal. Within this possession, it counts all successful passes by the scoring team before the shot.
+
+Build-ups are grouped into three categories:
+
+- **Quick:** 0 to 3 successful passes before the goal
+- **Medium:** 4 to 7 successful passes before the goal
+- **Long:** 8 or more successful passes before the goal
+
+The analysis also adds team-level shot data and tournament-stage information to compare build-up style with finishing efficiency and tournament progress.
+
+## Repository structure
 
 ```text
 Football/
-├── dashboard/
-│   └── app_worldcup.py                # Final IVI dashboard
 ├── data/
-│   ├── raw/                           # Original/raw data files
-│   └── processed/                     # Generated processed CSV files
-├── evaluation/
-│   ├── evaluation_tasks.md            # User test tasks
-│   ├── sus_questionnaire.md           # SUS questionnaire
-│   ├── evaluation_results_template.csv
-│   ├── evaluation_summary.md
-│   └── evaluation_analysis.md
+│   └── processed/
+│       ├── goal_buildups.csv
+│       ├── goal_buildup_passes.csv
+│       └── team_tournament_context.csv
 ├── notebooks/
-│   ├── eda2.ipynb                     # Exploratory notebook
-│   └── gdv_eda_final.ipynb            # GDV notebook draft
+│   └── 01_goal_buildup_gdv.ipynb
 ├── reports/
-│   ├── figures/                       # Generated GDV figures
-│   ├── gdv_insights.md                # Automatically generated insights
-│   ├── gdv_report_draft.md            # GDV report draft
-│   ├── ivi_report_draft.md            # IVI report draft
-│   └── final_report_draft.md          # Combined final report draft
-├── src/
-│   ├── build_worldcup_shots.py        # Builds processed World Cup shot dataset
-│   └── gdv_worldcup_analysis.py       # Final GDV tournament analysis figures
-├── SUBMISSION_CHECKLIST.md
+│   └── figures/
+│       ├── goal_fig01_passes_before_goals.png
+│       ├── goal_fig02_buildup_types.png
+│       ├── goal_fig04_passes_vs_duration.png
+│       ├── goal_final_01_team_buildup_style.png
+│       ├── goal_final_02_efficiency_stage.png
+│       ├── goal_final_03_direct_vs_patient.png
+│       ├── goal_final_04_buildup_type_share.png
+│       └── goal_fig13_spain_case_study.png
 ├── requirements.txt
 └── README.md
 ```
 
 ## Setup
 
-Create and activate a Python environment if needed. Then install the required packages:
+Install the required Python packages from the repository root:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Step 1: Build the processed shot dataset
+## Run the GDV notebook
 
-Run this command from the repository root:
-
-```bash
-python src/build_worldcup_shots.py
-```
-
-This creates:
+Open the notebook:
 
 ```text
-data/processed/world_cup_2022_shots.csv
-data/processed/world_cup_2022_team_summary.csv
+notebooks/01_goal_buildup_gdv.ipynb
 ```
 
-The script loads all FIFA World Cup 2022 matches from StatsBomb Open Data, extracts shot events, adds match metadata and calculates derived variables.
+Then run all cells from top to bottom.
 
-Generated variables include:
-
-- `x` and `y`: shot coordinates
-- `distance_to_goal`: distance from shot location to goal centre
-- `is_goal`: whether the shot resulted in a goal
-- `chance_quality`: Low, Medium or High based on xG
-
-## Step 2: Generate GDV figures
-
-Run:
-
-```bash
-python src/gdv_worldcup_analysis.py
-```
-
-This creates the GDV figures in:
+The notebook creates the processed data files and saves the final figures in:
 
 ```text
 reports/figures/
 ```
 
-The main GDV figures analyse:
+## Final GDV figures
 
-- top teams by shots
-- top teams by total xG
-- goals compared with xG
-- chance quality by team
-- shot locations
-- distance to goal vs xG
-- top players by total xG
-- Serbia vs Switzerland as case study
-
-It also creates:
+The final report should focus on these figures:
 
 ```text
-reports/gdv_insights.md
+goal_fig01_passes_before_goals.png
+goal_fig02_buildup_types.png
+goal_fig04_passes_vs_duration.png
+goal_final_01_team_buildup_style.png
+goal_final_02_efficiency_stage.png
+goal_final_03_direct_vs_patient.png
+goal_final_04_buildup_type_share.png
+goal_fig13_spain_case_study.png
 ```
 
-## Step 3: Run the IVI dashboard
+The heatmaps were used during exploration, but they are not central to the final argument because they were less directly interpretable for the research question.
 
-After the processed dataset exists, start the interactive dashboard with:
+## Main interpretation
 
-```bash
-python dashboard/app_worldcup.py
-```
+The analysis separates goal creation into pass count, build-up duration, finishing efficiency and tournament progress.
 
-Then open the dashboard in your browser:
+The goal is not to claim that one playing style is always better. Instead, the visualizations show that different teams created goals in different ways. Some goals were created through quick direct attacks, while others came after longer passing sequences.
 
-```text
-http://127.0.0.1:8050
-```
+Finishing efficiency and tournament progress are added as context. They help check whether more efficient teams tended to progress further, but this is interpreted as an association, not as causation.
 
-The dashboard provides:
+## Limitations
 
-- KPI cards for shots, goals, total xG, xG per shot and conversion rate
-- dependent filters for team, match and player
-- filters for shot outcome, chance quality and minute range
-- linked visualizations that update together
-- hover details for individual shots
-- shot map
-- timing chart
-- finishing efficiency chart
-- chance quality mix
-- player ranking
+The analysis is based on event data, not tracking data. Therefore, it shows ball actions such as passes and shots, but not the full movement of all players.
 
-## Current GDV results
+The possession field is used to identify the goal build-up phase. This is a reasonable approximation, but it is still a simplification of real match dynamics.
 
-The processed dataset contains:
-
-- 64 matches
-- 32 teams
-- 1494 shots
-- 195 goals
-
-Important findings:
-
-- Argentina had the highest shot volume with 110 shots.
-- Argentina also had the highest total xG with 20.99.
-- High-quality chances are usually closer to goal and more central.
-- Among teams with at least 10 shots, the Netherlands had the highest conversion rate at 27.10%.
-- The Serbia vs Switzerland case study connects the tournament overview to a concrete match.
-
-## GDV part
-
-The GDV part focuses on static visualization and design reasoning.
-
-Relevant files:
-
-```text
-src/build_worldcup_shots.py
-src/gdv_worldcup_analysis.py
-reports/figures/
-reports/gdv_insights.md
-reports/gdv_report_draft.md
-```
-
-## IVI part
-
-The IVI part uses the same processed CSV file:
-
-```text
-data/processed/world_cup_2022_shots.csv
-```
-
-Relevant files:
-
-```text
-dashboard/app_worldcup.py
-reports/ivi_report_draft.md
-evaluation/evaluation_tasks.md
-evaluation/sus_questionnaire.md
-evaluation/evaluation_results_template.csv
-```
-
-The dashboard follows the interaction principle:
-
-```text
-overview first, filter, then details on demand
-```
-
-Users start with the tournament overview and then filter down to a team, match or player.
-
-## Evaluation
-
-The evaluation material is stored in:
-
-```text
-evaluation/
-```
-
-The evaluation uses:
-
-- task-based user testing
-- think-aloud observation
-- SUS questionnaire
-- short qualitative feedback
-
-The planned tasks include finding the highest-xG team, comparing Argentina, analysing Serbia vs Switzerland, filtering high-quality chances and exploring top players.
-
-## Reproducibility
-
-To reproduce the current GDV results and start the IVI dashboard from scratch:
-
-```bash
-pip install -r requirements.txt
-python src/build_worldcup_shots.py
-python src/gdv_worldcup_analysis.py
-python dashboard/app_worldcup.py
-```
-
-Then check:
-
-```text
-data/processed/
-reports/figures/
-reports/gdv_insights.md
-http://127.0.0.1:8050
-```
-
-## Data source
-
-The project uses StatsBomb Open Data through the `statsbombpy` Python package.
+Team-level comparisons should be interpreted carefully because some teams scored fewer goals than others, which creates smaller samples.
