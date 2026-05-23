@@ -1,150 +1,109 @@
-# FIFA World Cup 2022 Goal Build-up Analysis
+# Goal Build-up Analysis
 
-This project analyses how goals were created during the FIFA World Cup 2022 using StatsBomb Open Data.
+Interactive Dash/Plotly dashboard for analysing goal build-ups at the FIFA World Cup 2022.
 
-The focus is on goal build-ups: successful passes in the same possession before a goal, attack duration, finishing efficiency and tournament progress.
+## Research Question
 
-## Module focus
+How are goals created at the FIFA World Cup 2022: through quick attacks with few passes or through longer passing sequences?
 
-This repository currently contains the GDV part of the project.
+The dashboard focuses on completed passes before goals, attack duration, team build-up style and concrete goal sequences.
 
-- **GDV – Fundamentals of Data Visualization:** static visual analysis, design reasoning and communication
-- **IVI – Interactive Visualization:** planned next step based on the same goal build-up data
+## Dataset
 
-## Research question
+The project uses StatsBomb Open Data for the FIFA World Cup 2022.
 
-**How are goals created at the FIFA World Cup 2022: through quick attacks with few passes or through longer passing sequences?**
+Used data fields include passes, shots, goals, teams, players, possessions, timestamps, match metadata and event coordinates.
 
-Additional question:
+This is event data only. The pitch view shows recorded event coordinates and does not show tracking data or invented player runs.
 
-**Does a team’s goal build-up style relate to finishing efficiency and tournament progress?**
+## What The Dashboard Shows
 
-## Use case
+- Goals analysed and core build-up metrics.
+- Distribution of quick, medium and long build-ups.
+- Team ranking by average completed passes before goal.
+- Relationship between completed passes and attack duration.
+- A selected goal build-up on a football pitch with event timeline.
 
-A coach, analyst or football fan wants to understand how goals are created. The goal is not only to know who scored, but how the ball moved before the goal.
+Build-up categories:
 
-The analysis answers:
+- Quick attack: 0-2 completed passes
+- Medium build-up: 3-6 completed passes
+- Long build-up: 7+ completed passes
 
-- How many successful passes happen before a goal?
-- Are goals more often created through quick, medium or long build-ups?
-- Which teams score after more direct attacks?
-- Which teams score after longer passing sequences?
-- Are more passes before a goal also linked to longer attack duration?
-- Is there a visible relationship between finishing efficiency and tournament progress?
-- What does a concrete Spain goal build-up look like as a case study?
+## Main Interactions
 
-## Data source
+- Filter by team, build-up type and match.
+- Select a goal from the goal dropdown.
+- Click a scatterplot point to inspect that goal on the pitch.
+- Click a build-up type bar to filter the dashboard.
+- Step through the selected event sequence with Previous, Next event and Show all.
 
-The project uses StatsBomb Open Data through the `statsbombpy` Python package.
+## How To Run
 
-The analysed competition is:
-
-```text
-FIFA World Cup 2022
-competition_id = 43
-season_id = 106
-```
-
-Relevant event data:
-
-- passes
-- shots
-- goals
-- possessions
-- pitch coordinates
-- match information
-- tournament stages
-
-## Method
-
-For each goal, the notebook identifies the same possession phase that directly led to the goal. Within this possession, it counts all successful passes by the scoring team before the shot.
-
-Build-ups are grouped into three categories:
-
-- **Quick:** 0 to 3 successful passes before the goal
-- **Medium:** 4 to 7 successful passes before the goal
-- **Long:** 8 or more successful passes before the goal
-
-The analysis also adds team-level shot data and tournament-stage information to compare build-up style with finishing efficiency and tournament progress.
-
-## Repository structure
-
-```text
-Football/
-├── data/
-│   └── processed/
-│       ├── goal_buildups.csv
-│       ├── goal_buildup_passes.csv
-│       └── team_tournament_context.csv
-├── notebooks/
-│   └── 01_goal_buildup_gdv.ipynb
-├── reports/
-│   └── figures/
-│       ├── goal_fig01_passes_before_goals.png
-│       ├── goal_fig02_buildup_types.png
-│       ├── goal_fig04_passes_vs_duration.png
-│       ├── goal_final_01_team_buildup_style.png
-│       ├── goal_final_02_efficiency_stage.png
-│       ├── goal_final_03_direct_vs_patient.png
-│       ├── goal_final_04_buildup_type_share.png
-│       └── goal_fig13_spain_case_study.png
-├── requirements.txt
-└── README.md
-```
-
-## Setup
-
-Install the required Python packages from the repository root:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run the GDV notebook
+Start the app:
 
-Open the notebook:
-
-```text
-notebooks/01_goal_buildup_gdv.ipynb
+```bash
+python app.py
 ```
 
-Then run all cells from top to bottom.
-
-The notebook creates the processed data files and saves the final figures in:
+Open the local URL shown in the terminal, usually:
 
 ```text
-reports/figures/
+http://127.0.0.1:8050/
 ```
 
-## Final GDV figures
-
-The final report should focus on these figures:
+## Project Structure
 
 ```text
-goal_fig01_passes_before_goals.png
-goal_fig02_buildup_types.png
-goal_fig04_passes_vs_duration.png
-goal_final_01_team_buildup_style.png
-goal_final_02_efficiency_stage.png
-goal_final_03_direct_vs_patient.png
-goal_final_04_buildup_type_share.png
-goal_fig13_spain_case_study.png
+Football/
+├── app.py
+├── requirements.txt
+├── README.md
+├── assets/
+│   └── style.css
+├── data/
+│   ├── raw/
+│   └── processed/
+│       ├── goals_df.csv
+│       ├── build_up_events_df.csv
+│       └── team_efficiency_df.csv
+├── src/
+│   ├── data_loader.py
+│   ├── preprocessing.py
+│   ├── metrics.py
+│   ├── figures.py
+│   ├── pitch_plots.py
+│   └── utils.py
+└── evaluation/
+    ├── tasks.md
+    ├── sus_questionnaire.md
+    └── evaluation_notes.md
 ```
-
-The heatmaps were used during exploration, but they are not central to the final argument because they were less directly interpretable for the research question.
-
-## Main interpretation
-
-The analysis separates goal creation into pass count, build-up duration, finishing efficiency and tournament progress.
-
-The goal is not to claim that one playing style is always better. Instead, the visualizations show that different teams created goals in different ways. Some goals were created through quick direct attacks, while others came after longer passing sequences.
-
-Finishing efficiency and tournament progress are added as context. They help check whether more efficient teams tended to progress further, but this is interpreted as an association, not as causation.
 
 ## Limitations
 
-The analysis is based on event data, not tracking data. Therefore, it shows ball actions such as passes and shots, but not the full movement of all players.
+- No tracking data is used, so off-ball movement and player runs are not shown.
+- The pitch sequence is a step-by-step event view, not a physical animation.
+- Legacy processed build-up files do not contain every original StatsBomb event field; pass recipients are inferred where necessary.
+- The dashboard is descriptive and does not claim causal relationships.
 
-The possession field is used to identify the goal build-up phase. This is a reasonable approximation, but it is still a simplification of real match dynamics.
+## IVI Design Rationale
 
-Team-level comparisons should be interpreted carefully because some teams scored fewer goals than others, which creates smaller samples.
+- Overview first: KPI cards and aggregate charts appear before detailed inspection.
+- Details on demand: hover tooltips and the selected goal view reveal event-level information.
+- Linked views: scatterplot clicks update the pitch, summary and timeline.
+- Filtering: team, build-up type and match filters update the goal list and charts.
+- Drill-down: users move from team-level patterns to a concrete goal build-up.
+- Performance: processed CSVs are loaded at startup, not recomputed inside callbacks.
+
+## Evaluation Plan
+
+The evaluation material is in `evaluation/`.
+
+Participants complete five short tasks, then answer the SUS questionnaire. Qualitative notes capture task success, confusion points, positive feedback and possible design changes.

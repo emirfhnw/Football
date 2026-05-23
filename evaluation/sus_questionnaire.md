@@ -2,7 +2,7 @@
 
 Use this questionnaire after the participant has completed the dashboard tasks.
 
-Each statement is rated from 1 to 5:
+Scale:
 
 1 = strongly disagree  
 2 = disagree  
@@ -10,7 +10,7 @@ Each statement is rated from 1 to 5:
 4 = agree  
 5 = strongly agree
 
-## Questions
+## Items
 
 1. I think that I would like to use this dashboard frequently.
 2. I found the dashboard unnecessarily complex.
@@ -23,39 +23,24 @@ Each statement is rated from 1 to 5:
 9. I felt very confident using the dashboard.
 10. I needed to learn a lot of things before I could get going with this dashboard.
 
-## SUS scoring
+## Scoring
 
-For odd-numbered questions:
+For odd-numbered items:
 
 ```text
 score = response - 1
 ```
 
-For even-numbered questions:
+For even-numbered items:
 
 ```text
 score = 5 - response
 ```
 
-Then sum all adjusted scores and multiply by 2.5.
+Then:
 
 ```text
 SUS = sum(adjusted_scores) * 2.5
 ```
 
 The final score is between 0 and 100.
-
-## Interpretation guide
-
-- below 50: poor usability
-- 50 to 68: acceptable but needs improvement
-- 68 to 80: good usability
-- above 80: very good usability
-
-## Additional open questions
-
-1. What was the easiest part of the dashboard?
-2. What was the most confusing part?
-3. Which visualization helped you most?
-4. What would you improve?
-5. Did the dashboard help you understand shot quality better?
