@@ -1,8 +1,6 @@
-# System Usability Scale (SUS) Questionnaire
+# System Usability Scale Questionnaire
 
-Use this questionnaire after the participant has completed the dashboard tasks.
-
-Scale:
+After completing the tasks, rate each statement from 1 to 5.
 
 1 = strongly disagree  
 2 = disagree  
@@ -25,22 +23,7 @@ Scale:
 
 ## Scoring
 
-For odd-numbered items:
+For odd-numbered items: response - 1.  
+For even-numbered items: 5 - response.
 
-```text
-score = response - 1
-```
-
-For even-numbered items:
-
-```text
-score = 5 - response
-```
-
-Then:
-
-```text
-SUS = sum(adjusted_scores) * 2.5
-```
-
-The final score is between 0 and 100.
+Sum the adjusted scores and multiply by 2.5.

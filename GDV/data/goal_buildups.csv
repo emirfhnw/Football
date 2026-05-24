@@ -1,196 +1,196 @@
-build_up_id,match_id,match_date,match_label,team,goal_player,goal_minute,goal_second,period,possession,play_pattern,passes_before_goal,duration_seconds,start_x,start_y,goal_x,goal_y
-3857256_1,3857256,2022-12-02,Serbia vs Switzerland,Switzerland,Xherdan Shaqiri,19,11,1,44,From Free Kick,5,18,29.7,74.2,107.5,50.6
-3857256_2,3857256,2022-12-02,Serbia vs Switzerland,Serbia,Aleksandar Mitrović,25,56,1,68,Regular Play,2,7,57.3,13.5,108.3,38.6
-3857256_3,3857256,2022-12-02,Serbia vs Switzerland,Serbia,Dušan Vlahović,34,28,1,82,From Counter,0,5,80.8,20.3,106.2,31.8
-3857256_4,3857256,2022-12-02,Serbia vs Switzerland,Switzerland,Breel-Donald Embolo,43,41,1,99,Regular Play,5,19,6.4,53.0,114.4,36.9
-3857256_5,3857256,2022-12-02,Serbia vs Switzerland,Switzerland,Remo Freuler,47,38,2,113,From Free Kick,9,34,49.4,25.9,107.2,41.2
-3869151_1,3869151,2022-12-03,Argentina vs Australia,Argentina,Lionel Andrés Messi Cuccittini,34,35,1,52,From Free Kick,4,8,100.4,52.7,104.2,48.9
-3869151_2,3869151,2022-12-03,Argentina vs Australia,Argentina,Julián Álvarez,56,41,2,89,Regular Play,0,13,115.4,22.8,110.4,50.3
-3857257_1,3857257,2022-11-30,Australia vs Denmark,Australia,Mathew Leckie,59,56,2,126,From Counter,4,10,20.6,34.2,105.7,31.5
-3857258_1,3857258,2022-11-24,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,58,2,116,Regular Play,20,59,45.3,71.0,114.5,41.8
-3857258_2,3857258,2022-11-24,Brazil vs Serbia,Brazil,Richarlison de Andrade,72,54,2,134,From Throw In,5,21,29.9,80.0,107.1,39.6
-3857288_1,3857288,2022-11-26,Tunisia vs Australia,Australia,Mitchell Thomas Duke,22,50,1,47,From Throw In,8,27,45.6,80.0,110.1,32.5
-3857267_1,3857267,2022-11-29,Ecuador vs Senegal,Senegal,Ismaïla Sarr,43,41,1,70,Other,0,0,108.0,40.0,108.0,40.0
-3857267_2,3857267,2022-11-29,Ecuador vs Senegal,Ecuador,Moisés Isaac Caicedo Corozo,66,58,2,126,From Corner,1,2,120.0,80.0,117.2,35.6
-3857267_3,3857267,2022-11-29,Ecuador vs Senegal,Senegal,Kalidou Koulibaly,69,30,2,128,From Free Kick,0,3,88.6,74.6,114.3,46.0
-3869321_1,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,4,1,57,From Throw In,11,43,64.9,80.0,109.1,42.4
-3869321_2,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Lionel Andrés Messi Cuccittini,72,39,2,126,Other,0,0,108.0,40.0,108.0,40.0
-3869321_3,3869321,2022-12-09,Netherlands vs Argentina,Netherlands,Wout Weghorst,82,17,2,137,From Free Kick,7,34,72.9,60.9,108.7,46.4
-3869321_4,3869321,2022-12-09,Netherlands vs Argentina,Netherlands,Wout Weghorst,100,32,2,166,From Free Kick,1,1,96.8,31.8,111.8,39.9
-3869321_5,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Lionel Andrés Messi Cuccittini,121,3,5,226,Other,0,0,108.1,40.1,108.1,40.1
-3869321_6,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Leandro Daniel Paredes,122,39,5,228,Other,0,0,108.1,40.1,108.1,40.1
-3869321_7,3869321,2022-12-09,Netherlands vs Argentina,Netherlands,Teun Koopmeiners,123,31,5,229,Other,0,0,108.1,40.1,108.1,40.1
-3869321_8,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Gonzalo Ariel Montiel,124,15,5,230,Other,0,0,108.1,40.1,108.1,40.1
-3869321_9,3869321,2022-12-09,Netherlands vs Argentina,Netherlands,Wout Weghorst,124,59,5,231,Other,0,0,108.1,40.1,108.1,40.1
-3869321_10,3869321,2022-12-09,Netherlands vs Argentina,Netherlands,Luuk de Jong,126,40,5,233,Other,0,0,108.1,40.1,108.1,40.1
-3869321_11,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Lautaro Javier Martínez,127,42,5,234,Other,0,0,108.1,40.1,108.1,40.1
-3869486_1,3869486,2022-12-10,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,36,1,76,From Free Kick,15,47,14.2,67.6,112.6,39.7
-3869685_1,3869685,2022-12-18,Argentina vs France,Argentina,Lionel Andrés Messi Cuccittini,22,24,1,32,Other,0,0,108.0,40.0,108.0,40.0
-3869685_2,3869685,2022-12-18,Argentina vs France,Argentina,Ángel Fabián Di María Hernández,35,22,1,52,From Counter,5,10,25.9,71.8,111.8,32.1
-3869685_3,3869685,2022-12-18,Argentina vs France,France,Kylian Mbappé Lottin,79,24,2,163,Other,0,0,108.0,40.0,108.0,40.0
-3869685_4,3869685,2022-12-18,Argentina vs France,France,Kylian Mbappé Lottin,80,59,2,165,From Throw In,9,46,56.5,80.0,104.8,30.1
-3869685_5,3869685,2022-12-18,Argentina vs France,Argentina,Lionel Andrés Messi Cuccittini,107,58,4,228,Regular Play,5,12,43.2,46.2,116.6,43.0
-3869685_6,3869685,2022-12-18,Argentina vs France,France,Kylian Mbappé Lottin,117,5,4,238,Other,0,0,108.0,40.0,108.0,40.0
-3869685_7,3869685,2022-12-18,Argentina vs France,France,Kylian Mbappé Lottin,120,13,5,248,Other,0,0,108.1,40.1,108.1,40.1
-3869685_8,3869685,2022-12-18,Argentina vs France,Argentina,Lionel Andrés Messi Cuccittini,121,2,5,249,Other,0,0,108.1,40.1,108.1,40.1
-3869685_9,3869685,2022-12-18,Argentina vs France,Argentina,Paulo Bruno Exequiel Dybala,122,27,5,251,Other,0,0,108.1,40.1,108.1,40.1
-3869685_10,3869685,2022-12-18,Argentina vs France,Argentina,Leandro Daniel Paredes,124,16,5,253,Other,0,0,108.1,40.1,108.1,40.1
-3869685_11,3869685,2022-12-18,Argentina vs France,France,Randal Kolo Muani,125,9,5,254,Other,0,0,108.1,40.1,108.1,40.1
-3869685_12,3869685,2022-12-18,Argentina vs France,Argentina,Gonzalo Ariel Montiel,125,57,5,255,Other,0,0,108.1,40.1,108.1,40.1
-3857260_1,3857260,2022-11-30,Saudi Arabia vs Mexico,Mexico,Henry Josué Martín Mex,46,52,2,112,From Corner,2,2,120.0,0.1,116.7,40.2
-3857260_2,3857260,2022-11-30,Saudi Arabia vs Mexico,Mexico,Luis Gerardo Chávez Magallón,51,56,2,120,From Free Kick,0,0,86.7,41.3,86.7,41.3
-3857260_3,3857260,2022-11-30,Saudi Arabia vs Mexico,Saudi Arabia,Salem Mohammed Al Dawsari,94,40,2,199,Regular Play,6,13,64.4,46.5,110.9,45.2
-3857264_1,3857264,2022-11-30,Poland vs Argentina,Argentina,Alexis Mac Allister,45,53,2,81,From Kick Off,17,53,60.0,40.0,106.0,46.7
-3857264_2,3857264,2022-11-30,Poland vs Argentina,Argentina,Julián Álvarez,66,57,2,107,From Free Kick,27,67,70.9,4.6,106.0,33.5
-3857266_1,3857266,2022-11-26,France vs Denmark,France,Kylian Mbappé Lottin,60,25,2,106,Regular Play,5,16,19.6,73.1,110.8,31.3
-3857266_2,3857266,2022-11-26,France vs Denmark,Denmark,Andreas Christensen,67,15,2,119,From Corner,1,2,120.0,80.0,113.0,37.6
-3857266_3,3857266,2022-11-26,France vs Denmark,France,Kylian Mbappé Lottin,85,9,2,144,From Goal Kick,9,35,7.0,44.1,117.8,36.5
-3857289_1,3857289,2022-11-26,Argentina vs Mexico,Argentina,Lionel Andrés Messi Cuccittini,63,32,2,105,From Goal Kick,7,24,7.0,36.1,94.9,37.4
-3857289_2,3857289,2022-11-26,Argentina vs Mexico,Argentina,Enzo Fernandez,86,39,2,144,From Corner,2,5,120.0,0.1,106.5,22.8
-3857269_1,3857269,2022-11-28,Brazil vs Switzerland,Brazil,Carlos Henrique Casimiro,82,15,2,146,Regular Play,9,29,26.3,8.5,106.3,29.4
-3857294_1,3857294,2022-11-29,Netherlands vs Qatar,Netherlands,Cody Mathès Gakpo,25,55,1,60,From Goal Kick,6,15,6.0,36.0,103.3,39.8
-3857294_2,3857294,2022-11-29,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,55,2,148,From Goal Kick,14,59,7.0,44.1,117.6,40.3
-3869254_1,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,16,43,1,33,From Throw In,2,5,100.4,0.1,111.3,27.5
-3869254_2,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Kléper Laveran Lima Ferreira,32,35,1,58,From Corner,1,2,120.0,80.0,114.3,40.0
-3869254_3,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,50,5,2,91,Regular Play,3,23,47.4,43.3,115.8,44.4
-3869254_4,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Raphaël Adelino José Guerreiro,54,55,2,96,From Free Kick,7,16,25.8,14.4,110.9,32.4
-3869254_5,3869254,2022-12-06,Portugal vs Switzerland,Switzerland,Manuel Obafemi Akanji,57,5,2,98,From Corner,0,2,120.0,80.0,118.7,35.4
-3869254_6,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,66,12,2,115,From Goal Kick,3,15,6.0,36.0,112.6,45.8
-3869254_7,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,12,2,157,From Free Kick,18,52,7.3,33.0,105.0,21.7
-3869118_1,3869118,2022-12-04,England vs Senegal,England,Jordan Brian Henderson,38,0,1,60,From Goal Kick,7,15,6.0,36.0,107.6,38.0
-3869118_2,3869118,2022-12-04,England vs Senegal,England,Harry Kane,47,17,1,73,Regular Play,2,5,63.5,44.1,104.3,50.7
-3869118_3,3869118,2022-12-04,England vs Senegal,England,Bukayo Saka,56,43,2,96,Regular Play,4,11,43.9,28.2,111.0,35.9
-3869684_1,3869684,2022-12-17,Croatia vs Morocco,Croatia,Joško Gvardiol,6,28,1,11,From Free Kick,2,2,84.6,21.0,108.8,38.0
-3869684_2,3869684,2022-12-17,Croatia vs Morocco,Morocco,Achraf Dari,8,17,1,13,From Free Kick,0,3,87.7,74.4,115.6,39.0
-3869684_3,3869684,2022-12-17,Croatia vs Morocco,Croatia,Mislav Oršić,41,43,1,71,Regular Play,16,46,10.8,51.9,106.5,21.3
-3869519_1,3869519,2022-12-13,Argentina vs Croatia,Argentina,Lionel Andrés Messi Cuccittini,33,27,1,54,Other,0,0,108.0,40.0,108.0,40.0
-3869519_2,3869519,2022-12-13,Argentina vs Croatia,Argentina,Julián Álvarez,38,26,1,61,From Counter,1,11,21.2,47.8,112.7,37.4
-3869519_3,3869519,2022-12-13,Argentina vs Croatia,Argentina,Julián Álvarez,68,46,2,127,From Throw In,3,14,42.5,80.0,113.3,45.4
-3869354_1,3869354,2022-12-10,England vs France,France,Aurélien Djani Tchouaméni,16,22,1,44,Regular Play,6,20,41.4,14.3,92.5,43.5
-3869354_2,3869354,2022-12-10,England vs France,England,Harry Kane,53,27,2,100,Other,0,0,108.1,40.1,108.1,40.1
-3869354_3,3869354,2022-12-10,England vs France,France,Olivier Giroud,77,10,2,151,From Corner,3,8,88.0,40.3,114.7,36.4
-3869552_1,3869552,2022-12-14,France vs Morocco,France,Theo Bernard François Hernández,4,40,1,6,From Throw In,16,60,61.1,0.1,115.7,31.5
-3869552_2,3869552,2022-12-14,France vs Morocco,France,Randal Kolo Muani,78,49,2,126,From Goal Kick,6,24,45.2,27.5,115.6,43.8
-3869420_1,3869420,2022-12-09,Croatia vs Brazil,Brazil,Neymar da Silva Santos Junior,105,35,3,229,From Throw In,7,17,92.0,80.0,116.5,47.2
-3869420_2,3869420,2022-12-09,Croatia vs Brazil,Croatia,Bruno Petković,116,2,4,246,Regular Play,5,30,55.3,11.6,103.2,38.6
-3869420_3,3869420,2022-12-09,Croatia vs Brazil,Croatia,Nikola Vlašić,120,3,5,258,Other,0,0,108.0,40.0,108.0,40.0
-3869420_4,3869420,2022-12-09,Croatia vs Brazil,Croatia,Lovro Majer,121,38,5,260,Other,0,0,108.0,40.0,108.0,40.0
-3869420_5,3869420,2022-12-09,Croatia vs Brazil,Brazil,Carlos Henrique Casimiro,122,17,5,261,Other,0,0,108.0,40.0,108.0,40.0
-3869420_6,3869420,2022-12-09,Croatia vs Brazil,Croatia,Luka Modrić,123,6,5,262,Other,0,0,108.0,40.0,108.0,40.0
-3869420_7,3869420,2022-12-09,Croatia vs Brazil,Brazil,Pedro Guilherme Abreu dos Santos,123,49,5,263,Other,0,0,108.0,40.0,108.0,40.0
-3869420_8,3869420,2022-12-09,Croatia vs Brazil,Croatia,Mislav Oršić,124,34,5,264,Other,0,0,108.0,40.0,108.0,40.0
-3869220_1,3869220,2022-12-06,Morocco vs Spain,Morocco,Abdelhamid Sabiri,120,7,5,224,Other,0,0,108.0,40.0,108.0,40.0
-3869220_2,3869220,2022-12-06,Morocco vs Spain,Morocco,Hakim Ziyech,121,51,5,226,Other,0,0,108.0,40.0,108.0,40.0
-3869220_3,3869220,2022-12-06,Morocco vs Spain,Morocco,Achraf Hakimi Mouh,125,36,5,230,Other,0,0,108.0,40.0,108.0,40.0
-3869219_1,3869219,2022-12-05,Japan vs Croatia,Japan,Daizen Maeda,42,54,1,60,From Corner,4,7,120.0,80.0,113.5,44.3
-3869219_2,3869219,2022-12-05,Japan vs Croatia,Croatia,Ivan Perišić,54,54,2,87,Regular Play,16,52,32.6,54.6,106.0,34.1
-3869219_3,3869219,2022-12-05,Japan vs Croatia,Croatia,Nikola Vlašić,120,43,5,226,Other,0,0,108.1,40.1,108.1,40.1
-3869219_4,3869219,2022-12-05,Japan vs Croatia,Croatia,Marcelo Brozović,121,52,5,228,Other,0,0,108.1,40.1,108.1,40.1
-3869219_5,3869219,2022-12-05,Japan vs Croatia,Japan,Takuma Asano,122,33,5,229,Other,0,0,108.1,40.1,108.1,40.1
-3869219_6,3869219,2022-12-05,Japan vs Croatia,Croatia,Mario Pašalić,124,28,5,232,Other,0,0,108.1,40.1,108.1,40.1
-3869253_1,3869253,2022-12-05,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,41,1,13,From Free Kick,13,49,40.5,54.3,110.0,29.9
-3869253_2,3869253,2022-12-05,Brazil vs South Korea,Brazil,Neymar da Silva Santos Junior,12,18,1,17,Other,0,0,108.0,40.0,108.0,40.0
-3869253_3,3869253,2022-12-05,Brazil vs South Korea,Brazil,Richarlison de Andrade,28,13,1,46,From Corner,6,30,93.4,32.1,110.7,43.3
-3869253_4,3869253,2022-12-05,Brazil vs South Korea,Brazil,Lucas Tolentino Coelho de Lima,35,45,1,55,From Throw In,6,20,10.9,0.1,110.0,44.8
-3869253_5,3869253,2022-12-05,Brazil vs South Korea,South Korea,Seung-Ho Paik,75,47,2,136,From Free Kick,0,3,89.5,66.9,93.7,39.8
-3869152_1,3869152,2022-12-04,France vs Poland,France,Olivier Giroud,43,28,1,73,From Throw In,11,26,94.8,80.0,105.6,32.3
-3869152_2,3869152,2022-12-04,France vs Poland,France,Kylian Mbappé Lottin,73,56,2,121,Regular Play,4,16,8.8,39.3,104.8,28.6
-3869152_3,3869152,2022-12-04,France vs Poland,France,Kylian Mbappé Lottin,90,5,2,143,Regular Play,8,23,51.8,22.2,106.2,25.2
-3869152_4,3869152,2022-12-04,France vs Poland,Poland,Robert Lewandowski,98,36,2,152,Other,0,0,108.0,40.0,108.0,40.0
-3869117_1,3869117,2022-12-03,Netherlands vs United States,Netherlands,Memphis Depay,9,31,1,20,Regular Play,21,63,80.5,25.7,104.9,43.7
-3869117_2,3869117,2022-12-03,Netherlands vs United States,Netherlands,Daley Blind,45,36,1,72,From Throw In,4,9,106.1,80.0,107.6,38.5
-3869117_3,3869117,2022-12-03,Netherlands vs United States,United States,Haji Wright,75,20,2,125,From Corner,4,6,82.4,48.5,115.1,45.2
-3869117_4,3869117,2022-12-03,Netherlands vs United States,Netherlands,Denzel Dumfries,80,28,2,137,From Keeper,8,27,15.0,34.8,113.5,44.3
-3857270_1,3857270,2022-11-28,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,40,2,94,Regular Play,14,42,7.3,40.0,99.4,14.6
-3857270_2,3857270,2022-11-28,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,92,19,2,161,Other,0,0,108.0,40.0,108.0,40.0
-3857263_1,3857263,2022-11-27,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,33,2,131,From Goal Kick,16,44,7.0,36.1,113.2,34.3
-3857263_2,3857263,2022-11-27,Spain vs Germany,Germany,Niclas Füllkrug,82,25,2,169,From Counter,2,5,79.5,75.6,110.8,51.9
-3857259_1,3857259,2022-11-28,Cameroon vs Serbia,Cameroon,Jean-Charles Castelletto,28,7,1,52,From Corner,1,2,120.0,0.1,118.5,43.2
-3857259_2,3857259,2022-11-28,Cameroon vs Serbia,Serbia,Strahinja Pavlović,45,22,1,80,From Free Kick,1,2,86.0,26.7,110.7,42.8
-3857259_3,3857259,2022-11-28,Cameroon vs Serbia,Serbia,Sergej Milinković-Savić,47,52,1,83,From Throw In,3,14,64.7,0.1,99.6,46.7
-3857259_4,3857259,2022-11-28,Cameroon vs Serbia,Serbia,Aleksandar Mitrović,52,26,2,105,Regular Play,4,7,95.5,27.8,113.6,40.2
-3857259_5,3857259,2022-11-28,Cameroon vs Serbia,Cameroon,Vincent Paté Aboubakar,62,52,2,122,From Goal Kick,4,20,6.0,44.0,104.4,49.0
-3857259_6,3857259,2022-11-28,Cameroon vs Serbia,Cameroon,Jean-Eric Maxim Choupo-Moting,65,25,2,124,From Counter,2,6,40.5,48.9,111.0,37.0
-3857295_1,3857295,2022-11-27,Japan vs Costa Rica,Costa Rica,Keysher Fuller Spence,80,8,2,143,Regular Play,1,2,92.3,47.7,102.6,47.5
-3857283_1,3857283,2022-11-27,Belgium vs Morocco,Morocco,Romain Saïss,72,37,2,128,From Free Kick,1,1,114.1,3.6,118.0,36.4
-3857283_2,3857283,2022-11-27,Belgium vs Morocco,Morocco,Zakaria Aboukhlal,91,51,2,156,From Goal Kick,4,12,6.0,36.0,110.3,46.8
-3857284_1,3857284,2022-11-23,Germany vs Japan,Germany,İlkay Gündoğan,32,35,1,56,Other,0,0,108.0,40.0,108.0,40.0
-3857284_2,3857284,2022-11-23,Germany vs Japan,Japan,Ritsu Doan,74,46,2,141,From Throw In,12,48,38.3,80.0,112.1,41.5
-3857284_3,3857284,2022-11-23,Germany vs Japan,Japan,Takuma Asano,82,42,2,151,From Free Kick,1,6,39.2,71.1,117.7,50.2
-3857282_1,3857282,2022-11-21,United States vs Wales,United States,Timothy Weah,35,12,1,60,From Counter,6,12,26.2,21.8,107.7,37.8
-3857282_2,3857282,2022-11-21,United States vs Wales,Wales,Gareth Frank Bale,81,33,2,144,Other,0,0,108.0,40.0,108.0,40.0
-3857286_1,3857286,2022-11-20,Qatar vs Ecuador,Ecuador,Enner Remberto Valencia Lastra,15,49,1,25,Other,0,0,108.1,40.1,108.1,40.1
-3857286_2,3857286,2022-11-20,Qatar vs Ecuador,Ecuador,Enner Remberto Valencia Lastra,30,44,1,49,Regular Play,2,3,112.6,71.8,109.6,38.0
-3857301_1,3857301,2022-11-25,Qatar vs Senegal,Senegal,Boulaye Dia,40,20,1,70,Regular Play,10,39,58.2,43.4,107.2,33.3
-3857301_2,3857301,2022-11-25,Qatar vs Senegal,Senegal,Famara Diedhiou,47,51,2,96,From Corner,1,1,120.0,80.0,112.5,48.1
-3857301_3,3857301,2022-11-25,Qatar vs Senegal,Qatar,Mohammed Muntari,77,39,2,147,From Free Kick,6,30,64.0,39.1,110.1,38.7
-3857301_4,3857301,2022-11-25,Qatar vs Senegal,Senegal,Cheikh Ahmadou Bamba Mbacke Dieng,83,6,2,155,From Throw In,4,12,55.7,73.3,107.8,45.3
-3857300_1,3857300,2022-11-22,Argentina vs Saudi Arabia,Argentina,Lionel Andrés Messi Cuccittini,9,15,1,10,Other,0,0,108.0,40.0,108.0,40.0
-3857300_2,3857300,2022-11-22,Argentina vs Saudi Arabia,Saudi Arabia,Saleh Khalid Al Shehri,47,40,2,78,From Free Kick,5,18,49.9,24.7,108.0,29.6
-3857300_3,3857300,2022-11-22,Argentina vs Saudi Arabia,Saudi Arabia,Salem Mohammed Al Dawsari,52,44,2,88,Regular Play,4,31,66.4,2.7,102.4,25.3
-3857299_1,3857299,2022-11-28,South Korea vs Ghana,Ghana,Mohamed Salisu,23,43,1,38,From Free Kick,0,2,92.9,2.9,115.5,37.9
-3857299_2,3857299,2022-11-28,South Korea vs Ghana,Ghana,Mohammed Kudus,33,49,1,51,From Goal Kick,31,94,7.0,44.1,113.1,41.8
-3857299_3,3857299,2022-11-28,South Korea vs Ghana,South Korea,Gue-Sung Cho,57,19,2,95,Regular Play,6,28,16.8,6.3,112.6,38.4
-3857299_4,3857299,2022-11-28,South Korea vs Ghana,South Korea,Gue-Sung Cho,60,7,2,99,From Throw In,8,29,76.4,0.1,115.5,43.7
-3857299_5,3857299,2022-11-28,South Korea vs Ghana,Ghana,Mohammed Kudus,67,52,2,113,From Free Kick,8,22,50.6,61.6,108.4,48.6
-3857298_1,3857298,2022-11-24,Portugal vs Ghana,Portugal,Cristiano Ronaldo dos Santos Aveiro,64,20,2,119,Other,0,0,108.1,40.1,108.1,40.1
-3857298_2,3857298,2022-11-24,Portugal vs Ghana,Ghana,André Ayew Pelé,72,11,2,134,From Keeper,5,25,56.7,64.4,115.6,39.8
-3857298_3,3857298,2022-11-24,Portugal vs Ghana,Portugal,João Félix Sequeira,77,6,2,143,Regular Play,3,8,46.0,11.0,107.5,52.6
-3857298_4,3857298,2022-11-24,Portugal vs Ghana,Portugal,Rafael Alexandre Conceição Leão,79,21,2,147,Regular Play,2,8,56.1,43.9,111.7,28.3
-3857298_5,3857298,2022-11-24,Portugal vs Ghana,Ghana,Osman Bukari,88,28,2,163,From Throw In,3,13,51.8,80.0,113.5,40.2
-3857297_1,3857297,2022-11-26,Poland vs Saudi Arabia,Poland,Piotr Zieliński,38,57,1,68,From Goal Kick,5,14,6.0,36.0,111.9,44.7
-3857297_2,3857297,2022-11-26,Poland vs Saudi Arabia,Poland,Robert Lewandowski,81,28,2,157,From Goal Kick,0,13,94.7,68.6,107.2,44.6
-3857293_1,3857293,2022-12-02,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,25,30,1,48,Regular Play,5,23,48.0,49.4,118.0,42.7
-3857293_2,3857293,2022-12-02,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,2,1,57,From Free Kick,10,18,75.4,18.1,110.8,31.2
-3857292_1,3857292,2022-12-01,Costa Rica vs Germany,Germany,Serge Gnabry,9,31,1,17,Regular Play,3,9,53.4,13.9,111.9,33.1
-3857292_2,3857292,2022-12-01,Costa Rica vs Germany,Costa Rica,Yeltsin Ignacio Tejeda Valverde,57,39,2,122,Regular Play,3,9,70.8,76.4,114.3,38.1
-3857292_3,3857292,2022-12-01,Costa Rica vs Germany,Germany,Kai Havertz,72,4,2,143,From Kick Off,18,65,60.0,40.0,109.3,42.6
-3857292_4,3857292,2022-12-01,Costa Rica vs Germany,Germany,Kai Havertz,84,2,2,165,Regular Play,8,23,34.7,51.4,113.1,37.6
-3857292_5,3857292,2022-12-01,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,13,2,178,From Throw In,17,81,49.4,0.1,114.8,42.5
-3857291_1,3857291,2022-11-23,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,52,1,19,From Throw In,26,75,110.5,80.0,112.3,39.3
-3857291_2,3857291,2022-11-23,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,32,1,35,Regular Play,26,79,36.1,54.2,105.8,33.4
-3857291_3,3857291,2022-11-23,Spain vs Costa Rica,Spain,Ferrán Torres García,30,9,1,42,Other,0,0,108.1,40.1,108.1,40.1
-3857291_4,3857291,2022-11-23,Spain vs Costa Rica,Spain,Ferrán Torres García,53,41,2,80,From Corner,33,98,120.0,80.0,114.7,49.4
-3857291_5,3857291,2022-11-23,Spain vs Costa Rica,Spain,Pablo Martín Páez Gavira,73,59,2,112,From Free Kick,4,28,32.1,48.1,103.0,45.8
-3857291_6,3857291,2022-11-23,Spain vs Costa Rica,Spain,Carlos Soler Barragán,89,11,2,132,Regular Play,6,24,40.8,8.1,109.7,40.1
-3857291_7,3857291,2022-11-23,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,57,2,135,From Keeper,23,65,15.8,30.0,104.0,36.4
-3857290_1,3857290,2022-11-24,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,33,2,83,From Throw In,13,30,98.9,0.1,111.9,39.5
-3857285_1,3857285,2022-11-21,Senegal vs Netherlands,Netherlands,Cody Mathès Gakpo,83,50,2,149,Regular Play,6,16,108.1,70.9,112.3,39.0
-3857285_2,3857285,2022-11-21,Senegal vs Netherlands,Netherlands,Davy Klaassen,98,18,2,176,Regular Play,8,24,35.7,30.4,109.5,34.8
-3857281_1,3857281,2022-11-27,Croatia vs Canada,Canada,Alphonso Davies,1,8,1,3,Regular Play,11,40,15.4,39.2,109.6,36.4
-3857281_2,3857281,2022-11-27,Croatia vs Canada,Croatia,Andrej Kramarić,35,53,1,64,From Corner,6,13,100.2,11.2,114.1,29.4
-3857281_3,3857281,2022-11-27,Croatia vs Canada,Croatia,Marko Livaja,43,32,1,74,From Free Kick,12,31,33.3,56.0,101.0,39.1
-3857281_4,3857281,2022-11-27,Croatia vs Canada,Croatia,Andrej Kramarić,69,36,2,142,Regular Play,6,21,43.7,53.8,106.8,47.1
-3857281_5,3857281,2022-11-27,Croatia vs Canada,Croatia,Lovro Majer,93,26,2,198,Regular Play,1,1,105.0,34.2,109.2,45.4
-3857280_1,3857280,2022-12-02,Cameroon vs Brazil,Cameroon,Vincent Paté Aboubakar,91,48,2,157,Regular Play,4,11,43.7,3.1,106.7,40.7
-3857279_1,3857279,2022-11-22,France vs Australia,Australia,Craig Goodwin,8,24,1,15,From Throw In,6,17,97.5,0.1,114.2,31.3
-3857279_2,3857279,2022-11-22,France vs Australia,France,Adrien Rabiot,26,2,1,40,From Corner,2,4,80.8,31.8,111.6,42.0
-3857279_3,3857279,2022-11-22,France vs Australia,France,Olivier Giroud,31,18,1,48,Regular Play,2,3,104.7,9.2,110.5,39.2
-3857279_4,3857279,2022-11-22,France vs Australia,France,Kylian Mbappé Lottin,67,3,2,101,Regular Play,29,87,33.6,13.2,113.5,42.2
-3857279_5,3857279,2022-11-22,France vs Australia,France,Olivier Giroud,70,50,2,106,From Free Kick,7,24,45.1,3.9,113.5,42.6
-3857278_1,3857278,2022-11-29,Iran vs United States,United States,Christian Pulisic,37,49,1,73,Regular Play,11,30,42.8,62.6,115.1,38.7
-3857276_1,3857276,2022-12-01,Canada vs Morocco,Morocco,Hakim Ziyech,3,29,1,8,From Throw In,1,11,47.0,3.7,83.9,45.0
-3857276_2,3857276,2022-12-01,Canada vs Morocco,Morocco,Youssef En-Nesyri,22,36,1,40,From Throw In,6,24,63.3,80.0,107.6,53.2
-3857275_1,3857275,2022-11-30,Tunisia vs France,Tunisia,Wahbi Khazri,57,20,2,120,Regular Play,2,7,65.4,48.6,103.3,37.8
-3857274_1,3857274,2022-11-25,Netherlands vs Ecuador,Netherlands,Cody Mathès Gakpo,5,3,1,11,From Throw In,4,18,55.7,80.0,100.6,31.0
-3857274_2,3857274,2022-11-25,Netherlands vs Ecuador,Ecuador,Enner Remberto Valencia Lastra,48,44,2,95,From Counter,2,6,78.7,44.6,116.0,38.1
-3857273_1,3857273,2022-11-25,Wales vs Iran,Iran,Roozbeh Cheshmi,97,56,2,187,From Throw In,6,43,48.2,80.0,95.1,37.5
-3857273_2,3857273,2022-11-25,Wales vs Iran,Iran,Ramin Rezaeian,100,37,2,190,From Counter,1,3,95.7,27.3,104.8,45.3
-3857271_1,3857271,2022-11-21,England vs Iran,England,Jude Bellingham,34,9,1,43,Regular Play,17,68,18.6,65.8,112.0,38.0
-3857271_2,3857271,2022-11-21,England vs Iran,England,Bukayo Saka,42,46,1,54,From Corner,2,3,120.0,0.1,104.1,38.5
-3857271_3,3857271,2022-11-21,England vs Iran,England,Raheem Sterling,45,17,1,57,Regular Play,7,25,40.8,24.1,111.0,42.8
-3857271_4,3857271,2022-11-21,England vs Iran,England,Bukayo Saka,61,26,2,106,Regular Play,2,11,57.4,16.4,105.3,46.3
-3857271_5,3857271,2022-11-21,England vs Iran,Iran,Mehdi Taremi,64,33,2,111,From Throw In,6,18,97.9,80.0,109.7,48.0
-3857271_6,3857271,2022-11-21,England vs Iran,England,Marcus Rashford,70,51,2,114,From Goal Kick,3,12,26.7,7.2,109.7,47.7
-3857271_7,3857271,2022-11-21,England vs Iran,England,Jack Grealish,89,1,2,135,From Free Kick,35,86,64.2,36.9,112.0,39.9
-3857271_8,3857271,2022-11-21,England vs Iran,Iran,Mehdi Taremi,102,30,2,153,Other,0,0,108.0,40.0,108.0,40.0
-3857268_1,3857268,2022-11-23,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,32,1,73,Regular Play,24,89,46.1,50.8,109.0,36.1
-3857262_1,3857262,2022-12-02,South Korea vs Portugal,Portugal,Ricardo Jorge Luz Horta,4,53,1,7,From Goal Kick,8,27,7.0,36.1,113.6,47.0
-3857262_2,3857262,2022-12-02,South Korea vs Portugal,South Korea,Young-Gwon Kim,26,43,1,36,From Corner,0,2,120.0,0.1,116.7,38.0
-3857262_3,3857262,2022-12-02,South Korea vs Portugal,South Korea,Hee-Chan Hwang,90,28,2,186,From Counter,1,1,98.3,52.3,108.3,44.6
-3857261_1,3857261,2022-11-29,Wales vs England,England,Marcus Rashford,49,17,2,93,From Free Kick,0,0,96.1,29.3,96.1,29.3
-3857261_2,3857261,2022-11-29,Wales vs England,England,Philip Foden,50,53,2,95,Regular Play,1,1,115.8,58.9,114.5,34.1
-3857261_3,3857261,2022-11-29,Wales vs England,England,Marcus Rashford,67,40,2,119,From Throw In,14,44,51.9,0.1,109.9,50.3
-3857255_1,3857255,2022-12-01,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,0,1,15,Regular Play,30,106,27.6,23.0,115.3,38.3
-3857255_2,3857255,2022-12-01,Japan vs Spain,Japan,Ritsu Doan,47,48,2,68,Regular Play,1,4,93.0,70.1,100.5,55.8
-3857255_3,3857255,2022-12-01,Japan vs Spain,Japan,Ao Tanaka,50,14,2,71,From Free Kick,5,13,25.6,10.6,118.7,40.2
+build_up_id,match_id,match_date,match_label,team,goal_player,goal_minute,goal_second,period,possession,play_pattern,formation,passes_before_goal,duration_seconds,players_involved,start_x,start_y,start_third,goal_x,goal_y,attack_type
+3857256_1,3857256,2022-12-02,Serbia vs Switzerland,Switzerland,Xherdan Shaqiri,19,11,1,44,From Free Kick,4231,5,18,6,29.7,74.2,Defensives Drittel,107.5,50.6,Trainerregel (4–5)
+3857256_2,3857256,2022-12-02,Serbia vs Switzerland,Serbia,Aleksandar Mitrović,25,56,1,68,Regular Play,3412,2,7,3,57.3,13.5,Mittleres Drittel,108.3,38.6,Sehr direkt (0–3)
+3857256_3,3857256,2022-12-02,Serbia vs Switzerland,Serbia,Dušan Vlahović,34,28,1,82,From Counter,3412,0,5,1,80.8,20.3,Offensives Drittel,106.2,31.8,Sehr direkt (0–3)
+3857256_4,3857256,2022-12-02,Serbia vs Switzerland,Switzerland,Breel-Donald Embolo,43,41,1,99,Regular Play,4231,5,19,6,6.4,53.0,Defensives Drittel,114.4,36.9,Trainerregel (4–5)
+3857256_5,3857256,2022-12-02,Serbia vs Switzerland,Switzerland,Remo Freuler,47,38,2,113,From Free Kick,4231,9,34,7,49.4,25.9,Mittleres Drittel,107.2,41.2,Langer Aufbau (9+)
+3869151_1,3869151,2022-12-03,Argentina vs Australia,Argentina,Lionel Andrés Messi Cuccittini,34,35,1,52,From Free Kick,433,4,8,4,100.4,52.7,Offensives Drittel,104.2,48.9,Trainerregel (4–5)
+3869151_2,3869151,2022-12-03,Argentina vs Australia,Argentina,Julián Álvarez,56,41,2,89,Regular Play,433,0,13,1,115.4,22.8,Offensives Drittel,110.4,50.3,Sehr direkt (0–3)
+3857257_1,3857257,2022-11-30,Australia vs Denmark,Australia,Mathew Leckie,59,56,2,126,From Counter,442,4,10,5,20.6,34.2,Defensives Drittel,105.7,31.5,Trainerregel (4–5)
+3857258_1,3857258,2022-11-24,Brazil vs Serbia,Brazil,Richarlison de Andrade,61,58,2,116,Regular Play,4231,20,59,9,45.3,71.0,Mittleres Drittel,114.5,41.8,Langer Aufbau (9+)
+3857258_2,3857258,2022-11-24,Brazil vs Serbia,Brazil,Richarlison de Andrade,72,54,2,134,From Throw In,4231,5,21,5,29.9,80.0,Defensives Drittel,107.1,39.6,Trainerregel (4–5)
+3857288_1,3857288,2022-11-26,Tunisia vs Australia,Australia,Mitchell Thomas Duke,22,50,1,47,From Throw In,442,8,27,7,45.6,80.0,Mittleres Drittel,110.1,32.5,Mittlerer Aufbau (6–8)
+3857267_1,3857267,2022-11-29,Ecuador vs Senegal,Senegal,Ismaïla Sarr,43,41,1,70,Other,4231,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3857267_2,3857267,2022-11-29,Ecuador vs Senegal,Ecuador,Moisés Isaac Caicedo Corozo,66,58,2,126,From Corner,433,1,2,2,120.0,80.0,Offensives Drittel,117.2,35.6,Sehr direkt (0–3)
+3857267_3,3857267,2022-11-29,Ecuador vs Senegal,Senegal,Kalidou Koulibaly,69,30,2,128,From Free Kick,4231,0,3,1,88.6,74.6,Offensives Drittel,114.3,46.0,Sehr direkt (0–3)
+3869321_1,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Nahuel Molina Lucero,34,4,1,57,From Throw In,352,11,43,6,64.9,80.0,Mittleres Drittel,109.1,42.4,Langer Aufbau (9+)
+3869321_2,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Lionel Andrés Messi Cuccittini,72,39,2,126,Other,352,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869321_3,3869321,2022-12-09,Netherlands vs Argentina,Netherlands,Wout Weghorst,82,17,2,137,From Free Kick,3412,7,34,6,72.9,60.9,Mittleres Drittel,108.7,46.4,Mittlerer Aufbau (6–8)
+3869321_4,3869321,2022-12-09,Netherlands vs Argentina,Netherlands,Wout Weghorst,100,32,2,166,From Free Kick,3412,1,1,2,96.8,31.8,Offensives Drittel,111.8,39.9,Sehr direkt (0–3)
+3869321_5,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Lionel Andrés Messi Cuccittini,121,3,5,226,Other,352,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869321_6,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Leandro Daniel Paredes,122,39,5,228,Other,352,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869321_7,3869321,2022-12-09,Netherlands vs Argentina,Netherlands,Teun Koopmeiners,123,31,5,229,Other,3412,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869321_8,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Gonzalo Ariel Montiel,124,15,5,230,Other,352,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869321_9,3869321,2022-12-09,Netherlands vs Argentina,Netherlands,Wout Weghorst,124,59,5,231,Other,3412,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869321_10,3869321,2022-12-09,Netherlands vs Argentina,Netherlands,Luuk de Jong,126,40,5,233,Other,3412,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869321_11,3869321,2022-12-09,Netherlands vs Argentina,Argentina,Lautaro Javier Martínez,127,42,5,234,Other,352,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869486_1,3869486,2022-12-10,Morocco vs Portugal,Morocco,Youssef En-Nesyri,41,36,1,76,From Free Kick,4141,15,47,9,14.2,67.6,Defensives Drittel,112.6,39.7,Langer Aufbau (9+)
+3869685_1,3869685,2022-12-18,Argentina vs France,Argentina,Lionel Andrés Messi Cuccittini,22,24,1,32,Other,433,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869685_2,3869685,2022-12-18,Argentina vs France,Argentina,Ángel Fabián Di María Hernández,35,22,1,52,From Counter,433,5,10,5,25.9,71.8,Defensives Drittel,111.8,32.1,Trainerregel (4–5)
+3869685_3,3869685,2022-12-18,Argentina vs France,France,Kylian Mbappé Lottin,79,24,2,163,Other,4231,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869685_4,3869685,2022-12-18,Argentina vs France,France,Kylian Mbappé Lottin,80,59,2,165,From Throw In,4231,9,46,7,56.5,80.0,Mittleres Drittel,104.8,30.1,Langer Aufbau (9+)
+3869685_5,3869685,2022-12-18,Argentina vs France,Argentina,Lionel Andrés Messi Cuccittini,107,58,4,228,Regular Play,433,5,12,5,43.2,46.2,Mittleres Drittel,116.6,43.0,Trainerregel (4–5)
+3869685_6,3869685,2022-12-18,Argentina vs France,France,Kylian Mbappé Lottin,117,5,4,238,Other,4231,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869685_7,3869685,2022-12-18,Argentina vs France,France,Kylian Mbappé Lottin,120,13,5,248,Other,4231,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869685_8,3869685,2022-12-18,Argentina vs France,Argentina,Lionel Andrés Messi Cuccittini,121,2,5,249,Other,433,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869685_9,3869685,2022-12-18,Argentina vs France,Argentina,Paulo Bruno Exequiel Dybala,122,27,5,251,Other,433,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869685_10,3869685,2022-12-18,Argentina vs France,Argentina,Leandro Daniel Paredes,124,16,5,253,Other,433,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869685_11,3869685,2022-12-18,Argentina vs France,France,Randal Kolo Muani,125,9,5,254,Other,4231,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869685_12,3869685,2022-12-18,Argentina vs France,Argentina,Gonzalo Ariel Montiel,125,57,5,255,Other,433,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3857260_1,3857260,2022-11-30,Saudi Arabia vs Mexico,Mexico,Henry Josué Martín Mex,46,52,2,112,From Corner,4231,2,2,3,120.0,0.1,Offensives Drittel,116.7,40.2,Sehr direkt (0–3)
+3857260_2,3857260,2022-11-30,Saudi Arabia vs Mexico,Mexico,Luis Gerardo Chávez Magallón,51,56,2,120,From Free Kick,4231,0,0,1,86.7,41.3,Offensives Drittel,86.7,41.3,Sehr direkt (0–3)
+3857260_3,3857260,2022-11-30,Saudi Arabia vs Mexico,Saudi Arabia,Salem Mohammed Al Dawsari,94,40,2,199,Regular Play,442,6,13,5,64.4,46.5,Mittleres Drittel,110.9,45.2,Mittlerer Aufbau (6–8)
+3857264_1,3857264,2022-11-30,Poland vs Argentina,Argentina,Alexis Mac Allister,45,53,2,81,From Kick Off,433,17,53,9,60.0,40.0,Mittleres Drittel,106.0,46.7,Langer Aufbau (9+)
+3857264_2,3857264,2022-11-30,Poland vs Argentina,Argentina,Julián Álvarez,66,57,2,107,From Free Kick,433,27,67,10,70.9,4.6,Mittleres Drittel,106.0,33.5,Langer Aufbau (9+)
+3857266_1,3857266,2022-11-26,France vs Denmark,France,Kylian Mbappé Lottin,60,25,2,106,Regular Play,4231,5,16,3,19.6,73.1,Defensives Drittel,110.8,31.3,Trainerregel (4–5)
+3857266_2,3857266,2022-11-26,France vs Denmark,Denmark,Andreas Christensen,67,15,2,119,From Corner,343,1,2,2,120.0,80.0,Offensives Drittel,113.0,37.6,Sehr direkt (0–3)
+3857266_3,3857266,2022-11-26,France vs Denmark,France,Kylian Mbappé Lottin,85,9,2,144,From Goal Kick,4231,9,35,8,7.0,44.1,Defensives Drittel,117.8,36.5,Langer Aufbau (9+)
+3857289_1,3857289,2022-11-26,Argentina vs Mexico,Argentina,Lionel Andrés Messi Cuccittini,63,32,2,105,From Goal Kick,442,7,24,5,7.0,36.1,Defensives Drittel,94.9,37.4,Mittlerer Aufbau (6–8)
+3857289_2,3857289,2022-11-26,Argentina vs Mexico,Argentina,Enzo Fernandez,86,39,2,144,From Corner,442,2,5,3,120.0,0.1,Offensives Drittel,106.5,22.8,Sehr direkt (0–3)
+3857269_1,3857269,2022-11-28,Brazil vs Switzerland,Brazil,Carlos Henrique Casimiro,82,15,2,146,Regular Play,433,9,29,7,26.3,8.5,Defensives Drittel,106.3,29.4,Langer Aufbau (9+)
+3857294_1,3857294,2022-11-29,Netherlands vs Qatar,Netherlands,Cody Mathès Gakpo,25,55,1,60,From Goal Kick,3412,6,15,6,6.0,36.0,Defensives Drittel,103.3,39.8,Mittlerer Aufbau (6–8)
+3857294_2,3857294,2022-11-29,Netherlands vs Qatar,Netherlands,Frenkie de Jong,48,55,2,148,From Goal Kick,3412,14,59,9,7.0,44.1,Defensives Drittel,117.6,40.3,Langer Aufbau (9+)
+3869254_1,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,16,43,1,33,From Throw In,433,2,5,3,100.4,0.1,Offensives Drittel,111.3,27.5,Sehr direkt (0–3)
+3869254_2,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Kléper Laveran Lima Ferreira,32,35,1,58,From Corner,433,1,2,2,120.0,80.0,Offensives Drittel,114.3,40.0,Sehr direkt (0–3)
+3869254_3,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,50,5,2,91,Regular Play,433,3,23,4,47.4,43.3,Mittleres Drittel,115.8,44.4,Sehr direkt (0–3)
+3869254_4,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Raphaël Adelino José Guerreiro,54,55,2,96,From Free Kick,433,7,16,5,25.8,14.4,Defensives Drittel,110.9,32.4,Mittlerer Aufbau (6–8)
+3869254_5,3869254,2022-12-06,Portugal vs Switzerland,Switzerland,Manuel Obafemi Akanji,57,5,2,98,From Corner,352,0,2,1,120.0,80.0,Offensives Drittel,118.7,35.4,Sehr direkt (0–3)
+3869254_6,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Gonçalo Matias Ramos,66,12,2,115,From Goal Kick,433,3,15,4,6.0,36.0,Defensives Drittel,112.6,45.8,Sehr direkt (0–3)
+3869254_7,3869254,2022-12-06,Portugal vs Switzerland,Portugal,Rafael Alexandre Conceição Leão,91,12,2,157,From Free Kick,433,18,52,9,7.3,33.0,Defensives Drittel,105.0,21.7,Langer Aufbau (9+)
+3869118_1,3869118,2022-12-04,England vs Senegal,England,Jordan Brian Henderson,38,0,1,60,From Goal Kick,433,7,15,8,6.0,36.0,Defensives Drittel,107.6,38.0,Mittlerer Aufbau (6–8)
+3869118_2,3869118,2022-12-04,England vs Senegal,England,Harry Kane,47,17,1,73,Regular Play,433,2,5,3,63.5,44.1,Mittleres Drittel,104.3,50.7,Sehr direkt (0–3)
+3869118_3,3869118,2022-12-04,England vs Senegal,England,Bukayo Saka,56,43,2,96,Regular Play,433,4,11,3,43.9,28.2,Mittleres Drittel,111.0,35.9,Trainerregel (4–5)
+3869684_1,3869684,2022-12-17,Croatia vs Morocco,Croatia,Joško Gvardiol,6,28,1,11,From Free Kick,4231,2,2,3,84.6,21.0,Offensives Drittel,108.8,38.0,Sehr direkt (0–3)
+3869684_2,3869684,2022-12-17,Croatia vs Morocco,Morocco,Achraf Dari,8,17,1,13,From Free Kick,433,0,3,1,87.7,74.4,Offensives Drittel,115.6,39.0,Sehr direkt (0–3)
+3869684_3,3869684,2022-12-17,Croatia vs Morocco,Croatia,Mislav Oršić,41,43,1,71,Regular Play,4231,16,46,11,10.8,51.9,Defensives Drittel,106.5,21.3,Langer Aufbau (9+)
+3869519_1,3869519,2022-12-13,Argentina vs Croatia,Argentina,Lionel Andrés Messi Cuccittini,33,27,1,54,Other,442,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869519_2,3869519,2022-12-13,Argentina vs Croatia,Argentina,Julián Álvarez,38,26,1,61,From Counter,442,1,11,2,21.2,47.8,Defensives Drittel,112.7,37.4,Sehr direkt (0–3)
+3869519_3,3869519,2022-12-13,Argentina vs Croatia,Argentina,Julián Álvarez,68,46,2,127,From Throw In,442,3,14,3,42.5,80.0,Mittleres Drittel,113.3,45.4,Sehr direkt (0–3)
+3869354_1,3869354,2022-12-10,England vs France,France,Aurélien Djani Tchouaméni,16,22,1,44,Regular Play,4231,6,20,5,41.4,14.3,Mittleres Drittel,92.5,43.5,Mittlerer Aufbau (6–8)
+3869354_2,3869354,2022-12-10,England vs France,England,Harry Kane,53,27,2,100,Other,433,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869354_3,3869354,2022-12-10,England vs France,France,Olivier Giroud,77,10,2,151,From Corner,4231,3,8,4,88.0,40.3,Offensives Drittel,114.7,36.4,Sehr direkt (0–3)
+3869552_1,3869552,2022-12-14,France vs Morocco,France,Theo Bernard François Hernández,4,40,1,6,From Throw In,4231,16,60,9,61.1,0.1,Mittleres Drittel,115.7,31.5,Langer Aufbau (9+)
+3869552_2,3869552,2022-12-14,France vs Morocco,France,Randal Kolo Muani,78,49,2,126,From Goal Kick,4231,6,24,7,45.2,27.5,Mittleres Drittel,115.6,43.8,Mittlerer Aufbau (6–8)
+3869420_1,3869420,2022-12-09,Croatia vs Brazil,Brazil,Neymar da Silva Santos Junior,105,35,3,229,From Throw In,4411,7,17,6,92.0,80.0,Offensives Drittel,116.5,47.2,Mittlerer Aufbau (6–8)
+3869420_2,3869420,2022-12-09,Croatia vs Brazil,Croatia,Bruno Petković,116,2,4,246,Regular Play,433,5,30,6,55.3,11.6,Mittleres Drittel,103.2,38.6,Trainerregel (4–5)
+3869420_3,3869420,2022-12-09,Croatia vs Brazil,Croatia,Nikola Vlašić,120,3,5,258,Other,433,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869420_4,3869420,2022-12-09,Croatia vs Brazil,Croatia,Lovro Majer,121,38,5,260,Other,433,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869420_5,3869420,2022-12-09,Croatia vs Brazil,Brazil,Carlos Henrique Casimiro,122,17,5,261,Other,4411,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869420_6,3869420,2022-12-09,Croatia vs Brazil,Croatia,Luka Modrić,123,6,5,262,Other,433,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869420_7,3869420,2022-12-09,Croatia vs Brazil,Brazil,Pedro Guilherme Abreu dos Santos,123,49,5,263,Other,4411,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869420_8,3869420,2022-12-09,Croatia vs Brazil,Croatia,Mislav Oršić,124,34,5,264,Other,433,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869220_1,3869220,2022-12-06,Morocco vs Spain,Morocco,Abdelhamid Sabiri,120,7,5,224,Other,433,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869220_2,3869220,2022-12-06,Morocco vs Spain,Morocco,Hakim Ziyech,121,51,5,226,Other,433,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869220_3,3869220,2022-12-06,Morocco vs Spain,Morocco,Achraf Hakimi Mouh,125,36,5,230,Other,433,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869219_1,3869219,2022-12-05,Japan vs Croatia,Japan,Daizen Maeda,42,54,1,60,From Corner,343,4,7,4,120.0,80.0,Offensives Drittel,113.5,44.3,Trainerregel (4–5)
+3869219_2,3869219,2022-12-05,Japan vs Croatia,Croatia,Ivan Perišić,54,54,2,87,Regular Play,433,16,52,8,32.6,54.6,Defensives Drittel,106.0,34.1,Langer Aufbau (9+)
+3869219_3,3869219,2022-12-05,Japan vs Croatia,Croatia,Nikola Vlašić,120,43,5,226,Other,433,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869219_4,3869219,2022-12-05,Japan vs Croatia,Croatia,Marcelo Brozović,121,52,5,228,Other,433,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869219_5,3869219,2022-12-05,Japan vs Croatia,Japan,Takuma Asano,122,33,5,229,Other,343,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869219_6,3869219,2022-12-05,Japan vs Croatia,Croatia,Mario Pašalić,124,28,5,232,Other,433,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3869253_1,3869253,2022-12-05,Brazil vs South Korea,Brazil,Vinícius José Paixão de Oliveira Júnior,6,41,1,13,From Free Kick,4231,13,49,7,40.5,54.3,Mittleres Drittel,110.0,29.9,Langer Aufbau (9+)
+3869253_2,3869253,2022-12-05,Brazil vs South Korea,Brazil,Neymar da Silva Santos Junior,12,18,1,17,Other,4231,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869253_3,3869253,2022-12-05,Brazil vs South Korea,Brazil,Richarlison de Andrade,28,13,1,46,From Corner,4231,6,30,6,93.4,32.1,Offensives Drittel,110.7,43.3,Mittlerer Aufbau (6–8)
+3869253_4,3869253,2022-12-05,Brazil vs South Korea,Brazil,Lucas Tolentino Coelho de Lima,35,45,1,55,From Throw In,4231,6,20,6,10.9,0.1,Defensives Drittel,110.0,44.8,Mittlerer Aufbau (6–8)
+3869253_5,3869253,2022-12-05,Brazil vs South Korea,South Korea,Seung-Ho Paik,75,47,2,136,From Free Kick,442,0,3,1,89.5,66.9,Offensives Drittel,93.7,39.8,Sehr direkt (0–3)
+3869152_1,3869152,2022-12-04,France vs Poland,France,Olivier Giroud,43,28,1,73,From Throw In,4231,11,26,8,94.8,80.0,Offensives Drittel,105.6,32.3,Langer Aufbau (9+)
+3869152_2,3869152,2022-12-04,France vs Poland,France,Kylian Mbappé Lottin,73,56,2,121,Regular Play,4231,4,16,5,8.8,39.3,Defensives Drittel,104.8,28.6,Trainerregel (4–5)
+3869152_3,3869152,2022-12-04,France vs Poland,France,Kylian Mbappé Lottin,90,5,2,143,Regular Play,4231,8,23,5,51.8,22.2,Mittleres Drittel,106.2,25.2,Mittlerer Aufbau (6–8)
+3869152_4,3869152,2022-12-04,France vs Poland,Poland,Robert Lewandowski,98,36,2,152,Other,4141,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3869117_1,3869117,2022-12-03,Netherlands vs United States,Netherlands,Memphis Depay,9,31,1,20,Regular Play,3412,21,63,11,80.5,25.7,Offensives Drittel,104.9,43.7,Langer Aufbau (9+)
+3869117_2,3869117,2022-12-03,Netherlands vs United States,Netherlands,Daley Blind,45,36,1,72,From Throw In,3412,4,9,4,106.1,80.0,Offensives Drittel,107.6,38.5,Trainerregel (4–5)
+3869117_3,3869117,2022-12-03,Netherlands vs United States,United States,Haji Wright,75,20,2,125,From Corner,433,4,6,4,82.4,48.5,Offensives Drittel,115.1,45.2,Trainerregel (4–5)
+3869117_4,3869117,2022-12-03,Netherlands vs United States,Netherlands,Denzel Dumfries,80,28,2,137,From Keeper,3412,8,27,6,15.0,34.8,Defensives Drittel,113.5,44.3,Mittlerer Aufbau (6–8)
+3857270_1,3857270,2022-11-28,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,53,40,2,94,Regular Play,41212,14,42,10,7.3,40.0,Defensives Drittel,99.4,14.6,Langer Aufbau (9+)
+3857270_2,3857270,2022-11-28,Portugal vs Uruguay,Portugal,Bruno Miguel Borges Fernandes,92,19,2,161,Other,41212,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3857263_1,3857263,2022-11-27,Spain vs Germany,Spain,Álvaro Borja Morata Martín,61,33,2,131,From Goal Kick,433,16,44,10,7.0,36.1,Defensives Drittel,113.2,34.3,Langer Aufbau (9+)
+3857263_2,3857263,2022-11-27,Spain vs Germany,Germany,Niclas Füllkrug,82,25,2,169,From Counter,4231,2,5,3,79.5,75.6,Mittleres Drittel,110.8,51.9,Sehr direkt (0–3)
+3857259_1,3857259,2022-11-28,Cameroon vs Serbia,Cameroon,Jean-Charles Castelletto,28,7,1,52,From Corner,433,1,2,2,120.0,0.1,Offensives Drittel,118.5,43.2,Sehr direkt (0–3)
+3857259_2,3857259,2022-11-28,Cameroon vs Serbia,Serbia,Strahinja Pavlović,45,22,1,80,From Free Kick,3421,1,2,2,86.0,26.7,Offensives Drittel,110.7,42.8,Sehr direkt (0–3)
+3857259_3,3857259,2022-11-28,Cameroon vs Serbia,Serbia,Sergej Milinković-Savić,47,52,1,83,From Throw In,3421,3,14,3,64.7,0.1,Mittleres Drittel,99.6,46.7,Sehr direkt (0–3)
+3857259_4,3857259,2022-11-28,Cameroon vs Serbia,Serbia,Aleksandar Mitrović,52,26,2,105,Regular Play,3421,4,7,4,95.5,27.8,Offensives Drittel,113.6,40.2,Trainerregel (4–5)
+3857259_5,3857259,2022-11-28,Cameroon vs Serbia,Cameroon,Vincent Paté Aboubakar,62,52,2,122,From Goal Kick,433,4,20,5,6.0,44.0,Defensives Drittel,104.4,49.0,Trainerregel (4–5)
+3857259_6,3857259,2022-11-28,Cameroon vs Serbia,Cameroon,Jean-Eric Maxim Choupo-Moting,65,25,2,124,From Counter,433,2,6,3,40.5,48.9,Mittleres Drittel,111.0,37.0,Sehr direkt (0–3)
+3857295_1,3857295,2022-11-27,Japan vs Costa Rica,Costa Rica,Keysher Fuller Spence,80,8,2,143,Regular Play,343,1,2,2,92.3,47.7,Offensives Drittel,102.6,47.5,Sehr direkt (0–3)
+3857283_1,3857283,2022-11-27,Belgium vs Morocco,Morocco,Romain Saïss,72,37,2,128,From Free Kick,433,1,1,2,114.1,3.6,Offensives Drittel,118.0,36.4,Sehr direkt (0–3)
+3857283_2,3857283,2022-11-27,Belgium vs Morocco,Morocco,Zakaria Aboukhlal,91,51,2,156,From Goal Kick,433,4,12,4,6.0,36.0,Defensives Drittel,110.3,46.8,Trainerregel (4–5)
+3857284_1,3857284,2022-11-23,Germany vs Japan,Germany,İlkay Gündoğan,32,35,1,56,Other,4231,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3857284_2,3857284,2022-11-23,Germany vs Japan,Japan,Ritsu Doan,74,46,2,141,From Throw In,4231,12,48,8,38.3,80.0,Defensives Drittel,112.1,41.5,Langer Aufbau (9+)
+3857284_3,3857284,2022-11-23,Germany vs Japan,Japan,Takuma Asano,82,42,2,151,From Free Kick,4231,1,6,2,39.2,71.1,Defensives Drittel,117.7,50.2,Sehr direkt (0–3)
+3857282_1,3857282,2022-11-21,United States vs Wales,United States,Timothy Weah,35,12,1,60,From Counter,433,6,12,6,26.2,21.8,Defensives Drittel,107.7,37.8,Mittlerer Aufbau (6–8)
+3857282_2,3857282,2022-11-21,United States vs Wales,Wales,Gareth Frank Bale,81,33,2,144,Other,352,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3857286_1,3857286,2022-11-20,Qatar vs Ecuador,Ecuador,Enner Remberto Valencia Lastra,15,49,1,25,Other,442,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3857286_2,3857286,2022-11-20,Qatar vs Ecuador,Ecuador,Enner Remberto Valencia Lastra,30,44,1,49,Regular Play,442,2,3,3,112.6,71.8,Offensives Drittel,109.6,38.0,Sehr direkt (0–3)
+3857301_1,3857301,2022-11-25,Qatar vs Senegal,Senegal,Boulaye Dia,40,20,1,70,Regular Play,4231,10,39,6,58.2,43.4,Mittleres Drittel,107.2,33.3,Langer Aufbau (9+)
+3857301_2,3857301,2022-11-25,Qatar vs Senegal,Senegal,Famara Diedhiou,47,51,2,96,From Corner,4231,1,1,2,120.0,80.0,Offensives Drittel,112.5,48.1,Sehr direkt (0–3)
+3857301_3,3857301,2022-11-25,Qatar vs Senegal,Qatar,Mohammed Muntari,77,39,2,147,From Free Kick,352,6,30,6,64.0,39.1,Mittleres Drittel,110.1,38.7,Mittlerer Aufbau (6–8)
+3857301_4,3857301,2022-11-25,Qatar vs Senegal,Senegal,Cheikh Ahmadou Bamba Mbacke Dieng,83,6,2,155,From Throw In,4231,4,12,4,55.7,73.3,Mittleres Drittel,107.8,45.3,Trainerregel (4–5)
+3857300_1,3857300,2022-11-22,Argentina vs Saudi Arabia,Argentina,Lionel Andrés Messi Cuccittini,9,15,1,10,Other,442,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3857300_2,3857300,2022-11-22,Argentina vs Saudi Arabia,Saudi Arabia,Saleh Khalid Al Shehri,47,40,2,78,From Free Kick,4141,5,18,6,49.9,24.7,Mittleres Drittel,108.0,29.6,Trainerregel (4–5)
+3857300_3,3857300,2022-11-22,Argentina vs Saudi Arabia,Saudi Arabia,Salem Mohammed Al Dawsari,52,44,2,88,Regular Play,4141,4,31,4,66.4,2.7,Mittleres Drittel,102.4,25.3,Trainerregel (4–5)
+3857299_1,3857299,2022-11-28,South Korea vs Ghana,Ghana,Mohamed Salisu,23,43,1,38,From Free Kick,4231,0,2,1,92.9,2.9,Offensives Drittel,115.5,37.9,Sehr direkt (0–3)
+3857299_2,3857299,2022-11-28,South Korea vs Ghana,Ghana,Mohammed Kudus,33,49,1,51,From Goal Kick,4231,31,94,10,7.0,44.1,Defensives Drittel,113.1,41.8,Langer Aufbau (9+)
+3857299_3,3857299,2022-11-28,South Korea vs Ghana,South Korea,Gue-Sung Cho,57,19,2,95,Regular Play,4231,6,28,5,16.8,6.3,Defensives Drittel,112.6,38.4,Mittlerer Aufbau (6–8)
+3857299_4,3857299,2022-11-28,South Korea vs Ghana,South Korea,Gue-Sung Cho,60,7,2,99,From Throw In,4231,8,29,8,76.4,0.1,Mittleres Drittel,115.5,43.7,Mittlerer Aufbau (6–8)
+3857299_5,3857299,2022-11-28,South Korea vs Ghana,Ghana,Mohammed Kudus,67,52,2,113,From Free Kick,4231,8,22,7,50.6,61.6,Mittleres Drittel,108.4,48.6,Mittlerer Aufbau (6–8)
+3857298_1,3857298,2022-11-24,Portugal vs Ghana,Portugal,Cristiano Ronaldo dos Santos Aveiro,64,20,2,119,Other,433,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3857298_2,3857298,2022-11-24,Portugal vs Ghana,Ghana,André Ayew Pelé,72,11,2,134,From Keeper,352,5,25,5,56.7,64.4,Mittleres Drittel,115.6,39.8,Trainerregel (4–5)
+3857298_3,3857298,2022-11-24,Portugal vs Ghana,Portugal,João Félix Sequeira,77,6,2,143,Regular Play,433,3,8,4,46.0,11.0,Mittleres Drittel,107.5,52.6,Sehr direkt (0–3)
+3857298_4,3857298,2022-11-24,Portugal vs Ghana,Portugal,Rafael Alexandre Conceição Leão,79,21,2,147,Regular Play,433,2,8,3,56.1,43.9,Mittleres Drittel,111.7,28.3,Sehr direkt (0–3)
+3857298_5,3857298,2022-11-24,Portugal vs Ghana,Ghana,Osman Bukari,88,28,2,163,From Throw In,352,3,13,4,51.8,80.0,Mittleres Drittel,113.5,40.2,Sehr direkt (0–3)
+3857297_1,3857297,2022-11-26,Poland vs Saudi Arabia,Poland,Piotr Zieliński,38,57,1,68,From Goal Kick,442,5,14,5,6.0,36.0,Defensives Drittel,111.9,44.7,Trainerregel (4–5)
+3857297_2,3857297,2022-11-26,Poland vs Saudi Arabia,Poland,Robert Lewandowski,81,28,2,157,From Goal Kick,442,0,13,1,94.7,68.6,Offensives Drittel,107.2,44.6,Sehr direkt (0–3)
+3857293_1,3857293,2022-12-02,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,25,30,1,48,Regular Play,442,5,23,5,48.0,49.4,Mittleres Drittel,118.0,42.7,Trainerregel (4–5)
+3857293_2,3857293,2022-12-02,Ghana vs Uruguay,Uruguay,Giorgian Daniel De Arrascaeta Benedetti,31,2,1,57,From Free Kick,442,10,18,9,75.4,18.1,Mittleres Drittel,110.8,31.2,Langer Aufbau (9+)
+3857292_1,3857292,2022-12-01,Costa Rica vs Germany,Germany,Serge Gnabry,9,31,1,17,Regular Play,4231,3,9,4,53.4,13.9,Mittleres Drittel,111.9,33.1,Sehr direkt (0–3)
+3857292_2,3857292,2022-12-01,Costa Rica vs Germany,Costa Rica,Yeltsin Ignacio Tejeda Valverde,57,39,2,122,Regular Play,343,3,9,3,70.8,76.4,Mittleres Drittel,114.3,38.1,Sehr direkt (0–3)
+3857292_3,3857292,2022-12-01,Costa Rica vs Germany,Germany,Kai Havertz,72,4,2,143,From Kick Off,4231,18,65,10,60.0,40.0,Mittleres Drittel,109.3,42.6,Langer Aufbau (9+)
+3857292_4,3857292,2022-12-01,Costa Rica vs Germany,Germany,Kai Havertz,84,2,2,165,Regular Play,4231,8,23,8,34.7,51.4,Defensives Drittel,113.1,37.6,Mittlerer Aufbau (6–8)
+3857292_5,3857292,2022-12-01,Costa Rica vs Germany,Germany,Niclas Füllkrug,88,13,2,178,From Throw In,4231,17,81,10,49.4,0.1,Mittleres Drittel,114.8,42.5,Langer Aufbau (9+)
+3857291_1,3857291,2022-11-23,Spain vs Costa Rica,Spain,Daniel Olmo Carvajal,10,52,1,19,From Throw In,433,26,75,10,110.5,80.0,Offensives Drittel,112.3,39.3,Langer Aufbau (9+)
+3857291_2,3857291,2022-11-23,Spain vs Costa Rica,Spain,Marco Asensio Willemsen,20,32,1,35,Regular Play,433,26,79,9,36.1,54.2,Defensives Drittel,105.8,33.4,Langer Aufbau (9+)
+3857291_3,3857291,2022-11-23,Spain vs Costa Rica,Spain,Ferrán Torres García,30,9,1,42,Other,433,0,0,1,108.1,40.1,Offensives Drittel,108.1,40.1,Sehr direkt (0–3)
+3857291_4,3857291,2022-11-23,Spain vs Costa Rica,Spain,Ferrán Torres García,53,41,2,80,From Corner,433,33,98,10,120.0,80.0,Offensives Drittel,114.7,49.4,Langer Aufbau (9+)
+3857291_5,3857291,2022-11-23,Spain vs Costa Rica,Spain,Pablo Martín Páez Gavira,73,59,2,112,From Free Kick,433,4,28,5,32.1,48.1,Defensives Drittel,103.0,45.8,Trainerregel (4–5)
+3857291_6,3857291,2022-11-23,Spain vs Costa Rica,Spain,Carlos Soler Barragán,89,11,2,132,Regular Play,433,6,24,5,40.8,8.1,Mittleres Drittel,109.7,40.1,Mittlerer Aufbau (6–8)
+3857291_7,3857291,2022-11-23,Spain vs Costa Rica,Spain,Álvaro Borja Morata Martín,91,57,2,135,From Keeper,433,23,65,11,15.8,30.0,Defensives Drittel,104.0,36.4,Langer Aufbau (9+)
+3857290_1,3857290,2022-11-24,Switzerland vs Cameroon,Switzerland,Breel-Donald Embolo,47,33,2,83,From Throw In,4231,13,30,10,98.9,0.1,Offensives Drittel,111.9,39.5,Langer Aufbau (9+)
+3857285_1,3857285,2022-11-21,Senegal vs Netherlands,Netherlands,Cody Mathès Gakpo,83,50,2,149,Regular Play,3412,6,16,5,108.1,70.9,Offensives Drittel,112.3,39.0,Mittlerer Aufbau (6–8)
+3857285_2,3857285,2022-11-21,Senegal vs Netherlands,Netherlands,Davy Klaassen,98,18,2,176,Regular Play,3412,8,24,8,35.7,30.4,Defensives Drittel,109.5,34.8,Mittlerer Aufbau (6–8)
+3857281_1,3857281,2022-11-27,Croatia vs Canada,Canada,Alphonso Davies,1,8,1,3,Regular Play,442,11,40,8,15.4,39.2,Defensives Drittel,109.6,36.4,Langer Aufbau (9+)
+3857281_2,3857281,2022-11-27,Croatia vs Canada,Croatia,Andrej Kramarić,35,53,1,64,From Corner,433,6,13,5,100.2,11.2,Offensives Drittel,114.1,29.4,Mittlerer Aufbau (6–8)
+3857281_3,3857281,2022-11-27,Croatia vs Canada,Croatia,Marko Livaja,43,32,1,74,From Free Kick,433,12,31,10,33.3,56.0,Defensives Drittel,101.0,39.1,Langer Aufbau (9+)
+3857281_4,3857281,2022-11-27,Croatia vs Canada,Croatia,Andrej Kramarić,69,36,2,142,Regular Play,433,6,21,5,43.7,53.8,Mittleres Drittel,106.8,47.1,Mittlerer Aufbau (6–8)
+3857281_5,3857281,2022-11-27,Croatia vs Canada,Croatia,Lovro Majer,93,26,2,198,Regular Play,433,1,1,2,105.0,34.2,Offensives Drittel,109.2,45.4,Sehr direkt (0–3)
+3857280_1,3857280,2022-12-02,Cameroon vs Brazil,Cameroon,Vincent Paté Aboubakar,91,48,2,157,Regular Play,442,4,11,5,43.7,3.1,Mittleres Drittel,106.7,40.7,Trainerregel (4–5)
+3857279_1,3857279,2022-11-22,France vs Australia,Australia,Craig Goodwin,8,24,1,15,From Throw In,4141,6,17,6,97.5,0.1,Offensives Drittel,114.2,31.3,Mittlerer Aufbau (6–8)
+3857279_2,3857279,2022-11-22,France vs Australia,France,Adrien Rabiot,26,2,1,40,From Corner,4231,2,4,3,80.8,31.8,Offensives Drittel,111.6,42.0,Sehr direkt (0–3)
+3857279_3,3857279,2022-11-22,France vs Australia,France,Olivier Giroud,31,18,1,48,Regular Play,4231,2,3,3,104.7,9.2,Offensives Drittel,110.5,39.2,Sehr direkt (0–3)
+3857279_4,3857279,2022-11-22,France vs Australia,France,Kylian Mbappé Lottin,67,3,2,101,Regular Play,4231,29,87,10,33.6,13.2,Defensives Drittel,113.5,42.2,Langer Aufbau (9+)
+3857279_5,3857279,2022-11-22,France vs Australia,France,Olivier Giroud,70,50,2,106,From Free Kick,4231,7,24,5,45.1,3.9,Mittleres Drittel,113.5,42.6,Mittlerer Aufbau (6–8)
+3857278_1,3857278,2022-11-29,Iran vs United States,United States,Christian Pulisic,37,49,1,73,Regular Play,433,11,30,8,42.8,62.6,Mittleres Drittel,115.1,38.7,Langer Aufbau (9+)
+3857276_1,3857276,2022-12-01,Canada vs Morocco,Morocco,Hakim Ziyech,3,29,1,8,From Throw In,433,1,11,2,47.0,3.7,Mittleres Drittel,83.9,45.0,Sehr direkt (0–3)
+3857276_2,3857276,2022-12-01,Canada vs Morocco,Morocco,Youssef En-Nesyri,22,36,1,40,From Throw In,433,6,24,5,63.3,80.0,Mittleres Drittel,107.6,53.2,Mittlerer Aufbau (6–8)
+3857275_1,3857275,2022-11-30,Tunisia vs France,Tunisia,Wahbi Khazri,57,20,2,120,Regular Play,3421,2,7,3,65.4,48.6,Mittleres Drittel,103.3,37.8,Sehr direkt (0–3)
+3857274_1,3857274,2022-11-25,Netherlands vs Ecuador,Netherlands,Cody Mathès Gakpo,5,3,1,11,From Throw In,3412,4,18,5,55.7,80.0,Mittleres Drittel,100.6,31.0,Trainerregel (4–5)
+3857274_2,3857274,2022-11-25,Netherlands vs Ecuador,Ecuador,Enner Remberto Valencia Lastra,48,44,2,95,From Counter,3421,2,6,3,78.7,44.6,Mittleres Drittel,116.0,38.1,Sehr direkt (0–3)
+3857273_1,3857273,2022-11-25,Wales vs Iran,Iran,Roozbeh Cheshmi,97,56,2,187,From Throw In,4411,6,43,6,48.2,80.0,Mittleres Drittel,95.1,37.5,Mittlerer Aufbau (6–8)
+3857273_2,3857273,2022-11-25,Wales vs Iran,Iran,Ramin Rezaeian,100,37,2,190,From Counter,4411,1,3,2,95.7,27.3,Offensives Drittel,104.8,45.3,Sehr direkt (0–3)
+3857271_1,3857271,2022-11-21,England vs Iran,England,Jude Bellingham,34,9,1,43,Regular Play,4231,17,68,8,18.6,65.8,Defensives Drittel,112.0,38.0,Langer Aufbau (9+)
+3857271_2,3857271,2022-11-21,England vs Iran,England,Bukayo Saka,42,46,1,54,From Corner,4231,2,3,3,120.0,0.1,Offensives Drittel,104.1,38.5,Sehr direkt (0–3)
+3857271_3,3857271,2022-11-21,England vs Iran,England,Raheem Sterling,45,17,1,57,Regular Play,4231,7,25,7,40.8,24.1,Mittleres Drittel,111.0,42.8,Mittlerer Aufbau (6–8)
+3857271_4,3857271,2022-11-21,England vs Iran,England,Bukayo Saka,61,26,2,106,Regular Play,4231,2,11,3,57.4,16.4,Mittleres Drittel,105.3,46.3,Sehr direkt (0–3)
+3857271_5,3857271,2022-11-21,England vs Iran,Iran,Mehdi Taremi,64,33,2,111,From Throw In,343,6,18,4,97.9,80.0,Offensives Drittel,109.7,48.0,Mittlerer Aufbau (6–8)
+3857271_6,3857271,2022-11-21,England vs Iran,England,Marcus Rashford,70,51,2,114,From Goal Kick,4231,3,12,4,26.7,7.2,Defensives Drittel,109.7,47.7,Sehr direkt (0–3)
+3857271_7,3857271,2022-11-21,England vs Iran,England,Jack Grealish,89,1,2,135,From Free Kick,4231,35,86,11,64.2,36.9,Mittleres Drittel,112.0,39.9,Langer Aufbau (9+)
+3857271_8,3857271,2022-11-21,England vs Iran,Iran,Mehdi Taremi,102,30,2,153,Other,343,0,0,1,108.0,40.0,Offensives Drittel,108.0,40.0,Sehr direkt (0–3)
+3857268_1,3857268,2022-11-23,Belgium vs Canada,Belgium,Michy Batshuayi Tunga,43,32,1,73,Regular Play,3421,24,89,9,46.1,50.8,Mittleres Drittel,109.0,36.1,Langer Aufbau (9+)
+3857262_1,3857262,2022-12-02,South Korea vs Portugal,Portugal,Ricardo Jorge Luz Horta,4,53,1,7,From Goal Kick,433,8,27,8,7.0,36.1,Defensives Drittel,113.6,47.0,Mittlerer Aufbau (6–8)
+3857262_2,3857262,2022-12-02,South Korea vs Portugal,South Korea,Young-Gwon Kim,26,43,1,36,From Corner,433,0,2,1,120.0,0.1,Offensives Drittel,116.7,38.0,Sehr direkt (0–3)
+3857262_3,3857262,2022-12-02,South Korea vs Portugal,South Korea,Hee-Chan Hwang,90,28,2,186,From Counter,433,1,1,2,98.3,52.3,Offensives Drittel,108.3,44.6,Sehr direkt (0–3)
+3857261_1,3857261,2022-11-29,Wales vs England,England,Marcus Rashford,49,17,2,93,From Free Kick,433,0,0,1,96.1,29.3,Offensives Drittel,96.1,29.3,Sehr direkt (0–3)
+3857261_2,3857261,2022-11-29,Wales vs England,England,Philip Foden,50,53,2,95,Regular Play,433,1,1,2,115.8,58.9,Offensives Drittel,114.5,34.1,Sehr direkt (0–3)
+3857261_3,3857261,2022-11-29,Wales vs England,England,Marcus Rashford,67,40,2,119,From Throw In,433,14,44,8,51.9,0.1,Mittleres Drittel,109.9,50.3,Langer Aufbau (9+)
+3857255_1,3857255,2022-12-01,Japan vs Spain,Spain,Álvaro Borja Morata Martín,11,0,1,15,Regular Play,433,30,106,9,27.6,23.0,Defensives Drittel,115.3,38.3,Langer Aufbau (9+)
+3857255_2,3857255,2022-12-01,Japan vs Spain,Japan,Ritsu Doan,47,48,2,68,Regular Play,343,1,4,2,93.0,70.1,Offensives Drittel,100.5,55.8,Sehr direkt (0–3)
+3857255_3,3857255,2022-12-01,Japan vs Spain,Japan,Ao Tanaka,50,14,2,71,From Free Kick,343,5,13,5,25.6,10.6,Defensives Drittel,118.7,40.2,Trainerregel (4–5)

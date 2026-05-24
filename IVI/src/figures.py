@@ -10,21 +10,22 @@ from .utils import BUILD_UP_COLORS, BUILD_UP_ORDER
 
 TEMPLATE = "plotly_dark"
 PAPER = "rgba(0,0,0,0)"
-PLOT = "#101823"
-GRID = "rgba(148,163,184,0.14)"
-FONT = "#e5edf7"
+PLOT = "rgba(15,23,42,0.6)"
+GRID = "rgba(255,255,255,0.08)"
+FONT = "#f8fafc"
 
 
 def style_figure(fig: go.Figure, height: int = 360) -> go.Figure:
     fig.update_layout(
         template=TEMPLATE,
+        title=None,
         paper_bgcolor=PAPER,
         plot_bgcolor=PLOT,
-        font=dict(color=FONT, family="Inter, Segoe UI, Arial, sans-serif"),
-        margin=dict(l=34, r=18, t=54, b=42),
+        font=dict(color=FONT, family="Inter, system-ui, Segoe UI, sans-serif"),
+        margin=dict(l=20, r=20, t=18, b=30),
         height=height,
         hoverlabel=dict(bgcolor="#111827", font=dict(color="#f8fafc")),
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0),
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0, title_text=""),
     )
     fig.update_xaxes(gridcolor=GRID, zerolinecolor=GRID, linecolor=GRID)
     fig.update_yaxes(gridcolor=GRID, zerolinecolor=GRID, linecolor=GRID)
@@ -45,11 +46,11 @@ def build_up_distribution(goals_df: pd.DataFrame) -> go.Figure:
     )
     fig.update_traces(textposition="outside", customdata=counts[["build_up_type"]])
     fig.update_layout(clickmode="event+select", xaxis_title="", yaxis_title="Goals", showlegend=False)
-    return style_figure(fig, 330)
+    return style_figure(fig, 350)
 
 
 def team_build_up_profile(goals_df: pd.DataFrame) -> go.Figure:
-    ranking = team_ranking(goals_df).head(18).sort_values("avg_passes")
+    ranking = team_ranking(goals_df).head(12).sort_values("avg_passes")
     fig = px.bar(
         ranking,
         x="avg_passes",
@@ -59,9 +60,9 @@ def team_build_up_profile(goals_df: pd.DataFrame) -> go.Figure:
         title="Team Build-up Profile",
         hover_data={"team": True, "goals": True, "avg_passes": ":.1f", "avg_duration": ":.1f"},
     )
-    fig.update_traces(marker_opacity=0.88)
+    fig.update_traces(marker_opacity=0.9)
     fig.update_layout(xaxis_title="Average completed passes before goal", yaxis_title="")
-    return style_figure(fig, 430)
+    return style_figure(fig, 350)
 
 
 def passes_duration_scatter(goals_df: pd.DataFrame, selected_build_up_id: str | None = None) -> go.Figure:
@@ -76,7 +77,7 @@ def passes_duration_scatter(goals_df: pd.DataFrame, selected_build_up_id: str | 
         custom_data=["build_up_id", "team", "match_name", "minute", "build_up_type"],
     )
     fig.update_traces(
-        marker=dict(size=10, opacity=0.82, line=dict(width=0.8, color="rgba(255,255,255,0.45)")),
+        marker=dict(size=9, opacity=0.82, line=dict(width=0.8, color="rgba(255,255,255,0.45)")),
         hovertemplate=(
             "<b>%{hovertext}</b><br>"
             "Team: %{customdata[1]}<br>"
@@ -100,4 +101,52 @@ def passes_duration_scatter(goals_df: pd.DataFrame, selected_build_up_id: str | 
             )
         )
     fig.update_layout(xaxis_title="Completed passes before goal", yaxis_title="Attack duration (seconds)")
-    return style_figure(fig, 430)
+    return style_figure(fig, 350)
+
+
+def finishing_progress_chart(team_df: pd.DataFrame, selected_teams: list[str] | None = None) -> go.Figure:
+    plot_df = team_df.copy()
+    if selected_teams:
+        plot_df["selection"] = plot_df["team"].where(plot_df["team"].isin(selected_teams), "Other teams")
+        color_map = {team: "#38bdf8" for team in selected_teams}
+        color_map["Other teams"] = "rgba(148,163,184,0.35)"
+        color_arg = "selection"
+    else:
+        plot_df["selection"] = "All teams"
+        color_map = {"All teams": "#38bdf8"}
+        color_arg = "selection"
+    fig = px.scatter(
+        plot_df,
+        x="finishing_efficiency",
+        y="tournament_progress_score",
+        size=plot_df["goals"].clip(lower=1),
+        color=color_arg,
+        color_discrete_map=color_map,
+        title="Finishing Efficiency vs Tournament Progress",
+        hover_name="team",
+        custom_data=["tournament_stage", "shots", "goals", "avg_passes_before_goal", "avg_attack_duration", "selection"],
+    )
+    fig.update_traces(
+        marker=dict(opacity=0.82, line=dict(width=0.8, color="rgba(255,255,255,0.45)")),
+        hovertemplate=(
+            "<b>%{hovertext}</b><br>"
+            "Stage: %{customdata[0]}<br>"
+            "Shots: %{customdata[1]:.0f}<br>"
+            "Goals: %{customdata[2]:.0f}<br>"
+            "Finishing: %{x:.1%}<br>"
+            "Definition: goals / shots<br>"
+            "Avg passes: %{customdata[3]:.1f}<br>"
+            "Avg duration: %{customdata[4]:.1f}s<extra></extra>"
+        ),
+    )
+    fig.update_layout(
+        xaxis_title="Goals / shots",
+        yaxis_title="Stage reached",
+        yaxis=dict(
+            tickmode="array",
+            tickvals=[1, 2, 3, 4, 5, 6, 7],
+            ticktext=["Group", "R16", "QF", "SF", "3rd", "Final", "Winner"],
+        ),
+        showlegend=bool(selected_teams),
+    )
+    return style_figure(fig, 350)

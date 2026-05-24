@@ -34,18 +34,60 @@ def preprocess_all(
     team_path = processed_dir / "team_efficiency_df.csv"
 
     if not force and goals_path.exists() and events_path.exists() and team_path.exists():
-        return pd.read_csv(goals_path), pd.read_csv(events_path), pd.read_csv(team_path)
+        goals_df, events_df, team_df = pd.read_csv(goals_path), pd.read_csv(events_path), pd.read_csv(team_path)
+        return ensure_dashboard_schema(goals_df, events_df, team_df)
 
     legacy_goals = processed_dir / "goal_buildups.csv"
     legacy_passes = processed_dir / "goal_buildup_passes.csv"
     if legacy_goals.exists() and legacy_passes.exists():
         goals_df, events_df, team_df = normalize_legacy_processed(processed_dir)
+    elif goals_path.exists() and events_path.exists() and team_path.exists():
+        goals_df, events_df, team_df = ensure_dashboard_schema(
+            pd.read_csv(goals_path),
+            pd.read_csv(events_path),
+            pd.read_csv(team_path),
+        )
     else:
         goals_df, events_df, team_df = build_from_statsbomb_files(raw_dir, processed_dir)
 
     goals_df.to_csv(goals_path, index=False, encoding="utf-8")
     events_df.to_csv(events_path, index=False, encoding="utf-8")
     team_df.to_csv(team_path, index=False, encoding="utf-8")
+    return goals_df, events_df, team_df
+
+
+def ensure_dashboard_schema(
+    goals_df: pd.DataFrame,
+    events_df: pd.DataFrame,
+    team_df: pd.DataFrame,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    goals_df = goals_df.copy()
+    events_df = events_df.copy()
+    if "goal_id" not in goals_df and "build_up_id" in goals_df:
+        goals_df["goal_id"] = goals_df["build_up_id"]
+    if "goal_event_id" not in goals_df and "build_up_id" in goals_df:
+        goals_df["goal_event_id"] = goals_df["build_up_id"]
+
+    if "goal_id" not in events_df and "build_up_id" in events_df:
+        events_df["goal_id"] = events_df["build_up_id"]
+    if "event_index" not in events_df and "event_order" in events_df:
+        events_df["event_index"] = events_df["event_order"]
+    if "event_id" not in events_df:
+        events_df["event_id"] = events_df.apply(
+            lambda row: f"{row.get('build_up_id', 'goal')}_{row.get('event_type', 'event').lower()}_{int(row.get('event_order', 0))}",
+            axis=1,
+        )
+    if "pass_recipient" not in events_df and "recipient" in events_df:
+        events_df["pass_recipient"] = events_df["recipient"]
+    if "outcome" not in events_df:
+        events_df["outcome"] = events_df.get("pass_outcome", "")
+        goal_mask = events_df["is_goal"].astype(bool) if "is_goal" in events_df else pd.Series(False, index=events_df.index)
+        events_df.loc[goal_mask, "outcome"] = "Goal"
+    if "is_completed_pass" not in events_df:
+        pass_outcome = events_df["pass_outcome"] if "pass_outcome" in events_df else pd.Series("", index=events_df.index)
+        events_df["is_completed_pass"] = events_df["event_type"].eq("Pass") & pass_outcome.eq("Complete")
+    if "is_shot" not in events_df:
+        events_df["is_shot"] = events_df["event_type"].eq("Shot")
     return goals_df, events_df, team_df
 
 
@@ -58,6 +100,7 @@ def normalize_legacy_processed(processed_dir: Path = PROCESSED_DIR) -> tuple[pd.
     team_summary = _read_optional(processed_dir / "world_cup_2022_team_summary.csv")
 
     goals = goals.copy()
+    goals["goal_id"] = goals["build_up_id"]
     goals["goal_event_id"] = goals["build_up_id"]
     goals["match_name"] = goals["match_label"]
     goals["scorer"] = goals["goal_player"]
@@ -103,6 +146,7 @@ def normalize_legacy_processed(processed_dir: Path = PROCESSED_DIR) -> tuple[pd.
 
     output_cols = [
         "build_up_id",
+        "goal_id",
         "match_id",
         "match_name",
         "match_date",
@@ -147,13 +191,17 @@ def normalize_legacy_passes(passes: pd.DataFrame, goals_df: pd.DataFrame) -> pd.
             rows.append(
                 {
                     "build_up_id": build_up_id,
+                    "goal_id": build_up_id,
                     "match_id": row.get("match_id"),
                     "match_name": row.get("match_label", goal.get("match_name", "")),
                     "team": row.get("team", goal.get("team", "")),
                     "event_order": int(row.get("pass_order", idx + 1)),
+                    "event_index": int(row.get("pass_order", idx + 1)),
+                    "event_id": f"{build_up_id}_pass_{int(row.get('pass_order', idx + 1))}",
                     "event_type": "Pass",
                     "player": row.get("player", ""),
                     "recipient": next_player,
+                    "pass_recipient": next_player,
                     "minute": int(row.get("minute", 0)),
                     "second": int(row.get("second", 0)),
                     "timestamp_label": f"{int(row.get('minute', 0)):02d}:{int(row.get('second', 0)):02d}",
@@ -162,6 +210,9 @@ def normalize_legacy_passes(passes: pd.DataFrame, goals_df: pd.DataFrame) -> pd.
                     "end_x": row.get("end_x"),
                     "end_y": row.get("end_y"),
                     "pass_outcome": "Complete",
+                    "outcome": "Complete",
+                    "is_completed_pass": True,
+                    "is_shot": False,
                     "is_assist": idx == len(group_records) - 1,
                     "is_goal": False,
                 }
@@ -169,13 +220,17 @@ def normalize_legacy_passes(passes: pd.DataFrame, goals_df: pd.DataFrame) -> pd.
         rows.append(
             {
                 "build_up_id": build_up_id,
+                "goal_id": build_up_id,
                 "match_id": goal.get("match_id"),
                 "match_name": goal.get("match_name", ""),
                 "team": goal.get("team", ""),
                 "event_order": len(group_records) + 1,
+                "event_index": len(group_records) + 1,
+                "event_id": f"{build_up_id}_shot",
                 "event_type": "Shot",
                 "player": goal.get("scorer", ""),
                 "recipient": "",
+                "pass_recipient": "",
                 "minute": int(goal.get("minute", 0)),
                 "second": int(goal.get("second", 0)),
                 "timestamp_label": f"{int(goal.get('minute', 0)):02d}:{int(goal.get('second', 0)):02d}",
@@ -184,6 +239,9 @@ def normalize_legacy_passes(passes: pd.DataFrame, goals_df: pd.DataFrame) -> pd.
                 "end_x": 120,
                 "end_y": 40,
                 "pass_outcome": "",
+                "outcome": "Goal",
+                "is_completed_pass": False,
+                "is_shot": True,
                 "is_assist": False,
                 "is_goal": True,
             }

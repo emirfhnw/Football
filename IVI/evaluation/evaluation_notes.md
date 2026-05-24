@@ -2,7 +2,7 @@
 
 ## Participant
 
-- ID:
+- Participant ID:
 - Date:
 - Football knowledge:
 - Dashboard experience:
@@ -16,12 +16,13 @@
 | 3 |  |  |  |
 | 4 |  |  |  |
 | 5 |  |  |  |
+| 6 |  |  |  |
 
-## Confusion Points
+## Observed Problems
 
 - 
 
-## Positive Feedback
+## Participant Comments
 
 - 
 
@@ -29,10 +30,6 @@
 
 - 
 
-## Design Changes Made
-
-- 
-
-## Additional Notes
+## Changes Made
 
 - 

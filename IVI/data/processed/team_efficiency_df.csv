@@ -1,5 +1,5 @@
 team,shots,goals,goals_analysed,finishing_efficiency,tournament_stage,tournament_progress_score,avg_passes_before_goal,avg_attack_duration
-Argentina,110,23,23,0.209090909090909,Winner,7,3.5652173913043477,11.304347826086957
+Argentina,110,23,23,0.209090909090909,Winner,7,3.565217391304348,11.304347826086955
 Australia,26,3,3,0.1153846153846153,Round of 16,2,6.0,18.0
 Belgium,35,1,1,0.0285714285714285,Group Stage,1,24.0,89.0
 Brazil,99,10,10,0.101010101010101,Quarter Final,3,6.6,22.5
@@ -25,7 +25,7 @@ Saudi Arabia,30,3,3,0.1,Group Stage,1,5.0,20.666666666666668
 Senegal,50,5,5,0.1,Round of 16,2,3.0,11.0
 Serbia,32,5,5,0.15625,Group Stage,1,2.0,7.0
 South Korea,48,5,5,0.1041666666666666,Round of 16,2,3.0,12.6
-Spain,51,9,9,0.1764705882352941,Round of 16,2,18.22222222222222,57.666666666666664
+Spain,51,9,9,0.1764705882352941,Round of 16,2,18.22222222222222,57.66666666666666
 Switzerland,37,5,5,0.1351351351351351,Round of 16,2,6.4,20.6
 Tunisia,32,1,1,0.03125,Group Stage,1,2.0,7.0
 United States,46,3,3,0.0652173913043478,Round of 16,2,7.0,16.0
