@@ -48,6 +48,60 @@ def app_header():
         className="app-header",
     )
 
+def data_source_panel(competition_options):
+    return card(
+        [
+            html.Div(
+                [
+                    form_field(
+                        "Competition / Season",
+                        dcc.Dropdown(
+                            id="competition-season-filter",
+                            options=competition_options,
+                            value=competition_options[0]["value"] if competition_options else None,
+                            clearable=False,
+                            className="dash-dropdown",
+                        ),
+                    ),
+                    form_field(
+                        "Match",
+                        dcc.Dropdown(
+                            id="match-filter",
+                            options=[],
+                            value=None,
+                            clearable=False,
+                            placeholder="Select match",
+                            className="dash-dropdown",
+                        ),
+                    ),
+                    form_field(
+                        "Team",
+                        dcc.Dropdown(
+                            id="team-scope-filter",
+                            options=[{"label": "All teams", "value": "ALL"}],
+                            value="ALL",
+                            clearable=False,
+                            className="dash-dropdown",
+                        ),
+                    ),
+                    dbc.Button(
+                        "Load match",
+                        id="load-match-button",
+                        color="primary",
+                        className="reset-button",
+                    ),
+                ],
+                className="data-source-grid",
+            ),
+            html.Div(
+                "Choose a competition, match and team. The dashboard then loads goal build-ups for this selected match.",
+                id="data-load-feedback",
+                className="filter-feedback",
+            ),
+        ],
+        "filter-panel",
+    )
+
 def kpi_card(label: str, value: object, suffix: str = ""):
     return html.Div(
         [
@@ -186,13 +240,34 @@ def replay_controls():
     return html.Div(
         [
             dbc.Button("Previous", id="step-prev", color="secondary", outline=True),
+            dbc.Button("Play", id="play-button", color="success"),
+            dbc.Button("Pause", id="pause-button", color="warning", outline=True),
             dbc.Button("Next", id="step-next", color="primary"),
             dbc.Button("Show full sequence", id="step-all", color="light", outline=True),
             dbc.Button("Reset replay", id="step-reset", color="light", outline=True),
+
+            html.Div(
+                [
+                    html.Label("Speed"),
+                    dcc.Slider(
+                        id="replay-speed",
+                        min=300,
+                        max=1500,
+                        step=100,
+                        value=800,
+                        marks={
+                            300: "fast",
+                            800: "normal",
+                            1500: "slow",
+                        },
+                        tooltip={"placement": "bottom", "always_visible": False},
+                    ),
+                ],
+                className="speed-control",
+            ),
         ],
         className="replay-controls",
     )
-
 
 def goal_replay_tab(goals_df):
     return html.Div(
@@ -213,6 +288,20 @@ def goal_replay_tab(goals_df):
                     ),
                     card(
                         [
+                            html.Div(
+                                [
+                                    html.Div("Coach focus", className="coach-focus-label"),
+                                    html.Div(
+                                        "Use the replay to inspect how the ball moves before a goal.",
+                                        className="coach-focus-title",
+                                    ),
+                                    html.Div(
+                                        "The sequence is one example only. It helps to discuss passing direction, support options and timing, but it does not prove a general rule.",
+                                        className="coach-focus-text",
+                                    ),
+                                ],
+                                className="coach-focus-box",
+                            ),
                             html.Div(id="step-info", className="step-info"),
                             replay_controls(),
                             html.Div("Jump to event", className="mini-label"),
@@ -236,8 +325,8 @@ def team_comparison_tab():
                     card(
                         [
                             section_title(
-                                "Team attacking profile",
-                                "Teams sorted by average completed passes before goals."
+                                "Trainer comparison tables",
+                                "Compare directness, patience and finishing efficiency."
                             ),
                             dcc.Graph(id="team-chart", config=GRAPH_CONFIG, className="team-graph"),
                         ],
@@ -257,19 +346,22 @@ def team_comparison_tab():
                 className="team-grid",
             ),
             html.Div(
-                "Coach interpretation: A high average does not automatically mean better attacking quality. It mainly shows whether a team tends to reach goals through patient build-up or more direct attacks.",
+                "Coach interpretation: The tables do not show one perfect tactic. They help a coach compare different attacking styles: direct attacks, patient build-up and finishing efficiency. This is useful for discussing which principles could be trained in an amateur team.",
                 className="insight-text",
             ),
         ],
         className="tab-page team-page",
     )
 
-def build_layout(goals_df):
+def build_layout(goals_df, competition_options=None):
     return html.Div(
         [
             dcc.Store(id="selected-build-up", data=str(goals_df.iloc[0]["build_up_id"]) if not goals_df.empty else None),
             dcc.Store(id="step-store", data=0),
+            dcc.Store(id="is-playing", data=False),
+            dcc.Interval(id="replay-interval", interval=800, n_intervals=0, disabled=True),
             app_header(),
+            data_source_panel(competition_options or []),
             dcc.Tabs(
                 id="main-tabs",
                 value="overview",
