@@ -19,7 +19,7 @@ app = Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
     suppress_callback_exceptions=True,
-    title="Goal Build-up Analysis",
+    title="StatsBomb Attack Explorer",
 )
 server = app.server
 app.layout = build_layout(goals_df)

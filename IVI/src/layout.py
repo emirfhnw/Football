@@ -36,15 +36,17 @@ def app_header():
         [
             html.Div(
                 [
-                    html.Div("Goal Build-up Analysis", className="app-title"),
-                    html.Div("FIFA World Cup 2022 - StatsBomb Event Data", className="app-subtitle"),
+                    html.Div("StatsBomb Attack Explorer", className="app-title"),
+                    html.Div(
+                        "Interactive coach dashboard for attacking patterns, goal build-ups and team styles",
+                        className="app-subtitle"
+                    ),
                 ]
             ),
-            html.Div("Event data only", className="data-note"),
+            html.Div("Event data only · ball actions, no off-ball tracking", className="data-note"),
         ],
         className="app-header",
     )
-
 
 def kpi_card(label: str, value: object, suffix: str = ""):
     return html.Div(
@@ -60,10 +62,10 @@ def kpi_row(kpis):
     cards = [
         ("Goals analysed", kpis["total_goals"], ""),
         ("Avg passes before goal", kpis["avg_passes"], ""),
+        ("Avg attack duration", kpis["avg_duration"], "s"),
         ("Most common type", kpis["most_common_type"], ""),
     ]
     return html.Div([kpi_card(label, value, suffix) for label, value, suffix in cards], className="kpi-row")
-
 
 def form_field(label: str, component):
     return html.Div([html.Label(label), component], className="form-field")
@@ -117,19 +119,44 @@ def replay_filters(goals_df):
 def overview_tab():
     return html.Div(
         [
-            html.Div(id="overview-kpis"),
+            html.Div(
+                [
+                    html.Div(
+                        [
+                            html.Div("Coach question", className="hero-label"),
+                            html.Div(
+                                "Which attacking patterns from professional football can a coach turn into simple training ideas?",
+                                className="hero-title"
+                            ),
+                            html.Div(
+                                "Use the dashboard to compare goal build-ups, inspect passing sequences and identify teams that attack more directly or more patiently.",
+                                className="hero-text"
+                            ),
+                        ],
+                        className="hero-card",
+                    ),
+                    html.Div(id="overview-kpis"),
+                ],
+                className="overview-top",
+            ),
             html.Div(
                 [
                     card(
                         [
-                            section_title("Build-up Types", "Quick, medium or long?"),
+                            section_title(
+                                "Goal build-up types",
+                                "How often do goals come from quick, medium or longer attacking sequences?"
+                            ),
                             dcc.Graph(id="overview-build-up-chart", config=GRAPH_CONFIG, className="chart-graph"),
                         ],
                         "chart-panel",
                     ),
                     card(
                         [
-                            section_title("Passes vs Duration", "Do longer sequences take more time?"),
+                            section_title(
+                                "Passes vs duration",
+                                "Do attacks with more completed passes also take more time?"
+                            ),
                             dcc.Graph(id="overview-scatter-chart", config=GRAPH_CONFIG, className="chart-graph"),
                         ],
                         "chart-panel",
@@ -141,7 +168,6 @@ def overview_tab():
         ],
         className="tab-page overview-page",
     )
-
 
 def pitch_legend():
     return html.Div(
@@ -176,7 +202,10 @@ def goal_replay_tab(goals_df):
                 [
                     card(
                         [
-                            section_title("Goal Replay", "Replay one goal build-up step by step."),
+                            section_title(
+                                "Attack Replay",
+                                "Inspect one goal sequence step by step. This is useful as an example, not as statistical proof."
+                            ),
                             dcc.Graph(id="pitch-graph", config=GRAPH_CONFIG, className="pitch-graph"),
                             pitch_legend(),
                         ],
@@ -206,25 +235,34 @@ def team_comparison_tab():
                 [
                     card(
                         [
-                            section_title("Team Build-up Profile", "Teams sorted by average completed passes."),
+                            section_title(
+                                "Team attacking profile",
+                                "Teams sorted by average completed passes before goals."
+                            ),
                             dcc.Graph(id="team-chart", config=GRAPH_CONFIG, className="team-graph"),
                         ],
                         "team-chart-panel",
                     ),
                     card(
                         [
-                            section_title("Top 5 Patient Teams"),
+                            section_title(
+                                "Most patient teams",
+                                "These teams used the longest passing sequences before goals."
+                            ),
                             html.Div(id="top-teams-table"),
                         ],
                         "top-table-panel",
                     ),
                 ],
                 className="team-grid",
-            )
+            ),
+            html.Div(
+                "Coach interpretation: A high average does not automatically mean better attacking quality. It mainly shows whether a team tends to reach goals through patient build-up or more direct attacks.",
+                className="insight-text",
+            ),
         ],
         className="tab-page team-page",
     )
-
 
 def build_layout(goals_df):
     return html.Div(
@@ -237,10 +275,9 @@ def build_layout(goals_df):
                 value="overview",
                 className="main-tabs",
                 children=[
-                    dcc.Tab(label="Overview", value="overview", className="main-tab", selected_className="main-tab-selected", children=overview_tab()),
-                    dcc.Tab(label="Goal Replay", value="replay", className="main-tab", selected_className="main-tab-selected", children=goal_replay_tab(goals_df)),
-                    dcc.Tab(label="Team Comparison", value="teams", className="main-tab", selected_className="main-tab-selected", children=team_comparison_tab()),
-                ],
+                    dcc.Tab(label="Coach Overview", value="overview", className="main-tab", selected_className="main-tab-selected", children=overview_tab()),
+                    dcc.Tab(label="Attack Replay", value="replay", className="main-tab", selected_className="main-tab-selected", children=goal_replay_tab(goals_df)),
+                    dcc.Tab(label="Team Profile", value="teams", className="main-tab", selected_className="main-tab-selected", children=team_comparison_tab()),                ],
             ),
         ],
         className="app-shell",
