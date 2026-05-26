@@ -1,22 +1,24 @@
 from __future__ import annotations
 
 import socket
+
+import plotly.graph_objects as go
 from src.statsbomb_explorer import (
     competition_options,
     match_options,
     team_options,
     build_match_goal_tables,
+    parse_match_value,
 )
 from dash import ALL, Dash, Input, Output, State, callback_context, html, no_update
 import dash_bootstrap_components as dbc
 
 from src.data_loader import load_dashboard_data
 from src.figures import build_up_distribution, passes_duration_scatter, team_build_up_profile
-from src.layout import build_layout, goal_options, kpi_row
+from src.layout import build_layout, goal_options, kpi_row, options
 from src.metrics import (
     dashboard_kpis,
     filter_goals,
-    team_ranking,
     direct_team_ranking,
     patient_team_ranking,
     efficient_team_ranking,
@@ -77,11 +79,80 @@ def current_event(goal_id: str | None, step: int):
 
 def overview_insight(goals):
     if goals.empty:
-        return "No goals in the current dataset."
+        return "No goal build-ups are available for the current selection."
+
     kpis = dashboard_kpis(goals)
-    corr = goals[["passes_before_goal", "attack_duration_seconds"]].corr().iloc[0, 1]
-    relation = "Longer sequences also tended to take more time." if corr >= 0.35 else "Pass count and duration were not strongly aligned."
-    return f"Most goals came from {str(kpis['most_common_type']).lower()}. {relation}"
+    avg_passes = kpis["avg_passes"]
+    avg_duration = kpis["avg_duration"]
+    most_common = str(kpis["most_common_type"])
+
+    if avg_passes <= 3:
+        style_text = "The selected goals mainly come from direct attacks with only a few completed passes."
+    elif avg_passes <= 6:
+        style_text = "The selected goals mostly come from medium-length attacks, where teams combine a few passes before finishing."
+    else:
+        style_text = "The selected goals tend to come from longer build-up sequences with more patient possession."
+
+    return (
+        f"{style_text} On average, the goals include {avg_passes} completed passes "
+        f"and last about {avg_duration} seconds. The most common build-up type is '{most_common}'. "
+        "For a coach, this is useful as a starting point for discussing whether a team attacks directly, patiently or somewhere in between."
+    )
+
+def empty_figure(message: str = "Load a selection to start the analysis."):
+    fig = go.Figure()
+    fig.add_annotation(
+        text=message,
+        x=0.5,
+        y=0.5,
+        xref="paper",
+        yref="paper",
+        showarrow=False,
+        font=dict(size=16, color="#94a3b8"),
+        align="center",
+    )
+    fig.update_layout(
+        template="plotly_dark",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(15,23,42,0.6)",
+        margin=dict(l=20, r=20, t=20, b=20),
+        height=350,
+        xaxis=dict(visible=False),
+        yaxis=dict(visible=False),
+    )
+    return fig
+
+
+def welcome_cards():
+    return html.Div(
+        [
+            html.Div(
+                [
+                    html.Div("1", className="welcome-step-number"),
+                    html.Div("Choose competition", className="welcome-step-title"),
+                    html.Div("Start with a competition and season from StatsBomb data.", className="welcome-step-text"),
+                ],
+                className="welcome-step",
+            ),
+            html.Div(
+                [
+                    html.Div("2", className="welcome-step-number"),
+                    html.Div("Select match and team", className="welcome-step-title"),
+                    html.Div("Load one match or focus on one team in that match.", className="welcome-step-text"),
+                ],
+                className="welcome-step",
+            ),
+            html.Div(
+                [
+                    html.Div("3", className="welcome-step-number"),
+                    html.Div("Analyse the attack", className="welcome-step-title"),
+                    html.Div("Use charts, team profile and replay to inspect goal build-ups.", className="welcome-step-text"),
+                ],
+                className="welcome-step",
+            ),
+        ],
+        className="welcome-steps",
+    )
 
 @app.callback(
     Output("match-filter", "options"),
@@ -99,46 +170,74 @@ def update_match_dropdown(competition_season_value):
     Output("team-scope-filter", "value"),
     Input("match-filter", "value"),
 )
-def update_team_scope(match_id):
-    options = team_options(int(match_id)) if match_id else [{"label": "All teams", "value": "ALL"}]
+def update_team_scope(match_value):
+    options = team_options(match_value) if match_value else [{"label": "All teams", "value": "ALL"}]
     return options, "ALL"
 
 
 @app.callback(
     Output("selected-build-up", "data", allow_duplicate=True),
+    Output("step-store", "data", allow_duplicate=True),
+    Output("team-filter", "value", allow_duplicate=True),
+    Output("type-filter", "value", allow_duplicate=True),
     Output("data-load-feedback", "children"),
     Input("load-match-button", "n_clicks"),
     State("match-filter", "value"),
     State("team-scope-filter", "value"),
     prevent_initial_call=True,
 )
-def load_selected_match(_clicks, match_id, team_scope):
+def load_selected_match(_clicks, match_value, team_scope):
     global goals_df, events_df, _team_df
 
-    if not match_id:
-        return no_update, "Please select a match first."
+    if not match_value:
+        return no_update, no_update, no_update, no_update, "Please select a match first."
 
     try:
-        new_goals, new_events, new_team = build_match_goal_tables(int(match_id), team_scope or "ALL")
+        new_goals, new_events, new_team = build_match_goal_tables(match_value, team_scope or "ALL")
     except Exception as exc:
-        return no_update, f"Could not load match: {exc}"
+        return no_update, no_update, no_update, no_update, f"Could not load selection: {exc}"
 
     goals_df = new_goals
     events_df = new_events
     _team_df = new_team
 
     if goals_df.empty:
-        return None, "Match loaded, but no goals were found for the selected team."
+        return None, 0, [], [], "Selection loaded, but no goals were found for the selected team."
 
     first_goal = str(goals_df.iloc[0]["build_up_id"])
-    return first_goal, f"Loaded match {match_id}: {len(goals_df)} goal build-ups available."
+
+    try:
+        _competition_id, _season_id, match_id = parse_match_value(match_value)
+        feedback = f"Loaded selection: match {match_id}, {len(goals_df)} goal build-ups available."
+    except Exception:
+        feedback = f"Loaded selection: {len(goals_df)} goal build-ups available."
+
+    return first_goal, 0, [], [], feedback
+
+@app.callback(
+    Output("team-filter", "options"),
+    Output("type-filter", "options"),
+    Input("selected-build-up", "data"),
+)
+def refresh_replay_filter_options(selected_goal):
+    if not selected_goal or goals_df.empty:
+        return [], []
+
+    team_options_local = options(goals_df["team"])
+    type_options_local = [
+        {"label": item, "value": item}
+        for item in sorted(goals_df["build_up_type"].astype(str).dropna().unique())
+    ]
+
+    return team_options_local, type_options_local
+
 def step_info(goal_id: str | None, step: int):
     row = goal_row(goal_id)
     event = current_event(goal_id, step)
     total = total_steps(goal_id)
 
     if row is None or event is None or total == 0:
-        return html.Div("Select a goal to replay.", className="empty-state")
+        return html.Div("Load a match and select a goal to replay.", className="empty-state")
 
     is_full = step < 0
     step_label = f"Full sequence ({total} events)" if is_full else f"Step {min(step + 1, total)} of {total}"
@@ -207,7 +306,7 @@ def info_pair(label, value):
 def mini_steps(goal_id: str | None, step: int):
     total = total_steps(goal_id)
     if total == 0:
-        return html.Div("No events available.", className="empty-state")
+        return html.Div("No events available yet.", className="empty-state")
     active_order = None if step < 0 else min(step + 1, total)
     buttons = []
     for order in range(1, total + 1):
@@ -337,6 +436,14 @@ def top_team_table(goals):
     Input("selected-build-up", "data"),
 )
 def render_overview(selected_goal):
+    if not selected_goal or goals_df.empty:
+        return (
+            welcome_cards(),
+            empty_figure("Choose a competition, match and team above. Then click 'Load'."),
+            empty_figure("After loading a match, this chart shows passes before goals and attack duration."),
+            "Start by loading a selection. The dashboard will then show goal build-ups for the selected match or team.",
+        )
+
     return (
         kpi_row(dashboard_kpis(goals_df)),
         build_up_distribution(goals_df),
@@ -364,11 +471,14 @@ def reset_filters(_clicks):
     Input("selected-build-up", "data"),
 )
 def update_goal_options(teams, build_types, selected_goal):
+    if not selected_goal or goals_df.empty:
+        return [], None, "Load a selection first."
+
     goals = filtered_goals(teams, build_types)
-    options = goal_options(goals)
-    valid = {option["value"] for option in options}
-    value = selected_goal if selected_goal in valid else (options[0]["value"] if options else None)
-    return options, value, f"{len(goals)} goals in selection"
+    options_list = goal_options(goals)
+    valid = {option["value"] for option in options_list}
+    value = selected_goal if selected_goal in valid else (options_list[0]["value"] if options_list else None)
+    return options_list, value, f"{len(goals)} goals in selection"
 
 
 @app.callback(
@@ -498,8 +608,15 @@ def render_replay(goal_id, step, is_playing):
     Output("team-chart", "figure"),
     Output("top-teams-table", "children"),
     Input("main-tabs", "value"),
+    Input("selected-build-up", "data"),
 )
-def render_team_comparison(_tab):
+def render_team_comparison(_tab, selected_goal):
+    if not selected_goal or goals_df.empty:
+        return (
+            empty_figure("Load a match first to compare attacking styles."),
+            html.Div("No team profile available yet. Load a selection first.", className="empty-state"),
+        )
+
     return team_build_up_profile(goals_df), top_team_table(goals_df)
 
 

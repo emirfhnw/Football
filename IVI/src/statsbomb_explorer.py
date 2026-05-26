@@ -28,6 +28,11 @@ def _end_xy(row):
     return np.nan, np.nan
 
 
+def parse_match_value(match_value: str):
+    competition_id, season_id, match_id = [int(x) for x in str(match_value).split("|")]
+    return competition_id, season_id, match_id
+
+
 @lru_cache(maxsize=1)
 def competitions_df() -> pd.DataFrame:
     df = sb.competitions()
@@ -58,40 +63,41 @@ def match_options(competition_season_value: str):
     if not competition_season_value:
         return []
 
-    competition_id, season_id = [int(x) for x in competition_season_value.split("|")]
+    competition_id, season_id = [int(x) for x in str(competition_season_value).split("|")]
     df = matches_df(competition_id, season_id)
 
     options = []
     for _, row in df.iterrows():
         stage = row.get("competition_stage", "")
         date = row.get("match_date", "")
+        match_id = int(row["match_id"])
+
         label = f"{row['home_team']} vs {row['away_team']} · {date}"
         if stage:
             label += f" · {stage}"
 
-        options.append({"label": label, "value": int(row["match_id"])})
+        value = f"{competition_id}|{season_id}|{match_id}"
+        options.append({"label": label, "value": value})
 
     return options
 
 
-def team_options(match_id: int):
-    if not match_id:
+def team_options(match_value: str):
+    if not match_value:
         return [{"label": "All teams", "value": "ALL"}]
 
-    match_row = None
-
-    for _, comp in competitions_df().iterrows():
-        try:
-            m = matches_df(int(comp["competition_id"]), int(comp["season_id"]))
-            found = m[m["match_id"].astype(int).eq(int(match_id))]
-            if not found.empty:
-                match_row = found.iloc[0]
-                break
-        except Exception:
-            continue
-
-    if match_row is None:
+    try:
+        competition_id, season_id, match_id = parse_match_value(match_value)
+    except Exception:
         return [{"label": "All teams", "value": "ALL"}]
+
+    matches = matches_df(competition_id, season_id)
+    found = matches[matches["match_id"].astype(int).eq(int(match_id))]
+
+    if found.empty:
+        return [{"label": "All teams", "value": "ALL"}]
+
+    match_row = found.iloc[0]
 
     return [
         {"label": "All teams", "value": "ALL"},
@@ -100,28 +106,35 @@ def team_options(match_id: int):
     ]
 
 
-@lru_cache(maxsize=32)
+@lru_cache(maxsize=64)
 def events_for_match(match_id: int) -> pd.DataFrame:
     events = sb.events(match_id=int(match_id))
     events = events.sort_values("index").reset_index(drop=True)
     return events
 
 
-def build_match_goal_tables(match_id: int, team_filter: str = "ALL"):
+def build_match_goal_tables(match_value: str, team_filter: str = "ALL"):
+    _competition_id, _season_id, match_id = parse_match_value(match_value)
     events = events_for_match(int(match_id)).copy()
     events = events.sort_values("index").reset_index(drop=True)
 
     if "location" in events.columns:
         events[["x", "y"]] = events["location"].apply(lambda v: pd.Series(_xy(v)))
+    else:
+        events["x"] = np.nan
+        events["y"] = np.nan
 
     end_locations = events.apply(_end_xy, axis=1)
     events["end_x"] = [xy[0] for xy in end_locations]
     events["end_y"] = [xy[1] for xy in end_locations]
 
-    goal_shots = events[
-        (events["type"] == "Shot")
-        & (events["shot_outcome"] == "Goal")
-    ].copy()
+    if "shot_outcome" not in events.columns:
+        goal_shots = events.iloc[0:0].copy()
+    else:
+        goal_shots = events[
+            (events["type"].astype(str).str.lower() == "shot")
+            & (events["shot_outcome"].astype(str).str.lower() == "goal")
+        ].copy()
 
     if team_filter and team_filter != "ALL":
         goal_shots = goal_shots[goal_shots["team"].eq(team_filter)]

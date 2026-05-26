@@ -678,3 +678,64 @@ button.dash-dropdown:focus {
   gap: 10px;
   align-items: end;
 }
+
+
+.data-source-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 1.2fr)
+    minmax(320px, 1.6fr)
+    minmax(200px, 0.8fr)
+    120px;
+  gap: 12px;
+  align-items: end;
+}
+
+.load-button {
+  width: 100%;
+  min-width: 110px;
+  white-space: nowrap;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.welcome-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  height: 100%;
+}
+
+.welcome-step {
+  padding: 14px;
+  background: rgba(17, 24, 39, 0.94);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 14px;
+}
+
+.welcome-step-number {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.16);
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.welcome-step-title {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.welcome-step-text {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}

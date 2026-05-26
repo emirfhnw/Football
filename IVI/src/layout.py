@@ -14,8 +14,30 @@ def options(values):
 
 
 def goal_options(goals_df):
-    return [{"label": row["goal_label"], "value": str(row["build_up_id"])} for _, row in goals_df.iterrows()]
+    if goals_df is None or goals_df.empty:
+        return []
 
+    out = []
+
+    for _, row in goals_df.iterrows():
+        build_up_id = str(row.get("build_up_id", ""))
+
+        if "goal_label" in goals_df.columns and str(row.get("goal_label", "")).strip():
+            label = row["goal_label"]
+        else:
+            team = str(row.get("team", "Unknown team"))
+            scorer = str(row.get("scorer", "Unknown scorer"))
+            minute = row.get("minute", "")
+            opponent = str(row.get("opponent", "")).strip()
+
+            if opponent:
+                label = f"{team} - {scorer} ({minute}') vs {opponent}"
+            else:
+                label = f"{team} - {scorer} ({minute}')"
+
+        out.append({"label": label, "value": build_up_id})
+
+    return out
 
 def card(children, class_name: str = ""):
     return html.Div(children, className=f"panel {class_name}".strip())
@@ -38,12 +60,12 @@ def app_header():
                 [
                     html.Div("StatsBomb Attack Explorer", className="app-title"),
                     html.Div(
-                        "Interactive coach dashboard for attacking patterns, goal build-ups and team styles",
-                        className="app-subtitle"
+                        "Interactive dashboard for coaches: compare attacking styles, inspect goal build-ups and discuss training ideas",
+                        className="app-subtitle",
                     ),
                 ]
             ),
-            html.Div("Event data only · ball actions, no off-ball tracking", className="data-note"),
+            html.Div("StatsBomb event data · ball actions only", className="data-note"),
         ],
         className="app-header",
     )
@@ -58,7 +80,8 @@ def data_source_panel(competition_options):
                         dcc.Dropdown(
                             id="competition-season-filter",
                             options=competition_options,
-                            value=competition_options[0]["value"] if competition_options else None,
+                            value=None,
+                            placeholder="Choose competition / season",
                             clearable=False,
                             className="dash-dropdown",
                         ),
@@ -85,16 +108,16 @@ def data_source_panel(competition_options):
                         ),
                     ),
                     dbc.Button(
-                        "Load match",
+                        "Load",
                         id="load-match-button",
                         color="primary",
-                        className="reset-button",
+                        className="load-button",
                     ),
                 ],
                 className="data-source-grid",
             ),
             html.Div(
-                "Choose a competition, match and team. The dashboard then loads goal build-ups for this selected match.",
+                "Select a competition, match and team, then press Load. The analysis appears only after a selection is loaded.",
                 id="data-load-feedback",
                 className="filter-feedback",
             ),
@@ -134,7 +157,7 @@ def replay_filters(goals_df):
                         "Team",
                         dcc.Dropdown(
                             id="team-filter",
-                            options=options(goals_df["team"]),
+                            options=[],
                             multi=True,
                             placeholder="All teams",
                             className="dash-dropdown",
@@ -144,7 +167,7 @@ def replay_filters(goals_df):
                         "Build-up Type",
                         dcc.Dropdown(
                             id="type-filter",
-                            options=[{"label": item, "value": item} for item in BUILD_UP_ORDER],
+                            options=[],
                             multi=True,
                             placeholder="All build-up types",
                             className="dash-dropdown",
@@ -154,8 +177,8 @@ def replay_filters(goals_df):
                         "Goal",
                         dcc.Dropdown(
                             id="goal-dropdown",
-                            options=goal_options(goals_df),
-                            value=str(goals_df.iloc[0]["build_up_id"]) if not goals_df.empty else None,
+                            options=[],
+                            value=None,
                             placeholder="Select a goal",
                             className="dash-dropdown goal-select",
                         ),
@@ -179,12 +202,12 @@ def overview_tab():
                         [
                             html.Div("Coach question", className="hero-label"),
                             html.Div(
-                                "Which attacking patterns from professional football can a coach turn into simple training ideas?",
-                                className="hero-title"
+                                "How do professional teams create goals, and which attacking ideas could be useful for amateur training?",
+                                className="hero-title",
                             ),
                             html.Div(
-                                "Use the dashboard to compare goal build-ups, inspect passing sequences and identify teams that attack more directly or more patiently.",
-                                className="hero-text"
+                                "This dashboard is designed from a trainer perspective. Instead of only counting goals, it helps to inspect how attacks develop before a goal: how many passes are involved, how long the attack takes and how different teams build up their chances.",
+                                className="hero-text",
                             ),
                         ],
                         className="hero-card",
@@ -199,7 +222,7 @@ def overview_tab():
                         [
                             section_title(
                                 "Goal build-up types",
-                                "How often do goals come from quick, medium or longer attacking sequences?"
+                                "After loading a selection, this shows whether goals come from quick, medium or longer attacking sequences."
                             ),
                             dcc.Graph(id="overview-build-up-chart", config=GRAPH_CONFIG, className="chart-graph"),
                         ],
@@ -209,7 +232,7 @@ def overview_tab():
                         [
                             section_title(
                                 "Passes vs duration",
-                                "Do attacks with more completed passes also take more time?"
+                                "After loading a selection, this shows how completed passes relate to attack duration."
                             ),
                             dcc.Graph(id="overview-scatter-chart", config=GRAPH_CONFIG, className="chart-graph"),
                         ],
@@ -243,8 +266,8 @@ def replay_controls():
             dbc.Button("Play", id="play-button", color="success"),
             dbc.Button("Pause", id="pause-button", color="warning", outline=True),
             dbc.Button("Next", id="step-next", color="primary"),
-            dbc.Button("Show full sequence", id="step-all", color="light", outline=True),
-            dbc.Button("Reset replay", id="step-reset", color="light", outline=True),
+            dbc.Button("Show full", id="step-all", color="light", outline=True),
+            dbc.Button("Reset", id="step-reset", color="light", outline=True),
 
             html.Div(
                 [
@@ -279,7 +302,7 @@ def goal_replay_tab(goals_df):
                         [
                             section_title(
                                 "Attack Replay",
-                                "Inspect one goal sequence step by step. This is useful as an example, not as statistical proof."
+                                "Load a match and play one goal sequence. Use it as a concrete example, not as statistical proof."
                             ),
                             dcc.Graph(id="pitch-graph", config=GRAPH_CONFIG, className="pitch-graph"),
                             pitch_legend(),
@@ -292,11 +315,11 @@ def goal_replay_tab(goals_df):
                                 [
                                     html.Div("Coach focus", className="coach-focus-label"),
                                     html.Div(
-                                        "Use the replay to inspect how the ball moves before a goal.",
+                                        "Watch how the ball moves before the goal.",
                                         className="coach-focus-title",
                                     ),
                                     html.Div(
-                                        "The sequence is one example only. It helps to discuss passing direction, support options and timing, but it does not prove a general rule.",
+                                        "The replay is useful for discussing simple training points: first forward pass, support after the pass, timing of the final pass and the finish. It does not show off-ball runs, because the data only contains recorded events.",
                                         className="coach-focus-text",
                                     ),
                                 ],
@@ -325,8 +348,8 @@ def team_comparison_tab():
                     card(
                         [
                             section_title(
-                                "Trainer comparison tables",
-                                "Compare directness, patience and finishing efficiency."
+                                "Team attacking profile",
+                                "After loading a selection, compare how teams score: direct attacks, patient build-up and finishing efficiency."
                             ),
                             dcc.Graph(id="team-chart", config=GRAPH_CONFIG, className="team-graph"),
                         ],
@@ -335,8 +358,8 @@ def team_comparison_tab():
                     card(
                         [
                             section_title(
-                                "Most patient teams",
-                                "These teams used the longest passing sequences before goals."
+                                "Style comparison",
+                                "Direct teams, patient teams and efficient finishers in one view."
                             ),
                             html.Div(id="top-teams-table"),
                         ],
@@ -346,7 +369,7 @@ def team_comparison_tab():
                 className="team-grid",
             ),
             html.Div(
-                "Coach interpretation: The tables do not show one perfect tactic. They help a coach compare different attacking styles: direct attacks, patient build-up and finishing efficiency. This is useful for discussing which principles could be trained in an amateur team.",
+                "Coach interpretation: The dashboard does not rank one tactic as the best. It helps to compare different attacking styles. Some teams score after short sequences, others after longer possession phases. For training, this can support discussions about quick forward play, controlled build-up and finishing quality.",
                 className="insight-text",
             ),
         ],
@@ -356,7 +379,7 @@ def team_comparison_tab():
 def build_layout(goals_df, competition_options=None):
     return html.Div(
         [
-            dcc.Store(id="selected-build-up", data=str(goals_df.iloc[0]["build_up_id"]) if not goals_df.empty else None),
+            dcc.Store(id="selected-build-up", data=None),
             dcc.Store(id="step-store", data=0),
             dcc.Store(id="is-playing", data=False),
             dcc.Interval(id="replay-interval", interval=800, n_intervals=0, disabled=True),
