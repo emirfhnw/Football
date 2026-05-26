@@ -60,7 +60,7 @@ def app_header():
                 [
                     html.Div("Coach Attack Explorer", className="app-title"),
                     html.Div(
-                        "Compare direct and patient goal attacks in tournament football",
+                        "Tournament dashboard for comparing direct and patient goal attacks",
                         className="app-subtitle",
                     ),
                 ]
@@ -94,17 +94,7 @@ def data_source_panel(competition_options):
                             options=[],
                             value=None,
                             clearable=False,
-                            placeholder="All matches or one match",
-                            className="dash-dropdown",
-                        ),
-                    ),
-                    form_field(
-                        "Team",
-                        dcc.Dropdown(
-                            id="team-scope-filter",
-                            options=[{"label": "All teams", "value": "ALL"}],
-                            value="ALL",
-                            clearable=False,
+                            placeholder="All matches in tournament",
                             className="dash-dropdown",
                         ),
                     ),
@@ -115,10 +105,10 @@ def data_source_panel(competition_options):
                         className="load-button",
                     ),
                 ],
-                className="data-source-grid",
+                className="data-source-grid final-source-grid",
             ),
             html.Div(
-                "Recommended: choose a tournament, keep 'All matches in this tournament', then select a team or All teams. This gives enough data for useful coaching insights.",
+                "Recommended workflow: choose a full tournament, keep 'All matches in this tournament', then select a team in the replay filter below.",
                 id="data-load-feedback",
                 className="filter-feedback",
             ),
@@ -153,27 +143,28 @@ def replay_filters(goals_df):
             html.Div(
                 [
                     form_field(
-                        "Team",
+                        "Team for replay and team info",
                         dcc.Dropdown(
-                            id="team-filter",
+                        id="team-filter",
                             options=[],
-                            multi=True,
-                            placeholder="All teams",
+                            multi=False,
+                            placeholder="Choose one team",
                             className="dash-dropdown",
                         ),
+
                     ),
                     form_field(
-                        "Build-up Type",
+                        "Build-up type",
                         dcc.Dropdown(
                             id="type-filter",
                             options=[],
-                            multi=True,
+                            multi=False,
                             placeholder="All build-up types",
                             className="dash-dropdown",
                         ),
                     ),
                     form_field(
-                        "Goal",
+                        "Goal example",
                         dcc.Dropdown(
                             id="goal-dropdown",
                             options=[],
@@ -188,62 +179,7 @@ def replay_filters(goals_df):
             ),
             html.Div(id="filter-feedback", className="filter-feedback"),
         ],
-        "filter-panel",
-    )
-
-
-def overview_tab():
-    return html.Div(
-        [
-            html.Div(
-                [
-                    html.Div(
-                        [
-                            html.Div("Coach workflow", className="hero-label"),
-                            html.Div(
-                                "What can a coach learn from professional goal attacks?",
-                                className="hero-title",
-                            ),
-                            html.Div(
-                                "Use this dashboard in three steps: load a tournament, compare attacking styles, then inspect one goal in the replay. The goal is not to find one perfect tactic, but to turn professional examples into simple training ideas.",
-                                className="hero-text",
-                            ),
-                        ],
-                        className="hero-card",
-                    ),
-                    html.Div(id="overview-kpis"),
-                ],
-                className="overview-top",
-            ),
-            html.Div(
-                [
-                    card(
-                        [
-                            section_title(
-                                "Goal build-up types",
-                                "Shows whether goals come from direct, medium or more patient attacking sequences.",
-                            ),
-                            dcc.Graph(id="overview-build-up-chart", config=GRAPH_CONFIG, className="chart-graph"),
-                        ],
-                        "chart-panel",
-                    ),
-                    card(
-                        [
-                            section_title(
-                                "Passes vs duration",
-                                "Shows how completed passes before goals relate to attack duration.",
-                            ),
-                            dcc.Graph(id="overview-scatter-chart", config=GRAPH_CONFIG, className="chart-graph"),
-                        ],
-                        "chart-panel",
-                    ),
-                ],
-                className="overview-grid",
-            ),
-            html.Div(id="coach-takeaway", className="coach-takeaway"),
-            html.Div(id="overview-insight", className="insight-text"),
-        ],
-        className="tab-page overview-page",
+        "filter-panel replay-filter-panel",
     )
 
 
@@ -289,7 +225,7 @@ def replay_controls():
     )
 
 
-def goal_replay_tab(goals_df):
+def attack_replay_section(goals_df):
     return html.Div(
         [
             replay_filters(goals_df),
@@ -298,8 +234,8 @@ def goal_replay_tab(goals_df):
                     card(
                         [
                             section_title(
-                                "Attack Replay",
-                                "Play one goal sequence step by step. This is a concrete example, not statistical proof.",
+                                "1. Attack Replay",
+                                "Select one team and one goal example, then play the sequence step by step.",
                             ),
                             dcc.Graph(id="pitch-graph", config=GRAPH_CONFIG, className="pitch-graph"),
                             pitch_legend(),
@@ -308,17 +244,6 @@ def goal_replay_tab(goals_df):
                     ),
                     card(
                         [
-                            html.Div(
-                                [
-                                    html.Div("Coach focus", className="coach-focus-label"),
-                                    html.Div("Watch how the ball moves before the goal.", className="coach-focus-title"),
-                                    html.Div(
-                                        "Use the replay to discuss the first forward pass, support after the pass, timing of the final pass and the finish. Off-ball runs are not shown because the data only contains events.",
-                                        className="coach-focus-text",
-                                    ),
-                                ],
-                                className="coach-focus-box",
-                            ),
                             html.Div(id="step-info", className="step-info"),
                             replay_controls(),
                             html.Div("Jump to event", className="mini-label"),
@@ -329,21 +254,69 @@ def goal_replay_tab(goals_df):
                 ],
                 className="replay-grid",
             ),
+            card(
+                [
+                    section_title(
+                        "2. Team tournament information",
+                        "Shown when exactly one team is selected in the replay filter.",
+                    ),
+                    html.Div(id="team-tournament-info"),
+                ],
+                "team-info-panel",
+            ),
         ],
-        className="tab-page replay-page",
+        className="one-page-section replay-page",
     )
 
 
-def team_comparison_tab():
+def overview_section():
     return html.Div(
         [
+            section_title(
+                "3. Tournament overview",
+                "These plots describe all loaded goals in the selected tournament or scope.",
+            ),
+            html.Div(id="overview-kpis"),
+            html.Div(
+                [
+                    card(
+                        [
+                            section_title("Goal build-up types", "Direct, medium and patient goal attacks."),
+                            dcc.Graph(id="overview-build-up-chart", config=GRAPH_CONFIG, className="chart-graph"),
+                        ],
+                        "chart-panel",
+                    ),
+                    card(
+                        [
+                            section_title("Passes vs duration", "Relationship between completed passes and attack duration."),
+                            dcc.Graph(id="overview-scatter-chart", config=GRAPH_CONFIG, className="chart-graph"),
+                        ],
+                        "chart-panel",
+                    ),
+                ],
+                className="overview-grid",
+            ),
+            html.Div(id="coach-takeaway", className="coach-takeaway"),
+            html.Div(id="overview-insight", className="insight-text"),
+        ],
+        className="one-page-section overview-page",
+    )
+
+
+def team_profile_section():
+    return html.Div(
+        [
+            section_title(
+                "4. Team profile and tournament comparison",
+                "Compare which teams score after shorter or longer attacking sequences.",
+            ),
             html.Div(
                 [
                     card(
                         [
                             section_title(
-                                "Team attacking profile",
-                                "Best used with 'All matches in this tournament'. It compares which teams score after shorter or longer attacking sequences.",
+                                "Team goal style map",
+                                "Compare direct and patient scoring styles. The selected team is highlighted in orange."
                             ),
                             dcc.Graph(id="team-chart", config=GRAPH_CONFIG, className="team-graph"),
                         ],
@@ -351,10 +324,7 @@ def team_comparison_tab():
                     ),
                     card(
                         [
-                            section_title(
-                                "Style comparison",
-                                "Direct teams, patient teams and efficient finishers in one view.",
-                            ),
+                            section_title("Style ranking", "Most direct, most patient and most efficient teams."),
                             html.Div(id="top-teams-table"),
                         ],
                         "top-table-panel",
@@ -363,11 +333,11 @@ def team_comparison_tab():
                 className="team-grid",
             ),
             html.Div(
-                "Coach interpretation: This view does not tell which tactic is best. It shows tendencies: some teams score after quick attacks, others after longer build-up. A coach can use this to discuss which attacking style fits their own team.",
+                "Interpretation: This does not prove which tactic is best. It shows tendencies that can be used for coaching discussion and replay selection.",
                 className="insight-text",
             ),
         ],
-        className="tab-page team-page",
+        className="one-page-section team-page",
     )
 
 
@@ -380,16 +350,9 @@ def build_layout(goals_df, competition_options=None):
             dcc.Interval(id="replay-interval", interval=800, n_intervals=0, disabled=True),
             app_header(),
             data_source_panel(competition_options or []),
-            dcc.Tabs(
-                id="main-tabs",
-                value="overview",
-                className="main-tabs",
-                children=[
-                    dcc.Tab(label="Coach Overview", value="overview", className="main-tab", selected_className="main-tab-selected", children=overview_tab()),
-                    dcc.Tab(label="Attack Replay", value="replay", className="main-tab", selected_className="main-tab-selected", children=goal_replay_tab(goals_df)),
-                    dcc.Tab(label="Team Profile", value="teams", className="main-tab", selected_className="main-tab-selected", children=team_comparison_tab()),
-                ],
-            ),
+            attack_replay_section(goals_df),
+            overview_section(),
+            team_profile_section(),
         ],
-        className="app-shell",
+        className="app-shell one-page-shell",
     )

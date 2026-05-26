@@ -17,12 +17,14 @@ def _xy(value):
 
 def _end_xy(row):
     event_type = row.get("type", "")
+
     if event_type == "Pass":
         return _xy(row.get("pass_end_location"))
     if event_type == "Carry":
         return _xy(row.get("carry_end_location"))
     if event_type == "Shot":
         return 120, 40
+
     return np.nan, np.nan
 
 
@@ -38,24 +40,6 @@ def competitions_df() -> pd.DataFrame:
     return df
 
 
-def competition_options():
-    df = competitions_df().copy()
-    patterns = ["World Cup", "Euro", "European Championship", "Copa America", "Africa Cup"]
-    mask = False
-    for pattern in patterns:
-        mask = mask | df["competition_name"].astype(str).str.contains(pattern, case=False, na=False)
-    filtered = df[mask].copy()
-    if filtered.empty:
-        filtered = df.copy()
-
-    options = []
-    for _, row in filtered.iterrows():
-        value = f"{int(row['competition_id'])}|{int(row['season_id'])}"
-        label = f"{row['competition_name']} - {row['season_name']}"
-        options.append({"label": label, "value": value})
-    return options
-
-
 @lru_cache(maxsize=64)
 def matches_df(competition_id: int, season_id: int) -> pd.DataFrame:
     df = sb.matches(competition_id=int(competition_id), season_id=int(season_id))
@@ -63,48 +47,61 @@ def matches_df(competition_id: int, season_id: int) -> pd.DataFrame:
     return df
 
 
+def competition_options():
+    """
+    Return tournament competitions only.
+
+    Important:
+    We do NOT check every competition with sb.matches() here,
+    because that makes the dashboard slow at startup.
+    """
+    df = competitions_df().copy()
+
+    tournament_patterns = [
+        "World Cup",
+        "Euro",
+        "European Championship",
+        "Copa America",
+        "Africa Cup",
+    ]
+
+    mask = False
+    for pattern in tournament_patterns:
+        mask = mask | df["competition_name"].astype(str).str.contains(
+            pattern,
+            case=False,
+            na=False,
+        )
+
+    filtered = df[mask].copy()
+
+    if filtered.empty:
+        filtered = df.copy()
+
+    filtered = filtered.sort_values(
+        ["competition_name", "season_name"],
+        ascending=[True, False],
+    )
+
+    options = []
+    for _, row in filtered.iterrows():
+        value = f"{int(row['competition_id'])}|{int(row['season_id'])}"
+        label = f"{row['competition_name']} - {row['season_name']}"
+        options.append({"label": label, "value": value})
+
+    return options
+
 def match_options(competition_season_value: str):
     if not competition_season_value:
         return []
+
     competition_id, season_id = [int(x) for x in str(competition_season_value).split("|")]
-    df = matches_df(competition_id, season_id)
 
-    options = [{"label": "All matches in this tournament", "value": f"{competition_id}|{season_id}|ALL"}]
-    for _, row in df.iterrows():
-        stage = row.get("competition_stage", "")
-        date = row.get("match_date", "")
-        match_id = int(row["match_id"])
-        label = f"{row['home_team']} vs {row['away_team']} · {date}"
-        if stage:
-            label += f" · {stage}"
-        value = f"{competition_id}|{season_id}|{match_id}"
-        options.append({"label": label, "value": value})
-    return options
-
-
-def team_options(match_value: str):
-    if not match_value:
-        return [{"label": "All teams", "value": "ALL"}]
-    try:
-        competition_id, season_id, match_token = parse_match_value(match_value)
-    except Exception:
-        return [{"label": "All teams", "value": "ALL"}]
-
-    matches = matches_df(competition_id, season_id)
-    if str(match_token) == "ALL":
-        teams = sorted(
-            set(matches["home_team"].dropna().astype(str)).union(set(matches["away_team"].dropna().astype(str)))
-        )
-        return [{"label": "All teams", "value": "ALL"}] + [{"label": team, "value": team} for team in teams]
-
-    found = matches[matches["match_id"].astype(int).eq(int(match_token))]
-    if found.empty:
-        return [{"label": "All teams", "value": "ALL"}]
-    row = found.iloc[0]
     return [
-        {"label": "All teams", "value": "ALL"},
-        {"label": row["home_team"], "value": row["home_team"]},
-        {"label": row["away_team"], "value": row["away_team"]},
+        {
+            "label": "All matches in this tournament",
+            "value": f"{competition_id}|{season_id}|ALL",
+        }
     ]
 
 
@@ -120,19 +117,26 @@ def build_match_goal_tables(match_value: str, team_filter: str = "ALL"):
 
     if str(match_token) == "ALL":
         matches = matches_df(competition_id, season_id)
-        all_goals, all_events = [], []
+
+        all_goals = []
+        all_events = []
 
         for _, match in matches.iterrows():
-            if team_filter and team_filter != "ALL" and team_filter not in {match["home_team"], match["away_team"]}:
-                continue
-            goals_df, events_df, _ = _build_single_match_goal_tables(
-                match_id=int(match["match_id"]),
+            match_id = int(match["match_id"])
+
+            if team_filter and team_filter != "ALL":
+                if team_filter not in {match["home_team"], match["away_team"]}:
+                    continue
+
+            goals_df, events_df, _team_df = _build_single_match_goal_tables(
+                match_id=match_id,
                 team_filter=team_filter,
                 home_team=match["home_team"],
                 away_team=match["away_team"],
                 match_date=match.get("match_date", ""),
                 stage=match.get("competition_stage", ""),
             )
+
             if not goals_df.empty:
                 all_goals.append(goals_df)
             if not events_df.empty:
@@ -146,7 +150,14 @@ def build_match_goal_tables(match_value: str, team_filter: str = "ALL"):
     return _build_single_match_goal_tables(match_id=int(match_token), team_filter=team_filter)
 
 
-def _build_single_match_goal_tables(match_id: int, team_filter: str = "ALL", home_team: str = "", away_team: str = "", match_date: str = "", stage: str = ""):
+def _build_single_match_goal_tables(
+    match_id: int,
+    team_filter: str = "ALL",
+    home_team: str = "",
+    away_team: str = "",
+    match_date: str = "",
+    stage: str = "",
+):
     events = events_for_match(int(match_id)).copy()
     events = events.sort_values("index").reset_index(drop=True)
 
@@ -168,10 +179,17 @@ def _build_single_match_goal_tables(match_id: int, team_filter: str = "ALL", hom
             & (events["shot_outcome"].astype(str).str.lower() == "goal")
         ].copy()
 
+    # Penalty goals are excluded because they do not represent normal attacking build-up.
+    if "shot_type" in goal_shots.columns:
+        goal_shots = goal_shots[
+            ~goal_shots["shot_type"].astype(str).str.lower().eq("penalty")
+        ].copy()
+
     if team_filter and team_filter != "ALL":
         goal_shots = goal_shots[goal_shots["team"].eq(team_filter)]
 
-    goal_rows, event_rows = [], []
+    goal_rows = []
+    event_rows = []
 
     for goal_number, (_, goal) in enumerate(goal_shots.iterrows(), start=1):
         team = goal["team"]
@@ -190,22 +208,32 @@ def _build_single_match_goal_tables(match_id: int, team_filter: str = "ALL", hom
         else:
             completed_pass_mask = pd.Series(True, index=possession_events.index)
 
-        completed_passes = possession_events[(possession_events["type"] == "Pass") & completed_pass_mask].copy()
+        completed_passes = possession_events[
+            (possession_events["type"] == "Pass")
+            & completed_pass_mask
+        ].copy()
 
         action_events = possession_events[
-            ((possession_events["type"] == "Pass") & completed_pass_mask)
+            (
+                (possession_events["type"] == "Pass")
+                & completed_pass_mask
+            )
             | (possession_events["type"] == "Carry")
             | (possession_events["type"] == "Shot")
         ].copy()
+
         action_events = action_events[action_events["index"] <= goal["index"]].copy()
         action_events = action_events.sort_values("index").reset_index(drop=True)
 
         passes_before_goal = int(len(completed_passes))
+
         first_timestamp = action_events.iloc[0]["timestamp"] if not action_events.empty else "00:00:00.000"
-        duration_seconds = max(0, _timestamp_to_seconds(goal["timestamp"]) - _timestamp_to_seconds(first_timestamp))
+        duration_seconds = _timestamp_to_seconds(goal["timestamp"]) - _timestamp_to_seconds(first_timestamp)
+        duration_seconds = max(0, duration_seconds)
 
         scorer = goal.get("player", "")
         shot_xg = float(goal.get("shot_statsbomb_xg", 0) or 0)
+
         minute = int(goal.get("minute", 0))
         second = int(goal.get("second", 0))
         goal_label = f"{team} - {scorer} ({minute}')"
@@ -247,6 +275,8 @@ def _build_single_match_goal_tables(match_id: int, team_filter: str = "ALL", hom
 
         for order, (_, event) in enumerate(action_events.iterrows(), start=1):
             event_type = event.get("type", "")
+            player = event.get("player", "")
+
             if event_type == "Pass":
                 recipient = event.get("pass_recipient", "")
                 pass_outcome = "Complete"
@@ -267,7 +297,7 @@ def _build_single_match_goal_tables(match_id: int, team_filter: str = "ALL", hom
                     "event_index": int(event.get("index", order)),
                     "event_id": event.get("id", f"{build_up_id}_{order}"),
                     "event_type": event_type,
-                    "player": event.get("player", ""),
+                    "player": player,
                     "recipient": recipient,
                     "pass_recipient": recipient,
                     "minute": int(event.get("minute", 0)),
@@ -289,12 +319,80 @@ def _build_single_match_goal_tables(match_id: int, team_filter: str = "ALL", hom
     goals_df = pd.DataFrame(goal_rows) if goal_rows else _empty_goals_df()
     events_df = pd.DataFrame(event_rows) if event_rows else _empty_events_df()
     team_df = _team_summary(goals_df)
+
     return goals_df, events_df, team_df
+
+
+def team_tournament_summary(match_value: str, team_name: str | None):
+    if not match_value or not team_name or team_name == "ALL":
+        return {
+            "team": "All teams",
+            "matches": [],
+            "goals": None,
+            "formation": "Select a team",
+            "summary": "Select one team in the replay filter to see team-specific tournament information.",
+        }
+
+    competition_id, season_id, _match_token = parse_match_value(match_value)
+    matches = matches_df(competition_id, season_id)
+
+    team_matches = matches[
+        (matches["home_team"].astype(str).eq(team_name))
+        | (matches["away_team"].astype(str).eq(team_name))
+    ].copy()
+
+    match_rows = []
+    formations = []
+
+    for _, match in team_matches.iterrows():
+        match_id = int(match["match_id"])
+        home = str(match["home_team"])
+        away = str(match["away_team"])
+        home_score = match.get("home_score", "")
+        away_score = match.get("away_score", "")
+        date = match.get("match_date", "")
+        stage = match.get("competition_stage", "")
+
+        match_rows.append(
+            {
+                "date": date,
+                "stage": stage,
+                "match": f"{home} vs {away}",
+                "result": f"{home_score}:{away_score}",
+            }
+        )
+
+        try:
+            events = events_for_match(match_id)
+            starting_xi = events[
+                (events["type"].astype(str) == "Starting XI")
+                & (events["team"].astype(str) == team_name)
+            ]
+
+            if not starting_xi.empty and "tactics_formation" in starting_xi.columns:
+                form = starting_xi.iloc[0].get("tactics_formation", None)
+                if form and str(form) != "nan":
+                    formations.append(str(int(form)) if isinstance(form, float) else str(form))
+        except Exception:
+            pass
+
+    if formations:
+        formation = pd.Series(formations).mode().iloc[0]
+    else:
+        formation = "Not available"
+
+    return {
+        "team": team_name,
+        "matches": match_rows,
+        "formation": formation,
+        "summary": f"{team_name} played {len(match_rows)} matches in this selected tournament.",
+    }
 
 
 def _team_summary(goals_df):
     if goals_df.empty:
         return _empty_team_df()
+
     out = (
         goals_df.groupby("team", as_index=False)
         .agg(
@@ -313,15 +411,36 @@ def _team_summary(goals_df):
 
 
 def _empty_goals_df():
-    return pd.DataFrame(columns=["build_up_id", "goal_id", "goal_event_id", "goal_label", "match_id", "match_name", "team", "opponent", "scorer", "minute", "second", "period", "possession", "passes_before_goal", "attack_duration_seconds", "build_up_type", "shot_xg", "tournament_stage", "tournament_progress_score", "finishing_efficiency", "match_stage", "play_pattern", "start_x", "start_y", "goal_x", "goal_y", "shot_x", "shot_y"])
+    return pd.DataFrame(
+        columns=[
+            "build_up_id", "goal_id", "goal_event_id", "goal_label", "match_id", "match_name",
+            "team", "opponent", "scorer", "minute", "second", "period", "possession",
+            "passes_before_goal", "attack_duration_seconds", "build_up_type", "shot_xg",
+            "tournament_stage", "tournament_progress_score", "finishing_efficiency",
+            "match_stage", "play_pattern", "start_x", "start_y", "goal_x", "goal_y", "shot_x", "shot_y"
+        ]
+    )
 
 
 def _empty_events_df():
-    return pd.DataFrame(columns=["build_up_id", "goal_id", "match_id", "match_name", "team", "event_order", "event_index", "event_id", "event_type", "player", "recipient", "pass_recipient", "minute", "second", "timestamp_label", "x", "y", "end_x", "end_y", "pass_outcome", "outcome", "is_completed_pass", "is_shot", "is_assist", "is_goal"])
+    return pd.DataFrame(
+        columns=[
+            "build_up_id", "goal_id", "match_id", "match_name", "team", "event_order", "event_index",
+            "event_id", "event_type", "player", "recipient", "pass_recipient", "minute", "second",
+            "timestamp_label", "x", "y", "end_x", "end_y", "pass_outcome", "outcome",
+            "is_completed_pass", "is_shot", "is_assist", "is_goal"
+        ]
+    )
 
 
 def _empty_team_df():
-    return pd.DataFrame(columns=["team", "goals", "goals_analysed", "avg_passes_before_goal", "avg_attack_duration", "shots", "finishing_efficiency", "tournament_stage", "tournament_progress_score", "total_xg"])
+    return pd.DataFrame(
+        columns=[
+            "team", "goals", "goals_analysed", "avg_passes_before_goal",
+            "avg_attack_duration", "shots", "finishing_efficiency",
+            "tournament_stage", "tournament_progress_score", "total_xg"
+        ]
+    )
 
 
 def _timestamp_to_seconds(value):
