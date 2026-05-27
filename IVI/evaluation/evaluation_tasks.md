@@ -1,106 +1,140 @@
-# Evaluation Tasks – FIFA World Cup 2022 Shot Quality Explorer
+# Evaluation Tasks – Coach Attack Explorer
 
 ## Purpose
 
-These tasks are used to evaluate whether the interactive dashboard helps users understand shot quality, shot locations and finishing efficiency in the FIFA World Cup 2022.
+These tasks evaluate whether the dashboard helps users understand how teams create goals in major tournaments. The evaluation focuses on the complete workflow: selecting a tournament, choosing a team, replaying a goal attack and comparing the team's attacking style with other teams in the tournament.
 
-The evaluation is lightweight and formative. The goal is not to prove statistical significance, but to find usability problems and improve the visualization.
+The evaluation is formative. The goal is not to prove that the dashboard is perfect, but to identify usability problems and improve the design before submission.
 
 ## Target users
 
-Possible participants:
+The intended users are:
 
-- football fans
-- students
-- people with basic dashboard experience
-- people without deep football analytics knowledge
+- football coaches
+- football fans with tactical interest
+- beginner analysts
+- students with basic dashboard experience
+
+The participants do not need expert football analytics knowledge. The dashboard should be understandable for users who know football, but are not professional data analysts.
 
 ## Procedure
 
-1. Give the participant a short introduction to the dashboard.
+1. Give the participant a short introduction:
+   "This dashboard shows how teams create goals. Please choose a tournament, select a team, replay one goal attack and compare the team with the rest of the tournament."
 2. Ask the participant to solve the tasks below while thinking aloud.
-3. Observe where the participant hesitates or misunderstands something.
+3. Observe where the participant hesitates, misunderstands labels or needs help.
 4. After the tasks, ask the SUS questionnaire.
-5. Note suggestions and possible improvements.
+5. Record positive feedback, main problems and improvement ideas.
 
 ## Tasks
 
-### Task 1 – Tournament overview
+### Task 1 – Select a tournament
 
-Find the team with the highest total xG in the tournament.
-
-Expected interaction:
-
-- use the xG by team chart
-- no filter or only overview mode
-
-Expected answer from current data:
-
-- Argentina
-
-### Task 2 – Team comparison
-
-Select Argentina and describe its shot quality using the KPI cards and charts.
+Choose one tournament from the tournament dropdown and check that the dashboard loads goal build-ups.
 
 Expected interaction:
 
-- use the team filter
-- inspect Shots, Goals, Total xG and xG per Shot
-- inspect shot map and timeline
+- open the tournament dropdown
+- select one tournament
+- wait until the dashboard updates
+- read the number of available goal build-ups
 
-### Task 3 – Match case study
+What this tests:
 
-Select the match Serbia vs Switzerland and compare both teams.
+- whether the entry point is understandable
+- whether the user notices that the dashboard is tournament-based
 
-Expected interaction:
+### Task 2 – Select a team and goal example
 
-- use the match filter
-- inspect shot map
-- inspect timeline
-- compare xG and outcomes
-
-### Task 4 – Chance quality
-
-Filter for High-quality chances and describe where these chances usually occur on the pitch.
+Select one team and then choose one goal example from this team.
 
 Expected interaction:
 
-- use the Chance Quality filter
-- inspect shot map
+- use the team dropdown
+- select one team
+- use the goal example dropdown
+- select one goal
 
-Expected pattern:
+What this tests:
 
-- high-quality chances are mostly close to goal and central
+- whether the filter workflow is clear
+- whether the user understands that the replay is team-specific
 
-### Task 5 – Player exploration
+### Task 3 – Replay the attack
 
-Find one player with high total xG and inspect his shots.
+Use the replay controls to inspect how the selected goal was created.
 
 Expected interaction:
 
-- use Top Players chart
-- optionally use Player filter
-- inspect shot map and timeline
+- use Play, Next or Jump to event
+- identify at least one important action before the goal
+- describe whether the attack was quick, medium or longer build-up
+
+What this tests:
+
+- whether the pitch replay is understandable
+- whether users can follow the sequence step by step
+- whether the build-up zones support interpretation
+
+### Task 4 – Interpret tournament goal patterns
+
+Use the tournament goal pattern charts to identify the most common build-up type in the selected tournament.
+
+Expected interaction:
+
+- inspect the build-up type chart
+- compare quick, medium and long build-ups
+- optionally inspect the passes vs duration scatterplot
+
+What this tests:
+
+- whether users understand the overview charts
+- whether the KPI cards and chart labels are useful
+
+### Task 5 – Compare team style with tournament outcome
+
+Use the team style map and ranking table to compare the selected team with the rest of the tournament.
+
+Expected interaction:
+
+- find the selected team in the style map
+- read whether it is more direct or more patient
+- use the ranking table to see directness rank and tournament finish
+
+What this tests:
+
+- whether the comparison view supports the coaching use case
+- whether users understand the link between attacking style and tournament finish
 
 ## Observation notes template
 
-For each participant, note:
+For each participant, record:
 
-- Did the participant complete the task?
-- Did the participant understand the filters?
-- Did the participant understand xG?
-- Did the participant understand the shot map?
-- Which chart was most useful?
-- Which part was confusing?
-- Suggested improvement
+- Were all tasks completed?
+- Which task caused hesitation?
+- Was the replay understandable?
+- Was the ranking understandable?
+- Did the participant understand direct, balanced and patient build-up?
+- Which view was most useful?
+- Which label or interaction was confusing?
+- What should be improved?
 
-## Possible design improvements after evaluation
+## Success criteria
 
-Depending on feedback, possible improvements are:
+The dashboard is considered understandable enough if most participants can:
 
-- add short explanation of xG in the dashboard
-- make goal markers larger
-- improve default filter state
-- add clearer labels for chance quality
-- reduce clutter in the shot map
-- improve README instructions
+- select a tournament without support
+- select a team and goal example
+- play through a goal sequence
+- explain the selected team's build-up style
+- use the ranking table to compare teams
+
+## Planned design improvements after evaluation
+
+Possible improvements based on expected feedback:
+
+- simplify labels if users do not understand build-up categories
+- make the selected team more visible in the style map and ranking
+- reduce visual clutter in the team style map if labels overlap
+- improve short instructions in the header
+- keep the dashboard focused on goal build-ups instead of adding unrelated football metrics
