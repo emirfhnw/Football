@@ -1,69 +1,68 @@
-# Evaluation Analysis – Current Status and Next Step
+# Evaluation Analysis – Coach Attack Explorer
 
-## Important note
+## Current status
 
-This file documents the evaluation setup and the analysis structure. The actual user evaluation must still be completed with real participants before the final submission if the module explicitly requires measured results.
+This file documents the planned evaluation analysis for the Coach Attack Explorer. The dashboard is finished enough for a small formative evaluation. The next step is to run the task-based test with 2 to 3 real participants and enter the results into the results template.
 
-The repository already contains all required evaluation material:
+The evaluation material is stored in:
 
 - `evaluation/evaluation_tasks.md`
 - `evaluation/sus_questionnaire.md`
 - `evaluation/evaluation_results_template.csv`
 - `evaluation/evaluation_summary.md`
 
-## Planned evaluation setup
+## Dashboard goal
 
-The evaluation is designed as a small formative usability test with 3 to 5 participants.
+The dashboard helps users inspect how teams create goals in major football tournaments. It combines one detailed goal replay with overview and comparison views.
 
-The participants should represent the intended target users:
+The main analysis question is:
 
-- football fans
-- students
-- beginner analysts
-- users with basic dashboard experience
+> How do teams create goals, and how does their attacking style compare with other teams in the same tournament?
 
-The goal is to check whether users can use the dashboard to explore shot quality, shot locations and finishing efficiency in the FIFA World Cup 2022.
+## Evaluation setup
+
+The evaluation is designed as a small formative usability test with 2 to 3 participants. Participants should represent realistic users such as football fans, coaches, students or beginner analysts.
+
+The test is not intended to prove statistical significance. Its purpose is to check whether the dashboard workflow is understandable and whether the visualizations support the intended analysis tasks.
 
 ## Evaluation tasks
 
 The evaluation uses five tasks:
 
-1. Find the team with the highest total xG.
-2. Select Argentina and describe its shot quality.
-3. Select Serbia vs Switzerland and compare both teams.
-4. Filter high-quality chances and describe where these chances usually occur on the pitch.
-5. Find one player with high total xG and inspect his shots.
+1. Select a tournament and confirm that goal build-ups are loaded.
+2. Select one team and one goal example.
+3. Replay the selected goal attack and describe how the goal was created.
+4. Use the tournament goal pattern charts to identify the most common build-up type.
+5. Use the team style map and ranking table to compare the selected team with the tournament.
 
-These tasks test the core IVI interactions:
+These tasks test the core IVI interaction concepts:
 
+- overview first
 - filtering
 - linked views
-- KPI interpretation
-- shot map interpretation
-- timeline interpretation
-- hover details
+- details on demand
+- visual comparison
+- interpretation of encoded data
 
 ## What to record
 
 For each participant, record:
 
-- whether each task was completed
-- SUS answers from 1 to 5
+- completion of each task
+- where the participant hesitated
+- whether the replay was understandable
+- whether the directness ranking was understandable
+- which view was most useful
 - main positive feedback
 - main usability problem
 - suggested improvement
-
-Use:
-
-```text
-evaluation/evaluation_results_template.csv
-```
+- SUS questionnaire answers
 
 ## Analysis method
 
 ### Task completion
 
-For each task, calculate how many participants completed it.
+For each task, count how many participants completed it.
 
 Example format:
 
@@ -79,8 +78,8 @@ Task 5: 3/3 completed
 
 For each participant:
 
-- odd questions: response minus 1
-- even questions: 5 minus response
+- odd-numbered questions: response minus 1
+- even-numbered questions: 5 minus response
 - sum adjusted scores
 - multiply by 2.5
 
@@ -90,41 +89,46 @@ Then calculate the average SUS score.
 
 Group observations into themes, for example:
 
-- xG explanation unclear
-- filters easy to understand
-- shot map useful
-- goal markers should be clearer
-- too many points when no filter is selected
+- tournament selection is easy to understand
+- replay controls are intuitive
+- build-up categories need a short explanation
+- ranking table supports comparison
+- labels in the team style map can overlap when many teams are shown
 
-## Expected design improvements
+## Improvements already made during development
 
-Based on the planned evaluation, the most realistic improvements are:
+Several improvements were made before the final evaluation:
 
-1. Add a short explanation of xG directly in the dashboard.
-2. Add a short user instruction explaining how to use the filters.
-3. Make goal markers and chance quality easier to understand.
-4. Keep the dashboard focused on shot quality instead of adding too many extra football metrics.
+1. Static local dataset
 
-## Current implementation status
+The first dashboard versions loaded too slowly when full tournament data was loaded directly. The data was therefore preprocessed into local CSV files. This improved reliability and made the dashboard usable during presentation.
 
-Some improvements are already implemented in the dashboard:
+2. Simplified layout
 
-- prepared local CSV data for faster loading
-- linked views through shared filters
-- KPI cards for immediate overview
-- filters for team, match, player, outcome, chance quality and minute range
-- hover details for individual shots
+Earlier versions contained too many sections and a wide team information table. This made the page harder to read. The layout was simplified so that the replay is the main entry point.
 
-## Final report wording after the real evaluation
+3. Clearer pitch visualization
 
-After completing the evaluation with real participants, the final report should include a short paragraph like this:
+The pitch was adjusted to stay inside its card and was divided into three tactical zones: build-up, progression and final third. This helps users interpret where the attack develops.
+
+4. Tournament comparison
+
+The team style map was changed to show all teams in the selected tournament and highlight the selected team. This supports comparison instead of showing only one isolated team.
+
+5. Ranking with tournament finish
+
+The ranking table was extended with tournament finish. This makes the use case stronger because users can compare directness with how far teams reached in the tournament.
+
+## Expected final report wording after real evaluation
+
+After completing the evaluation, the final report should include a paragraph like this with real numbers:
 
 ```text
-The dashboard was evaluated with X participants using five task-based questions and a SUS questionnaire. Most participants completed the tasks successfully. The main difficulty was understanding xG and chance quality without an explanation. Based on this feedback, an xG explanation was added to the dashboard and the user instructions were made clearer.
+The dashboard was evaluated with X participants using five task-based questions and a SUS questionnaire. Most participants completed the main workflow successfully. The replay was considered the most intuitive view because it directly shows the attacking sequence on the pitch. The main difficulty was understanding the directness ranking without a short explanation. Based on this feedback, the ranking description was simplified and the selected team was highlighted more clearly.
 ```
 
-Replace `X` with the real number of participants and add the real SUS score.
+Replace `X` and the findings with the real evaluation results.
 
 ## Conclusion
 
-The evaluation structure is ready. The only missing step is to run the short test with real participants and insert the results into `evaluation/evaluation_results_template.csv` or a filled copy of that file.
+The evaluation structure is ready. The missing step is to perform the short user test, fill in the results template and insert the real findings into the report.
