@@ -25,14 +25,29 @@ The analysis uses event data: shots, goals, successful passes before shots, carr
 
 ```text
 GDV/
-├── EDA_GDV_final_abgabe.ipynb
-├── gdv_report_final_abgabe.pdf
-├── gdv_pitch_slides_final.pdf
+├── README.md
+├── data/
+│   ├── gdv_final_third_entries.csv
+│   ├── gdv_shot_sequences.csv
+│   └── gdv_team_attack_summary.csv
 ├── evaluation/
 │   ├── gdv_evaluation_tasks_final.md
 │   ├── gdv_evaluation_results_final.csv
 │   └── gdv_evaluation_summary_final.md
-└── README.md
+├── figures/
+│   ├── 01_passes_before_shots_goals.png
+│   ├── 02_conversion_by_pass_category.png
+│   ├── 03_final_third_entry_outcomes.png
+│   ├── 04_entry_method_outcome.png
+│   ├── 05_goal_start_zone.png
+│   ├── 06_team_directness_ranking.png
+│   ├── 07_spain_final_third_entries_for.png
+│   └── 08_formation_context_optional.png
+├── notebooks/
+│   └── EDA_GDV_final_abgabe.ipynb
+└── report/
+    ├── gdv_report_final_abgabe.docx
+    └── gdv_report_final_abgabe.pdf
 ```
 
 ## How to run the notebook
@@ -46,19 +61,19 @@ pip install pandas numpy matplotlib statsbombpy
 Then run:
 
 ```bash
-jupyter notebook EDA_GDV_final_abgabe.ipynb
+jupyter notebook notebooks/EDA_GDV_final_abgabe.ipynb
 ```
 
 The notebook creates processed tables and final figures in the GDV folder. If cached CSV files use an older schema, the notebook rebuilds the analysis tables so the set-piece and penalty-shootout handling is applied.
 
 ## Final report
 
-Submit `gdv_report_final_abgabe.pdf` as the written report. The DOCX version is provided only for editing.
-
-## Pitch slides
-
-Submit `gdv_pitch_slides_final.pdf` as the final pitch slides. The PPTX version is provided only for editing.
+Submit `GDV/report/gdv_report_final_abgabe.pdf` as the written report. The DOCX version is provided only for editing.
 
 ## Evaluation material
 
 The evaluation material is aligned with the final figures in the report. The tasks cover pass categories, conversion rate, entries into the final third, entry method, start zones, team directness and the Spain use case.
+
+## Notes
+
+No separate pitch-slide file is required in this repository version. The final GDV submission consists of the notebook, report, figures, processed data, evaluation material and this README.
