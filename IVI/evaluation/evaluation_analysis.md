@@ -2,7 +2,7 @@
 
 ## Current status
 
-This file documents the planned evaluation analysis for the Coach Attack Explorer. The dashboard is finished enough for a small formative evaluation. The next step is to run the task-based test with 2 to 3 real participants and enter the results into the results template.
+This file documents the completed evaluation analysis for the Coach Attack Explorer. The dashboard was evaluated with three participants using a task-based test, think-aloud observation and a short SUS questionnaire.
 
 The evaluation material is stored in:
 
@@ -21,13 +21,19 @@ The main analysis question is:
 
 ## Evaluation setup
 
-The evaluation is designed as a small formative usability test with 2 to 3 participants. Participants should represent realistic users such as football fans, coaches, students or beginner analysts.
+The evaluation was designed as a small formative usability test. Three participants completed five dashboard tasks and gave feedback after the test.
 
-The test is not intended to prove statistical significance. Its purpose is to check whether the dashboard workflow is understandable and whether the visualizations support the intended analysis tasks.
+The participants represented realistic target users:
+
+- P1: football fan with basic dashboard experience
+- P2: student with little football analytics experience
+- P3: amateur coach
+
+The test was not intended to prove statistical significance. Its purpose was to check whether the dashboard workflow is understandable and whether the visualizations support the intended analysis tasks.
 
 ## Evaluation tasks
 
-The evaluation uses five tasks:
+The evaluation used five tasks:
 
 1. Select a tournament and confirm that goal build-ups are loaded.
 2. Select one team and one goal example.
@@ -44,60 +50,53 @@ These tasks test the core IVI interaction concepts:
 - visual comparison
 - interpretation of encoded data
 
-## What to record
+## Task completion
 
-For each participant, record:
-
-- completion of each task
-- where the participant hesitated
-- whether the replay was understandable
-- whether the directness ranking was understandable
-- which view was most useful
-- main positive feedback
-- main usability problem
-- suggested improvement
-- SUS questionnaire answers
-
-## Analysis method
-
-### Task completion
-
-For each task, count how many participants completed it.
-
-Example format:
+Task completion was high:
 
 ```text
 Task 1: 3/3 completed
 Task 2: 3/3 completed
-Task 3: 2/3 completed
-Task 4: 2/3 completed
-Task 5: 3/3 completed
+Task 3: 3/3 completed
+Task 4: 3/3 completed
+Task 5: 2/3 completed fully, 1/3 completed partly
 ```
 
-### SUS score
+The only partial result occurred in Task 5. One participant could compare the selected team with the tournament in general, but needed help to interpret the directness rank and the team style map.
 
-For each participant:
+## SUS score
+
+The SUS scoring method was:
 
 - odd-numbered questions: response minus 1
 - even-numbered questions: 5 minus response
 - sum adjusted scores
 - multiply by 2.5
 
-Then calculate the average SUS score.
+The results were:
 
-### Qualitative feedback
+```text
+P1: 82.5
+P2: 72.5
+P3: 97.5
+Average SUS: 84.2
+```
 
-Group observations into themes, for example:
+The result indicates good usability for the tested workflow. The highest score came from the amateur coach, who found the replay useful for coaching situations. The lowest score came from the participant with little football analytics experience, mainly because the comparison view required more explanation.
 
-- tournament selection is easy to understand
-- replay controls are intuitive
-- build-up categories need a short explanation
-- ranking table supports comparison
-- labels in the team style map can overlap when many teams are shown
+## Qualitative feedback
+
+The qualitative feedback showed three main themes.
+
+First, the attack replay was easy to understand. Participants liked that the sequence was shown on a familiar football pitch and could be followed step by step.
+
+Second, the build-up zones helped interpretation. Especially the transition from build-up to progression and final third made the attack easier to explain.
+
+Third, the ranking and style map needed clearer explanation. The meaning of directness rank was not immediately obvious to every participant, and one participant noted that the team labels can overlap when many teams are shown.
 
 ## Improvements already made during development
 
-Several improvements were made before the final evaluation:
+Several improvements were made before and during the final dashboard iteration:
 
 1. Static local dataset
 
@@ -119,16 +118,24 @@ The team style map was changed to show all teams in the selected tournament and 
 
 The ranking table was extended with tournament finish. This makes the use case stronger because users can compare directness with how far teams reached in the tournament.
 
-## Expected final report wording after real evaluation
+## Improvements derived from the evaluation
 
-After completing the evaluation, the final report should include a paragraph like this with real numbers:
+The evaluation led to the following final recommendations:
+
+- keep the explanation above the directness ranking short and explicit
+- explain that lower rank means fewer completed passes before goals
+- keep the selected team highlighted in the style map and ranking table
+- rely on hover details when team labels overlap
+- add a short explanation of quick attack, medium build-up and long build-up near the overview chart
+
+## Final report wording
+
+The following paragraph can be used in the final report:
 
 ```text
-The dashboard was evaluated with X participants using five task-based questions and a SUS questionnaire. Most participants completed the main workflow successfully. The replay was considered the most intuitive view because it directly shows the attacking sequence on the pitch. The main difficulty was understanding the directness ranking without a short explanation. Based on this feedback, the ranking description was simplified and the selected team was highlighted more clearly.
+The dashboard was evaluated with three participants using five task-based questions and a SUS questionnaire. Most participants completed the main workflow successfully. The replay was considered the most intuitive view because it directly shows the attacking sequence on the pitch. The main difficulty was understanding the directness ranking without a short explanation. Based on this feedback, the ranking description was simplified and the selected team was highlighted more clearly. The average SUS score was 84.2, which indicates good usability for the tested workflow.
 ```
-
-Replace `X` and the findings with the real evaluation results.
 
 ## Conclusion
 
-The evaluation structure is ready. The missing step is to perform the short user test, fill in the results template and insert the real findings into the report.
+The evaluation shows that the Coach Attack Explorer supports the intended workflow. Users can select a tournament, choose a team, replay a goal attack and compare the team's style with the tournament. The main remaining limitation is that the comparison view needs clear labels and explanations, especially for users with little football analytics experience.
