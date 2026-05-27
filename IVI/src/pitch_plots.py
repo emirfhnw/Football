@@ -1,308 +1,253 @@
-from __future__ import annotations
-
 import pandas as pd
 import plotly.graph_objects as go
 
-from .utils import PITCH_LENGTH, PITCH_WIDTH, normalize_attack_direction
+
+PITCH_X = 120
+PITCH_Y = 80
 
 
-PITCH_BG = "#0f3d2e"
-PITCH_LINE = "rgba(240,253,244,0.62)"
-PASS_COLOR = "#b7dcec"
-ASSIST_COLOR = "#f59e0b"
-SHOT_COLOR = "#ef4444"
-NODE_COLOR = "#152235"
-ACTIVE_COLOR = "#38bdf8"
+def _get(row, names, default=None):
+    for name in names:
+        if name in row and pd.notna(row[name]):
+            return row[name]
+    return default
 
 
-def pitch_sequence_figure(
-    events_df: pd.DataFrame,
-    goals_df: pd.DataFrame,
-    build_up_id: str | None,
-    current_step: int | None = -1,
-) -> go.Figure:
-    if not build_up_id and not goals_df.empty:
-        build_up_id = str(goals_df.iloc[0]["build_up_id"])
+def _add_pitch_base(fig):
 
-    goal = goals_df[goals_df["build_up_id"].astype(str).eq(str(build_up_id))]
-    title = "No goal selected"
-    if not goal.empty:
-        row = goal.iloc[0]
-        title = f"{row['team']} · {row['scorer']} vs {row['opponent']} · {int(row['minute'])}'"
+    fig.add_annotation(x=20, y=5, text="Build-up", showarrow=False, font=dict(size=12, color="#93c5fd"))
+    fig.add_annotation(x=60, y=5, text="Progression", showarrow=False, font=dict(size=12, color="#86efac"))
+    fig.add_annotation(x=100, y=5, text="Final third", showarrow=False, font=dict(size=12, color="#fbbf24"))
 
-    fig = base_pitch(title)
-    sequence = events_df[events_df["build_up_id"].astype(str).eq(str(build_up_id))].copy()
-    if sequence.empty:
-        fig.add_annotation(
-            text="No build-up sequence available for the current selection.",
-            x=PITCH_LENGTH / 2,
-            y=PITCH_WIDTH / 2,
-            xref="x",
-            yref="y",
-            showarrow=False,
-            font=dict(color="#cbd5e1", size=14),
-        )
-        return fig
+    line = "rgba(226,232,240,0.75)"
+    soft = "rgba(226,232,240,0.55)"
 
-    sequence = normalize_attack_direction(sequence, ["x", "y", "end_x", "end_y"])
-    sequence["event_order"] = sequence["event_order"].astype(int)
-    max_order = int(sequence["event_order"].max())
-    active_order, visible_sequence = _visible_sequence(sequence, current_step, max_order)
+    shapes = [
+        dict(type="rect", x0=0, y0=0, x1=40, y1=80, line=dict(width=0), fillcolor="rgba(59,130,246,0.12)", layer="below"),
+        dict(type="rect", x0=40, y0=0, x1=80, y1=80, line=dict(width=0), fillcolor="rgba(34,197,94,0.10)", layer="below"),
+        dict(type="rect", x0=80, y0=0, x1=120, y1=80, line=dict(width=0), fillcolor="rgba(245,158,11,0.13)", layer="below"),
 
-    show_all = active_order is None
-    _add_edges(fig, visible_sequence, active_order, show_all)
-    _add_nodes(fig, visible_sequence, active_order, show_all)
-    _add_active_label(fig, visible_sequence, active_order)
-    _add_ball(fig, visible_sequence, active_order)
-    _add_step_annotation(fig, active_order, max_order)
-    return fig
+        dict(type="rect", x0=0, y0=0, x1=120, y1=80, line=dict(color=line, width=2), fillcolor="rgba(0,0,0,0)"),
+        dict(type="line", x0=60, y0=0, x1=60, y1=80, line=dict(color="rgba(255,255,255,0.90)", width=2)),
 
+        dict(type="line", x0=40, y0=0, x1=40, y1=80, line=dict(color="rgba(148,163,184,0.35)", width=1, dash="dot")),
+        dict(type="line", x0=80, y0=0, x1=80, y1=80, line=dict(color="rgba(148,163,184,0.35)", width=1, dash="dot")),
 
-def base_pitch(title: str = "") -> go.Figure:
-    fig = go.Figure()
-    fig.update_layout(
-        title=dict(text=title, x=0.02, font=dict(size=15, color="#f8fafc")),
-        paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor=PITCH_BG,
-        margin=dict(l=4, r=4, t=38, b=4),
-        height=380,
-        xaxis=dict(range=[0, PITCH_LENGTH], visible=False, fixedrange=True),
-        yaxis=dict(range=[0, PITCH_WIDTH], visible=False, fixedrange=True, scaleanchor="x", scaleratio=1),
-        showlegend=False,
-        hoverlabel=dict(bgcolor="#111827", font=dict(color="#f8fafc")),
-        shapes=_pitch_shapes(),
-    )
-    return fig
+        dict(type="rect", x0=0, y0=18, x1=18, y1=62, line=dict(color=soft, width=1), fillcolor="rgba(0,0,0,0)"),
+        dict(type="rect", x0=102, y0=18, x1=120, y1=62, line=dict(color=soft, width=1), fillcolor="rgba(0,0,0,0)"),
 
+        dict(type="rect", x0=0, y0=30, x1=6, y1=50, line=dict(color=soft, width=1), fillcolor="rgba(0,0,0,0)"),
+        dict(type="rect", x0=114, y0=30, x1=120, y1=50, line=dict(color=soft, width=1), fillcolor="rgba(0,0,0,0)"),
 
-def _visible_sequence(sequence: pd.DataFrame, current_step: int | None, max_order: int) -> tuple[int | None, pd.DataFrame]:
-    if current_step is None:
-        current_step = -1
-    current_step = int(current_step)
-    if current_step < 0:
-        return None, sequence
-    active_order = max(1, min(max_order, current_step + 1))
-    return active_order, sequence[sequence["event_order"] <= active_order]
-
-
-def _add_edges(fig: go.Figure, sequence: pd.DataFrame, active_order: int | None, show_all: bool) -> None:
-    for _, event in sequence.iterrows():
-        order = int(event["event_order"])
-        is_shot = event["event_type"] == "Shot"
-        is_assist = bool(event.get("is_assist", False))
-        is_current = active_order == order
-        color = SHOT_COLOR if is_shot else ASSIST_COLOR if is_assist else PASS_COLOR
-        if show_all:
-            width = 3.5 if is_shot else 2.7 if is_assist else 0.65
-            opacity = 1.0 if is_shot else 0.9 if is_assist else 0.16
-        else:
-            width = 3.2 if is_current or is_shot else 2.6 if is_assist else 1.0
-            opacity = 1.0 if is_current or is_shot else 0.92 if is_assist else 0.26
-        dash = "dash" if is_shot else "solid"
-        fig.add_trace(
-            go.Scatter(
-                x=[event["x"], event["end_x"]],
-                y=[event["y"], event["end_y"]],
-                mode="lines",
-                line=dict(color=color, width=width, dash=dash),
-                opacity=opacity,
-                hoverinfo="skip",
-            )
-        )
-        fig.add_annotation(
-            x=event["end_x"],
-            y=event["end_y"],
-            ax=event["x"],
-            ay=event["y"],
-            xref="x",
-            yref="y",
-            axref="x",
-            ayref="y",
-            showarrow=True,
-            arrowhead=3,
-            arrowsize=1.1,
-            arrowwidth=width,
-            arrowcolor=color,
-            opacity=opacity,
-        )
-
-
-def _add_nodes(fig: go.Figure, sequence: pd.DataFrame, active_order: int | None, show_all: bool) -> None:
-    min_order = int(sequence["event_order"].min())
-    max_order = int(sequence["event_order"].max())
-    long_sequence = max_order > 15
-    colors = []
-    sizes = []
-    border_colors = []
-    border_widths = []
-    labels = []
-    for row in sequence.itertuples():
-        order = int(row.event_order)
-        is_active = active_order == order
-        is_start = order == min_order
-        is_final = order == max_order
-        is_assist = bool(row.is_assist)
-        is_shot = row.event_type == "Shot"
-
-        colors.append(ACTIVE_COLOR if is_active else NODE_COLOR)
-        if show_all:
-            sizes.append(19 if is_final or is_shot else 15 if is_start or is_assist else 8)
-            border_colors.append(SHOT_COLOR if is_shot else ASSIST_COLOR if is_assist else ACTIVE_COLOR if is_final else "#dbeafe" if is_start else "rgba(219,234,254,0.55)")
-            border_widths.append(2.8 if is_final or is_shot else 2.0 if is_start or is_assist else 0.9)
-            labels.append(str(order) if (is_start or is_assist or is_shot or is_final or not long_sequence and order % 2 == 1) else "")
-        else:
-            sizes.append(27 if is_active else 17 if is_assist or is_shot else 13)
-            border_colors.append(ACTIVE_COLOR if is_active else ASSIST_COLOR if is_assist else SHOT_COLOR if is_shot else "#dbeafe")
-            border_widths.append(4.2 if is_active else 1.4)
-            labels.append(str(order))
-
-    fig.add_trace(
-        go.Scatter(
-            x=sequence["x"],
-            y=sequence["y"],
-            mode="markers+text",
-            marker=dict(size=sizes, color=colors, line=dict(width=border_widths, color=border_colors)),
-            text=labels,
-            textfont=dict(size=8 if show_all else 10, color="rgba(248,250,252,0.72)" if show_all else "#f8fafc", family="Inter, sans-serif"),
-            textposition="middle center",
-            customdata=sequence[["event_type", "player", "recipient", "timestamp_label", "pass_outcome"]],
-            hovertemplate=(
-                "<b>%{customdata[1]}</b><br>"
-                "Event: %{customdata[0]}<br>"
-                "Recipient: %{customdata[2]}<br>"
-                "Time: %{customdata[3]}<br>"
-                "Outcome: %{customdata[4]}<extra></extra>"
-            ),
-        )
-    )
-
-
-def _add_active_label(fig: go.Figure, sequence: pd.DataFrame, active_order: int | None) -> None:
-    if sequence.empty:
-        return
-    if active_order is not None:
-        active = sequence[sequence["event_order"].eq(active_order)].iloc[-1]
-        player = str(active["player"])
-        label = player if len(player) <= 18 else player[:17] + "..."
-        fig.add_annotation(
-            text=label,
-            x=active["x"],
-            y=min(PITCH_WIDTH - 2, active["y"] + 5),
-            xref="x",
-            yref="y",
-            showarrow=False,
-            font=dict(color="#f8fafc", size=11),
-            bgcolor="rgba(15,23,42,0.72)",
-            bordercolor="rgba(56,189,248,0.55)",
-            borderpad=3,
-        )
-
-    goals = sequence[sequence["is_goal"].astype(bool)]
-    if not goals.empty:
-        goal = goals.iloc[-1]
-        fig.add_trace(
-            go.Scatter(
-                x=[goal["end_x"]],
-                y=[goal["end_y"]],
-                mode="markers",
-                marker=dict(size=22, color=ASSIST_COLOR, symbol="star", line=dict(width=2.0, color="#fff7ed")),
-                hovertemplate="Goal<extra></extra>",
-            )
-        )
-        fig.add_annotation(
-            text="Goal",
-            x=goal["end_x"],
-            y=min(PITCH_WIDTH - 2, goal["end_y"] + 4),
-            xref="x",
-            yref="y",
-            showarrow=False,
-            font=dict(color="#fff7ed", size=11),
-            bgcolor="rgba(15,23,42,0.72)",
-            bordercolor="rgba(245,158,11,0.75)",
-            borderpad=3,
-        )
-
-
-def _add_ball(fig: go.Figure, sequence: pd.DataFrame, active_order: int | None) -> None:
-    if sequence.empty:
-        return
-    active = sequence.iloc[-1] if active_order is None else sequence[sequence["event_order"].eq(active_order)].iloc[-1]
-    fig.add_trace(
-        go.Scatter(
-            x=[active["end_x"]],
-            y=[active["end_y"]],
-            mode="markers",
-            marker=dict(size=10, color="#ffffff", line=dict(width=2, color="#111827")),
-            hovertemplate="Ball position<extra></extra>",
-        )
-    )
-
-
-def _add_step_annotation(fig: go.Figure, active_order: int | None, max_order: int) -> None:
-    text = f"Showing all {max_order} events" if active_order is None else f"Step {active_order} / {max_order}"
-    fig.add_annotation(
-        text=text,
-        x=1.5,
-        y=82.5,
-        xref="x",
-        yref="y",
-        showarrow=False,
-        font=dict(color="#cbd5e1", size=12),
-        align="left",
-    )
-
-
-def _pitch_shapes() -> list[dict]:
-    return [
-        _rect(0, 0, PITCH_LENGTH, PITCH_WIDTH),
-        _line(PITCH_LENGTH / 2, 0, PITCH_LENGTH / 2, PITCH_WIDTH),
-        _circle(PITCH_LENGTH / 2, PITCH_WIDTH / 2, 10),
-        _rect(0, 18, 18, 62),
-        _rect(PITCH_LENGTH - 18, 18, PITCH_LENGTH, 62),
-        _rect(0, 30, 6, 50),
-        _rect(PITCH_LENGTH - 6, 30, PITCH_LENGTH, 50),
-        _circle(12, 40, 0.75),
-        _circle(PITCH_LENGTH - 12, 40, 0.75),
-        _line(PITCH_LENGTH, 36, PITCH_LENGTH, 44, width=4, color=ASSIST_COLOR),
+        dict(type="line", x0=0, y0=36, x1=0, y1=44, line=dict(color="#f59e0b", width=5)),
+        dict(type="line", x0=120, y0=36, x1=120, y1=44, line=dict(color="#f59e0b", width=5)),
     ]
 
+    fig.update_layout(shapes=shapes)
 
-def _rect(x0, y0, x1, y1, color=PITCH_LINE, width=1.2) -> dict:
-    return dict(type="rect", x0=x0, y0=y0, x1=x1, y1=y1, line=dict(color=color, width=width))
+    fig.add_shape(
+        type="circle",
+        x0=50,
+        y0=30,
+        x1=70,
+        y1=50,
+        line=dict(color=soft, width=1),
+    )
 
-
-def _line(x0, y0, x1, y1, width=1.2, color=PITCH_LINE) -> dict:
-    return dict(type="line", x0=x0, y0=y0, x1=x1, y1=y1, line=dict(color=color, width=width))
-
-
-def _circle(x, y, r, color=PITCH_LINE, width=1.1) -> dict:
-    return dict(type="circle", x0=x - r, y0=y - r, x1=x + r, y1=y + r, line=dict(color=color, width=width))
-
-
-def timeline_items(events_df: pd.DataFrame, build_up_id: str | None, current_step: int | None = -1) -> list[dict]:
-    if not build_up_id:
-        return []
-    sequence = events_df[events_df["build_up_id"].astype(str).eq(str(build_up_id))].copy()
-    if sequence.empty:
-        return []
-    max_order = int(sequence["event_order"].max())
-    active_order = None if current_step is None or int(current_step) < 0 else max(1, min(max_order, int(current_step) + 1))
-    items = []
-    for _, event in sequence.iterrows():
-        step = int(event["event_order"])
-        action = "Shot" if event["event_type"] == "Shot" else "Pass"
-        if bool(event.get("is_assist", False)):
-            action = "Final pass"
-        detail = event["player"]
-        if event.get("recipient"):
-            detail += f" to {event['recipient']}"
-        items.append(
-            {
-                "step": step,
-                "time": event["timestamp_label"],
-                "action": action,
-                "detail": detail,
-                "active": active_order == step,
-            }
+    fig.add_trace(
+        go.Scatter(
+            x=[12, 108],
+            y=[40, 40],
+            mode="markers",
+            marker=dict(size=5, color=soft),
+            hoverinfo="skip",
+            showlegend=False,
         )
-    return items
+    )
+
+
+def _finalize_pitch(fig, height=560):
+    fig.update_xaxes(range=[0, 120], visible=False, fixedrange=True, constrain="domain")
+    fig.update_yaxes(range=[80, 0], visible=False, fixedrange=True, scaleanchor="x", scaleratio=1)
+
+    fig.update_layout(
+        template="plotly_dark",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="#064e3b",
+        margin=dict(l=0, r=0, t=0, b=0),
+        height=height,
+        autosize=True,
+        showlegend=False,
+        hovermode=False,
+    )
+
+
+def _empty_pitch(message="No build-up sequence available for the current selection."):
+    fig = go.Figure()
+    _add_pitch_base(fig)
+    fig.add_annotation(
+        x=60,
+        y=40,
+        text=message,
+        showarrow=False,
+        font=dict(size=16, color="white"),
+    )
+    _finalize_pitch(fig)
+    return fig
+
+
+def pitch_sequence_figure(events_df, goals_df, goal_id, step):
+    if events_df is None or events_df.empty or not goal_id:
+        return _empty_pitch()
+
+    sequence = events_df[events_df["build_up_id"].astype(str).eq(str(goal_id))].copy()
+
+    if sequence.empty:
+        return _empty_pitch()
+
+    if "event_order" in sequence.columns:
+        sequence = sequence.sort_values("event_order")
+
+    if step is None:
+        step = 0
+
+    if step < 0:
+        visible = sequence.copy()
+    else:
+        visible = sequence.iloc[: int(step) + 1].copy()
+
+    if visible.empty:
+        return _empty_pitch()
+
+    fig = go.Figure()
+    _add_pitch_base(fig)
+
+    xs = []
+    ys = []
+    labels = []
+
+    for idx, row in visible.iterrows():
+        x = _get(row, ["x", "start_x", "location_x"])
+        y = _get(row, ["y", "start_y", "location_y"])
+        end_x = _get(row, ["end_x", "pass_end_x", "carry_end_x", "shot_end_x"])
+        end_y = _get(row, ["end_y", "pass_end_y", "carry_end_y", "shot_end_y"])
+
+        if x is None or y is None:
+            continue
+
+        event_order = int(_get(row, ["event_order"], len(xs) + 1))
+        event_type = str(_get(row, ["event_type", "type"], "Action"))
+        player = str(_get(row, ["player", "player_name"], ""))
+
+        xs.append(float(x))
+        ys.append(float(y))
+        labels.append(str(event_order))
+
+        if end_x is not None and end_y is not None:
+            color = "rgba(148,163,184,0.65)"
+            width = 2
+
+            if "shot" in event_type.lower():
+                color = "rgba(239,68,68,0.95)"
+                width = 4
+            elif "pass" in event_type.lower():
+                color = "rgba(56,189,248,0.75)"
+                width = 2
+            elif "carry" in event_type.lower():
+                color = "rgba(34,197,94,0.75)"
+                width = 2
+
+            fig.add_annotation(
+                x=float(end_x),
+                y=float(end_y),
+                ax=float(x),
+                ay=float(y),
+                xref="x",
+                yref="y",
+                axref="x",
+                ayref="y",
+                showarrow=True,
+                arrowhead=3,
+                arrowsize=1.2,
+                arrowwidth=width,
+                arrowcolor=color,
+                opacity=0.95,
+            )
+
+        is_current = idx == visible.index[-1]
+        if is_current and player:
+            fig.add_annotation(
+                x=float(x),
+                y=float(y) - 4,
+                text=player[:24],
+                showarrow=False,
+                bgcolor="rgba(15,23,42,0.88)",
+                bordercolor="rgba(56,189,248,0.8)",
+                borderwidth=1,
+                font=dict(size=11, color="white"),
+            )
+
+    fig.add_trace(
+        go.Scatter(
+            x=xs,
+            y=ys,
+            mode="markers+text",
+            text=labels,
+            textposition="middle center",
+            marker=dict(
+                size=17,
+                color="rgba(15,23,42,0.95)",
+                line=dict(color="rgba(226,232,240,0.9)", width=2),
+            ),
+            textfont=dict(color="white", size=10),
+            hoverinfo="skip",
+            showlegend=False,
+        )
+    )
+
+    current = visible.iloc[-1]
+    cx = _get(current, ["x", "start_x", "location_x"])
+    cy = _get(current, ["y", "start_y", "location_y"])
+
+    if cx is not None and cy is not None:
+        fig.add_trace(
+            go.Scatter(
+                x=[float(cx)],
+                y=[float(cy)],
+                mode="markers",
+                marker=dict(
+                    size=32,
+                    color="rgba(14,165,233,0.85)",
+                    line=dict(color="white", width=2),
+                ),
+                hoverinfo="skip",
+                showlegend=False,
+            )
+        )
+
+    final = sequence.iloc[-1]
+    gx = _get(final, ["end_x", "shot_end_x", "x"], 120)
+    gy = _get(final, ["end_y", "shot_end_y", "y"], 40)
+
+    if gx is not None and gy is not None:
+        fig.add_trace(
+            go.Scatter(
+                x=[float(gx)],
+                y=[float(gy)],
+                mode="markers+text",
+                text=["Goal"],
+                textposition="top center",
+                marker=dict(
+                    size=26,
+                    symbol="star",
+                    color="#f59e0b",
+                    line=dict(color="white", width=1),
+                ),
+                textfont=dict(color="white", size=11),
+                hoverinfo="skip",
+                showlegend=False,
+            )
+        )
+
+    _finalize_pitch(fig)
+    return fig

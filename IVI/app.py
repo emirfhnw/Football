@@ -6,12 +6,9 @@ import plotly.graph_objects as go
 from dash import ALL, Dash, Input, Output, State, callback_context, html, no_update
 import dash_bootstrap_components as dbc
 
-from src.statsbomb_explorer import (
-    competition_options,
-    match_options,
-    build_match_goal_tables,
-    team_tournament_summary,
-)
+from pathlib import Path
+import pandas as pd
+
 from src.data_loader import load_dashboard_data
 from src.figures import build_up_distribution, passes_duration_scatter, team_build_up_profile
 from src.layout import build_layout, goal_options, kpi_row
@@ -24,21 +21,78 @@ from src.metrics import (
 from src.pitch_plots import pitch_sequence_figure
 
 
-# Load only the schema at startup.
-# The dashboard starts empty and only loads real data after clicking Load.
-_initial_goals_df, _initial_events_df, _team_df = load_dashboard_data()
-goals_df = _initial_goals_df.iloc[0:0].copy()
-events_df = _initial_events_df.iloc[0:0].copy()
-tournament_goals_df = _initial_goals_df.iloc[0:0].copy()
+BASE_DIR = Path(__file__).resolve().parent
+SELECTED_TOURNAMENTS_FILE = BASE_DIR / "data" / "raw" / "selected_tournaments.csv"
+
+_all_goals_df, _all_events_df, _team_df = load_dashboard_data()
+
+goals_df = _all_goals_df.iloc[0:0].copy()
+events_df = _all_events_df.iloc[0:0].copy()
+team_df = _team_df.copy()
+tournament_goals_df = goals_df.copy()
+
+
+def load_selected_tournaments():
+    if SELECTED_TOURNAMENTS_FILE.exists():
+        tournaments = pd.read_csv(SELECTED_TOURNAMENTS_FILE)
+    else:
+        tournaments = pd.DataFrame(
+            [
+                {
+                    "label": "FIFA World Cup - 2022",
+                    "competition_id": 43,
+                    "season_id": 106,
+                    "value": "43|106|ALL",
+                }
+            ]
+        )
+
+    tournaments = tournaments.dropna(subset=["label", "value"]).copy()
+
+    return [
+        {
+            "label": str(row["label"]),
+            "value": str(row["value"]),
+        }
+        for _, row in tournaments.iterrows()
+    ]
+
+def filter_local_data_by_tournament(tournament_value):
+    goals = _all_goals_df.copy()
+    events = _all_events_df.copy()
+
+    # Wenn die processed CSVs eine Turnier-Spalte haben,
+    # filtern wir nach dem ausgewählten Turnier.
+    if "competition_value" in goals.columns:
+        filtered_goals = goals[
+            goals["competition_value"].astype(str).eq(str(tournament_value))
+        ].copy()
+
+        if not filtered_goals.empty:
+            goals = filtered_goals
+
+    if "competition_value" in events.columns:
+        filtered_events = events[
+            events["competition_value"].astype(str).eq(str(tournament_value))
+        ].copy()
+
+        if not filtered_events.empty:
+            events = filtered_events
+
+    return goals, events
 
 app = Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
     suppress_callback_exceptions=True,
+    prevent_initial_callbacks="initial_duplicate",
     title="Coach Attack Explorer",
 )
 server = app.server
-app.layout = build_layout(goals_df, competition_options())
+app.layout = build_layout(
+    goals_df,
+    load_selected_tournaments(),
+)
 
 
 def empty_figure(message: str = "Load a tournament to start."):
@@ -128,7 +182,6 @@ def coach_takeaway(goals):
         )
 
     kpis = dashboard_kpis(goals)
-    n_goals = len(goals)
     avg_passes = float(kpis["avg_passes"])
     avg_duration = float(kpis["avg_duration"])
 
@@ -145,7 +198,7 @@ def coach_takeaway(goals):
     return html.Div(
         [
             html.Div("Coach takeaway", className="takeaway-title"),
-            html.Div(f"{n_goals} goal build-ups are selected.", className="takeaway-text"),
+            html.Div(f"{len(goals)} goal build-ups are selected.", className="takeaway-text"),
             html.Div(
                 f"{style_note} Average: {avg_passes:.1f} completed passes and {avg_duration:.0f} seconds before the goal.",
                 className="takeaway-highlight",
@@ -176,7 +229,7 @@ def team_info_card(summary, goals):
             [
                 html.Div("Select one team", className="mini-table-title"),
                 html.Div(
-                    "After loading a tournament, choose one team above the replay to see matches, results and goal-build-up tendencies.",
+                    "Choose one team above the replay to see its goal build-up profile.",
                     className="mini-table-subtitle",
                 ),
             ],
@@ -199,40 +252,69 @@ def team_info_card(summary, goals):
     else:
         team_rank_df = (
             goals.groupby("team", as_index=False)
-            .agg(goals=("build_up_id", "nunique"), avg_passes=("passes_before_goal", "mean"))
+            .agg(
+                goals=("build_up_id", "nunique"),
+                avg_passes=("passes_before_goal", "mean"),
+            )
             .sort_values("avg_passes", ascending=True)
             .reset_index(drop=True)
         )
+
         if selected_team in set(team_rank_df["team"]):
             rank = int(team_rank_df.index[team_rank_df["team"].eq(selected_team)][0]) + 1
             rank_text = f"{rank} of {len(team_rank_df)} teams by directness"
         else:
             rank_text = "Not ranked"
 
-    rows = []
-    for match in summary.get("matches", []):
-        rows.append(
+    goal_rows = []
+
+    for _, row in team_goals.head(8).iterrows():
+        minute = row.get("minute", row.get("goal_minute", ""))
+        scorer = row.get("scorer", "")
+        passes = row.get("passes_before_goal", "")
+        style = row.get("build_up_type", "")
+
+        try:
+            minute = f"{int(float(minute))}'" if str(minute) != "" else ""
+        except Exception:
+            minute = str(minute)
+
+        goal_rows.append(
             html.Tr(
                 [
-                    html.Td(str(match.get("date", ""))),
-                    html.Td(str(match.get("stage", ""))),
-                    html.Td(str(match.get("match", ""))),
-                    html.Td(str(match.get("result", ""))),
+                    html.Td(str(minute)),
+                    html.Td(str(scorer)),
+                    html.Td(str(passes)),
+                    html.Td(str(style)),
                 ]
             )
         )
+
+    if not goal_rows:
+        goal_rows = [
+            html.Tr(
+                [
+                    html.Td("No goals"),
+                    html.Td("-"),
+                    html.Td("-"),
+                    html.Td("-"),
+                ]
+            )
+        ]
 
     return html.Div(
         [
             html.Div(
                 [
                     html.Div("Selected team", className="mini-table-title"),
-                    html.Div(summary.get("summary", ""), className="mini-table-subtitle"),
+                    html.Div(
+                        f"{selected_team} is analysed using the locally prepared goal build-up data.",
+                        className="mini-table-subtitle",
+                    ),
                     html.Div(
                         [
                             info_pair("Team", selected_team),
                             info_pair("Goals analysed", len(team_goals)),
-                            info_pair("Formation", summary.get("formation", "Not available")),
                             info_pair("Directness rank", rank_text),
                             info_pair("Avg passes before goal", f"{avg_passes:.1f}"),
                             info_pair("Avg attack duration", f"{avg_duration:.0f}s"),
@@ -245,20 +327,24 @@ def team_info_card(summary, goals):
             ),
             html.Div(
                 [
-                    html.Div("Matches in tournament", className="mini-table-title"),
+                    html.Div("Analysed goal examples", className="mini-table-title"),
+                    html.Div(
+                        "Goal build-ups available for the selected team in this tournament.",
+                        className="mini-table-subtitle",
+                    ),
                     html.Table(
                         [
                             html.Thead(
                                 html.Tr(
                                     [
-                                        html.Th("Date"),
-                                        html.Th("Stage"),
-                                        html.Th("Match"),
-                                        html.Th("Result"),
+                                        html.Th("Minute"),
+                                        html.Th("Scorer"),
+                                        html.Th("Passes"),
+                                        html.Th("Style"),
                                     ]
                                 )
                             ),
-                            html.Tbody(rows),
+                            html.Tbody(goal_rows),
                         ],
                         className="team-table compact-match-table",
                     ),
@@ -375,55 +461,158 @@ def ranking_table(df, columns):
     return html.Table([header, html.Tbody(rows)], className="team-table")
 
 
-def top_team_table(goals):
+def top_team_table(goals, selected_team=None):
     if goals.empty:
-        return html.Div("No team profile available yet. Load a tournament first.", className="empty-state")
+        return html.Div(
+            "No team ranking available yet. Choose a tournament first.",
+            className="empty-state",
+        )
 
-    direct = direct_team_ranking(goals).head(5)
-    patient = patient_team_ranking(goals).head(5)
-    efficient = efficient_team_ranking(goals).head(5)
+    stage_col = None
+    for col in ["stage", "competition_stage", "match_stage", "round"]:
+        if col in goals.columns:
+            stage_col = col
+            break
+
+    stage_order = {
+        "Group Stage": 1,
+        "Round of 16": 2,
+        "Quarter-finals": 3,
+        "Semi-finals": 4,
+        "3rd Place Final": 5,
+        "Final": 6,
+    }
+
+    def classify_style(avg_passes):
+        if avg_passes <= 3:
+            return "Direct"
+        if avg_passes <= 6:
+            return "Balanced"
+        return "Patient"
+
+    def best_stage(team_df):
+        if stage_col is None or team_df.empty:
+            return "Not available"
+
+        stages = team_df[stage_col].dropna().astype(str).unique().tolist()
+
+        if not stages:
+            return "Not available"
+
+        stages = sorted(
+            stages,
+            key=lambda item: stage_order.get(item, 0),
+            reverse=True,
+        )
+
+        return stages[0]
+
+    ranking = (
+        goals.groupby("team", as_index=False)
+        .agg(
+            goals=("build_up_id", "nunique"),
+            avg_passes=("passes_before_goal", "mean"),
+            avg_duration=("attack_duration_seconds", "mean"),
+        )
+        .sort_values("avg_passes", ascending=True)
+        .reset_index(drop=True)
+    )
+
+    ranking["directness_rank"] = ranking.index + 1
+
+    rows = []
+
+    # Show compact ranking. Keep selected team visible even if outside top 18.
+    visible_ranking = ranking.head(18).copy()
+
+    if selected_team and selected_team in set(ranking["team"]):
+        selected_row = ranking[ranking["team"].eq(selected_team)]
+
+        if not selected_row.empty and selected_team not in set(visible_ranking["team"]):
+            visible_ranking = pd.concat([visible_ranking, selected_row], ignore_index=True)
+
+    for _, row in visible_ranking.iterrows():
+        team_name = str(row["team"])
+        team_goals = goals[goals["team"].astype(str).eq(team_name)].copy()
+
+        avg_passes = float(row["avg_passes"])
+        style = classify_style(avg_passes)
+        finish = best_stage(team_goals)
+
+        row_class = "selected-ranking-row" if selected_team and team_name == selected_team else ""
+
+        rows.append(
+            html.Tr(
+                [
+                    html.Td(int(row["directness_rank"])),
+                    html.Td(team_name),
+                    html.Td(finish),
+                    html.Td(int(row["goals"])),
+                    html.Td(f"{avg_passes:.1f}"),
+                    html.Td(f"{float(row['avg_duration']):.0f}s"),
+                    html.Td(style),
+                ],
+                className=row_class,
+            )
+        )
+
+    selected_note = ""
+
+    if selected_team and selected_team in set(ranking["team"]):
+        selected_row = ranking[ranking["team"].eq(selected_team)].iloc[0]
+        selected_team_goals = goals[goals["team"].astype(str).eq(str(selected_team))]
+        selected_finish = best_stage(selected_team_goals)
+
+        selected_note = (
+            f"{selected_team} is directness rank {int(selected_row['directness_rank'])} "
+            f"of {len(ranking)} teams and reached: {selected_finish}."
+        )
 
     return html.Div(
         [
             html.Div(
-                [
-                    html.Div("Most direct teams", className="mini-table-title"),
-                    html.Div("Lowest average completed passes before goals.", className="mini-table-subtitle"),
-                    ranking_table(direct, [("Team", "team"), ("Goals", "goals"), ("Avg passes", "avg_passes"), ("Avg duration", "avg_duration")]),
-                ],
-                className="ranking-block",
+                "Lower rank means fewer completed passes before goals. The finish column shows how far the team reached.",
+                className="mini-table-subtitle",
             ),
-            html.Div(
+            html.Div(selected_note, className="mini-table-subtitle selected-ranking-note") if selected_note else html.Div(),
+            html.Table(
                 [
-                    html.Div("Most patient teams", className="mini-table-title"),
-                    html.Div("Highest average completed passes before goals.", className="mini-table-subtitle"),
-                    ranking_table(patient, [("Team", "team"), ("Goals", "goals"), ("Avg passes", "avg_passes"), ("Avg duration", "avg_duration")]),
+                    html.Thead(
+                        html.Tr(
+                            [
+                                html.Th("Rank"),
+                                html.Th("Team"),
+                                html.Th("Finish"),
+                                html.Th("Goals"),
+                                html.Th("Avg passes"),
+                                html.Th("Avg duration"),
+                                html.Th("Style"),
+                            ]
+                        )
+                    ),
+                    html.Tbody(rows),
                 ],
-                className="ranking-block",
-            ),
-            html.Div(
-                [
-                    html.Div("Most efficient finishers", className="mini-table-title"),
-                    html.Div("Largest positive difference between goals and xG.", className="mini-table-subtitle"),
-                    ranking_table(efficient, [("Team", "team"), ("Goals", "goals"), ("Total xG", "total_xg"), ("G-xG", "goals_minus_xg")]),
-                ],
-                className="ranking-block",
+                className="team-table compact-match-table ranking-table",
             ),
         ],
         className="ranking-grid",
     )
-
 
 @app.callback(
     Output("match-filter", "options"),
     Output("match-filter", "value"),
     Input("competition-season-filter", "value"),
 )
-def update_match_dropdown(competition_season_value):
-    options_list = match_options(competition_season_value)
-    value = options_list[0]["value"] if options_list else None
-    return options_list, value
+def update_match_dropdown(competition_value):
+    if not competition_value:
+        return [], None
 
+    return [
+        {
+            "label": "All matches in this tournament",
+            "value": competition_value,
+        }
+    ], competition_value
 
 @app.callback(
     Output("selected-build-up", "data", allow_duplicate=True),
@@ -436,42 +625,42 @@ def update_match_dropdown(competition_season_value):
     Output("goal-dropdown", "value", allow_duplicate=True),
     Output("data-load-feedback", "children"),
     Output("filter-feedback", "children", allow_duplicate=True),
+    Input("match-filter", "value"),
     Input("load-match-button", "n_clicks"),
-    State("match-filter", "value"),
-    prevent_initial_call=True,
+    prevent_initial_call=False,
 )
-def load_selected_match(_clicks, match_value):
-    global goals_df, events_df, _team_df, tournament_goals_df
+def load_selected_match(match_value, _clicks):
+    global goals_df, events_df, team_df, tournament_goals_df
 
     if not match_value:
         return (
-            None, 0, [], None, [], None, [], None,
-            "Please select a tournament first.",
-            "Load a tournament first.",
+            None,
+            0,
+            [],
+            None,
+            [],
+            None,
+            [],
+            None,
+            "Please choose a tournament first.",
+            "No tournament selected.",
         )
 
-    try:
-        new_goals, new_events, new_team = build_match_goal_tables(match_value, "ALL")
-
-        parts = str(match_value).split("|")
-        tournament_match_value = f"{parts[0]}|{parts[1]}|ALL"
-        tournament_goals, _unused_events, _unused_team = build_match_goal_tables(tournament_match_value, "ALL")
-    except Exception as exc:
-        return (
-            None, 0, [], None, [], None, [], None,
-            f"Could not load selection: {exc}",
-            "Loading failed.",
-        )
-
-    goals_df = new_goals.copy()
-    events_df = new_events.copy()
-    _team_df = new_team.copy()
-    tournament_goals_df = tournament_goals.copy()
+    goals_df, events_df = filter_local_data_by_tournament(match_value)
+    team_df = _team_df.copy()
+    tournament_goals_df = goals_df.copy()
 
     if goals_df.empty:
         return (
-            None, 0, [], None, [], None, [], None,
-            "Selection loaded, but no non-penalty goal build-ups were found.",
+            None,
+            0,
+            [],
+            None,
+            [],
+            None,
+            [],
+            None,
+            "No local goal data found for this tournament.",
             "No goals available.",
         )
 
@@ -497,21 +686,19 @@ def load_selected_match(_clicks, match_value):
         None,
         goal_dropdown_options,
         first_goal,
-        f"Loaded selection: {len(goals_df)} goal build-ups available. Now choose one team for replay and team-specific plots.",
+        f"Loaded tournament data: {len(goals_df)} goal build-ups available.",
         f"{len(goals_df)} goals in selection",
     )
-
 
 @app.callback(
     Output("team-tournament-info", "children"),
     Input("team-filter", "value"),
-    Input("match-filter", "value"),
     Input("selected-build-up", "data"),
 )
-def render_team_tournament_info(selected_team, match_value, selected_goal):
+def render_team_tournament_info(selected_team, selected_goal):
     if goals_df.empty:
         return html.Div(
-            "Load a tournament first. Then select one team to see tournament information.",
+            "Load the local CSV data first.",
             className="empty-state",
         )
 
@@ -521,14 +708,19 @@ def render_team_tournament_info(selected_team, match_value, selected_goal):
                 "team": "All teams",
                 "matches": [],
                 "formation": "Select a team",
-                "summary": "Select one team in the replay filter to see formation, matches and results.",
+                "summary": "Select one team in the replay filter to see team information.",
             },
             tournament_goals_df,
         )
 
-    summary = team_tournament_summary(match_value, selected_team)
-    return team_info_card(summary, tournament_goals_df)
+    summary = {
+        "team": selected_team,
+        "matches": [],
+        "formation": "Not available",
+        "summary": f"{selected_team} is analysed using the locally prepared goal build-up data.",
+    }
 
+    return team_info_card(summary, tournament_goals_df)
 
 @app.callback(
     Output("overview-kpis", "children"),
@@ -746,17 +938,10 @@ def render_replay(goal_id, step, is_playing):
     Input("team-filter", "value"),
 )
 def render_team_comparison(selected_goal, selected_team):
-    if tournament_goals_df.empty:
-        return (
-            empty_figure("Load a tournament first to compare attacking styles."),
-            html.Div("No team profile available yet. Load a tournament first.", className="empty-state"),
-        )
-
     return (
         team_build_up_profile(tournament_goals_df, selected_team),
-        top_team_table(tournament_goals_df),
+        top_team_table(tournament_goals_df, selected_team),
     )
-
 
 if __name__ == "__main__":
     def available_port(preferred: int = 8050, fallback: int = 8051) -> int:
