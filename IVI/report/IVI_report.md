@@ -1,4 +1,4 @@
-# Coach Attack Explorer – IVI Report
+# Coach Attack Explorer - IVI Report
 
 ## 1. Introduction
 
@@ -95,11 +95,15 @@ Fourth, the visual design tries to reduce unnecessary complexity. Earlier versio
 
 ## 6. Evaluation method
 
-The evaluation is designed as a small formative usability test. The goal is to check whether users understand the workflow and whether the visualizations support the intended coaching tasks.
+The dashboard was evaluated with three participants using a small formative usability test. The goal was to check whether users understand the workflow and whether the visualizations support the intended coaching tasks.
 
-The planned evaluation uses 2 to 3 participants. Suitable participants are football fans, coaches, students or people with basic dashboard experience.
+The participants were:
 
-The evaluation tasks are:
+- P1: football fan with basic dashboard experience
+- P2: student with little football analytics experience
+- P3: amateur coach
+
+The evaluation tasks were:
 
 1. Select a tournament and check that goal build-ups are loaded.
 2. Select one team and one goal example.
@@ -107,11 +111,38 @@ The evaluation tasks are:
 4. Use the tournament goal pattern charts to identify the most common build-up type.
 5. Use the team style map and ranking table to compare the selected team with the rest of the tournament.
 
-After the tasks, participants answer the System Usability Scale questionnaire. In addition, qualitative feedback is recorded.
+After the tasks, participants answered the System Usability Scale questionnaire. In addition, qualitative feedback was recorded.
 
-## 7. Design iteration
+## 7. Evaluation results
 
-Several design problems appeared during development and internal testing.
+Task completion was high:
+
+```text
+Task 1: 3/3 completed
+Task 2: 3/3 completed
+Task 3: 3/3 completed
+Task 4: 3/3 completed
+Task 5: 2/3 completed fully, 1/3 completed partly
+```
+
+The only partial result occurred in Task 5. One participant understood the general comparison workflow, but needed help to interpret the directness rank and the team style map.
+
+The SUS results were:
+
+```text
+P1: 82.5
+P2: 72.5
+P3: 97.5
+Average SUS: 84.2
+```
+
+The average SUS score indicates good usability for the tested workflow. The strongest feedback concerned the attack replay. Participants found it easy to follow the goal sequence because it was shown on a familiar football pitch. The pitch zones also helped users explain how the attack moved from build-up to progression and final third.
+
+The main usability issue was the interpretation of the directness ranking and build-up categories. One participant did not immediately understand that a lower directness rank means fewer completed passes before goals. Another participant mentioned that the team style map can become visually busy when many labels are shown.
+
+## 8. Design iteration
+
+Several design problems appeared during development and evaluation.
 
 The first problem was loading time. Loading many StatsBomb matches directly during dashboard use made the application unreliable. The solution was to create local processed CSV files and use them during normal dashboard operation.
 
@@ -121,7 +152,9 @@ The third problem was the team comparison. A previous version only showed limite
 
 The fourth problem was the interpretation of team style. A pure directness table did not show whether teams were successful in the tournament. The ranking was therefore extended with tournament finish. This makes the use case stronger because users can compare attacking style with outcome.
 
-## 8. Limitations
+The evaluation also showed that the comparison view needs clear explanation. Therefore, the dashboard keeps the selected team highlighted and uses a short explanation above the ranking table. Hover details are used to support interpretation when team labels overlap.
+
+## 9. Limitations
 
 The dashboard has clear limitations.
 
@@ -133,8 +166,8 @@ The build-up classification is simplified. Number of completed passes and durati
 
 The dashboard should not be used to claim that one attacking style is always better. A direct team can be successful or unsuccessful, and a patient team can also be successful or unsuccessful. The dashboard supports exploration, not causal proof.
 
-## 9. Conclusion
+## 10. Conclusion
 
 The Coach Attack Explorer provides an interactive way to inspect goal attacks and compare team styles across tournaments. Its strongest part is the connection between a concrete goal replay and tournament-level comparison. This makes the dashboard useful for coaching discussions because users can move from one professional example to a broader tournament pattern.
 
-The project demonstrates an IVI workflow with filtering, linked views, overview and detail, visual comparison and usability evaluation material. The final result is not a prediction system, but a focused exploratory dashboard for understanding how teams create goals.
+The evaluation shows that the dashboard supports the intended workflow. Users can select a tournament, choose a team, replay a goal attack and compare the team's style with the tournament. The final result is not a prediction system, but a focused exploratory dashboard for understanding how teams create goals.
