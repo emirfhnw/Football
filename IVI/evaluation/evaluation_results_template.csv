@@ -1,4 +1,4 @@
 participant,profile,task_1_completed,task_2_completed,task_3_completed,task_4_completed,task_5_completed,sus_q1,sus_q2,sus_q3,sus_q4,sus_q5,sus_q6,sus_q7,sus_q8,sus_q9,sus_q10,main_positive_feedback,main_problem,suggested_improvement
-P1,Football fan with basic dashboard experience,yes,yes,yes,yes,yes,4,2,5,1,4,2,4,1,4,2,The attack replay was easy to understand and the pitch zones helped to follow the goal sequence.,At first the meaning of directness rank was not immediately clear.,Add a short sentence above the ranking explaining that lower rank means fewer completed passes before goals.
-P2,Student with little football analytics experience,yes,yes,yes,yes,partly,4,2,4,2,4,2,4,2,3,2,The workflow from tournament to team to goal replay was clear after trying it once.,The team style map was visually busy because many team labels overlapped.,Keep the selected team highlighted strongly and rely more on hover details instead of reading every label.
-P3,Amateur coach,yes,yes,yes,yes,yes,5,1,5,1,5,1,5,1,4,1,The replay is useful for coaching because it shows how the attack develops from build-up to final third.,The difference between quick attack and medium build-up needed a short explanation.,Add a small explanation of the build-up categories near the overview chart.
+P1,,,,,,,,,,,,,,,,,,,
+P2,,,,,,,,,,,,,,,,,,,
+P3,,,,,,,,,,,,,,,,,,,
