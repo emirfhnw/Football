@@ -12,7 +12,7 @@ Which simple attacking patterns from the FIFA World Cup 2022 can amateur coaches
 
 This project uses StatsBomb Open Data from the FIFA World Cup 2022.
 
-The analysis is based on event data. I mainly use shots, goals, successful passes before shots, carries, entries into the final third, event coordinates and expected goals.
+The analysis is based on event data. I mainly use regular shots, goals, successful passes before shots, carries, entries into the final third, event coordinates and expected goals.
 
 ## Short project idea
 
@@ -20,17 +20,17 @@ The goal of this project is not to copy professional football tactics directly i
 
 The analysis focuses on questions such as:
 
-1. Do shots and goals happen more often after few passes or after longer passing sequences?
-2. Which pass categories have a higher conversion rate?
+1. How many completed passes happen before regular shots and goals?
+2. Which build up categories are common, and which ones look more efficient?
 3. Which teams create shots after entering the final third?
 4. Which entry methods lead to shots most often?
 5. What can be learned from Spain as a concrete team example?
 
 ## Important data decisions
 
-Penalty shootouts are excluded because they are not normal attacking possessions.
+Penalty shootouts, penalties and direct free kick shots are excluded from the main analysis. These situations do not describe normal build up play and would distort the short pass categories.
 
-Penalties, free kicks and corners during regular match play are kept in the data because they are still attacking situations inside the game. They are treated carefully in the interpretation.
+Corners and throw ins remain in the data because they can still continue as regular attacking situations.
 
 The analysis is descriptive. It shows patterns in the data, but it does not prove that one attacking style is always better than another.
 
@@ -46,23 +46,20 @@ GDV/
 │   ├── gdv_shot_sequences.csv
 │   └── gdv_team_attack_summary.csv
 ├── evaluation/
-│   ├── gdv_evaluation_tasks_final.md
-│   ├── gdv_evaluation_results_final.csv
-│   └── gdv_evaluation_summary_final.md
+│   └── GDV_Evaluation.docx
 ├── figures/
-│   ├── 01_passes_before_shots_goals.png
-│   ├── 02_conversion_by_pass_category.png
+│   ├── 01_build_up_volume_and_goals.png
+│   ├── 02_build_up_efficiency_conversion_xg.png
 │   ├── 03_final_third_entry_outcomes.png
 │   ├── 04_entry_method_outcome.png
 │   ├── 05_goal_start_zone.png
 │   ├── 06_team_directness_ranking.png
-│   ├── 07_spain_final_third_entries_for.png
-│   └── 08_formation_context.png
+│   └── 07_spain_final_third_entries_for.png
 ├── notebooks/
 │   └── EDA_GDV_final_abgabe.ipynb
 └── report/
-    ├── gdv_report_final_abgabe.docx
-    └── gdv_report_final_abgabe.pdf
+    ├── GDV_Report_Attack_Patterns_Final.docx
+    └── GDV_Report_Attack_Patterns_Final.pdf
 ```
 
 ## How to run the notebook
@@ -81,29 +78,31 @@ jupyter notebook notebooks/EDA_GDV_final_abgabe.ipynb
 
 Run all cells from top to bottom. The notebook creates the processed CSV files and the final figures inside the GDV folder.
 
-If older processed CSV files already exist, the notebook can rebuild the analysis tables so that the final data handling is applied.
+If the processed CSV files already exist, the notebook can load them again to avoid downloading all StatsBomb events each time. If the data handling is changed, rebuild the tables once and then save the notebook again.
 
 ## Final report
 
 The final written report is saved here:
 
 ```text
-GDV/report/gdv_report_final_abgabe.pdf
+GDV/report/GDV_Report_Attack_Patterns_Final.pdf
 ```
 
-The Word version is only included for editing:
+The Word version is included for editing:
 
 ```text
-GDV/report/gdv_report_final_abgabe.docx
+GDV/report/GDV_Report_Attack_Patterns_Final.docx
 ```
 
 ## Evaluation material
 
-The evaluation material is stored in the evaluation folder.
+The evaluation document is stored here:
 
-It includes the final evaluation tasks, the anonymised participant results and a short summary of what was improved after the feedback.
+```text
+GDV/evaluation/GDV_Evaluation.docx
+```
 
-The evaluation was used to check whether the final static figures were understandable for football interested readers.
+It documents the short formative evaluation with two football players and the improvements made after their feedback.
 
 ## Final notes
 
