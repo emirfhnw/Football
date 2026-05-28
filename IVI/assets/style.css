@@ -570,11 +570,12 @@ label {
   }
 }
 
-/* ===== EMERGENCY FINAL TOP FILTER FIX ===== */
+/* ===== FINAL CLEAN DROPDOWN FIX ===== */
 
 #match-filter,
 #match-filter *,
 #load-match-button,
+#load-match-button *,
 .load-button,
 .hidden-control {
   display: none !important;
@@ -585,6 +586,7 @@ label {
   display: grid !important;
   grid-template-columns: minmax(320px, 520px) !important;
   gap: 12px !important;
+  align-items: end !important;
 }
 
 .source-panel .form-field {
@@ -595,104 +597,199 @@ label {
   max-width: 100% !important;
 }
 
-/* Dash dropdown readability fix */
-.Select-control,
-.Select-menu-outer,
-.Select-value,
-.Select-placeholder,
-.Select-input,
-.Select-input input {
+/* Closed dropdown boxes */
+#competition-season-filter,
+#team-filter,
+#type-filter,
+#goal-dropdown,
+#competition-season-filter > div,
+#team-filter > div,
+#type-filter > div,
+#goal-dropdown > div,
+#competition-season-filter .Select-control,
+#team-filter .Select-control,
+#type-filter .Select-control,
+#goal-dropdown .Select-control,
+#competition-season-filter [class*="control"],
+#team-filter [class*="control"],
+#type-filter [class*="control"],
+#goal-dropdown [class*="control"] {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
   color: #0f172a !important;
+  opacity: 1 !important;
 }
 
-.Select-value-label {
-  color: #f8fafc !important;
+/* Selected value, placeholder and input text for old and new Dash dropdown versions */
+#competition-season-filter,
+#team-filter,
+#type-filter,
+#goal-dropdown,
+#competition-season-filter *,
+#team-filter *,
+#type-filter *,
+#goal-dropdown * {
+  opacity: 1 !important;
 }
 
-.dash-dropdown .Select-control {
-  background: #172235 !important;
-  border: 1px solid rgba(148, 163, 184, 0.35) !important;
-  border-radius: 10px !important;
-  min-height: 42px !important;
-}
-
-.dash-dropdown .Select-placeholder {
-  color: #94a3b8 !important;
-}
-
-.dash-dropdown .Select-menu-outer {
-  background: #f8fafc !important;
-  color: #111827 !important;
-  z-index: 3000 !important;
-}
-
-/* ===== FINAL VISUAL FIX ===== */
-
-/* Hide old controls if cached/old layout still renders them */
-#match-filter,
-#match-filter *,
-#load-match-button,
-#load-match-button *,
-.load-button,
-.hidden-control {
-  display: none !important;
-}
-
-/* Tournament box should only contain one visible dropdown */
-.source-panel .data-source-grid,
-.final-source-grid {
-  display: grid !important;
-  grid-template-columns: minmax(320px, 520px) !important;
-  gap: 12px !important;
-  align-items: end !important;
-}
-
-/* Dropdown dark mode fix */
-.dash-dropdown .Select-control {
-  background: #172235 !important;
-  border: 1px solid rgba(148, 163, 184, 0.42) !important;
-  border-radius: 10px !important;
-  min-height: 42px !important;
-  color: #f8fafc !important;
-}
-
-.dash-dropdown .Select-value,
-.dash-dropdown .Select-value-label,
-.dash-dropdown .Select-placeholder,
-.dash-dropdown .Select-input,
-.dash-dropdown .Select-input input {
-  color: #f8fafc !important;
-}
-
-.dash-dropdown .Select-placeholder {
-  color: #9fb0c8 !important;
-}
-
-.dash-dropdown .Select-arrow-zone,
-.dash-dropdown .Select-clear-zone {
-  color: #cbd5e1 !important;
-}
-
-.dash-dropdown .Select-menu-outer {
-  background: #f8fafc !important;
-  border: 1px solid #cbd5e1 !important;
-  border-radius: 10px !important;
-  z-index: 5000 !important;
-}
-
-.dash-dropdown .Select-option {
-  background: #f8fafc !important;
-  color: #111827 !important;
+#competition-season-filter .Select-value,
+#competition-season-filter .Select-value *,
+#competition-season-filter .Select-value-label,
+#competition-season-filter .Select-placeholder,
+#competition-season-filter .Select-input,
+#competition-season-filter .Select-input input,
+#team-filter .Select-value,
+#team-filter .Select-value *,
+#team-filter .Select-value-label,
+#team-filter .Select-placeholder,
+#team-filter .Select-input,
+#team-filter .Select-input input,
+#type-filter .Select-value,
+#type-filter .Select-value *,
+#type-filter .Select-value-label,
+#type-filter .Select-placeholder,
+#type-filter .Select-input,
+#type-filter .Select-input input,
+#goal-dropdown .Select-value,
+#goal-dropdown .Select-value *,
+#goal-dropdown .Select-value-label,
+#goal-dropdown .Select-placeholder,
+#goal-dropdown .Select-input,
+#goal-dropdown .Select-input input,
+#competition-season-filter [class*="singleValue"],
+#team-filter [class*="singleValue"],
+#type-filter [class*="singleValue"],
+#goal-dropdown [class*="singleValue"],
+#competition-season-filter [class*="placeholder"],
+#team-filter [class*="placeholder"],
+#type-filter [class*="placeholder"],
+#goal-dropdown [class*="placeholder"],
+#competition-season-filter [class*="Input"],
+#team-filter [class*="Input"],
+#type-filter [class*="Input"],
+#goal-dropdown [class*="Input"] {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+  opacity: 1 !important;
   font-weight: 700 !important;
 }
 
-.dash-dropdown .Select-option:hover,
-.dash-dropdown .Select-option.is-focused {
+/* Placeholder slightly softer */
+#competition-season-filter .Select-placeholder,
+#team-filter .Select-placeholder,
+#type-filter .Select-placeholder,
+#goal-dropdown .Select-placeholder,
+#competition-season-filter [class*="placeholder"],
+#team-filter [class*="placeholder"],
+#type-filter [class*="placeholder"],
+#goal-dropdown [class*="placeholder"] {
+  color: #64748b !important;
+  -webkit-text-fill-color: #64748b !important;
+}
+
+/* Arrow and clear icons */
+#competition-season-filter .Select-arrow-zone,
+#competition-season-filter .Select-clear-zone,
+#competition-season-filter .Select-arrow,
+#competition-season-filter .Select-clear,
+#team-filter .Select-arrow-zone,
+#team-filter .Select-clear-zone,
+#team-filter .Select-arrow,
+#team-filter .Select-clear,
+#type-filter .Select-arrow-zone,
+#type-filter .Select-clear-zone,
+#type-filter .Select-arrow,
+#type-filter .Select-clear,
+#goal-dropdown .Select-arrow-zone,
+#goal-dropdown .Select-clear-zone,
+#goal-dropdown .Select-arrow,
+#goal-dropdown .Select-clear,
+#competition-season-filter svg,
+#team-filter svg,
+#type-filter svg,
+#goal-dropdown svg {
+  color: #0f172a !important;
+  fill: #0f172a !important;
+  stroke: #0f172a !important;
+}
+
+/* Open menu and options */
+.Select-menu-outer,
+.Select-menu,
+.VirtualizedSelectOption,
+.VirtualizedSelectFocusedOption,
+.dash-dropdown .Select-menu-outer,
+.dash-dropdown .Select-option,
+[role="listbox"],
+[role="option"] {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  opacity: 1 !important;
+  z-index: 7000 !important;
+}
+
+.Select-option,
+.Select-option *,
+.VirtualizedSelectOption,
+.VirtualizedSelectOption *,
+.VirtualizedSelectFocusedOption,
+.VirtualizedSelectFocusedOption *,
+[role="option"],
+[role="option"] * {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+.Select-option:hover,
+.Select-option.is-focused,
+.Select-option.is-selected,
+.VirtualizedSelectFocusedOption,
+[role="option"]:hover,
+[role="option"][aria-selected="true"] {
   background: #dbeafe !important;
   color: #0f172a !important;
 }
 
-/* Better tournament pattern title */
+/* Disabled-looking dropdowns should still be readable */
+.Select.is-disabled > .Select-control,
+.Select.is-disabled .Select-value-label,
+.Select.is-disabled .Select-placeholder,
+#competition-season-filter.Select.is-disabled,
+#team-filter.Select.is-disabled,
+#type-filter.Select.is-disabled,
+#goal-dropdown.Select.is-disabled {
+  opacity: 1 !important;
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+/* Extra fallback: any text inside the dropdown white boxes must be dark */
+#competition-season-filter div,
+#competition-season-filter span,
+#competition-season-filter input,
+#team-filter div,
+#team-filter span,
+#team-filter input,
+#type-filter div,
+#type-filter span,
+#type-filter input,
+#goal-dropdown div,
+#goal-dropdown span,
+#goal-dropdown input {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+/* Keep labels outside dropdowns light */
+.form-field label {
+  color: #d1d9e6 !important;
+  -webkit-text-fill-color: #d1d9e6 !important;
+}
+
+/* Other final visual fixes */
 .overview-page .section-title {
   font-size: 1.35rem !important;
 }
@@ -701,7 +798,6 @@ label {
   max-width: 850px !important;
 }
 
-/* Ranking cleaner */
 .top-table-panel .mini-table-title {
   display: none !important;
 }
