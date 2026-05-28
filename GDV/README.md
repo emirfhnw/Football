@@ -1,28 +1,42 @@
-
-# GDV Final Submission - Angriffsmuster aus WM-Daten
+# GDV Final Submission
 
 ## Project title
 
-Angriffsmuster aus der FIFA WM 2022 fuer Amateurtrainer
+Attack patterns from the FIFA World Cup 2022 for amateur coaches
 
 ## Research question
 
-Welche einfachen Angriffsmuster aus der FIFA WM 2022 koennen Amateurtrainer fuer das Training ableiten?
+Which simple attacking patterns from the FIFA World Cup 2022 can amateur coaches use as ideas for training?
 
 ## Dataset
 
-StatsBomb Open Data, FIFA World Cup 2022.
+This project uses StatsBomb Open Data from the FIFA World Cup 2022.
 
-The analysis uses event data: shots, goals, successful passes before shots, carries, entries into the final third, event coordinates and expected goals (xG).
+The analysis is based on event data. I mainly use shots, goals, successful passes before shots, carries, entries into the final third, event coordinates and expected goals.
 
-## Important data handling decisions
+## Short project idea
 
-- Penalty shootouts are excluded because they are not normal attacking possessions.
-- In-game penalties, free kicks and corners remain included because they are relevant attacking situations, but they are marked as set-piece context.
-- The analysis is descriptive and does not claim causal effects.
-- Event data does not include full off-ball movement or tactical instructions.
+The goal of this project is not to copy professional football tactics directly into amateur football. The idea is more realistic: World Cup data can show repeated attacking patterns, and these patterns can be used as inspiration for simple training exercises.
 
-## Files for submission
+The analysis focuses on questions such as:
+
+1. Do shots and goals happen more often after few passes or after longer passing sequences?
+2. Which pass categories have a higher conversion rate?
+3. Which teams create shots after entering the final third?
+4. Which entry methods lead to shots most often?
+5. What can be learned from Spain as a concrete team example?
+
+## Important data decisions
+
+Penalty shootouts are excluded because they are not normal attacking possessions.
+
+Penalties, free kicks and corners during regular match play are kept in the data because they are still attacking situations inside the game. They are treated carefully in the interpretation.
+
+The analysis is descriptive. It shows patterns in the data, but it does not prove that one attacking style is always better than another.
+
+The data does not include full player tracking. This means that off ball runs, pressing structures and exact tactical instructions cannot be analysed.
+
+## Folder structure
 
 ```text
 GDV/
@@ -43,7 +57,7 @@ GDV/
 │   ├── 05_goal_start_zone.png
 │   ├── 06_team_directness_ranking.png
 │   ├── 07_spain_final_third_entries_for.png
-│   └── 08_formation_context_optional.png
+│   └── 08_formation_context.png
 ├── notebooks/
 │   └── EDA_GDV_final_abgabe.ipynb
 └── report/
@@ -53,92 +67,46 @@ GDV/
 
 ## How to run the notebook
 
-Install the required packages in the project environment. The notebook uses:
+Install the required packages:
 
 ```bash
-pip install pandas numpy matplotlib statsbombpy
+pip install pandas numpy matplotlib statsbombpy jupyter
 ```
 
-Then run:
+Then open the notebook:
 
 ```bash
 jupyter notebook notebooks/EDA_GDV_final_abgabe.ipynb
 ```
 
-The notebook creates processed tables and final figures in the GDV folder. If cached CSV files use an older schema, the notebook rebuilds the analysis tables so the set-piece and penalty-shootout handling is applied.
+Run all cells from top to bottom. The notebook creates the processed CSV files and the final figures inside the GDV folder.
+
+If older processed CSV files already exist, the notebook can rebuild the analysis tables so that the final data handling is applied.
 
 ## Final report
 
-Submit `GDV/report/gdv_report_final_abgabe.pdf` as the written report. The DOCX version is provided only for editing.
+The final written report is saved here:
+
+```text
+GDV/report/gdv_report_final_abgabe.pdf
+```
+
+The Word version is only included for editing:
+
+```text
+GDV/report/gdv_report_final_abgabe.docx
+```
 
 ## Evaluation material
 
-The evaluation material is aligned with the final figures in the report. The tasks cover pass categories, conversion rate, entries into the final third, entry method, start zones, team directness and the Spain use case.
+The evaluation material is stored in the evaluation folder.
 
-## Notes
+It includes the final evaluation tasks, the anonymised participant results and a short summary of what was improved after the feedback.
 
-No separate pitch-slide file is required in this repository version. The final GDV submission consists of the notebook, report, figures, processed data, evaluation material and this README.
-=======
-# GDV – Goal Build-up Analysis
+The evaluation was used to check whether the final static figures were understandable for football interested readers.
 
-This folder contains the GDV part of the football visualization project.
+## Final notes
 
-## Project topic
+This GDV submission contains the notebook, processed data, final figures, report and evaluation material.
 
-The project analyses how goals were created at the FIFA World Cup 2022. The main focus is on goal build-ups: whether goals were created through quick attacks with few completed passes or through longer passing sequences.
-
-## Research question
-
-How were goals created at the FIFA World Cup 2022: through quick attacks with few passes or through longer passing sequences?
-
-## Dataset
-
-The project uses StatsBomb Open Data for the FIFA World Cup 2022. The analysis is based on event data, especially goals, passes, shots, teams, players, timestamps, match information and event coordinates.
-
-Important limitation: this is event data only. The project does not use tracking data and does not show off-ball movement.
-
-## GDV focus
-
-The GDV part focuses on static visualizations and their design rationale. The goal is to communicate the main patterns clearly before moving to the interactive IVI dashboard.
-
-Main visual questions:
-
-1. Which build-up type is most common before goals?
-2. Do longer passing sequences also take more time?
-3. Which teams scored after more direct or more patient build-ups?
-4. Can selected goal sequences be explained visually?
-5. How clear are the static figures for users?
-
-## Folder structure
-
-```text
-GDV/
-|-- README.md
-|-- report/
-|   |-- gdv_report_draft.md
-|-- evaluation/
-|   |-- gdv_evaluation_tasks.md
-|   |-- gdv_evaluation_summary.md
-|   |-- gdv_evaluation_analysis.md
-|   |-- gdv_evaluation_results_template.csv
-```
-
-## Evaluation
-
-The evaluation uses a small formative think-aloud test. Participants inspect the static figures and answer short interpretation tasks. The goal is not to prove a hypothesis statistically, but to check whether the figures are understandable and whether the design needs improvement.
-
-## Final submission checklist for GDV
-
-Before submission, the following items should be present:
-
-- final GDV report as PDF
-- final static figures included or referenced in the report
-- evaluation tasks
-- anonymised evaluation results or notes
-- evaluation summary with design improvements
-- clear references in APA style
-- reproducible code or clear link to the preprocessing/analysis code
-
-## Honest status
-
-The GDV documentation and evaluation structure are prepared. The remaining critical task is to make sure the final figures are exported and referenced consistently in the final report PDF.
+The project should be read as an exploratory visualization project. The results are useful for discussing attacking ideas, but they should not be treated as fixed tactical rules.
