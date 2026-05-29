@@ -72,7 +72,7 @@ def app_header():
                         className="app-title-block",
                     ),
                     html.Div(
-                        "StatsBomb event data · ball actions only",
+                        "StatsBomb event data",
                         className="data-badge",
                     ),
                 ],
@@ -82,6 +82,49 @@ def app_header():
         className="app-header",
     )
 
+def overview_section():
+    return html.Div(
+        [
+            section_title(
+                "Tournament goal patterns",
+                "These charts summarize the analysed goal build-ups in the selected tournament.",
+            ),
+            html.Div(
+                [
+                    card(
+                        [
+                            section_title(
+                                "Goal build-up types",
+                                "Distribution of quick, medium and long goal attacks.",
+                            ),
+                            dcc.Graph(
+                                id="overview-build-up-chart",
+                                config=GRAPH_CONFIG,
+                                className="chart-graph",
+                            ),
+                        ],
+                        "chart-panel",
+                    ),
+                    card(
+                        [
+                            section_title(
+                                "Passes vs duration",
+                                "Each point is one goal build-up. The selected goal is highlighted.",
+                            ),
+                            dcc.Graph(
+                                id="overview-scatter-chart",
+                                config=GRAPH_CONFIG,
+                                className="chart-graph",
+                            ),
+                        ],
+                        "chart-panel",
+                    ),
+                ],
+                className="overview-grid",
+            ),
+        ],
+        className="one-page-section overview-page",
+    )
 
 def data_source_panel(competition_options):
     return card(
@@ -223,21 +266,6 @@ def replay_controls():
             dbc.Button("Next", id="step-next", color="primary"),
             dbc.Button("Show full", id="step-all", color="light", outline=True),
             dbc.Button("Reset", id="step-reset", color="light", outline=True),
-            html.Div(
-                [
-                    html.Label("Speed"),
-                    dcc.Slider(
-                        id="replay-speed",
-                        min=300,
-                        max=1500,
-                        step=100,
-                        value=800,
-                        marks={300: "fast", 800: "normal", 1500: "slow"},
-                        tooltip={"placement": "bottom", "always_visible": False},
-                    ),
-                ],
-                className="speed-control",
-            ),
         ],
         className="replay-controls",
     )
@@ -282,55 +310,6 @@ def attack_replay_section(goals_df):
         className="one-page-section replay-page",
     )
 
-
-def overview_section():
-    return html.Div(
-        [
-            section_title(
-                "Tournament goal patterns",
-                "These charts summarize all analysed goal build-ups in the selected tournament.",
-            ),
-            html.Div(id="overview-kpis"),
-            html.Div(
-                [
-                    card(
-                        [
-                            section_title(
-                                "Goal build-up types",
-                                "Distribution of quick, medium and long goal attacks.",
-                            ),
-                            dcc.Graph(
-                                id="overview-build-up-chart",
-                                config=GRAPH_CONFIG,
-                                className="chart-graph",
-                            ),
-                        ],
-                        "chart-panel",
-                    ),
-                    card(
-                        [
-                            section_title(
-                                "Passes vs duration",
-                                "Each point is one goal build-up. The selected goal is highlighted.",
-                            ),
-                            dcc.Graph(
-                                id="overview-scatter-chart",
-                                config=GRAPH_CONFIG,
-                                className="chart-graph",
-                            ),
-                        ],
-                        "chart-panel",
-                    ),
-                ],
-                className="overview-grid",
-            ),
-
-            # Hidden output targets for old callbacks.
-            html.Div(id="coach-takeaway", style={"display": "none"}),
-            html.Div(id="overview-insight", style={"display": "none"}),
-        ],
-        className="one-page-section overview-page",
-    )
 
 
 def team_profile_section():

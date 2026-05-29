@@ -15,23 +15,25 @@ def _get(row, names, default=None):
 
 def _add_pitch_base(fig):
 
-    fig.add_annotation(x=20, y=5, text="Build-up", showarrow=False, font=dict(size=12, color="#93c5fd"))
-    fig.add_annotation(x=60, y=5, text="Progression", showarrow=False, font=dict(size=12, color="#86efac"))
-    fig.add_annotation(x=100, y=5, text="Final third", showarrow=False, font=dict(size=12, color="#fbbf24"))
+    fig.add_annotation(x=20, y=5, text="Build-up", showarrow=False, font=dict(size=12, color="rgba(255,255,255,0.88)"))
+    fig.add_annotation(x=60, y=5, text="Progression", showarrow=False, font=dict(size=12, color="rgba(255,255,255,0.88)"))
+    fig.add_annotation(x=100, y=5, text="Final third", showarrow=False, font=dict(size=12, color="rgba(255,255,255,0.88)"))
 
     line = "rgba(226,232,240,0.75)"
     soft = "rgba(226,232,240,0.55)"
 
     shapes = [
-        dict(type="rect", x0=0, y0=0, x1=40, y1=80, line=dict(width=0), fillcolor="rgba(59,130,246,0.12)", layer="below"),
-        dict(type="rect", x0=40, y0=0, x1=80, y1=80, line=dict(width=0), fillcolor="rgba(34,197,94,0.10)", layer="below"),
-        dict(type="rect", x0=80, y0=0, x1=120, y1=80, line=dict(width=0), fillcolor="rgba(245,158,11,0.13)", layer="below"),
+        dict(type="rect", x0=0, y0=0, x1=120, y1=80, line=dict(width=0), fillcolor="#0b6b45", layer="below"),
+
+        dict(type="rect", x0=0, y0=0, x1=40, y1=80, line=dict(width=0), fillcolor="rgba(255,255,255,0.035)", layer="below"),
+        dict(type="rect", x0=40, y0=0, x1=80, y1=80, line=dict(width=0), fillcolor="rgba(255,255,255,0.000)", layer="below"),
+        dict(type="rect", x0=80, y0=0, x1=120, y1=80, line=dict(width=0), fillcolor="rgba(255,255,255,0.055)", layer="below"),
 
         dict(type="rect", x0=0, y0=0, x1=120, y1=80, line=dict(color=line, width=2), fillcolor="rgba(0,0,0,0)"),
         dict(type="line", x0=60, y0=0, x1=60, y1=80, line=dict(color="rgba(255,255,255,0.90)", width=2)),
 
-        dict(type="line", x0=40, y0=0, x1=40, y1=80, line=dict(color="rgba(148,163,184,0.35)", width=1, dash="dot")),
-        dict(type="line", x0=80, y0=0, x1=80, y1=80, line=dict(color="rgba(148,163,184,0.35)", width=1, dash="dot")),
+        dict(type="line", x0=40, y0=0, x1=40, y1=80, line=dict(color="rgba(255,255,255,0.40)", width=1.5, dash="dash")),
+        dict(type="line", x0=80, y0=0, x1=80, y1=80, line=dict(color="rgba(255,255,255,0.40)", width=1.5, dash="dash")),
 
         dict(type="rect", x0=0, y0=18, x1=18, y1=62, line=dict(color=soft, width=1), fillcolor="rgba(0,0,0,0)"),
         dict(type="rect", x0=102, y0=18, x1=120, y1=62, line=dict(color=soft, width=1), fillcolor="rgba(0,0,0,0)"),
@@ -148,7 +150,7 @@ def pitch_sequence_figure(events_df, goals_df, goal_id, step):
             width = 2
 
             if "shot" in event_type.lower():
-                color = "rgba(239,68,68,0.95)"
+                color = "rgba(250,204,21,0.98)"
                 width = 4
             elif "pass" in event_type.lower():
                 color = "rgba(56,189,248,0.75)"

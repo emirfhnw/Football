@@ -14,18 +14,24 @@ PLOT = "rgba(15,23,42,0.6)"
 GRID = "rgba(255,255,255,0.08)"
 FONT = "#f8fafc"
 
-
-def style_figure(fig: go.Figure, height: int = 360) -> go.Figure:
+def style_figure(fig: go.Figure, height: int = 300) -> go.Figure:
     fig.update_layout(
         template=TEMPLATE,
         title=None,
         paper_bgcolor=PAPER,
         plot_bgcolor=PLOT,
         font=dict(color=FONT, family="Inter, system-ui, Segoe UI, sans-serif"),
-        margin=dict(l=20, r=20, t=18, b=30),
+        margin=dict(l=90, r=35, t=45, b=80),
         height=height,
         hoverlabel=dict(bgcolor="#111827", font=dict(color="#f8fafc")),
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0, title_text=""),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="left",
+            x=0,
+            title_text="",
+        ),
     )
     fig.update_xaxes(gridcolor=GRID, zerolinecolor=GRID, linecolor=GRID)
     fig.update_yaxes(gridcolor=GRID, zerolinecolor=GRID, linecolor=GRID)
@@ -33,20 +39,62 @@ def style_figure(fig: go.Figure, height: int = 360) -> go.Figure:
 
 
 def build_up_distribution(goals_df: pd.DataFrame) -> go.Figure:
-    counts = goals_df["build_up_type"].astype(str).value_counts().reindex(BUILD_UP_ORDER, fill_value=0).reset_index()
+    counts = (
+        goals_df["build_up_type"]
+        .astype(str)
+        .value_counts()
+        .reindex(BUILD_UP_ORDER, fill_value=0)
+        .reset_index()
+    )
     counts.columns = ["build_up_type", "goals"]
+
     fig = px.bar(
         counts,
         x="build_up_type",
         y="goals",
         color="build_up_type",
         color_discrete_map=BUILD_UP_COLORS,
-        title="Build-up Type Distribution",
         text="goals",
     )
-    fig.update_traces(textposition="outside", customdata=counts[["build_up_type"]])
-    fig.update_layout(clickmode="event+select", xaxis_title="", yaxis_title="Goals", showlegend=False)
-    return style_figure(fig, 350)
+
+    fig.update_traces(
+        textposition="outside",
+        customdata=counts[["build_up_type"]],
+        cliponaxis=False,
+    )
+
+    fig.update_layout(
+        template=TEMPLATE,
+        title=None,
+        paper_bgcolor=PAPER,
+        plot_bgcolor=PLOT,
+        font=dict(color=FONT, family="Inter, system-ui, Segoe UI, sans-serif"),
+        margin=dict(l=70, r=25, t=35, b=70),
+        height=300,
+        showlegend=False,
+        clickmode="event+select",
+        hoverlabel=dict(bgcolor="#111827", font=dict(color="#f8fafc")),
+    )
+
+    fig.update_xaxes(
+        title="",
+        gridcolor=GRID,
+        zerolinecolor=GRID,
+        linecolor=GRID,
+        tickfont=dict(size=12),
+    )
+
+    fig.update_yaxes(
+        title="Goals",
+        title_standoff=10,
+        gridcolor=GRID,
+        zerolinecolor=GRID,
+        linecolor=GRID,
+        range=[0, max(5, counts["goals"].max() + 1)],
+        tickfont=dict(size=12),
+    )
+
+    return fig
 
 
 def team_build_up_profile(goals_df, selected_team=None):
@@ -209,8 +257,8 @@ def team_build_up_profile(goals_df, selected_team=None):
         template="plotly_dark",
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(15,23,42,0.6)",
-        margin=dict(l=55, r=25, t=75, b=65),
-        height=460,
+        margin=dict(l=95, r=45, t=95, b=95),
+        height=500,
         xaxis_title="Average completed passes before goal",
         yaxis_title="Goals scored in loaded data",
         font=dict(color="white"),

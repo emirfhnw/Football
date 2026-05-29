@@ -11,13 +11,7 @@ import pandas as pd
 
 from src.data_loader import load_dashboard_data
 from src.figures import build_up_distribution, passes_duration_scatter, team_build_up_profile
-from src.layout import build_layout, goal_options, kpi_row
-from src.metrics import (
-    dashboard_kpis,
-    direct_team_ranking,
-    patient_team_ranking,
-    efficient_team_ranking,
-)
+from src.layout import build_layout, goal_options
 from src.pitch_plots import pitch_sequence_figure
 
 
@@ -170,55 +164,6 @@ def current_event(goal_id: str | None, step: int):
 
 def info_pair(label, value):
     return html.Div([html.Span(label), html.Strong(value)], className="info-pair")
-
-
-def coach_takeaway(goals):
-    if goals.empty:
-        return html.Div(
-            [
-                html.Div("Coach takeaway", className="takeaway-title"),
-                html.Div("Load a tournament first.", className="takeaway-text"),
-            ]
-        )
-
-    kpis = dashboard_kpis(goals)
-    avg_passes = float(kpis["avg_passes"])
-    avg_duration = float(kpis["avg_duration"])
-
-    if avg_passes <= 3:
-        style_note = "Current style: direct attacking."
-        training_note = "Training idea: quick forward play, early support runs and fast finishing."
-    elif avg_passes <= 6:
-        style_note = "Current style: balanced attacking."
-        training_note = "Training idea: short combinations, support after the pass and timing of the final pass."
-    else:
-        style_note = "Current style: patient build-up."
-        training_note = "Training idea: keeping possession under pressure and recognising when to speed up."
-
-    return html.Div(
-        [
-            html.Div("Coach takeaway", className="takeaway-title"),
-            html.Div(f"{len(goals)} goal build-ups are selected.", className="takeaway-text"),
-            html.Div(
-                f"{style_note} Average: {avg_passes:.1f} completed passes and {avg_duration:.0f} seconds before the goal.",
-                className="takeaway-highlight",
-            ),
-            html.Div(training_note, className="takeaway-text"),
-        ]
-    )
-
-
-def overview_insight(goals):
-    if goals.empty:
-        return "Load a tournament and optionally choose one team."
-
-    kpis = dashboard_kpis(goals)
-    return (
-        f"The current selection contains {kpis['total_goals']} goal build-ups. "
-        f"Average completed passes before the goal: {kpis['avg_passes']}. "
-        f"Average attack duration: {kpis['avg_duration']} seconds. "
-        f"Most common build-up type: {kpis['most_common_type']}."
-    )
 
 
 def team_info_card(summary, goals):
@@ -691,6 +636,33 @@ def load_selected_match(match_value, _clicks):
     )
 
 @app.callback(
+    Output("overview-build-up-chart", "figure"),
+    Output("overview-scatter-chart", "figure"),
+    Input("selected-build-up", "data"),
+    Input("team-filter", "value"),
+    Input("type-filter", "value"),
+)
+def render_overview(selected_goal, selected_team, selected_build_type):
+    if goals_df.empty:
+        return (
+            empty_figure("Choose a tournament first."),
+            empty_figure("After loading, this chart shows whether attacks are direct or patient."),
+        )
+
+    plot_goals = selected_goals(selected_team, selected_build_type)
+
+    if plot_goals.empty:
+        return (
+            empty_figure("No goals for this team and build-up type."),
+            empty_figure("No goals for this team and build-up type."),
+        )
+
+    return (
+        build_up_distribution(plot_goals),
+        passes_duration_scatter(plot_goals, selected_goal),
+    )
+
+@app.callback(
     Output("team-tournament-info", "children"),
     Input("team-filter", "value"),
     Input("selected-build-up", "data"),
@@ -721,46 +693,6 @@ def render_team_tournament_info(selected_team, selected_goal):
     }
 
     return team_info_card(summary, tournament_goals_df)
-
-@app.callback(
-    Output("overview-kpis", "children"),
-    Output("overview-build-up-chart", "figure"),
-    Output("overview-scatter-chart", "figure"),
-    Output("coach-takeaway", "children"),
-    Output("overview-insight", "children"),
-    Input("selected-build-up", "data"),
-    Input("team-filter", "value"),
-    Input("type-filter", "value"),
-)
-def render_overview(selected_goal, selected_team, selected_build_type):
-    if goals_df.empty:
-        empty_goals = goals_df.iloc[0:0]
-        return (
-            html.Div("Load a tournament to see the overview.", className="empty-state"),
-            empty_figure("Choose a tournament and click Load."),
-            empty_figure("After loading, this chart shows whether attacks are direct or patient."),
-            coach_takeaway(empty_goals),
-            "Start by loading a tournament.",
-        )
-
-    plot_goals = selected_goals(selected_team, selected_build_type)
-
-    if plot_goals.empty:
-        return (
-            html.Div("No goals match the selected filters.", className="empty-state"),
-            empty_figure("No goals for this team and build-up type."),
-            empty_figure("No goals for this team and build-up type."),
-            coach_takeaway(plot_goals),
-            "No goals match the selected filters.",
-        )
-
-    return (
-        kpi_row(dashboard_kpis(plot_goals)),
-        build_up_distribution(plot_goals),
-        passes_duration_scatter(plot_goals, selected_goal),
-        coach_takeaway(plot_goals),
-        overview_insight(plot_goals),
-    )
 
 
 @app.callback(
@@ -842,12 +774,6 @@ def toggle_play(play_clicks, pause_clicks, reset_clicks, show_all_clicks, goal_i
     return no_update, no_update
 
 
-@app.callback(
-    Output("replay-interval", "interval"),
-    Input("replay-speed", "value"),
-)
-def update_replay_speed(speed):
-    return int(speed or 800)
 
 
 @app.callback(

@@ -307,34 +307,6 @@ label {
   font-weight: 900;
 }
 
-.speed-control {
-  grid-column: 1 / -1;
-  margin-top: 8px;
-  padding: 10px 12px 14px;
-  background: rgba(148, 163, 184, 0.08);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-.speed-control label {
-  margin-bottom: 4px;
-  color: #dbeafe;
-  font-size: 0.78rem;
-  font-weight: 900;
-}
-
-.speed-control .rc-slider-mark-text {
-  color: #cbd5e1 !important;
-  opacity: 1 !important;
-  font-weight: 800 !important;
-}
-
-.speed-control input,
-.speed-control .form-control,
-.speed-control .dbc-input,
-.speed-control .dash-input {
-  display: none !important;
-}
 
 .mini-label {
   margin-top: 18px;
@@ -815,4 +787,89 @@ label {
 .selected-ranking-note {
   color: #fbbf24 !important;
   font-weight: 900 !important;
+}
+.replay-controls .btn,
+.replay-controls .btn-primary,
+.replay-controls .btn-secondary,
+.replay-controls .btn-outline-primary,
+.replay-controls .btn-outline-secondary,
+#step-prev,
+#play-button,
+#pause-button,
+#step-next,
+#show-full-button,
+#reset-replay-button {
+  background: #2563eb !important;
+  border: 1px solid #60a5fa !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+.replay-controls .btn:hover,
+#step-prev:hover,
+#play-button:hover,
+#pause-button:hover,
+#step-next:hover,
+#show-full-button:hover,
+#reset-replay-button:hover {
+  background: #1d4ed8 !important;
+  border-color: #93c5fd !important;
+  color: #ffffff !important;
+}
+
+.replay-controls .btn:disabled,
+.replay-controls .btn.disabled,
+#step-prev:disabled,
+#play-button:disabled,
+#pause-button:disabled,
+#step-next:disabled,
+#show-full-button:disabled,
+#reset-replay-button:disabled {
+  background: #334155 !important;
+  border-color: #64748b !important;
+  color: #cbd5e1 !important;
+  opacity: 1 !important;
+}
+
+/* ===== FINAL PLOT CONTAINMENT FIX ===== */
+
+.chart-panel {
+  min-height: 430px !important;
+  padding: 18px 24px 22px !important;
+  overflow: hidden !important;
+}
+
+.chart-graph {
+  height: 330px !important;
+  min-height: 330px !important;
+  max-height: 330px !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.team-chart-panel {
+  min-height: 630px !important;
+  padding: 18px 30px 28px !important;
+  overflow: hidden !important;
+}
+
+.team-graph {
+  height: 520px !important;
+  min-height: 520px !important;
+  max-height: 520px !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.chart-graph > div,
+.chart-graph .js-plotly-plot,
+.chart-graph .plot-container,
+.chart-graph .svg-container,
+.team-graph > div,
+.team-graph .js-plotly-plot,
+.team-graph .plot-container,
+.team-graph .svg-container {
+  width: 100% !important;
+  max-width: 100% !important;
 }
