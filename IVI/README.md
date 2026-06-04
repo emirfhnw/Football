@@ -1,133 +1,229 @@
 # Coach Attack Explorer
 
-Interactive IVI dashboard for exploring how teams create goals in major football tournaments.
+Interactive dashboard for exploring football goal build ups and tournament style patterns.
 
-The dashboard is built for a simple coaching use case: a user selects a tournament, chooses a team, replays one goal attack step by step, and compares the team's attacking style with the rest of the tournament.
+## Project idea
 
-## Use case
+The Coach Attack Explorer is an interactive dashboard for inspecting how football teams create goals in tournament data.
 
-A coach or beginner football analyst wants to answer:
+The goal is not to predict match results or prove that one attacking style is always better. The dashboard is meant as an exploratory tool. A user can choose a tournament, select a team, replay one goal attack step by step and compare the team's attacking style with other teams in the same tournament.
 
-> How do teams create goals in major tournaments, and how does a team's attacking style relate to tournament outcome?
+The project was created for the module Interactive Visualisation.
 
-The dashboard focuses on goal build-ups, not on full match prediction. It helps users turn professional match examples into practical training ideas.
+## Research question
 
-## Main features
+How do teams create goals in major tournaments, and how does their attacking style compare with other teams in the same tournament?
 
-- Tournament selection from a prepared local tournament list
-- Team and goal selection
-- Step-by-step attack replay on a football pitch
-- Build-up zones on the pitch: build-up, progression and final third
-- Tournament goal pattern charts
-- Passes vs duration scatterplot
-- Team goal style map
-- Directness ranking with tournament finish
+## Dataset
 
-## Data source
+The project uses StatsBomb Open Data.
 
-The project uses StatsBomb open event data. The data is preprocessed into local CSV files so that the dashboard can run without downloading event data during normal use.
+The dashboard works with prepared local CSV files in the `data/processed/` folder. This makes the app faster during normal use because it does not need to download full event data every time the dashboard is opened.
 
-Included processed files:
+The processed data contains:
 
-```text
-IVI/data/processed/goals_df.csv
-IVI/data/processed/build_up_events_df.csv
-IVI/data/processed/team_efficiency_df.csv
-```
+- analysed goal build ups
+- events inside each goal build up
+- team level comparison values
 
-Included tournament selection file:
+The raw folder contains the selected tournament list used for preparing the dashboard data.
 
-```text
-IVI/data/raw/selected_tournaments.csv
-```
+## Intended users
 
-## Folder structure
+The dashboard is designed for football interested users such as:
 
-```text
-IVI/
-  app.py
-  build_static_tournament_data.py
-  create_selected_tournaments.py
-  requirements.txt
-  README.md
+- coaches
+- football players
+- football fans
+- beginner analysts
 
-  assets/
-    style.css
+The dashboard should be understandable without advanced data science knowledge.
 
-  data/
-    raw/
-      selected_tournaments.csv
-    processed/
-      goals_df.csv
-      build_up_events_df.csv
-      team_efficiency_df.csv
+## What the dashboard shows
 
-  src/
-    data_loader.py
-    figures.py
-    layout.py
-    metrics.py
-    pitch_plots.py
-    preprocessing.py
-    static_tournament_store.py
-    statsbomb_explorer.py
-    utils.py
+The dashboard focuses on goal attacks. Each selected sequence ends with a goal.
 
-  evaluation/
-    evaluation_tasks.md
-    evaluation_results_template.csv
-    evaluation_summary.md
-    evaluation_analysis.md
-    sus_questionnaire.md
+Main features:
 
-  report/
-    IVI_report.md
-```
+- tournament selection
+- team selection
+- goal example selection
+- pitch replay of one selected goal attack
+- step by step controls
+- full sequence view
+- tournament goal pattern charts
+- build up type comparison
+- passes versus duration scatterplot
+- team style map
+- directness ranking
+
+## Important note about the replay
+
+The replay is based on event data.
+
+The arrows show completed passes and the final shot. They do not show full player tracking or all off ball movement.
+
+If two arrows do not connect perfectly, this does not mean that the data is wrong. It can happen because the receiver moves with the ball before playing the next pass.
+
+## Build up categories
+
+The dashboard uses three simple build up categories:
+
+- Quick attack: few completed passes before the goal
+- Medium build up: medium number of completed passes before the goal
+- Long build up: more completed passes before the goal
+
+These categories are simplified. They help users compare attacking styles, but they are not a full tactical model.
+
+## Directness
+
+Directness is used as a style comparison.
+
+A more direct team usually needs fewer completed passes before goals. This does not automatically mean that the team is better. It only describes how direct the team's goal attacks were in the loaded tournament data.
 
 ## How to run the dashboard
 
-Open PowerShell in the repository root and run:
+Open a terminal in the IVI folder:
 
-```powershell
+```bash
 cd IVI
+```
+
+Install the required packages:
+
+```bash
 pip install -r requirements.txt
+```
+
+Start the app:
+
+```bash
 python app.py
 ```
 
-Then open the local Dash URL shown in the terminal, usually:
+Then open the dashboard in the browser:
 
 ```text
 http://127.0.0.1:8050/
 ```
 
-## How to rebuild the local dataset
+If port 8050 is already in use, the app can use:
 
-The processed CSV files are already included. Rebuilding is only needed if the data should be regenerated from StatsBomb.
-
-```powershell
-cd IVI
-python build_static_tournament_data.py
+```text
+http://127.0.0.1:8051/
 ```
 
-This can take some time because several tournaments are processed.
+## Project structure
 
-## Dashboard workflow
+```text
+IVI/
+│   app.py
+│   build_static_tournament_data.py
+│   create_selected_tournaments.py
+│   README.md
+│   requirements.txt
+│
+├── assets/
+│   └── style.css
+│
+├── data/
+│   ├── processed/
+│   │   ├── build_up_events_df.csv
+│   │   ├── goals_df.csv
+│   │   └── team_efficiency_df.csv
+│   │
+│   └── raw/
+│       └── selected_tournaments.csv
+│
+├── evaluation/
+│   ├── Aufgaben_Yannick_Geiger.docx
+│   ├── Aufgabe_Ivan_batista.docx
+│   ├── Aufgabe_Kenan_Trainer.docx
+│   ├── Evaluation.pdf
+│   └── IVI_Evaluation.docx
+│
+├── report/
+│   ├── IVI.pptx
+│   ├── Rport_ivi.docx
+│   └── Rport_ivi.pdf
+│
+└── src/
+    ├── data_loader.py
+    ├── figures.py
+    ├── layout.py
+    ├── metrics.py
+    ├── pitch_plots.py
+    ├── preprocessing.py
+    ├── static_tournament_store.py
+    ├── statsbomb_explorer.py
+    └── utils.py
+```
 
-1. Choose a tournament.
-2. Select one team.
-3. Select one goal example.
-4. Replay the attack step by step.
-5. Inspect the tournament goal pattern charts.
-6. Compare the selected team in the team style map and directness ranking.
+## Main files
+
+`app.py` starts the Dash application.
+
+`assets/style.css` contains the dashboard styling.
+
+`src/layout.py` defines the dashboard layout.
+
+`src/figures.py` creates the Plotly figures.
+
+`src/pitch_plots.py` creates the pitch replay view.
+
+`src/data_loader.py` loads the processed dashboard data.
+
+`src/preprocessing.py` contains preprocessing logic.
+
+`data/processed/` contains the prepared CSV files used by the dashboard.
+
+## Evaluation
+
+The evaluation material is stored in the `evaluation/` folder.
+
+The final evaluation summary is:
+
+```text
+evaluation/IVI_Evaluation.docx
+```
+
+The individual task sheets are:
+
+```text
+evaluation/Aufgaben_Yannick_Geiger.docx
+evaluation/Aufgabe_Ivan_batista.docx
+evaluation/Aufgabe_Kenan_Trainer.docx
+```
+
+The evaluation was done with three football interested participants. The main result was that the goal replay was the easiest and most useful part. The comparison views were useful, but terms such as Directness Rank and the team style map needed clearer explanation.
+
+Based on the final pitch and evaluation feedback, I made the dashboard clearer by using more consistent colours, improving plot explanations and adding a more detailed header explanation.
+
+## Report and presentation
+
+The final report is stored in:
+
+```text
+report/Rport_ivi.pdf
+report/Rport_ivi.docx
+```
+
+The final presentation is stored in:
+
+```text
+report/IVI.pptx
+```
 
 ## Limitations
 
-- The dashboard analyses goal build-ups only, not all attacks.
-- Off-ball runs and tactical positioning away from the ball are not visible in event data.
-- The ranking describes attacking style in goals, not overall team strength.
-- The dashboard should not be interpreted as a prediction model for tournament success.
-- The data quality depends on the available StatsBomb event data and the preprocessing rules.
+The dashboard only analyses goal build ups. It does not show every attack in a match.
 
-## Project status
+The data is event data. It does not include full tracking data, off ball runs, defensive positioning or coaching instructions.
 
-The dashboard is prepared for IVI submission together with evaluation material and a written report draft.
+The build up categories are simplified. They are useful for comparison, but they do not explain every tactical detail.
+
+The evaluation was small and formative. It helped improve the prototype, but it does not make general claims about all possible users.
+
+## Final note
+
+The Coach Attack Explorer should be read as an interactive exploratory prototype. It helps users inspect selected goal attacks and compare attacking styles inside a tournament. It is not a prediction system and not a complete tactical model.

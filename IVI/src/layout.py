@@ -61,23 +61,61 @@ def app_header():
         [
             html.Div(
                 [
+                    html.Div("Coach Attack Explorer", className="app-title"),
+                    html.Div(
+                        "Explore how FIFA World Cup 2022 goals were created through short, medium and long passing sequences.",
+                        className="app-subtitle",
+                    ),
+
                     html.Div(
                         [
-                            html.H1("Coach Attack Explorer", className="app-title"),
                             html.Div(
-                                "Explore how teams create goals in major tournaments. Select a tournament, choose a team, replay one goal attack, and compare the team's attacking style with the tournament outcome.",
-                                className="app-subtitle",
+                                [
+                                    html.Div("Goal attacks only", className="header-card-title"),
+                                    html.Div(
+                                        "Every selected sequence ends with a goal. The dashboard focuses on goal build ups, not all attacks.",
+                                        className="header-card-text",
+                                    ),
+                                ],
+                                className="header-card",
+                            ),
+                            html.Div(
+                                [
+                                    html.Div("Event data, not tracking", className="header-card-title"),
+                                    html.Div(
+                                        "Arrows show completed passes and the final shot. They do not show full player movement.",
+                                        className="header-card-text",
+                                    ),
+                                ],
+                                className="header-card",
+                            ),
+                            html.Div(
+                                [
+                                    html.Div("Why gaps can appear", className="header-card-title"),
+                                    html.Div(
+                                        "If arrows do not connect perfectly, the receiver may have moved before playing the next pass.",
+                                        className="header-card-text",
+                                    ),
+                                ],
+                                className="header-card",
                             ),
                         ],
-                        className="app-title-block",
+                        className="header-cards",
                     ),
+
                     html.Div(
-                        "StatsBomb event data",
-                        className="data-badge",
+                        [
+                            html.Span("How to use it", className="guide-label"),
+                            html.Span("1. Select a team"),
+                            html.Span("2. Choose a goal"),
+                            html.Span("3. Replay step by step"),
+                            html.Span("4. Compare team style"),
+                        ],
+                        className="header-guide",
                     ),
                 ],
-                className="app-header-inner",
-            )
+                className="header-content",
+            ),
         ],
         className="app-header",
     )

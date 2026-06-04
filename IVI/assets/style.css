@@ -44,48 +44,87 @@ body {
 }
 
 .app-header {
-  margin-bottom: 12px;
-}
-
-.app-header-inner {
-  min-height: 72px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
-  padding: 14px 20px;
-  background: rgba(17, 24, 39, 0.94);
+  margin-bottom: 14px;
+  padding: 20px 24px;
+  background: rgba(17, 24, 39, 0.96);
   border: 1px solid var(--border);
   border-radius: 18px;
 }
 
+.header-content {
+  max-width: 1280px;
+}
+
 .app-title {
   margin: 0;
-  font-size: 1.72rem;
-  line-height: 1.08;
+  font-size: 2rem;
+  line-height: 1.05;
   font-weight: 900;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.035em;
 }
 
 .app-subtitle {
-  max-width: 980px;
-  margin-top: 6px;
-  color: #b7c7dd;
-  font-size: 0.92rem;
-  font-weight: 500;
-  line-height: 1.35;
+  margin-top: 7px;
+  max-width: 950px;
+  color: #bfdbfe;
+  font-size: 0.96rem;
+  line-height: 1.4;
+  font-weight: 600;
 }
 
-.data-badge {
-  flex: 0 0 auto;
-  padding: 8px 14px;
-  color: #dbeafe;
-  background: rgba(56, 189, 248, 0.13);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: 999px;
-  font-size: 0.82rem;
+.header-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.header-card {
+  min-height: 84px;
+  padding: 12px 13px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 14px;
+}
+
+.header-card-title {
+  color: #f8fafc;
+  font-size: 0.84rem;
+  line-height: 1.2;
   font-weight: 900;
-  white-space: nowrap;
+}
+
+.header-card-text {
+  margin-top: 6px;
+  color: #cbd5e1;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.header-guide {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+  margin-top: 13px;
+}
+
+.header-guide span {
+  padding: 6px 10px;
+  color: #dbeafe;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.header-guide .guide-label {
+  color: #0f172a;
+  background: #38bdf8;
+  border-color: #38bdf8;
 }
 
 .filter-panel {
@@ -506,23 +545,17 @@ label {
     grid-template-columns: 1fr 1fr;
   }
 
+  .header-cards {
+    grid-template-columns: 1fr;
+  }
+
   .replay-side {
     min-height: auto;
   }
 }
-
 @media (max-width: 720px) {
   .app-shell {
     padding: 10px;
-  }
-
-  .app-header-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .data-badge {
-    white-space: normal;
   }
 
   .kpi-row,
