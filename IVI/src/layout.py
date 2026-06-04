@@ -3,8 +3,6 @@ from __future__ import annotations
 from dash import dcc, html
 import dash_bootstrap_components as dbc
 
-from .utils import BUILD_UP_ORDER
-
 
 GRAPH_CONFIG = {"displayModeBar": False, "displaylogo": False, "responsive": True}
 
@@ -14,7 +12,30 @@ def options(values):
 
 
 def goal_options(goals_df):
-    return [{"label": row["goal_label"], "value": str(row["build_up_id"])} for _, row in goals_df.iterrows()]
+    if goals_df is None or goals_df.empty:
+        return []
+
+    out = []
+
+    for _, row in goals_df.iterrows():
+        build_up_id = str(row.get("build_up_id", ""))
+
+        if "goal_label" in goals_df.columns and str(row.get("goal_label", "")).strip():
+            label = row["goal_label"]
+        else:
+            team = str(row.get("team", "Unknown team"))
+            scorer = str(row.get("scorer", "Unknown scorer"))
+            minute = row.get("minute", "")
+            opponent = str(row.get("opponent", "")).strip()
+
+            label = f"{team} - {scorer} ({minute}')"
+
+            if opponent:
+                label += f" vs {opponent}"
+
+        out.append({"label": label, "value": build_up_id})
+
+    return out
 
 
 def card(children, class_name: str = ""):
@@ -31,25 +52,178 @@ def section_title(title: str, subtitle: str | None = None):
     )
 
 
+def form_field(label: str, component):
+    return html.Div([html.Label(label), component], className="form-field")
+
+
 def app_header():
     return html.Header(
         [
             html.Div(
                 [
-                    html.Div("Goal Build-up Analysis", className="app-title"),
-                    html.Div("FIFA World Cup 2022 - StatsBomb Event Data", className="app-subtitle"),
-                ]
+                    html.Div("Coach Attack Explorer", className="app-title"),
+                    html.Div(
+                        "Explore how FIFA World Cup 2022 goals were created through short, medium and long passing sequences.",
+                        className="app-subtitle",
+                    ),
+
+                    html.Div(
+                        [
+                            html.Div(
+                                [
+                                    html.Div("Goal attacks only", className="header-card-title"),
+                                    html.Div(
+                                        "Every selected sequence ends with a goal. The dashboard focuses on goal build ups, not all attacks.",
+                                        className="header-card-text",
+                                    ),
+                                ],
+                                className="header-card",
+                            ),
+                            html.Div(
+                                [
+                                    html.Div("Event data, not tracking", className="header-card-title"),
+                                    html.Div(
+                                        "Arrows show completed passes and the final shot. They do not show full player movement.",
+                                        className="header-card-text",
+                                    ),
+                                ],
+                                className="header-card",
+                            ),
+                            html.Div(
+                                [
+                                    html.Div("Why gaps can appear", className="header-card-title"),
+                                    html.Div(
+                                        "If arrows do not connect perfectly, the receiver may have moved before playing the next pass.",
+                                        className="header-card-text",
+                                    ),
+                                ],
+                                className="header-card",
+                            ),
+                        ],
+                        className="header-cards",
+                    ),
+
+                    html.Div(
+                        [
+                            html.Span("How to use it", className="guide-label"),
+                            html.Span("1. Select a team"),
+                            html.Span("2. Choose a goal"),
+                            html.Span("3. Replay step by step"),
+                            html.Span("4. Compare team style"),
+                        ],
+                        className="header-guide",
+                    ),
+                ],
+                className="header-content",
             ),
-            html.Div("Event data only", className="data-note"),
         ],
         className="app-header",
     )
 
+def overview_section():
+    return html.Div(
+        [
+            section_title(
+                "Tournament goal patterns",
+                "These charts summarize the analysed goal build-ups in the selected tournament.",
+            ),
+            html.Div(
+                [
+                    card(
+                        [
+                            section_title(
+                                "Goal build-up types",
+                                "Distribution of quick, medium and long goal attacks.",
+                            ),
+                            dcc.Graph(
+                                id="overview-build-up-chart",
+                                config=GRAPH_CONFIG,
+                                className="chart-graph",
+                            ),
+                        ],
+                        "chart-panel",
+                    ),
+                    card(
+                        [
+                            section_title(
+                                "Passes vs duration",
+                                "Each point is one goal build-up. The selected goal is highlighted.",
+                            ),
+                            dcc.Graph(
+                                id="overview-scatter-chart",
+                                config=GRAPH_CONFIG,
+                                className="chart-graph",
+                            ),
+                        ],
+                        "chart-panel",
+                    ),
+                ],
+                className="overview-grid",
+            ),
+        ],
+        className="one-page-section overview-page",
+    )
+
+def data_source_panel(competition_options):
+    return card(
+        [
+            html.Div(
+                [
+                    form_field(
+                        "Tournament",
+                        dcc.Dropdown(
+                            id="competition-season-filter",
+                            options=competition_options,
+                            value=None,
+                            placeholder="Choose tournament",
+                            clearable=False,
+                            className="dash-dropdown",
+                        ),
+                    ),
+
+                    # Required for callbacks, but invisible.
+                    html.Div(
+                        dcc.Dropdown(
+                            id="match-filter",
+                            options=[],
+                            value=None,
+                            clearable=False,
+                        ),
+                        style={"display": "none"},
+                    ),
+
+                    # Required for callbacks, but invisible.
+                    html.Div(
+                        dbc.Button(
+                            "Load",
+                            id="load-match-button",
+                            color="primary",
+                            className="load-button hidden-control",
+                        ),
+                        style={"display": "none"},
+                    ),
+                ],
+                className="data-source-grid final-source-grid",
+            ),
+            html.Div(
+                "Choose a tournament first. Then select a team and one goal example for the replay.",
+                id="data-load-feedback",
+                className="filter-feedback",
+            ),
+        ],
+        "filter-panel source-panel",
+    )
 
 def kpi_card(label: str, value: object, suffix: str = ""):
     return html.Div(
         [
-            html.Div([html.Span(value), html.Span(suffix, className="kpi-suffix")], className="kpi-value"),
+            html.Div(
+                [
+                    html.Span(value),
+                    html.Span(suffix, className="kpi-suffix"),
+                ],
+                className="kpi-value",
+            ),
             html.Div(label, className="kpi-label"),
         ],
         className="kpi-card",
@@ -60,13 +234,14 @@ def kpi_row(kpis):
     cards = [
         ("Goals analysed", kpis["total_goals"], ""),
         ("Avg passes before goal", kpis["avg_passes"], ""),
+        ("Avg attack duration", kpis["avg_duration"], "s"),
         ("Most common type", kpis["most_common_type"], ""),
     ]
-    return html.Div([kpi_card(label, value, suffix) for label, value, suffix in cards], className="kpi-row")
 
-
-def form_field(label: str, component):
-    return html.Div([html.Label(label), component], className="form-field")
+    return html.Div(
+        [kpi_card(label, value, suffix) for label, value, suffix in cards],
+        className="kpi-row",
+    )
 
 
 def replay_filters(goals_df):
@@ -78,81 +253,45 @@ def replay_filters(goals_df):
                         "Team",
                         dcc.Dropdown(
                             id="team-filter",
-                            options=options(goals_df["team"]),
-                            multi=True,
-                            placeholder="All teams",
+                            options=[],
+                            multi=False,
+                            placeholder="Choose one team",
                             className="dash-dropdown",
                         ),
                     ),
                     form_field(
-                        "Build-up Type",
+                        "Build-up type",
                         dcc.Dropdown(
                             id="type-filter",
-                            options=[{"label": item, "value": item} for item in BUILD_UP_ORDER],
-                            multi=True,
+                            options=[],
+                            multi=False,
                             placeholder="All build-up types",
                             className="dash-dropdown",
                         ),
                     ),
                     form_field(
-                        "Goal",
+                        "Goal example",
                         dcc.Dropdown(
                             id="goal-dropdown",
-                            options=goal_options(goals_df),
-                            value=str(goals_df.iloc[0]["build_up_id"]) if not goals_df.empty else None,
+                            options=[],
+                            value=None,
                             placeholder="Select a goal",
                             className="dash-dropdown goal-select",
                         ),
                     ),
-                    dbc.Button("Reset", id="reset-button", color="primary", outline=True, className="reset-button"),
+                    dbc.Button(
+                        "Reset",
+                        id="reset-button",
+                        color="primary",
+                        outline=True,
+                        className="reset-button",
+                    ),
                 ],
                 className="filter-strip",
             ),
             html.Div(id="filter-feedback", className="filter-feedback"),
         ],
-        "filter-panel",
-    )
-
-
-def overview_tab():
-    return html.Div(
-        [
-            html.Div(id="overview-kpis"),
-            html.Div(
-                [
-                    card(
-                        [
-                            section_title("Build-up Types", "Quick, medium or long?"),
-                            dcc.Graph(id="overview-build-up-chart", config=GRAPH_CONFIG, className="chart-graph"),
-                        ],
-                        "chart-panel",
-                    ),
-                    card(
-                        [
-                            section_title("Passes vs Duration", "Do longer sequences take more time?"),
-                            dcc.Graph(id="overview-scatter-chart", config=GRAPH_CONFIG, className="chart-graph"),
-                        ],
-                        "chart-panel",
-                    ),
-                ],
-                className="overview-grid",
-            ),
-            html.Div(id="overview-insight", className="insight-text"),
-        ],
-        className="tab-page overview-page",
-    )
-
-
-def pitch_legend():
-    return html.Div(
-        [
-            html.Span([html.I(className="legend-swatch pass"), "Pass"]),
-            html.Span([html.I(className="legend-swatch final-pass"), "Final pass"]),
-            html.Span([html.I(className="legend-swatch shot"), "Shot"]),
-            html.Span([html.I(className="legend-swatch goal"), "Goal"]),
-            html.Span([html.I(className="legend-swatch current"), "Current"]),
-        ],
-        className="pitch-legend",
+        "filter-panel replay-filter-panel",
     )
 
 
@@ -160,15 +299,17 @@ def replay_controls():
     return html.Div(
         [
             dbc.Button("Previous", id="step-prev", color="secondary", outline=True),
+            dbc.Button("Play", id="play-button", color="success"),
+            dbc.Button("Pause", id="pause-button", color="warning", outline=True),
             dbc.Button("Next", id="step-next", color="primary"),
-            dbc.Button("Show full sequence", id="step-all", color="light", outline=True),
-            dbc.Button("Reset replay", id="step-reset", color="light", outline=True),
+            dbc.Button("Show full", id="step-all", color="light", outline=True),
+            dbc.Button("Reset", id="step-reset", color="light", outline=True),
         ],
         className="replay-controls",
     )
 
 
-def goal_replay_tab(goals_df):
+def attack_replay_section(goals_df):
     return html.Div(
         [
             replay_filters(goals_df),
@@ -176,9 +317,15 @@ def goal_replay_tab(goals_df):
                 [
                     card(
                         [
-                            section_title("Goal Replay", "Replay one goal build-up step by step."),
-                            dcc.Graph(id="pitch-graph", config=GRAPH_CONFIG, className="pitch-graph"),
-                            pitch_legend(),
+                            section_title(
+                                "Attack Replay",
+                                "Select a team and a goal example, then play the attacking sequence step by step.",
+                            ),
+                            dcc.Graph(
+                                id="pitch-graph",
+                                config=GRAPH_CONFIG,
+                                className="pitch-graph",
+                            ),
                         ],
                         "pitch-panel",
                     ),
@@ -194,54 +341,65 @@ def goal_replay_tab(goals_df):
                 ],
                 className="replay-grid",
             ),
+
+            # Hidden output target for old callback. Do not remove unless app.py callback is also removed.
+            html.Div(id="team-tournament-info", style={"display": "none"}),
         ],
-        className="tab-page replay-page",
+        className="one-page-section replay-page",
     )
 
 
-def team_comparison_tab():
+
+def team_profile_section():
     return html.Div(
         [
+            section_title(
+                "Team style and tournament finish",
+                "Compare whether teams scored directly or with longer build-up, and how far they reached in the tournament.",
+            ),
             html.Div(
                 [
                     card(
                         [
-                            section_title("Team Build-up Profile", "Teams sorted by average completed passes."),
-                            dcc.Graph(id="team-chart", config=GRAPH_CONFIG, className="team-graph"),
+                            section_title(
+                                "Team goal style map",
+                                "Left means more direct attacks. Right means more patient build-up. Higher means more analysed goals.",
+                            ),
+                            dcc.Graph(
+                                id="team-chart",
+                                config=GRAPH_CONFIG,
+                                className="team-graph",
+                            ),
                         ],
                         "team-chart-panel",
                     ),
                     card(
                         [
-                            section_title("Top 5 Patient Teams"),
                             html.Div(id="top-teams-table"),
                         ],
                         "top-table-panel",
                     ),
                 ],
                 className="team-grid",
-            )
+            ),
         ],
-        className="tab-page team-page",
+        className="one-page-section team-page",
     )
 
 
-def build_layout(goals_df):
+def build_layout(goals_df, competition_options=None):
     return html.Div(
         [
-            dcc.Store(id="selected-build-up", data=str(goals_df.iloc[0]["build_up_id"]) if not goals_df.empty else None),
+            dcc.Store(id="selected-build-up", data=None),
             dcc.Store(id="step-store", data=0),
+            dcc.Store(id="is-playing", data=False),
+            dcc.Interval(id="replay-interval", interval=800, n_intervals=0, disabled=True),
+
             app_header(),
-            dcc.Tabs(
-                id="main-tabs",
-                value="overview",
-                className="main-tabs",
-                children=[
-                    dcc.Tab(label="Overview", value="overview", className="main-tab", selected_className="main-tab-selected", children=overview_tab()),
-                    dcc.Tab(label="Goal Replay", value="replay", className="main-tab", selected_className="main-tab-selected", children=goal_replay_tab(goals_df)),
-                    dcc.Tab(label="Team Comparison", value="teams", className="main-tab", selected_className="main-tab-selected", children=team_comparison_tab()),
-                ],
-            ),
+            data_source_panel(competition_options or []),
+            attack_replay_section(goals_df),
+            overview_section(),
+            team_profile_section(),
         ],
-        className="app-shell",
+        className="app-shell one-page-shell",
     )

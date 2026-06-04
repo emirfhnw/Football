@@ -60,3 +60,54 @@ def team_ranking(goals_df: pd.DataFrame) -> pd.DataFrame:
         )
         .sort_values("avg_passes", ascending=False)
     )
+def direct_team_ranking(goals_df: pd.DataFrame) -> pd.DataFrame:
+    if goals_df.empty:
+        return pd.DataFrame(columns=["team", "goals", "avg_passes", "avg_duration"])
+
+    return (
+        goals_df.groupby("team", as_index=False)
+        .agg(
+            goals=("build_up_id", "nunique"),
+            avg_passes=("passes_before_goal", "mean"),
+            avg_duration=("attack_duration_seconds", "mean"),
+        )
+        .query("goals >= 2")
+        .sort_values("avg_passes", ascending=True)
+    )
+
+
+def patient_team_ranking(goals_df: pd.DataFrame) -> pd.DataFrame:
+    if goals_df.empty:
+        return pd.DataFrame(columns=["team", "goals", "avg_passes", "avg_duration"])
+
+    return (
+        goals_df.groupby("team", as_index=False)
+        .agg(
+            goals=("build_up_id", "nunique"),
+            avg_passes=("passes_before_goal", "mean"),
+            avg_duration=("attack_duration_seconds", "mean"),
+        )
+        .query("goals >= 2")
+        .sort_values("avg_passes", ascending=False)
+    )
+
+
+def efficient_team_ranking(goals_df: pd.DataFrame) -> pd.DataFrame:
+    if goals_df.empty or "shot_xg" not in goals_df.columns:
+        return pd.DataFrame(columns=["team", "goals", "total_xg", "goals_minus_xg"])
+
+    out = (
+        goals_df.groupby("team", as_index=False)
+        .agg(
+            goals=("build_up_id", "nunique"),
+            total_xg=("shot_xg", "sum"),
+            avg_xg=("shot_xg", "mean"),
+        )
+    )
+
+    out["goals_minus_xg"] = out["goals"] - out["total_xg"]
+
+    return (
+        out.query("goals >= 2")
+        .sort_values("goals_minus_xg", ascending=False)
+    )
